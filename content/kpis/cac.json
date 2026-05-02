@@ -1,0 +1,79 @@
+{
+  "slug": "cac",
+  "title": "CAC",
+  "type": "kpi",
+  "function": "Marketing",
+  "summary": "Sales and marketing acquisition cost per new customer.",
+  "whyPeCares": "PE cares because this KPI gives an early read on growth quality, margin expansion, cash conversion, execution discipline, or exit-story credibility.",
+  "goodBadSignals": "Good performance shows controlled execution and improving unit economics; bad performance signals leakage, weak process ownership, or a diligence risk requiring deeper segmentation.",
+  "improvementActions": [
+    "Standardize the definition and data owner.",
+    "Segment by customer, site, product, team, or channel.",
+    "Tie movement to an operating playbook and weekly cadence."
+  ],
+  "relatedPlaybooks": [
+    "KPI Dashboard Buildout",
+    "Management Operating Cadence"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "Marketing",
+    "KPI",
+    "CAC"
+  ],
+  "articleSections": [
+    {
+      "title": "CAC: The Cost of Growth in a Competitive Market",
+      "body": [
+        "In the Private Equity world, Customer Acquisition Cost (CAC) is the primary metric we use to measure the efficiency of a company's 'Go-to-Market' (GTM) engine. It represents the total cost of sales and marketing efforts required to acquire a single new customer. For an Operating Partner, CAC is a critical variable in the LTV/CAC ratio, which determines the long-term viability of the business model. If CAC is too high relative to the Lifetime Value (LTV), the company is effectively 'burning' equity to buy revenue—a strategy that is unsustainable in a high-leverage environment.",
+        "The math of CAC is a fully burdened calculation: (Total Sales & Marketing Expense) / (Number of New Customers Acquired). We use tools like Salesforce or HubSpot to track these expenses, ensuring that 'hidden' costs like sales commissions, marketing overhead, and technology subscriptions are included. For a mid-market SaaS business, if you spend $1M in a quarter and acquire 50 customers, your CAC is $20k. We monitor this monthly to identify trends: is CAC increasing as we move into more competitive segments or as our primary marketing channels become saturated?",
+        "Operating Partners look for 'Blended CAC' vs. 'Paid CAC' to understand the true health of the acquisition engine. Blended CAC includes all customers, including those from organic and referral channels, while Paid CAC only looks at those won through direct marketing spend. If the gap between the two is narrowing, it suggests that our organic 'moat' is shrinking and we are becoming over-reliant on expensive paid channels. This shift in the CAC profile is a major risk at exit and must be addressed early in the hold period."
+      ],
+      "callout": "CAC is the price you pay for growth; if you don't control it, it will eventually consume your EBITDA margin."
+    },
+    {
+      "title": "Fully Burdened CAC: Avoiding the 'Accountant's Trap'",
+      "body": [
+        "A common mistake in founder-led businesses is 'Under-Accounting' for CAC by only including direct advertising spend (e.g., LinkedIn Campaign Manager). Senior Operating Partners insist on a 'Fully Burdened' CAC that includes every dollar spent on the sales and marketing organization—from the CMO's salary to the cost of the office coffee for the SDR team. We use ERP tools like NetSuite or Intacct to pull these figures directly from the general ledger, ensuring there is no 'leakage' or miscategorization of GTM-related expenses.",
+        "The math of fully burdened CAC often reveals deep inefficiencies in the sales process. If your direct marketing CAC is $5k but your fully burdened CAC is $25k, it means your 'Sales Overhead' is 4x your 'Marketing Drive.' This is a signal that your sales process is likely too manual, your cycles are too long, or your reps are unproductive. We use tools like Outreach or SalesLoft to automate the 'Prospecting' and 'Discovery' phases, allowing us to lower the sales-to-marketing ratio and reduce the overall CAC. Our goal is to drive the fully burdened CAC down toward the direct CAC over time.",
+        "We also analyze 'CAC by Segment.' Often, the aggregate CAC masks the fact that winning an enterprise customer costs 10x more than winning an SMB customer. If the LTV of the enterprise customer is only 5x higher, we are actually losing money on our enterprise efforts relative to SMB. By performing this 'Unit Economic' analysis, we can reallocate our budget toward the highest-ROI segments. This data-driven approach to CAC management is a cornerstone of the PE value creation plan, transforming a scattergun GTM strategy into a surgical growth machine."
+      ]
+    },
+    {
+      "title": "Marketing Attribution: Identifying the 'High-ROI' Channels",
+      "body": [
+        "To manage CAC effectively, you must understand 'Attribution'—which specific marketing touches actually drove the conversion. We use tools like Bizible or Google Analytics 4 to track the customer journey from the first ad click to the final 'Closed Won' deal. This allows us to move beyond 'Last-Click' attribution, which often overvalues simple brand searches, toward a 'Multi-Touch' model that recognizes the value of early-stage whitepapers and webinars. By identifying the 'High-ROI' channels, we can optimize our CAC at the source.",
+        "The math of attribution is tied to 'Marginal CAC.' We want to know how much it will cost to acquire the *next* customer from a specific channel. For example, if we increase our LinkedIn spend from $10k to $20k, does our CAC remain stable or does it double? This 'Diminishing Returns' curve is critical for scaling the GTM engine. Operating Partners use A/B testing and 'Channel Capping' to ensure we aren't over-investing in saturated channels. By continuously pruning the low-performing ads and doubling down on the winners, we 'harden' the CAC and build a more resilient growth engine.",
+        "We also look at 'Micro-Conversions' along the funnel. What is the CAC for a 'Qualified Lead' (MQL) vs. a 'Qualified Opportunity' (SQL)? If our MQL-to-SQL conversion rate is low, it means our marketing is driving 'Cheap' but 'Low-Quality' leads that are wasting the sales team's time. By shifting our focus from 'Lead Volume' to 'Lead Quality,' we can actually lower our final CAC even if our cost-per-lead (CPL) increases. This alignment between marketing and sales is what drives true GTM efficiency and maximizes the exit multiple."
+      ]
+    },
+    {
+      "title": "Sales Productivity: The Hidden Lever of CAC Reduction",
+      "body": [
+        "CAC is not just a marketing problem; it is a sales productivity problem. Every day a deal sits in the funnel without moving is a day that the CAC is increasing due to the 'Carry Cost' of the sales rep. We use Conversation Intelligence tools like Gong or Chorus.ai to identify the specific behaviors that lead to shorter sales cycles and higher win rates. If we can reduce our sales cycle from 6 months to 4 months, we effectively reduce our 'Sales CAC' by 33%. This is the most direct lever for CAC reduction in the enterprise segment.",
+        "The math of sales productivity is measured through 'Quota Attainment' and 'AE Capacity.' If only 50% of your AEs are hitting their quota, your CAC is twice as high as it should be because you are paying for the overhead of the underperformers. We implement rigorous 'Performance Management' and 'Sales Enablement' programs to move the middle 60% of the sales force toward the top quartile. By using tools like Mindtickle to automate rep training and 'Ramp-up,' we ensure that every new hire becomes 'CAC-Positive' as quickly as possible.",
+        "Operating Partners also look at 'Non-Selling' time. How much of the sales team's time is spent on CRM data entry, prospecting, or internal meetings? By using tools like Clari or Outreach to automate these tasks, we can increase 'Selling Time' by 20-30%, which allows each rep to handle more pipeline without adding headcount. This 'Leverage' is what allows a business to scale revenue 2x faster than GTM headcount, driving massive expansion in the EBITDA margin and creating a highly attractive asset for the next buyer."
+      ]
+    },
+    {
+      "title": "Exit Readiness: Defending the 'Unit Economic' Story",
+      "body": [
+        "As we approach the exit, the CAC/LTV ratio is the primary tool we use to prove the asset's 'GTM Maturity' to potential buyers. A buyer will be highly skeptical of a growth forecast that relies on 'Efficiency Gains' that haven't yet been realized. We prepare for this by performing a 'Sell-Side GTM Audit' 12 months out, creating a 'Unit Economic' report that shows our CAC is stable or declining as we scale. We use tools like Salesforce to provide a 'Clean Data' trail that proves our CAC calculation is fully burdened and beyond reproach.",
+        "Buyers pay a premium for 'Scalable CAC.' They want to know that if they double the GTM budget next year, the CAC won't triple. We provide 'Capacity Models' and 'Channel Saturation' reports that show exactly where the next $10M of growth will come from and at what cost. By demonstrating that we have 'Unfilled Capacity' in high-ROI channels, we de-risk the growth forecast for the buyer and justify a higher multiple. We position the asset as a 'Spring-Loaded' machine that is ready for the next level of scale.",
+        "The final act is the 'Diligence Defense.' When a buyer's team looks at our CAC data, they should see a professional, data-driven organization that knows exactly how much it costs to win a customer. We use Google Analytics 4 data to show that our 'Organic' lead flow is growing, reducing our reliance on paid spend over time. By delivering a 'Hardened' unit economic story, we ensure a competitive bidding process and maximize the final exit price. In the end, a controlled and predictable CAC is the ultimate proof of an Operating Partner's success."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "CAC action loop",
+      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
+      "chart": "flowchart TB\n  A[\"Define CAC\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+    }
+  ]
+}

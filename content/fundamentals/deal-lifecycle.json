@@ -1,0 +1,76 @@
+{
+  "slug": "deal-lifecycle",
+  "title": "Deal Lifecycle",
+  "type": "fundamental",
+  "summary": "Deal Lifecycle explains the operating logic a PE professional needs before diagnosing a portfolio company or designing a value creation plan.",
+  "definition": "Deal Lifecycle is a core concept in how sponsors evaluate, own, improve, and eventually sell companies.",
+  "whyItMatters": "PE operators translate this concept into priorities, dashboards, management routines, and initiatives that improve EBITDA, cash flow, growth durability, or exit credibility.",
+  "example": "A portfolio CEO may use the concept to decide whether to prioritize pricing, working capital, sales productivity, or management cadence in the first 100 days.",
+  "diagram": "graph TD\n  A[Concept: Deal Lifecycle] --> B[Operator Question]\n  B --> C[Data Needed]\n  C --> D[Action]\n  D --> E[KPI Movement]\n  E --> F[Value Creation Story]",
+  "relatedPlaybooks": [
+    "Pricing Optimization",
+    "Procurement Savings",
+    "KPI Dashboard Buildout",
+    "100-Day Value Creation Plan"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "operations"
+  ],
+  "articleSections": [
+    {
+      "title": "Sourcing and the Funnel Dynamics",
+      "body": [
+        "The deal lifecycle begins with the sourcing funnel, a high-volume screening process designed to identify high-quality assets before they enter a competitive auction. GPs utilize proprietary networks and specialized sourcing tools like DealCloud to track thousands of potential targets, filtering them based on industry vertical, EBITDA margin, and revenue growth. The objective is to find a platform with a 'right to win' in its market, providing a stable base for future consolidation and operational improvement.",
+        "Sourcing is increasingly data-driven, with firms using automated scrapers and industry databases like PitchBook to identify founder-led businesses that are hitting a growth ceiling. A typical $500M fund might review 800 teasers a year, leading to 150 NDAs and perhaps only five closed transactions. This extreme selectivity ensures that capital is only deployed into businesses where the GP's specific value creation playbook can be applied with a high probability of success.",
+        "Maintaining a proprietary sourcing advantage is critical because competitive auctions often drive up entry multiples, compressing the potential for IRR. By building long-term relationships with founders 12 to 24 months before a sale, a GP can often negotiate a 'bilateral' deal at a more reasonable entry price, such as 8x EBITDA instead of 10x. This entry discipline provides a larger margin for error and allows the GP to capture a greater share of the upside generated during the hold period."
+      ]
+    },
+    {
+      "title": "Integrated Due Diligence: Underwriting the Thesis",
+      "body": [
+        "Due diligence has evolved from a defensive checklist into an offensive strategy for underwriting the Value Creation Plan (VCP). While legal and accounting firms handle the 'red flag' reports, operating partners conduct deep-dive operational diligence to validate the investment thesis. This involves stress-testing the scalability of the current IT stack, assessing the depth of the management team, and identifying 'hidden' EBITDA leaks in the supply chain or pricing structure.",
+        "A critical component of this phase is the Quality of Earnings (QofE) report, which strips out one-time gains and non-recurring expenses to reveal the true cash-generating power of the business. For a target reporting $25M in EBITDA, a rigorous QofE might identify $3M in 'pro-forma' adjustments that the GP must decide whether to credit or discount. This financial clarity is coupled with commercial diligence that uses tools like Alteryx to analyze customer churn and concentration risks at a granular level.",
+        "The output of this phase is a detailed 100-day plan that is finalized before the wire is even sent. This plan assigns specific owners to every value lever, whether it is implementing a new ERP like NetSuite or restructuring the sales commission model. By entering the 'Build' phase with a pre-validated roadmap, the GP minimizes the risk of 'day one' inertia and ensures the management team is aligned on the mission from the moment of close."
+      ]
+    },
+    {
+      "title": "The 100-Day Plan: Establishing the Operating Rhythm",
+      "body": [
+        "The first 100 days post-acquisition is the most critical window for establishing the culture of accountability and the pace of change. During this phase, the GP installs a standardized 'Operating Machine' consisting of weekly KPI tracking, monthly operating reviews (MORs), and quarterly board meetings. This cadence ensures that any deviations from the VCP are identified and corrected in real-time, preventing small operational issues from becoming major drag factors on IRR.",
+        "Operating partners focus on 'quick wins' during this period to build momentum and demonstrate the value of the GP's involvement to the employees. For instance, a rapid procurement review using Coupa might identify a 15% saving on indirect spend within the first 60 days, providing immediate EBITDA uplift. These early successes validate the GP's expertise and help win the 'hearts and minds' of a management team that may be wary of private equity ownership.",
+        "At the same time, the GP begins the 'professionalization' of the back office, often upgrading the CFO and implementing more robust reporting tools like PowerBI. This ensures that the CEO has the data they need to make high-velocity decisions without relying on gut feel or manual spreadsheets. By the end of the 100-day mark, the business should be operating as a professionalized, institutional-grade entity with a clear path toward its year-one growth targets."
+      ]
+    },
+    {
+      "title": "Value Creation: The Mid-Hold Performance Sprint",
+      "body": [
+        "In the mid-hold period, the focus shifts from stabilization to the aggressive execution of the core growth levers identified during diligence. This often involves a 'buy and build' strategy where the platform company acquires smaller competitors to realize massive scale and synergy benefits. For a $100M revenue business, adding three $20M competitors at lower multiples can significantly expand the overall EBITDA margin through the elimination of redundant overhead and the consolidation of sales forces.",
+        "Operational Alpha is driven by deep functional improvements in areas like pricing, sales force effectiveness, and digital transformation. For a manufacturer, this might involve deploying an MES (Manufacturing Execution System) to improve OEE (Overall Equipment Effectiveness) from 65% to 80%. This improvement in throughput allows the business to increase its top line by 20% without adding a single dollar of capital expenditure or new labor costs, resulting in pure margin expansion.",
+        "Throughout this phase, the GP maintains a relentless focus on the 'Exit North Star,' ensuring that every initiative contributes to the ultimate goal of multiple expansion. This requires constant monitoring of market trends and competitor moves to ensure the business remains a 'must-have' asset for future buyers. By maintaining a high level of intensity throughout the mid-hold, the GP maximizes the value of the asset and prepares it for a premium exit in the final phase of the lifecycle."
+      ]
+    },
+    {
+      "title": "Exit Readiness: Positioning for the Final Harvest",
+      "body": [
+        "Exit readiness is a proactive process that begins at least 18 months before the anticipated sale date. The goal is to deliver a 'clean' asset that minimizes the friction for the next buyer and eliminates any potential for 'price chips' during the final negotiation. This involves conducting a 'reverse diligence' process where the GP hires third-party firms to identify any remaining legal, financial, or operational issues that need to be remediated before going to market.",
+        "Positioning the asset for a premium multiple requires a compelling growth narrative supported by bulletproof data from the company's tech stack. If the GP can show that a recently implemented Salesforce instance has driven a 30% increase in pipeline conversion, they can command a higher multiple from a strategic buyer. For a business that has reached $50M in EBITDA, proving that there is still a 'next act' of growth—such as international expansion or a new product line—is critical for attracting top-tier bidders.",
+        "The final harvest involves choosing the right exit route, whether it be a strategic sale, a secondary PE buyout, or an IPO. Each path requires a different set of preparations, but the underlying requirement remains the same: a professionalized management team and a robust, scalable platform. By successfully navigating the entire deal lifecycle, the GP returns capital and significant profits to their LPs, reinforcing their reputation and paving the way for their next fundraise."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Deal Lifecycle workflow",
+      "description": "A practical flow from diagnosis through execution and value impact.",
+      "chart": "flowchart TB\n  A[\"Investment thesis\"] --> B[\"Commercial and operational diligence\"]\n  B --> C[\"Value creation underwriting\"]\n  C --> D[\"Close and 100-day plan\"]\n  D --> E[\"Portfolio operating cadence\"]\n  E --> F[\"Exit readiness\"]\n  F --> G[\"Sale process and buyer diligence\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+    }
+  ]
+}

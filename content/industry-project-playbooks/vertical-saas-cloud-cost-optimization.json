@@ -1,0 +1,46 @@
+{
+  "slug": "vertical-saas-cloud-cost-optimization",
+  "title": "Cloud Cost Optimization",
+  "type": "industry-project",
+  "industry": "Vertical SaaS",
+  "summary": "Cloud Cost Optimization is a focused Vertical SaaS operating project that connects a specific business problem to workstreams, data, KPIs, and expected value impact.",
+  "businessProblem": "Vertical SaaS companies often lose margin, growth, or cash when cloud cost optimization is not managed with a clear owner and KPI baseline.",
+  "goal": "Create a measurable improvement plan that management can execute through weekly operating cadence.",
+  "timeline": "60-120 days",
+  "workstreams": [
+    "Baseline current performance",
+    "Segment the opportunity",
+    "Design operating changes",
+    "Pilot with owner accountability",
+    "Track KPI and financial impact"
+  ],
+  "dataNeeded": [
+    "Customer data",
+    "P&L detail",
+    "Operating KPI exports",
+    "Org ownership map"
+  ],
+  "kpisImpacted": [
+    "Revenue Growth",
+    "Gross Margin",
+    "EBITDA Margin",
+    "Retention"
+  ],
+  "expectedImpact": "Expected impact should be underwritten as run-rate EBITDA, cash release, risk reduction, or exit-story improvement after baseline validation.",
+  "difficulty": "Advanced",
+  "typicalOwner": "Commercial Leader",
+  "relatedPlaybooks": [
+    "KPI Dashboard Buildout",
+    "Management Operating Cadence",
+    "Procurement Savings"
+  ],
+  "sourceRefs": [
+    "local-value-creation-playbook",
+    "local-pe-operations"
+  ],
+  "tags": [
+    "Vertical SaaS",
+    "industry project",
+    "Cloud Cost Optimization"
+  ]
+}

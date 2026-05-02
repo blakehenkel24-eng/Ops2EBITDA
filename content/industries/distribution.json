@@ -1,0 +1,130 @@
+{
+  "slug": "distribution",
+  "title": "Distribution",
+  "type": "industry",
+  "summary": "Intermediaries that buy, stock, sell, and deliver products across fragmented customer bases.",
+  "businessModel": "Intermediaries that buy, stock, sell, and deliver products across fragmented customer bases.",
+  "revenueModel": "Recurring contracts, transaction fees, project revenue, branch/site revenue, or unit-based service volume.",
+  "costStructure": "Major cost buckets typically include labor, delivery capacity, procurement or COGS, technology, facilities, sales, and overhead.",
+  "keyKpis": [
+    "Revenue Growth",
+    "Gross Margin",
+    "EBITDA Margin",
+    "Retention",
+    "Labor Productivity"
+  ],
+  "whyPeLikesIt": "PE likes niches with fragmented competition, repeatable operations, visible KPIs, pricing opportunity, add-on potential, and room for professionalized management.",
+  "investmentThesis": "A common thesis is to improve management systems, increase pricing discipline, expand sales capacity, consolidate fragmented competitors, and build a cleaner exit story.",
+  "diligenceQuestions": [
+    "What are the true unit economics by customer, site, branch, product, or contract?",
+    "Where is growth recurring versus one-time?",
+    "Which KPIs predict margin or retention deterioration earliest?"
+  ],
+  "operationalIssues": [
+    "Inconsistent KPI definitions across teams.",
+    "Local or functional variation that hides margin leakage.",
+    "Underdeveloped pricing, sales operations, and forecasting cadence."
+  ],
+  "valueCreationLevers": [
+    "Pricing discipline",
+    "Sales productivity",
+    "Procurement and vendor management",
+    "KPI dashboard buildout",
+    "Operating cadence"
+  ],
+  "projectPlaybooks": [
+    "Distribution KPI dashboard",
+    "Distribution pricing discipline",
+    "Distribution operating cadence"
+  ],
+  "aiOpportunities": [
+    "Automate repetitive admin workflows.",
+    "Improve forecasting, scheduling, or routing decisions.",
+    "Use analytics to identify churn, margin leakage, or service failures earlier."
+  ],
+  "risks": [
+    "Customer concentration",
+    "Weak data quality",
+    "Margin compression",
+    "Regulatory or labor exposure"
+  ],
+  "hundredDayPlan": [
+    "Build KPI baseline by segment.",
+    "Identify quick-win pricing, cash, and cost opportunities.",
+    "Install weekly operating review and value tracking."
+  ],
+  "exitReadiness": [
+    "Clean revenue and margin bridge.",
+    "Evidence of repeatable organic growth.",
+    "Documented playbooks and management cadence."
+  ],
+  "representativeExamples": [
+    "Representative public companies and sponsor-backed platforms vary by sub-niche."
+  ],
+  "relatedPlaybooks": [
+    "Pricing Optimization",
+    "Procurement Savings",
+    "KPI Dashboard Buildout",
+    "100-Day Value Creation Plan"
+  ],
+  "relatedKpis": [
+    "EBITDA Margin",
+    "Gross Margin",
+    "Revenue Growth",
+    "Retention"
+  ],
+  "tags": [
+    "industry",
+    "Distribution"
+  ],
+  "articleSections": [
+    {
+      "title": "Optimizing the Distribution Engine: Warehouse Excellence",
+      "body": [
+        "In the distribution sector, EBITDA is won or lost on the warehouse floor. Most mid-market distributors operate with 'Legacy Inefficiency'—manual picking processes, poor slotting logic, and fragmented inventory visibility. We initiate value creation by implementing a Tier-1 Warehouse Management System (WMS) like Manhattan Associates or HighJump (Korber). This transition from paper-based operations to a directed-work environment is the critical first step in driving the labor productivity and inventory accuracy required for a high-margin platform.",
+        "Labor Productivity is the primary operational lever in distribution. We target a 15-20% improvement in 'Units Per Hour' (UPH) by optimizing warehouse slotting and implementing labor management modules. By using data-driven heat maps to place high-velocity items closer to the shipping docks, we significantly reduce travel time for pickers. This operational refinement allows the business to handle increased volume without a corresponding increase in labor cost, effectively driving operating leverage and expanding EBITDA margins by 100-150bps through labor efficiency alone.",
+        "Inventory Accuracy is the second pillar of warehouse excellence. We enforce a rigorous 'Cycle Counting' program that replaces the disruptive annual physical inventory count. By achieving 99.9%+ location accuracy, we eliminate 'Ghost Inventory' and reduce order fulfillment errors that lead to costly returns and customer dissatisfaction. For a $250M revenue distributor, improving inventory accuracy from 95% to 99.9% can reduce working capital requirements by $5M+ and save $1M annually in 'Lost Sales' and expedited shipping costs."
+      ],
+      "callout": "Warehouse efficiency in distribution is the difference between a low-margin commodity player and a high-performance cash flow engine."
+    },
+    {
+      "title": "Inventory Management and Working Capital Optimization",
+      "body": [
+        "Effective inventory management is the key to unlocking cash in a distribution business. Many mid-market firms suffer from 'Inventory Bloat'—holding excessive safety stock of slow-moving items while frequently stocking out of high-demand products. We implement advanced Demand Planning and Inventory Optimization tools like Blue Yonder or E2open to move from 'Intuition-Based' purchasing to data-driven replenishment. The goal is to maximize 'Fill Rates' while simultaneously increasing 'Inventory Turns' through more precise forecasting.",
+        "Inventory Turns is the critical metric for working capital efficiency. We target a 20-25% increase in turns by implementing 'ABC Analysis' and aggressively liquidating 'Dead Stock' (items with no sales in 12+ months). By freeing up cash tied up in slow-moving inventory, we provide the liquidity needed for strategic M&A or high-ROI organic growth initiatives. A disciplined inventory strategy should result in a 'Cash Conversion Cycle' (CCC) that is at least 10-15 days shorter than the industry average, providing a significant competitive advantage in terms of capital flexibility.",
+        "The financial impact of optimized inventory is seen in the reduction of 'Carrying Costs' and 'Obsolescence Writes-Offs.' By reducing the overall inventory footprint by 15%, we can save 200-300bps in annual carrying costs (warehousing, insurance, taxes, and cost of capital). For a distributor with $50M in average inventory, this translates into $1M+ in direct annual EBITDA impact. We expect the Operating Partner to establish monthly 'Inventory Performance Reviews' with the procurement and sales teams to ensure that stocking levels are tightly aligned with current market demand."
+      ]
+    },
+    {
+      "title": "Pricing Discipline and Rebate Management",
+      "body": [
+        "Pricing in distribution is often a 'Wild West' of decentralized decisions and unmonitored discounting. We implement 'Pricing Science' by using tools like Zilliant or PROS to identify 'Price Leakage' and establish standardized pricing matrices. The goal is to move away from 'Salesman-Led' pricing to a centralized model that accounts for customer segmentation, order size, and cost-to-serve. Even a 50-100bps improvement in average realized price can result in a massive EBITDA uplift due to the high-volume, low-margin nature of the distribution business.",
+        "Rebate Management is an often-overlooked profit lever in the distribution sector. We implement specialized Rebate Management Software like Enable or Flintfox to ensure that every dollar of 'Vendor Rebates' and 'Volume Incentives' is accurately tracked and claimed. Many mid-market distributors leave 10-15% of their earned rebates on the table due to manual tracking errors and missed deadlines. By professionalizing the rebate function, we can drive an immediate 50bps improvement in gross margin that drops directly to the bottom line with zero incremental sales effort.",
+        "Strategic pricing also involves a rigorous analysis of 'Customer Profitability.' We use 'Activity-Based Costing' (ABC) to identify customers who are actually EBITDA-negative after accounting for small order sizes, frequent returns, and high service requirements. We've seen portcos drive 200bps of margin expansion by simply 'Firing' or re-pricing their bottom 10% of customers. The Senior Operating Partner must ensure that the sales team is incentivized based on 'Gross Margin Dollars' rather than 'Revenue,' aligning their behavior with the firm's value creation goals."
+      ]
+    },
+    {
+      "title": "Transportation Management and Route Optimization",
+      "body": [
+        "Transportation is the largest variable cost in most distribution businesses outside of COGS. We optimize the 'Last Mile' delivery engine by implementing a Transportation Management System (TMS) like Descartes or BluJay Solutions. These tools enable real-time route optimization, load consolidation, and carrier performance tracking. By moving from manual dispatching to automated, data-driven routing, we can significantly reduce fuel consumption, maintenance costs, and the overall number of required vehicles and drivers.",
+        "Route Density is the primary driver of transportation efficiency. We target a 10-15% reduction in 'Cost Per Delivery' by optimizing the sequence of stops and increasing the number of deliveries per route. By using telematics tools like Samsara or Geotab, we gain visibility into driver behavior, idling time, and unauthorized stops, allowing for targeted coaching and further cost reduction. A professionalized transportation function should operate with a 'Freight-as-%-of-Revenue' ratio that is at least 150-200bps lower than the industry benchmark, providing a significant margin advantage.",
+        "Quantifiable success in transportation is measured by 'On-Time Delivery' (OTD) and 'Freight Recovery' rates. We target 98%+ OTD to maintain high customer satisfaction and reduce the cost of redeliveries and customer service inquiries. Additionally, we implement 'Freight Surcharge' programs to recover a greater portion of fuel and logistics costs from the customer, further protecting our margins. For a $300M revenue distributor with $15M in annual freight spend, a 10% improvement in transportation efficiency results in an immediate $1.5M EBITDA increase, supporting a higher valuation multiple on exit."
+      ]
+    },
+    {
+      "title": "The Exit Story: Building a Modern Distribution Platform",
+      "body": [
+        "The ultimate goal in distribution is to build a 'Modern Platform' that strategic buyers view as an essential part of the supply chain. During the exit process, we highlight our 'Institutionalized Infrastructure'—the WMS, TMS, and Inventory Optimization tools that make the business scalable and repeatable. We demonstrate that we have built a data-driven culture that is no longer dependent on the 'Tribal Knowledge' of long-tenured employees. This level of operational sophistication is what commands a top-tier multiple from both strategic and financial acquirers.",
+        "A compelling exit story must be backed by 'Auditable Operational Alpha.' We provide prospective buyers with deep-dive data on our 'Fill Rates,' 'Inventory Turns,' and 'Labor Productivity' trends. By proving that we have consistently out-performed the industry average on these critical KPIs, we justify a premium valuation. We also highlight our 'M&A Engine' and our success in integrating add-on distributors onto our core platform, demonstrating that the business has a proven path for inorganic growth and 'Synergy Realization' in the post-exit phase.",
+        "Finally, the 'Exit Readiness' process involves a comprehensive 'Supply Chain Audit' to ensure all processes are fully documented and scalable. We ensure that every vendor contract is optimized, every lease is correctly structured, and every data pipeline is robust and transparent. For a $400M enterprise value distribution platform, a well-executed exit strategy can mean the difference between an 8x and an 11x EBITDA multiple, creating $120M+ in incremental value. The Operating Partner's role is to ensure the asset is 'Buyer-Ready' from day one, presenting a bulletproof case for the platform's future scalability and profitability."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Distribution operating value tree",
+      "description": "A compact view of the levers that connect industry economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"Distribution economics\"] --> B[\"Revenue quality\"]\n  A --> C[\"Margin quality\"]\n  A --> D[\"Cash profile\"]\n  B --> E[\"Growth durability\"]\n  C --> F[\"EBITDA bridge\"]\n  D --> G[\"Liquidity and debt capacity\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

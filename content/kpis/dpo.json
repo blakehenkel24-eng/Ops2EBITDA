@@ -1,0 +1,79 @@
+{
+  "slug": "dpo",
+  "title": "DPO",
+  "type": "kpi",
+  "function": "Finance",
+  "summary": "Days payable outstanding; how long the company takes to pay suppliers.",
+  "whyPeCares": "PE cares because this KPI gives an early read on growth quality, margin expansion, cash conversion, execution discipline, or exit-story credibility.",
+  "goodBadSignals": "Good performance shows controlled execution and improving unit economics; bad performance signals leakage, weak process ownership, or a diligence risk requiring deeper segmentation.",
+  "improvementActions": [
+    "Standardize the definition and data owner.",
+    "Segment by customer, site, product, team, or channel.",
+    "Tie movement to an operating playbook and weekly cadence."
+  ],
+  "relatedPlaybooks": [
+    "KPI Dashboard Buildout",
+    "Working Capital Improvement"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "Finance",
+    "KPI",
+    "DPO"
+  ],
+  "articleSections": [
+    {
+      "title": "DPO: The Interest-Free Loan Lever",
+      "body": [
+        "In the Private Equity world, Days Payable Outstanding (DPO) is the primary metric we use to measure the efficiency of a company's 'Source-to-Pay' lifecycle. It quantifies the average number of days it takes for a company to pay its own bills. For an Operating Partner, DPO is a strategic lever for working capital management; a higher DPO effectively represents an interest-free loan from your suppliers, which can be used to fund operations, pay down debt, or acquire add-on businesses. We view DPO optimization as a critical component of any value creation plan, especially in high-volume, low-margin industries where cash velocity is paramount.",
+        "The math of DPO is a fundamental balance sheet ratio: (Average Accounts Payable) / (Cost of Goods Sold) * (Number of Days in Period). If a company has $5M in AP and $40M in annual COGS, its DPO is 45.6 days. For a business with $500M in annual spend, every 10-day increase in DPO releases approximately $13.7M in permanent liquidity. We use procurement platforms like Coupa or Tipalti to centralize spending and gain the visibility needed to negotiate standardized payment terms across the entire vendor base, moving away from fragmented, 'lazy' AP processes.",
+        "Operating Partners look for 'Payable Extension' opportunities early in the hold period. Often, founder-led firms pay their bills too quickly or haven't negotiated standardized terms with their non-critical vendors. Our mandate is to move the organization toward 'Industry Standard' terms (e.g., Net 60 or Net 90) while protecting mission-critical supplier relationships. This 'Cash Windfall' is one of the most reliable ways to de-risk an LBO by providing an immediate liquidity cushion without impacting the P&L or the customer experience."
+      ],
+      "callout": "DPO is the only metric where 'Slower' is better for cash flow; it's the ultimate tool for turning suppliers into your interest-free bank."
+    },
+    {
+      "title": "Term Standardization: The 'Power of the Platform'",
+      "body": [
+        "A common trap in mid-market companies is 'Term Fragmentation'—hundreds of vendors each with different payment terms (Net 15, Net 30, Due on Receipt). Senior Operating Partners insist on 'Term Standardization' programs that move the entire vendor base toward a single, favorable target. We use tools like SAP Ariba or Tipalti to automate the onboarding process and enforce these terms at the point of contract. By centralizing procurement and acting as a 'Platform,' we can leverage our total spend to win better terms than individual departments could on their own.",
+        "The math of term standardization is transformative for the Cash Conversion Cycle (CCC). If we can move $100M of spend from Net 30 to Net 60, we release $8.2M in cash. We prioritize 'Indirect Spend'—office supplies, professional services, utilities—where we have more leverage and lower risk. For 'Direct Spend' (raw materials), we use 'Category Management' to identify sole-source vendors who require more delicate handling. By professionalizing the AP function and moving to a single payment run per month, we structurally increase the DPO by 5-10 days with minimal effort.",
+        "We also look at 'Payment Velocity.' Often, bills are paid early simply because the AP team wants to 'clear their desk.' We implement 'Payment Timing' controls in our ERP (NetSuite or Oracle) to ensure that payments are made on the exact due date, not a day before. This discipline ensures that we are maximizing our 'Days of Float' and earning the maximum return on our cash. Operating Partners view this 'Just-in-Time' payment strategy as a prerequisite for a high-velocity, cash-generative machine that is ready for the next level of growth."
+      ]
+    },
+    {
+      "title": "Supply Chain Finance: The Win-Win Liquidity Play",
+      "body": [
+        "To achieve top-quartile DPO without damaging supplier relationships, we deploy 'Supply Chain Finance' (SCF) or 'Dynamic Discounting' programs. In an SCF model, a third-party bank pays our suppliers early (e.g., on Day 10) at a discounted rate, while we pay the bank on our extended terms (e.g., on Day 90). This provides the supplier with the immediate liquidity they need while we maintain a high DPO. We use platforms like PrimeRevenue or C2FO to manage these programs and ensure a seamless experience for our strategic partners.",
+        "The math of SCF is a win-win for the balance sheet. Our suppliers, who often have a higher cost of capital than we do, are happy to take a small discount for guaranteed early payment. Meanwhile, we maintain our 90-day DPO, keeping the cash on our books longer. We also look at 'Dynamic Discounting,' where we use our own excess cash to pay suppliers early in exchange for a discount (e.g., 2/10 Net 30). This provides an annualized return of ~36%—far higher than any money market account. We move between these models based on our current liquidity needs.",
+        "Operating Partners use SCF to 'Harden' the supply chain. By providing our critical vendors with access to low-cost capital, we make them more resilient and less likely to face their own liquidity crises. This 'Strategic Partnership' approach to DPO is what drives sustainable multiple expansion at exit, as it proves we can manage our working capital without 'bullying' our suppliers. We position the company as a 'Sophisticated Borrower' that knows how to use every financial instrument in the toolkit to maximize value creation."
+      ]
+    },
+    {
+      "title": "Direct vs. Indirect Spend: Surgical DPO Management",
+      "body": [
+        "Managing DPO requires a 'Tiered' approach that distinguishes between 'Direct Spend'—items that go into our product—and 'Indirect Spend'—everything else. We never 'slow-pay' critical, sole-source direct suppliers who could shut down our production line. Instead, we use our leverage on 'Indirect' categories like Marketing, IT, and Facilities to push for Net 90+ terms. We use Spend Analytics tools like SpendHQ to categorize our spend and identify exactly where our leverage lies. This surgical approach minimizes 'Supply Risk' while maximizing the 'Cash Windfall.'",
+        "The math of indirect spend optimization is often overlooked. If indirect spend is 30% of our total COGS and we can increase its DPO from 30 to 90 days, we release a significant amount of cash with zero risk to our core operations. We also look for 'Consolidation' opportunities; if we are buying travel services from 10 different agencies, we have zero leverage. By consolidating to 1 agency and negotiating Net 60 terms, we drive both cost savings and DPO improvement. This 'Double Lever' is a cornerstone of any procurement workstream.",
+        "We also analyze 'P-Card' (Purchasing Card) usage. While P-Cards are convenient, they often result in immediate payment (Day 1), which is a DPO disaster. We implement 'Card Controls' and move as much spend as possible back to the 'PO-to-Invoice' process, where we can enforce our standardized terms. Operating Partners use this level of granular control to ensure that 'Convenience' doesn't come at the expense of 'Liquidity.' By professionalizing the 'Tail Spend,' we build a more disciplined, high-value enterprise that is ready for the scrutiny of the next owner."
+      ]
+    },
+    {
+      "title": "Exit Readiness: Defending the 'Payables Story' to Buyers",
+      "body": [
+        "As we approach the exit, the DPO ratio is the primary evidence we use to prove the asset's 'Working Capital Maturity' to potential buyers. A buyer will be highly skeptical of a 'High DPO' if they think it was achieved by simply 'Stretching' vendors and creating a 'Payables Bubble.' We prepare for this by performing a 'Sell-Side Working Capital Audit' 12 months out, creating a 'DPO Bridge' that shows how we've improved terms through structural changes like SCF and term standardization. We use Coupa data to provide a 'Verifiable Trail' of vendor agreements.",
+        "Buyers pay a premium for 'Sustainable DPO.' If we can show that our high DPO is backed by signed contracts and successful SCF programs, it becomes a 'High-Confidence' part of their own valuation model. We highlight our 'Strong Supplier Relationships' and 'Low Dispute Rates' as proof that our DPO isn't a liability. By de-risking the 'Payables' portion of the balance sheet, we justify a higher revenue multiple and ensure a smooth 'Net Working Capital' (NWC) settlement at close. We position the asset as a 'Capital-Light' cash machine.",
+        "The final act is the 'NWC Peg' negotiation. By driving DPO to an industry-leading level *before* we go to market, we set a high baseline for the working capital target. This ensures that the cash we've 'Found' stays with our LPs rather than being 'Re-calculated' in favor of the buyer. We use historical data to show that our improved DPO is a permanent operational advantage, not a pre-exit 'Sprint.' By delivering a 'Hardened' balance sheet, we maximize the exit price and deliver a superior return. In the end, a controlled and strategic DPO is the ultimate proof of an Operating Partner's success."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "DPO action loop",
+      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
+      "chart": "flowchart TB\n  A[\"Define DPO\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+    }
+  ]
+}

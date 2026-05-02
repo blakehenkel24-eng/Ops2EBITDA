@@ -1,0 +1,80 @@
+{
+  "slug": "cash-conversion-cycle",
+  "title": "Cash Conversion Cycle",
+  "type": "kpi",
+  "function": "Finance",
+  "summary": "DSO plus inventory days minus DPO.",
+  "formula": "DSO plus inventory days minus DPO.",
+  "whyPeCares": "PE cares because this KPI gives an early read on growth quality, margin expansion, cash conversion, execution discipline, or exit-story credibility.",
+  "goodBadSignals": "Good performance shows controlled execution and improving unit economics; bad performance signals leakage, weak process ownership, or a diligence risk requiring deeper segmentation.",
+  "improvementActions": [
+    "Standardize the definition and data owner.",
+    "Segment by customer, site, product, team, or channel.",
+    "Tie movement to an operating playbook and weekly cadence."
+  ],
+  "relatedPlaybooks": [
+    "KPI Dashboard Buildout",
+    "Working Capital Improvement"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "Finance",
+    "KPI",
+    "Cash Conversion Cycle"
+  ],
+  "articleSections": [
+    {
+      "title": "Cash is King: The CCC as the Ultimate Liquidity Scorecard",
+      "body": [
+        "In a Private Equity-backed Leveraged Buyout (LBO), the Cash Conversion Cycle (CCC) is more than an operational metric—it is the lifeblood of the debt-servicing engine. CCC measures the number of days it takes for a company to convert its investments in inventory and other resources into cash flows from sales. In a high-leverage environment, a business can be EBITDA-positive but still face a liquidity crisis if its cash is 'trapped' in the balance sheet. Operating Partners prioritize CCC because every day reduced from the cycle represents a one-time cash windfall that can be used to pay down expensive debt or fund accretive add-on acquisitions.",
+        "The math of CCC is a simple but powerful trio: Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days Payable Outstanding (DPO). If a company has 45 days of DSO, 60 days of DIO, and 30 days of DPO, its CCC is 75 days. For a business with $500M in annual revenue, each day in the CCC is worth approximately $1.37M in cash. Reducing the CCC from 75 to 60 days would unlock over $20M in permanent liquidity. We use working capital management platforms like Tesorio or HighRadius to provide real-time visibility into these components, moving away from static month-end reporting toward dynamic, daily cash management.",
+        "Operating Partners look for 'structural' inefficiencies in the CCC that have been overlooked by previous management. Often, founder-led businesses prioritize customer relationships over payment terms or carry 'safety stock' inventory that hasn't moved in years. Our mandate is to instill a 'Cash Culture' where every manager understands that an unpaid invoice or a dusty pallet in the warehouse is capital that is not earning a return. By tightening these screws, we can often release 5-10% of the purchase price in cash within the first 12 months of the hold period, significantly de-risking the investment from day one."
+      ],
+      "callout": "In an LBO, EBITDA is a theory, but cash is a fact; the CCC is the bridge between the two."
+    },
+    {
+      "title": "DSO Optimization: Turning Receivables into Rocket Fuel",
+      "body": [
+        "Days Sales Outstanding (DSO) is typically the largest and most controllable component of the CCC. High DSO is often a symptom of 'lazy' billing processes, lack of collection rigor, or unfavorable credit terms granted to win deals. We start by performing a deep-dive 'Aging Analysis' using tools like Billtrust to identify 'chronic offenders'—customers who consistently pay late. We then implement automated 'dunning' workflows that send reminders before the invoice is even due, reducing the 'friction' of collections. Our target is usually a 10-15% reduction in DSO in the first year.",
+        "The strategy isn't just about 'asking for money'; it's about redesigning the 'Quote-to-Cash' lifecycle. We move companies toward electronic invoicing and integrated payment portals to eliminate 'check-in-the-mail' delays. We also review sales incentive plans, ensuring that sales reps aren't just paid on 'Booking,' but on 'Cash Receipt.' When a rep's commission is held until the customer pays, the quality of the customer and the clarity of the payment terms improve immediately. This alignment ensures that the front line is protecting the balance sheet as much as the top line.",
+        "Math is the ultimate weapon in DSO negotiations. We analyze the 'cost of carry' for our receivables—at a 10% cost of debt, carrying an extra $10M in past-due invoices costs the firm $1M per year in interest alone. Armed with this data, we can offer 'Early Payment Discounts' (e.g., 2/10 net 30) that are mathematically beneficial to both parties or move high-risk customers to 'Pre-payment' or 'Autopay' models. By professionalizing the credit and collections function, we transform it from a back-office cost center into a strategic source of liquidity."
+      ]
+    },
+    {
+      "title": "DIO and the War on 'Dead Cash' Inventory",
+      "body": [
+        "Days Inventory Outstanding (DIO) represents 'Dead Cash' sitting on warehouse shelves or in the supply chain. In manufacturing or distribution businesses, DIO is often bloated by poor demand forecasting, 'just-in-case' ordering, and a lack of SKU rationalization. Operating Partners deploy Advanced Planning and Scheduling (APS) tools or WMS modules within NetSuite to gain granular visibility into 'Inventory Velocity.' We categorize inventory using ABC/XYZ analysis: 'A' items (high volume, high predictability) get tight 'Just-in-Time' (JIT) management, while 'C' items (slow-moving) are often targeted for liquidation.",
+        "The math of inventory reduction is transformative. If we can improve inventory turns from 4x to 6x (reducing DIO from 91 to 60 days), we not only release cash but also reduce 'carrying costs'—warehousing, insurance, and obsolescence—which typically run 20-25% of the inventory value. We ruthlessly eliminate 'SKU proliferation' by identifying the bottom 20% of products that contribute less than 5% of margin but consume 30% of warehouse space. Liquidation sales or 'bundles' are used to clear the floor and convert stale inventory back into working capital.",
+        "Modern supply chain resilience must be balanced with cash efficiency. We use 'Digital Twin' simulations to stress-test our DIO targets against potential disruptions. However, we avoid the 'over-correction' trap where companies hold massive amounts of safety stock 'just in case.' Instead, we build 'Vendor-Managed Inventory' (VMI) programs where suppliers own the stock until the moment we use it, effectively pushing the DIO burden back up the supply chain. This shift allows us to maintain high service levels while keeping our balance sheet lean and agile for the next owner."
+      ]
+    },
+    {
+      "title": "DPO Strategy: Stretching the Payable Lever Ethically",
+      "body": [
+        "Days Payable Outstanding (DPO) is the only component of the CCC where a *higher* number is better for cash flow. DPO measures how long the company takes to pay its own bills. In a PE environment, we look to maximize DPO without damaging mission-critical supplier relationships. We use procurement platforms like Coupa or SAP Ariba to centralize spending and negotiate standardized payment terms (e.g., moving from 'Net 30' to 'Net 60' or 'Net 90') across the entire vendor base. This 'Payables Extension' provides an immediate, interest-free loan from our suppliers.",
+        "The math of DPO must be calculated against the potential for lost discounts. If a vendor offers a 2% discount for payment in 10 days, that is an effective annualized return of ~36%—far higher than our cost of debt. In those cases, we pay early. However, for non-discounted spend, we stretch terms to the limit of 'industry standard.' We also look at 'Supply Chain Finance' (SCF) programs where a third-party bank pays our suppliers early while we pay the bank on extended terms. This allows the supplier to get their cash immediately while we maintain a high DPO, a win-win for the CCC.",
+        "Managing DPO requires a 'Tiered Vendor' approach. We never 'slow-pay' critical, sole-source suppliers who could shut down our production line. Instead, we focus on the 'Long Tail' of indirect spend—office supplies, professional services, and utilities—where we have more leverage. By professionalizing the Accounts Payable (AP) function and moving to a single payment run per month, we can structurally increase DPO by 5-10 days with minimal effort. This disciplined approach to payables ensures that we are the 'Bank' for our customers, not the other way around."
+      ]
+    },
+    {
+      "title": "Negative Working Capital: Achieving the 'Holy Grail' of Growth",
+      "body": [
+        "The 'Holy Grail' of operational efficiency is achieving Negative Working Capital, where the CCC is less than zero. This occurs when a company collects cash from its customers *before* it has to pay its suppliers for the goods or services provided. This is common in high-scale SaaS models with upfront annual payments or marketplace businesses. A company with negative working capital is a 'Cash Machine'—the faster it grows, the more cash it generates, drastically reducing the need for external equity or debt to fund expansion.",
+        "We drive toward negative working capital by pushing for 'Annual Upfront' billing in our SaaS contracts and negotiating 'Back-to-Back' payment terms where our vendor payments are timed to hit *after* our customer receipts. For example, if we collect an annual contract on Day 1 and pay our infrastructure providers on Day 60, we have 300+ days of 'float' that can be reinvested in the business. We use tools like Maxio to manage these complex billing cycles and track our 'Deferred Revenue' with the same intensity as our EBITDA.",
+        "At exit, a business with negative working capital or a low/decreasing CCC commands a massive premium. It proves to the next buyer that the growth is 'self-funding' and that the management team has total control over the balance sheet. During the sell-side QofE, we highlight the 'Working Capital Windfall' that we've unlocked and project the future cash flow benefits of the improved cycle. By transforming the CCC from a drag on the business into a competitive advantage, we maximize the exit multiple and deliver a superior return to our LPs."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Cash Conversion Cycle action loop",
+      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
+      "chart": "flowchart TB\n  A[\"Define Cash Conversion Cycle\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+    }
+  ]
+}

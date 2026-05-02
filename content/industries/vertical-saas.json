@@ -1,0 +1,130 @@
+{
+  "slug": "vertical-saas",
+  "title": "Vertical SaaS",
+  "type": "industry",
+  "summary": "Software for a specific industry workflow with recurring revenue and high switching costs.",
+  "businessModel": "Software for a specific industry workflow with recurring revenue and high switching costs.",
+  "revenueModel": "Subscription revenue, usage expansion, implementation fees, and professional services.",
+  "costStructure": "Major cost buckets typically include labor, delivery capacity, procurement or COGS, technology, facilities, sales, and overhead.",
+  "keyKpis": [
+    "Revenue Growth",
+    "Gross Margin",
+    "EBITDA Margin",
+    "Retention",
+    "Labor Productivity"
+  ],
+  "whyPeLikesIt": "PE likes niches with fragmented competition, repeatable operations, visible KPIs, pricing opportunity, add-on potential, and room for professionalized management.",
+  "investmentThesis": "A common thesis is to improve management systems, increase pricing discipline, expand sales capacity, consolidate fragmented competitors, and build a cleaner exit story.",
+  "diligenceQuestions": [
+    "What are the true unit economics by customer, site, branch, product, or contract?",
+    "Where is growth recurring versus one-time?",
+    "Which KPIs predict margin or retention deterioration earliest?"
+  ],
+  "operationalIssues": [
+    "Inconsistent KPI definitions across teams.",
+    "Local or functional variation that hides margin leakage.",
+    "Underdeveloped pricing, sales operations, and forecasting cadence."
+  ],
+  "valueCreationLevers": [
+    "Pricing discipline",
+    "Sales productivity",
+    "Procurement and vendor management",
+    "KPI dashboard buildout",
+    "Operating cadence"
+  ],
+  "projectPlaybooks": [
+    "Vertical SaaS KPI dashboard",
+    "Vertical SaaS pricing discipline",
+    "Vertical SaaS operating cadence"
+  ],
+  "aiOpportunities": [
+    "Automate repetitive admin workflows.",
+    "Improve forecasting, scheduling, or routing decisions.",
+    "Use analytics to identify churn, margin leakage, or service failures earlier."
+  ],
+  "risks": [
+    "Customer concentration",
+    "Weak data quality",
+    "Margin compression",
+    "Regulatory or labor exposure"
+  ],
+  "hundredDayPlan": [
+    "Build KPI baseline by segment.",
+    "Identify quick-win pricing, cash, and cost opportunities.",
+    "Install weekly operating review and value tracking."
+  ],
+  "exitReadiness": [
+    "Clean revenue and margin bridge.",
+    "Evidence of repeatable organic growth.",
+    "Documented playbooks and management cadence."
+  ],
+  "representativeExamples": [
+    "Representative public companies and sponsor-backed platforms vary by sub-niche."
+  ],
+  "relatedPlaybooks": [
+    "Pricing Optimization",
+    "Procurement Savings",
+    "KPI Dashboard Buildout",
+    "100-Day Value Creation Plan"
+  ],
+  "relatedKpis": [
+    "EBITDA Margin",
+    "Gross Margin",
+    "Revenue Growth",
+    "Retention"
+  ],
+  "tags": [
+    "industry",
+    "Vertical SaaS"
+  ],
+  "articleSections": [
+    {
+      "title": "The System of Record and Workflow Dominance",
+      "body": [
+        "Vertical SaaS platforms win by going deep into the specific operational needs of a single industry, such as dental practices, law firms, or HVAC contractors. We focus on companies that have established themselves as the 'Mission-Critical System of Record'—the primary software that a business owner opens first in the morning and closes last at night. This central position creates exceptionally high switching costs, as the cost of migrating historical data and retraining staff far outweighs the savings from a cheaper competitor.",
+        "The goal of our value creation plan is to transform the platform into the industry's 'Operating System' by automating the entire business lifecycle from lead generation to final payment. By deeply integrating scheduling, inventory management, and CRM into a single unified workflow, we make the software 'un-extractable' from the client's daily operations. This dominance allows us to maintain premium pricing power and achieve 'Logo Churn' rates typically below 5%, which is the foundation for a high exit multiple.",
+        "To measure and drive this dominance, we focus on 'User Engagement' metrics—specifically Daily Active Users (DAU) over Monthly Active Users (MAU). We use product analytics tools like Pendo or Amplitude to identify which features are becoming 'sticky' and which parts of the workflow are still being handled outside the system. By ruthlessly prioritizing the development of features that close these gaps, we increase the platform's utility and solidify its position as the indispensable hub of the customer's business."
+      ],
+      "callout": "In Vertical SaaS, the goal is to be the 'One-Stop Shop'—if you control the workflow, you control the wallet."
+    },
+    {
+      "title": "The Rule of 40 and Growth Efficiency",
+      "body": [
+        "Top-tier Vertical SaaS companies are measured by the 'Rule of 40'—the principle that a company's combined revenue growth rate and EBITDA margin should exceed 40%. In a PE context, we prioritize 'Growth Efficiency' over 'Growth at All Costs,' ensuring that every dollar of marketing spend has a clear and rapid path to profitability. We target a 'LTV to CAC' ratio of at least 3x and a CAC Payback period of less than 12 months, which are the hallmarks of a sustainable, high-quality growth engine.",
+        "Commercial due diligence focuses heavily on 'Cohort Analysis' to prove the health of the underlying business. We use tools like ChartMogul or ProfitWell to dissect the revenue by vintage, ensuring that newer customers are as profitable and sticky as the legacy base. By demonstrating 'Negative Net Churn'—where expansion revenue from existing customers exceeds the revenue lost from churned accounts—we prove that the platform is a self-sustaining growth machine that justifies a double-digit revenue multiple.",
+        "We implement a rigorous 'Sales Velocity' playbook to reduce the 'Time to Value' for new customers. By automating the onboarding process and providing in-app training modules, we shorten the 'Implementation Cycle' from weeks to days. This not only improves the customer experience and reduces initial churn risk but also allows us to recognize revenue faster and redeploy capital more efficiently, directly improving the platform's ROIC (Return on Invested Capital) and terminal value."
+      ]
+    },
+    {
+      "title": "Embedded Fintech and Payment Monetization",
+      "body": [
+        "'Fintech Integration' is the most powerful operational alpha lever in the Vertical SaaS playbook. By embedding payment processing directly into the software's workflow, we capture a percentage of every transaction that our customers process (typically 2.9% + 30c). This transforms the business from a pure software vendor into a high-margin financial platform, capturing a 'Tax' on the entire industry's transaction volume without increasing the platform's sales or support costs.",
+        "Embedded payments can double or triple the 'Average Revenue Per User' (ARPU) while simultaneously increasing customer stickiness. A client who uses your software to schedule their appointments and process their payments is twice as likely to stay as one who only uses the software for scheduling. We use platforms like Stripe Connect or Adyen for Platforms to enable these features, allowing us to generate high-margin, 'SaaS-like' revenue that flows directly to the bottom line with nearly 100% incremental margin.",
+        "Beyond payments, we expand into adjacent 'Fintech Services' like business lending, insurance, and payroll. Because our software sits on the 'System of Record' data, we have perfect visibility into the customer's cash flow and risk profile. This 'Data Advantage' allows us to offer pre-approved, low-risk loans or specialized insurance products with zero acquisition cost, creating a highly profitable 'Fintech Flywheel' that significantly expands the platform's total addressable market (TAM) and exit valuation."
+      ]
+    },
+    {
+      "title": "TAM Expansion and Strategic Adjacencies",
+      "body": [
+        "Once a platform dominates its core niche, the next value lever is 'TAM Expansion' into strategic adjacencies. We look for opportunities to move 'Upstream' or 'Downstream' in the industry's value chain—for example, an HVAC software platform moving into equipment procurement or a legal SaaS moving into court filing services. If you control the primary workflow, you are the natural 'Aggregator' of all the secondary services that your customers currently buy from fragmented third-party vendors.",
+        "We use a 'Product-Led M&A' strategy to accelerate this expansion. We acquire smaller, best-of-breed software tools that solve specific pain points—such as an AI-powered lead-capture tool or a specialized inventory tracker—and integrate them directly into our core platform. This 'Multi-Module' strategy allows us to cross-sell into our existing customer base with zero customer acquisition cost, driving a rapid increase in 'Net Revenue Retention' (NRR) and making the platform even more indispensable.",
+        "Success in TAM expansion requires a disciplined 'Integration Playbook' to ensure that the user experience remains seamless. We use 'Microservices Architecture' and robust API layers to ensure that new modules can be added without slowing down the core system. By proving that the platform can successfully move into multiple high-value categories, we de-risk the investment and justify a 'Platform Multiple' from future buyers who are looking for a comprehensive, all-in-one industry solution."
+      ]
+    },
+    {
+      "title": "Customer Success as an NRR Engine",
+      "body": [
+        "In a Vertical SaaS model, 'Customer Success' is not a support function; it is a critical profit center and the primary engine for 'Net Revenue Retention' (NRR). We transition Customer Success Managers (CSMs) from reactive 'Fire-Fighters' to proactive 'Value-Creators' whose goal is to drive product adoption and identify upsell opportunities. By ensuring that every customer is utilizing the full power of the platform, we maximize their ROI and eliminate the 'Shelf-Ware' that often leads to churn.",
+        "We implement a data-driven 'Customer Health Scoring' system using tools like Gainsight or Totango. This allows the CS team to identify at-risk accounts based on a drop in login frequency or a failure to utilize specific modules before the renewal window arrives. By initiating a 'Success Intervention' 90 days before renewal, we can proactively address concerns and prevent churn, maintaining the high-quality, predictable revenue streams that drive the platform's enterprise value.",
+        "The CS team also acts as the 'Intelligence Hub' for the product development team. By systematically capturing customer feedback and identifying common 'Workarounds,' they provide the data necessary to prioritize the engineering roadmap for maximum impact. This feedback loop ensures that the platform is always evolving to meet the actual needs of the industry, creating a 'Virtuous Cycle' of improvement that keeps the platform ahead of competitors and solidifies its status as the industry leader."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Vertical SaaS operating value tree",
+      "description": "A compact view of the levers that connect industry economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"Vertical SaaS economics\"] --> B[\"Revenue quality\"]\n  A --> C[\"Margin quality\"]\n  A --> D[\"Cash profile\"]\n  B --> E[\"Growth durability\"]\n  C --> F[\"EBITDA bridge\"]\n  D --> G[\"Liquidity and debt capacity\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

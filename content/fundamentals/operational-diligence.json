@@ -1,0 +1,70 @@
+{
+  "slug": "operational-diligence",
+  "title": "Operational Diligence",
+  "type": "fundamental",
+  "summary": "Operational Diligence explains the operating logic a PE professional needs before diagnosing a portfolio company or designing a value creation plan.",
+  "definition": "Operational Diligence is a core concept in how sponsors evaluate, own, improve, and eventually sell companies.",
+  "whyItMatters": "PE operators translate this concept into priorities, dashboards, management routines, and initiatives that improve EBITDA, cash flow, growth durability, or exit credibility.",
+  "example": "A portfolio CEO may use the concept to decide whether to prioritize pricing, working capital, sales productivity, or management cadence in the first 100 days.",
+  "diagram": "graph TD\n  A[Concept: Operational Diligence] --> B[Operator Question]\n  B --> C[Data Needed]\n  C --> D[Action]\n  D --> E[KPI Movement]\n  E --> F[Value Creation Story]",
+  "relatedPlaybooks": [
+    "Pricing Optimization",
+    "Procurement Savings",
+    "KPI Dashboard Buildout",
+    "100-Day Value Creation Plan"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "operations"
+  ],
+  "articleSections": [
+    {
+      "title": "Underwriting the Operational Engine",
+      "body": [
+        "Operational Due Diligence (ODD) is the clinical process of assessing a target's internal capabilities and identifying the structural constraints that could impede the execution of the investment thesis. While commercial diligence validates the market, ODD looks 'under the hood' to ensure the company's processes, systems, and people can handle the projected growth. It provides the operating partner with a baseline of the current state and a detailed list of 'operational debt' that must be remediated post-close.",
+        "The ODD process involves a deep dive into the manufacturing footprint, distribution network, and back-office efficiency to identify immediate EBITDA improvement opportunities. Operators use specialized tools like Alteryx to analyze SKU-level profitability and labor productivity across different sites, uncovering hidden inefficiencies that a standard financial audit would miss. For a $100M manufacturer, ODD might identify that a 15% reduction in scrap rates through better process controls could drop an additional $1.5M directly to the bottom line.",
+        "Ultimately, ODD is about de-risking the execution of the 100-day plan and ensuring that the Value Creation Plan (VCP) is grounded in reality. The output of this phase is a prioritized list of capital expenditures (CAPEX) and organizational changes required to professionalize the business. By identifying these costs early, the GP can negotiate a more favorable purchase price or build a 'CapEx allowance' into the financing structure, ensuring the business is fully funded for its transformation journey."
+      ]
+    },
+    {
+      "title": "Assessing IT Infrastructure and Tech Debt",
+      "body": [
+        "In the modern private equity landscape, IT diligence is no longer a peripheral activity but a core component of the operational audit. ODD must assess the scalability and security of the target's technology stack, identifying legacy systems that could act as a 'growth governor.' If a company is running on fragmented 'green screen' ERPs or manual spreadsheets, it will be impossible to implement the real-time KPI dashboards required for professionalized management.",
+        "Identifying 'Tech Debt' is critical for accurately modeling the post-close investment required to reach exit readiness. For a business with $200M in revenue, migrating from a legacy system to a modern platform like NetSuite or Microsoft Dynamics 365 can cost upwards of $2M to $5M and take 12 to 18 months to fully implement. This capital outlay and implementation risk must be factored into the IRR model, as a failed ERP rollout can derail the entire value creation strategy.",
+        "Beyond the ERP, ODD must also scrutinize the company's data architecture and cybersecurity posture to ensure the business is protected from external shocks. Using automated scanning tools and vulnerability assessments, the GP identifies 'low-hanging fruit' for security hardening that can be addressed in the first 100 days. A robust technology foundation is a key component of the exit multiple, as strategic buyers will pay a premium for a business with a modern, integrated, and secure digital core."
+      ]
+    },
+    {
+      "title": "Supply Chain Resilience and Procurement Optimization",
+      "body": [
+        "ODD scrutinizes the target's supply chain to identify 'leakage' in procurement and risks in the vendor base that could disrupt operations. Many mid-market companies lack a strategic procurement function, resulting in a fragmented vendor base and unmanaged spend. By conducting a 'spend cube' analysis, the operating partner can identify immediate opportunities to consolidate vendors and negotiate volume discounts that drop directly to EBITDA.",
+        "For a distributor with $50M in addressable spend, a 5% saving achieved through better vendor management using a tool like Coupa provides an immediate $2.5M EBITDA uplift. This 'found money' can be used to fund other transformation initiatives or to accelerate the deleveraging of the capital structure. ODD also assesses the 'inventory health' of the business, identifying slow-moving SKUs that are tying up working capital and reducing the overall return on invested capital.",
+        "Resilience is also a key factor, and ODD must map out the tier-one and tier-two suppliers to identify any single-source risks or geopolitical vulnerabilities. In a volatile global market, having a diversified and flexible supply chain is a major competitive advantage that reduces the risk of stock-outs and lost revenue. By institutionalizing a culture of supply chain excellence, the GP ensures that the business can maintain its margins even in the face of external cost pressures and logistical disruptions."
+      ]
+    },
+    {
+      "title": "Talent Audits and Management Bench Strength",
+      "body": [
+        "The ultimate constraint on any private equity investment is the quality of the management team, making the 'Talent Audit' a vital part of the ODD process. This involves assessing the 'bench strength' of the C-suite and identifying the human capital gaps that must be filled to scale the business. Does the CFO have the rigor required for PE-level reporting? Does the Head of Sales have experience leading a high-growth, high-accountability organization?",
+        "GP's often use specialized executive search firms to conduct behavioral assessments and 360-degree reviews of the key leaders. For a business seeking to triple its EBITDA, the existing management team may not have the 'muscle memory' required for such a rapid transformation. Identifying the need for a new 'Tier-1' CEO or COO early allows the GP to have candidates in the pipeline before the deal even closes, ensuring a seamless transition and a fast start.",
+        "Beyond the C-suite, ODD also examines the organizational design and the 'spans and layers' within the company to identify opportunities for streamlining. Using tools like Greenhouse to analyze the recruitment pipeline and employee turnover data, the GP can assess the health of the company's culture and its ability to attract and retain top talent. A high-performance culture is a critical 'intangible' asset that drives the execution of the VCP and ensures the long-term sustainability of the value created."
+      ]
+    },
+    {
+      "title": "Scalability Constraints and Operational Debt",
+      "body": [
+        "ODD identifies the 'operational debt'—the neglected investments in processes and equipment that have allowed the previous owners to artificially inflate short-term earnings. This might include deferred maintenance on manufacturing equipment or a lack of documented Standard Operating Procedures (SOPs). For a $50M EBITDA business, 'paying down' this debt may require a significant upfront investment in the first year of ownership to stabilize the platform for future growth.",
+        "Scalability is tested by modeling 'what happens if we double the volume?' and identifying the specific 'break-points' in the current operating model. This might reveal that the current warehouse layout can only handle 20% more volume before it becomes a bottleneck, requiring an investment in automation or a larger facility. By proactively identifying these constraints, the GP can build the necessary infrastructure into the VCP, avoiding costly fire-drills later in the hold period.",
+        "The final output of ODD is a comprehensive 'Operational Risk and Opportunity' register that informs the final valuation and the 100-day plan. This register provides the board of directors with a clear roadmap of the heavy lifting required to reach the exit thesis. By delivering a professionalized, scalable, and high-performance operating engine, the GP creates a high-quality asset that is attractive to a wide range of strategic and financial buyers, ensuring a successful exit for the LPs."
+      ]
+    }
+  ],
+  "diagrams": []
+}

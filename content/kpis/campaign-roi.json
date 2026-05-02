@@ -1,0 +1,79 @@
+{
+  "slug": "campaign-roi",
+  "title": "Campaign ROI",
+  "type": "kpi",
+  "function": "Marketing",
+  "summary": "Incremental gross profit or pipeline generated per campaign dollar.",
+  "whyPeCares": "PE cares because this KPI gives an early read on growth quality, margin expansion, cash conversion, execution discipline, or exit-story credibility.",
+  "goodBadSignals": "Good performance shows controlled execution and improving unit economics; bad performance signals leakage, weak process ownership, or a diligence risk requiring deeper segmentation.",
+  "improvementActions": [
+    "Standardize the definition and data owner.",
+    "Segment by customer, site, product, team, or channel.",
+    "Tie movement to an operating playbook and weekly cadence."
+  ],
+  "relatedPlaybooks": [
+    "KPI Dashboard Buildout",
+    "Management Operating Cadence"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "Marketing",
+    "KPI",
+    "Campaign ROI"
+  ],
+  "articleSections": [
+    {
+      "title": "The Private Equity Lens on Marketing Spend",
+      "body": [
+        "In the high-stakes world of private equity, Marketing Campaign ROI is not a 'vanity metric' but a 'Capital Allocation' efficiency score. Operating partners view marketing spend through a 'Zero-Based Budgeting' lens, where every dollar must justify its existence by contributing to EBITDA growth. We define Campaign ROI as the (Incremental Gross Profit from Campaign - Campaign Cost) / Campaign Cost, ensuring we measure true bottom-line impact.",
+        "The math of the 'Marketing Efficiency Ratio' (MER) is the first line of defense: Total Revenue / Total Marketing Spend. For a high-growth SaaS platform, a healthy MER might be 4.0x or higher. If a $50k LinkedIn campaign generates $200k in New MRR with an 80% gross margin, the Campaign ROI is ($160k - $50k) / $50k = 220%. This level of precision prevents the 'Marketing Black Hole' where spend increases without proportional returns.",
+        "We leverage 'Multi-Touch Attribution' (MTA) tools like Rockerbox or Bizible to track the customer journey across various touchpoints. This allows the operating partner to move beyond 'Last Click' fallacies and understand the true 'Assisted Conversion' value of each channel. Without these tools, management is effectively guessing which levers to pull to drive the next $10M in revenue."
+      ],
+      "callout": "Marketing spend is an investment, not an expense. If the ROI doesn't exceed your Cost of Capital, you are destroying value."
+    },
+    {
+      "title": "Optimizing the 'Unit Economics' of a Campaign",
+      "body": [
+        "To drive multiple expansion, we must optimize the 'Customer Acquisition Cost' (CAC) relative to the 'Lifetime Value' (LTV). A campaign might have a positive ROI but still be 'Value Destructive' if it acquires customers with a low LTV/CAC ratio. We benchmark our campaigns against a '3.0x LTV/CAC' threshold; anything lower indicates a channel that is either too expensive or acquiring low-quality, high-churn leads.",
+        "The math of 'CAC Payback Period' is the secondary gatekeeper: (Campaign CAC) / (Monthly Gross Profit per Customer). For a B2B services business, we target a payback of <12 months. If a campaign acquires a customer for $1,200 and that customer generates $100 in monthly gross profit, the payback is 12 months. We use this to decide whether to 'Double Down' on a channel or 'Pivot' the marketing mix.",
+        "We implement 'A/B Testing' protocols using tools like Optimizely or VWO to relentlessly optimize conversion rates at every stage of the funnel. A 10% improvement in Landing Page Conversion Rate can lead to a 10% reduction in CAC, which, when scaled across a $1M monthly budget, creates significant 'Incremental EBITDA' that flows directly to the bottom line."
+      ]
+    },
+    {
+      "title": "The 'Sales-Marketing Alignment' Bridge",
+      "body": [
+        "Marketing ROI is often bottlenecked by a 'Broken Bridge' to the sales team. We track the 'Marketing Qualified Lead (MQL) to Sales Qualified Lead (SQL)' conversion rate as a proxy for 'Lead Quality'. If a campaign is generating thousands of cheap MQLs that fail to convert to SQLs, the 'Campaign ROI' is a fiction that masks a massive operational waste.",
+        "The operator implements a 'Service Level Agreement' (SLA) between Marketing and Sales, monitored via CRM tools like Salesforce or HubSpot. We track 'Speed to Lead' (the time it takes for sales to follow up) as a critical leading indicator of Campaign ROI. Math shows that leads followed up within 5 minutes are 100x more likely to convert than those followed up after 30 minutes.",
+        "By integrating CRM data with Marketing Automation tools like Marketo or Klaviyo, we can calculate 'Closed-Loop ROI'. This tells us not just which campaigns generated leads, but which campaigns generated the highest 'Deal Velocity' and 'Win Rate'. This is the level of granularity required to present a compelling 'Growth Narrative' to potential buyers during the exit process."
+      ]
+    },
+    {
+      "title": "Scaling ROI Through 'Channel Diversification'",
+      "body": [
+        "Relying on a single channel (e.g., Google Search) creates a 'Concentration Risk' that can depress exit multiples. We follow a 'Portfolio Approach' to marketing spend, allocating budgets across 'Proven Channels' (80%) and 'Experimental Channels' (20%). The goal is to find the 'Next Leg of Growth' before the primary channel hits 'Diminishing Returns'.",
+        "We monitor 'Incremental CAC'—the cost of the next customer acquired through a specific channel. As spend increases, Incremental CAC often rises due to 'Audience Saturation'. If our base CAC on Meta is $50, but the incremental CAC for the next $100k in spend is $150, we must shift capital to other channels where the ROI is higher.",
+        "Tools like Sprout Social or Hootsuite are used to manage 'Organic and Social' channels, which, while harder to track, provide the 'Low-Cost Foundation' that improves the blended ROI of the entire marketing department. We look for 'Operating Leverage' where brand equity reduces the reliance on paid 'Performance Marketing' over time."
+      ]
+    },
+    {
+      "title": "Exit Readiness: Proving the 'Growth Engine'",
+      "body": [
+        "In the 'Exit Readiness' phase, the marketing department is transformed from a 'Cost Center' into a 'Proven Growth Engine'. We prepare 'Cohort Analysis' reports showing the ROI of marketing spend by vintage, proving that our acquisition strategy is sustainable and scalable. Buyers will pay a premium for a business where they can 'Pour in Capital' and get a predictable return.",
+        "We conduct a 'Marketing Audit' to identify and eliminate 'Hidden Waste'—overlapping tools, inactive agencies, and underperforming campaigns. The goal is to exit with a 'Lean, High-Performance' marketing stack. We often use tools like ProfitWell or ChartMogul to present these metrics in a format that 'SaaS-Savvy' buyers immediately recognize and trust.",
+        "The final 'Value Narrative' includes the 'Marketing Waterfall': (Market Opportunity -> Lead Gen -> Conversion -> Retention). By proving that we have a 'Repeatable Process' for driving high ROI, we move the conversation from 'Current EBITDA' to 'Future Potential', justifying a higher valuation multiple and a successful exit for our LPs."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Campaign ROI action loop",
+      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
+      "chart": "flowchart TB\n  A[\"Define Campaign ROI\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+    }
+  ]
+}

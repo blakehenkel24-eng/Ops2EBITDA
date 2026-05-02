@@ -1,0 +1,79 @@
+{
+  "slug": "addressable-spend",
+  "title": "Addressable Spend",
+  "type": "kpi",
+  "function": "Procurement",
+  "summary": "Spend that can be influenced through sourcing, renegotiation, or demand management.",
+  "whyPeCares": "PE cares because this KPI gives an early read on growth quality, margin expansion, cash conversion, execution discipline, or exit-story credibility.",
+  "goodBadSignals": "Good performance shows controlled execution and improving unit economics; bad performance signals leakage, weak process ownership, or a diligence risk requiring deeper segmentation.",
+  "improvementActions": [
+    "Standardize the definition and data owner.",
+    "Segment by customer, site, product, team, or channel.",
+    "Tie movement to an operating playbook and weekly cadence."
+  ],
+  "relatedPlaybooks": [
+    "Procurement Savings",
+    "Management Operating Cadence"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "Procurement",
+    "KPI",
+    "Addressable Spend"
+  ],
+  "articleSections": [
+    {
+      "title": "Strategic Context & Value Driver",
+      "body": [
+        "In the high-stakes environment of private equity value creation, Addressable Spend represents the primary lever for immediate EBITDA expansion. We define addressable spend as the universe of procurement expenditures where the portfolio company has the commercial leverage to influence price, volume, or specifications. In a typical mid-market LBO, identifying the 'manageable core' is the first step toward professionalizing the supply chain and extracting the 'Procurement Alpha' that was underwritten during the due diligence phase.",
+        "From an Operating Partner perspective, the addressability of spend is the litmus test for a company's organizational maturity. We often find that founder-led businesses treat procurement as a back-office administrative function rather than a strategic value driver. By shifting the focus to addressable spend, we move the conversation from 'paying bills' to 'managing categories,' allowing us to consolidate purchasing power and leverage the firm's broader portfolio volume to achieve favorable terms that the company could not access as a standalone entity.",
+        "The strategic importance of this metric cannot be overstated, as every dollar saved in addressable spend flows directly to the bottom line with 100% margin efficiency. Unlike revenue growth, which carries customer acquisition costs and variable delivery expenses, procurement-led savings are 'pure' EBITDA. For a GP, maximizing the addressable spend under management is the most reliable way to de-risk the investment and ensure that the margin expansion targets are met early in the hold period, providing a cushion for more complex operational transformations."
+      ],
+      "callout": "Addressable spend is the 'playground' for procurement alpha—if you can't influence it, you can't manage it."
+    },
+    {
+      "title": "Operational Levers & Benchmarking",
+      "body": [
+        "To maximize addressable spend, we deploy a series of 'Category Management' levers designed to bring disparate spend under centralized control. This begins with a rigorous 'Spend Cube' analysis, where we map every transaction to a specific vendor, category, and business unit. We benchmark addressability against industry standards, where top-quartile performers typically maintain 80-85% of their total non-payroll spend under management. Any significant variance below this benchmark indicates 'Spend Leakage' that must be addressed through policy and system upgrades.",
+        "A critical lever in this process is the enforcement of a 'No PO, No Pay' policy, which ensures that all addressable spend is captured within the formal procurement workflow. We also look to standardize specifications across the portfolio—moving from 50 different types of packaging or office supplies to a handful of high-volume SKUs. This simplification increases the addressable pool for each category, allowing the procurement team to negotiate from a position of strength during RFP cycles and long-term contract discussions.",
+        "Effective benchmarking also involves analyzing 'Spend Velocity' and 'Vendor Concentration' within the addressable pool. We aim to move the organization toward a 'Preferred Vendor' model, where 80% of spend is concentrated with the top 20% of the vendor base. This concentration not only improves pricing through volume discounts but also reduces the administrative burden of managing thousands of micro-vendors. By professionalizing the vendor management office (VMO), we ensure that the addressable spend remains under tight control throughout the entire investment lifecycle."
+      ]
+    },
+    {
+      "title": "Math & Unit Economics (Example Injection)",
+      "body": [
+        "Consider a mid-market manufacturing business with $250M in total annual expenditures. Upon initial audit, we find that the company identifies only $100M as 'addressable,' while the remaining $150M is buried in fragmented local contracts, discretionary department spend, and unmanaged tail-spend. Our first objective is to expand the addressable pool by 50%—bringing an additional $50M into the managed category through centralization and policy enforcement, resulting in a total addressable universe of $150M.",
+        "By applying a conservative 8% savings target through strategic sourcing and vendor consolidation on this $150M pool, we generate $12M in annual EBITDA savings. If the company was previously only managing $100M at a 5% savings rate ($5M savings), our intervention has effectively more than doubled the procurement impact. The unit economics of this change are profound: the cost of a centralized procurement team ($500k) is dwarfed by the $7M in incremental 'found' EBITDA created through the expansion of the addressable lens.",
+        "The impact on enterprise value is where the math truly shines. At an 11x exit multiple, the initial $5M in savings was worth $55M in EV. By expanding the addressable pool and increasing sourcing efficiency to $12M, we have created $132M in total enterprise value from procurement alone. This $77M delta in EV represents a massive return on the operational effort of simply broadening the scope of what the business considers 'addressable,' illustrating why procurement is often the first workstream in a 100-day plan."
+      ]
+    },
+    {
+      "title": "Technology & Tooling Stack",
+      "body": [
+        "Modern spend management requires a sophisticated technology stack that provides real-time visibility and automated control. We typically install a best-in-class 'Spend Analytics' platform such as SpendHQ or GEP Strategy to ingest data from multiple ERPs and normalize it into a unified spend cube. These tools use AI and machine learning to categorize transactions automatically, flagging 'Maverick Spend' and identifying consolidation opportunities that are invisible to manual spreadsheet-based analysis.",
+        "For the execution of the procurement workflow, we deploy 'Procure-to-Pay' (P2P) suites like Coupa or Jaggaer. these platforms act as the 'gatekeeper' for addressable spend, ensuring that every purchase request is routed through approved vendors and matches negotiated contract terms. The integration of these tools with the core ERP (e.g., NetSuite or SAP) creates a closed-loop system where spend is managed at the point of inception rather than the point of payment, preventing budget overruns before they occur.",
+        "Finally, we utilize 'Strategic Sourcing' tools like Scout RFP (now Workday Strategic Sourcing) to manage the competitive bidding process. These platforms allow the operating partner to run high-velocity RFPs across dozens of categories simultaneously, ensuring that the addressable spend is always being market-tested for the best possible value. By digitizing the entire procurement lifecycle, we create an 'Audit Trail' of savings that provides future buyers with the confidence that the company's margin profile is sustainable and professionally managed."
+      ]
+    },
+    {
+      "title": "Exit Readiness & Multiple Expansion",
+      "body": [
+        "As we approach the exit, the maturity of the addressable spend management function is a key component of the 'Professionalization' narrative. A buyer will conduct deep procurement diligence, looking for evidence that the company's margins are protected by robust contracts and a disciplined sourcing process. By demonstrating a high percentage of addressable spend under management, we provide a 'Margin Safety Net' that justifies a premium multiple over less-disciplined competitors who are exposed to vendor-led price volatility.",
+        "The data generated by the P2P and spend analytics stack becomes a core part of the virtual data room (VDR). We present the 'Savings Bridge'—showing exactly how the addressable spend has been optimized over the hold period and highlighting 'Run-Rate' savings that haven't fully hit the LTM P&L yet. This visibility allows the seller to negotiate for 'Pro-Forma EBITDA' credit, potentially adding millions to the final transaction price by capturing the full value of procurement initiatives that are still in flight.",
+        "Ultimately, a business that has institutionalized its addressable spend management is seen as a more scalable and lower-risk asset. Strategic buyers value the ease of integration into their own supply chains, while financial buyers see a 'Playbook' that they can maintain or further optimize. By elevating addressable spend from a tactical metric to a core strategic pillar, we create a high-quality, high-margin business that commands top-of-market valuation and provides a clear path for the next phase of growth."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Addressable Spend action loop",
+      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
+      "chart": "flowchart TB\n  A[\"Define Addressable Spend\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+    }
+  ]
+}

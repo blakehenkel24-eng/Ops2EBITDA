@@ -1,0 +1,79 @@
+{
+  "slug": "mrr",
+  "title": "MRR",
+  "type": "kpi",
+  "function": "SaaS",
+  "summary": "Monthly recurring revenue from subscription customers.",
+  "whyPeCares": "PE cares because this KPI gives an early read on growth quality, margin expansion, cash conversion, execution discipline, or exit-story credibility.",
+  "goodBadSignals": "Good performance shows controlled execution and improving unit economics; bad performance signals leakage, weak process ownership, or a diligence risk requiring deeper segmentation.",
+  "improvementActions": [
+    "Standardize the definition and data owner.",
+    "Segment by customer, site, product, team, or channel.",
+    "Tie movement to an operating playbook and weekly cadence."
+  ],
+  "relatedPlaybooks": [
+    "KPI Dashboard Buildout",
+    "Management Operating Cadence"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "SaaS",
+    "KPI",
+    "MRR"
+  ],
+  "articleSections": [
+    {
+      "title": "The Strategic Bedrock of SaaS Valuation",
+      "body": [
+        "Monthly Recurring Revenue (MRR) is the normalized, predictable revenue stream that serves as the 'Heartbeat' of any subscription-based business model. For an operating partner, MRR is the primary indicator of 'Economic Durability' and 'Underwriting Confidence'. We define MRR as the total amount of subscription revenue expected each month, excluding one-time professional services, setup fees, and hardware sales.",
+        "The math of 'MRR Normalization' is critical: (Annual Subscription Value / 12) or (Quarterly Value / 3). This ensures that the operator is looking at the 'True Operational Velocity' rather than distorted cash flow spikes. For a platform with $10M in ARR, the monthly target is $833k in MRR. If the actual MRR is lagging this target, it indicates a 'Growth Gap' that requires immediate functional intervention in either Sales or Product.",
+        "We utilize Subscription Management tools like Chargebee or Recurly to automate the tracking of MRR across different pricing tiers and geographies. By digitizing the 'Revenue Ledger', the operating partner can move from manual spreadsheets to a 'Single Source of Truth' that allows for real-time monitoring of 'Revenue Line Item' (RLI) performance. This visibility is essential for maintaining the high growth rates required to justify a premium exit multiple."
+      ],
+      "callout": "MRR is the most valuable dollar in private equity because it is 'Pre-Sold' revenue. It de-risks the capital structure and enables aggressive scaling."
+    },
+    {
+      "title": "The 'Net MRR Bridge' and Growth Decomposition",
+      "body": [
+        "To understand the 'Quality of Growth,' we decompose MRR changes every month into four distinct buckets: New MRR (new logos), Expansion MRR (upsells), Contraction MRR (downsells), and Churn MRR (cancellations). The sum of these equals 'Net MRR Change'. We look for 'Net Revenue Retention' (NRR) of >110%, which signifies that the existing customer base is growing even before a single new logo is added.",
+        "The math of the 'Growth Bridge' tells the real story: (New + Expansion) - (Contraction + Churn). If a company is growing MRR by $50k but losing $40k to churn, it has a 'Leaky Bucket' problem that no amount of new sales can fix. The operating partner uses this bridge to identify which 'Functional Lever' needs attention; for instance, high Contraction MRR often indicates a 'Product-Market Fit' issue or a pricing model that is too complex.",
+        "We implement 'Cohort Analysis' to track how MRR evolves for customers based on their join date. Tools like ProfitWell or ChartMogul allow us to visualize these cohorts, identifying 'Churn Inflection Points' (e.g., month 13 when a contract expires). By predicting these 'Revenue Risks,' we can launch 'Customer Success Sprints' to secure renewals and maintain the integrity of the MRR stream."
+      ]
+    },
+    {
+      "title": "Optimizing 'ARPU' and Pricing Power",
+      "body": [
+        "MRR growth is driven by two factors: getting more logos or getting more revenue per logo (ARPU - Average Revenue Per User). We view ARPU as a proxy for 'Pricing Power' and 'Value Capture'. If ARPU is flat while the product roadmap is delivering significant new features, the company is effectively 'Giving Away Value' and leaving EBITDA on the table.",
+        "The math of 'Tiered Pricing' is the primary optimization play. By moving customers from a 'Standard' ($50/mo) to a 'Premium' ($100/mo) plan, we double the MRR from that customer without any incremental acquisition cost. We track 'Plan Migration Trends' to ensure our sales team is incentivized to sell the 'Full Value Stack' rather than just the lowest-cost entry point. A 10% increase in ARPU across a 5,000-user base is an immediate $25k/mo ($300k/yr) EBITDA boost.",
+        "We use 'Price Elasticity' studies and 'Usage-Based Billing' models (utilizing tools like Metronome) to align revenue with the value being consumed by the customer. This ensures that our MRR grows automatically as our customers scale their own businesses. This 'Built-in Upsell' is the holy grail of SaaS unit economics, driving massive 'Operating Leverage' as the business matures."
+      ]
+    },
+    {
+      "title": "Revenue Quality and 'MRR Contamination'",
+      "body": [
+        "During the investment lifecycle, the operating partner must be vigilant against 'MRR Contamination'—the practice of disguising one-time revenue as recurring to inflate the valuation. We apply a strict 'Contractual Definition' to MRR: if it's not automated and guaranteed by a multi-month contract, it's not MRR. Common 'Contaminants' include one-time setup fees, consulting hours, and 'Teaser' rates that will soon revert to a lower base.",
+        "The math of 'Clean MRR' involves stripping away 'Bad Revenue' that has a high cost of service or low gross margin. We target 'Gross Margins on MRR' of >80%. If our MRR carries a 40% margin because it requires heavy manual support, we are running a 'Services Business' disguised as SaaS, which will be severely penalized by the market at exit. We look for 'High-Margin MRR' that is driven by pure software utility.",
+        "We conduct regular 'Revenue Audits' using tools like SaaSOptics or Maxio to ensure that the revenue recognition is GAAP-compliant. Proving that our MRR is 'Auditable' and 'Free of Contaminants' is the single most important task for a SaaS CFO during the due diligence process. A 'Dirty MRR Ledger' is a primary cause of 'Deal Broken' scenarios or significant 'Value Haircuts' during an exit."
+      ]
+    },
+    {
+      "title": "Exit Readiness: Proving the 'Growth Flywheel'",
+      "body": [
+        "As we prepare for exit, the 'MRR Velocity' is presented as a 'Proven Growth Flywheel'. We show potential buyers that our MRR growth is 'Systematized' and 'Repeatable' rather than dependent on a few large deals. We provide 'MRR Concentration' reports, proving that no single customer accounts for more than 5% of our revenue, which significantly 'De-Risks' the asset.",
+        "We calculate the 'Magic Number'—(Incremental MRR * 12) / Previous Quarter's S&M Spend. A Magic Number of >1.0 indicates a highly efficient 'Customer Acquisition Machine' that is ready for further capital infusion. Buyers will pay a premium for a business where they can 'Pour in Capital' and get a predictable, high-multiple return on that spend. This is the ultimate 'Growth Proof' in the SaaS world.",
+        "The final 'Exit Deck' must bridge the 'MRR Journey' from entry to exit, showing how we moved from 'Fragile Growth' to 'Industrial-Strength Recurring Revenue'. By quantifying the millions of dollars in 'Enterprise Value' created through MRR optimization, we justify a 'Top-Quartile' exit multiple and deliver the 3x-5x MOIC that our LPs demand."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "MRR action loop",
+      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
+      "chart": "flowchart TB\n  A[\"Define MRR\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+    }
+  ]
+}

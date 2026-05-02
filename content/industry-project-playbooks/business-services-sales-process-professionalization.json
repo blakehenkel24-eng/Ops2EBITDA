@@ -1,0 +1,46 @@
+{
+  "slug": "business-services-sales-process-professionalization",
+  "title": "Sales Process Professionalization",
+  "type": "industry-project",
+  "industry": "Business Services",
+  "summary": "Sales Process Professionalization is a focused Business Services operating project that connects a specific business problem to workstreams, data, KPIs, and expected value impact.",
+  "businessProblem": "Business Services companies often lose margin, growth, or cash when sales process professionalization is not managed with a clear owner and KPI baseline.",
+  "goal": "Create a measurable improvement plan that management can execute through weekly operating cadence.",
+  "timeline": "30-90 days",
+  "workstreams": [
+    "Baseline current performance",
+    "Segment the opportunity",
+    "Design operating changes",
+    "Pilot with owner accountability",
+    "Track KPI and financial impact"
+  ],
+  "dataNeeded": [
+    "Customer data",
+    "P&L detail",
+    "Operating KPI exports",
+    "Org ownership map"
+  ],
+  "kpisImpacted": [
+    "Revenue Growth",
+    "Gross Margin",
+    "EBITDA Margin",
+    "Retention"
+  ],
+  "expectedImpact": "Expected impact should be underwritten as run-rate EBITDA, cash release, risk reduction, or exit-story improvement after baseline validation.",
+  "difficulty": "Beginner",
+  "typicalOwner": "COO",
+  "relatedPlaybooks": [
+    "KPI Dashboard Buildout",
+    "Management Operating Cadence",
+    "Pricing Optimization"
+  ],
+  "sourceRefs": [
+    "local-value-creation-playbook",
+    "local-pe-operations"
+  ],
+  "tags": [
+    "Business Services",
+    "industry project",
+    "Sales Process Professionalization"
+  ]
+}
