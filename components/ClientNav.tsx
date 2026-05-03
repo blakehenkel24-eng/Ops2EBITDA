@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import {
   Activity,
   BookOpen,
+  BrainCircuit,
   BriefcaseBusiness,
   ChevronDown,
   Database,
@@ -26,7 +27,7 @@ export function ClientNav() {
     { href: '/playbooks', label: 'Playbooks', icon: BriefcaseBusiness },
     { href: '/industries', label: 'Industries', icon: Factory },
     { href: '/kpis', label: 'KPIs', icon: Activity },
-    { href: '/ai-for-pe-professionals', label: 'AI for PE Professionals', icon: Activity },
+    { href: '/ai-for-pe-professionals', label: 'AI for PE Professionals', icon: BrainCircuit },
   ];
 
   const isActive = (href: string) => {

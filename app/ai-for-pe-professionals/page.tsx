@@ -76,36 +76,42 @@ const useCases = [
 
 const tools = [
   {
+    name: "Claude Projects and Skills",
+    opinion: "Best default for reusable skill workflows.",
+    fit: "Claude is the strongest fit when the work depends on reusable skills because Skills are a native Claude concept. You can package instructions, reference files, and workflow steps so Claude can load the right method when the task calls for it.",
+    source: "https://support.claude.com/en/articles/12512176-what-are-skills",
+  },
+  {
     name: "ChatGPT Projects and GPTs",
-    fit: "Useful when you want a saved workspace or custom assistant with files, instructions, and repeatable behavior.",
+    opinion: "Good for broad project work, weaker for true skill packages.",
+    fit: "Useful when you want a saved workspace or custom assistant with files, instructions, and repeatable behavior. It can approximate parts of a skill workflow, but it does not map as directly to portable skill folders.",
     source: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
   },
   {
-    name: "Claude Projects",
-    fit: "Useful for long documents, project knowledge, and team collaboration around a shared set of materials.",
-    source: "https://support.claude.com/en/articles/9517075-what-are-projects",
-  },
-  {
     name: "NotebookLM",
-    fit: "Useful when you want the AI to stay close to a set of uploaded sources and help you study, compare, and summarize them.",
+    opinion: "Best for source-grounded reading and synthesis.",
+    fit: "Useful when you want the AI to stay close to a set of uploaded sources and help you study, compare, and summarize them. It is less of a reusable workflow engine and more of a research notebook.",
     source:
       "https://support.google.com/notebooklm/answer/16215270?co=GENIE.Platform%3DDesktop&hl=en",
   },
   {
     name: "Perplexity Spaces",
-    fit: "Useful for research workflows that combine web search, uploaded files, saved threads, and shared spaces.",
+    opinion: "Best for fast external research workflows.",
+    fit: "Useful for research workflows that combine web search, uploaded files, saved threads, and shared spaces. Strong for finding and comparing outside information, less direct for reusable internal skills.",
     source:
       "https://www.perplexity.ai/help-center/en/articles/10352961-what-are-spaces",
   },
   {
     name: "Microsoft 365 Copilot Agents",
-    fit: "Useful inside firms that already work in Microsoft 365 and want agents connected to SharePoint, files, and firm permissions.",
+    opinion: "Best when the firm already runs on Microsoft 365.",
+    fit: "Useful inside firms that already work in Microsoft 365 and want agents connected to SharePoint, files, and firm permissions. The advantage is enterprise context and governance, not simplicity.",
     source:
       "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder-build",
   },
   {
     name: "Gemini Gems",
-    fit: "Useful for saved assistants that repeat a task or style of thinking inside Gemini.",
+    opinion: "Useful for simple saved assistants.",
+    fit: "Useful for saved assistants that repeat a task or style of thinking inside Gemini. Good for lightweight repetition, but not the cleanest home for structured PE skill packages.",
     source: "https://support.google.com/gemini/answer/15236321?hl=en",
   },
 ];
@@ -275,9 +281,11 @@ export default function AIForPEProfessionalsPage() {
           Where these ideas show up in the current AI tool stack.
         </h2>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-stone font-geist">
-          The names differ by vendor. The pattern is usually the same: saved
-          instructions, source material, reusable context, and a more structured
-          way to repeat work.
+          The names differ by vendor. For PE professionals who want reusable
+          skill packages, Claude is the best starting point by far because it
+          has native Skills. Other tools can still be useful, but they usually
+          recreate the same idea through saved instructions, custom assistants,
+          agents, notebooks, or research spaces.
         </p>
         <div className="mt-6 divide-y divide-line/80 border-y border-line/80">
           {tools.map((tool) => (
@@ -285,10 +293,15 @@ export default function AIForPEProfessionalsPage() {
               key={tool.name}
               className="grid gap-3 py-5 md:grid-cols-[18rem_1fr_auto] md:items-start"
             >
-              <h3 className="font-newsreader text-xl text-ink">{tool.name}</h3>
-              <p className="text-sm leading-7 text-stone font-geist">
-                {tool.fit}
-              </p>
+              <div>
+                <h3 className="font-newsreader text-xl text-ink">
+                  {tool.name}
+                </h3>
+                <p className="mt-2 font-mono-label text-accent">
+                  {tool.opinion}
+                </p>
+              </div>
+              <p className="text-sm leading-7 text-stone font-geist">{tool.fit}</p>
               <a
                 href={tool.source}
                 target="_blank"
