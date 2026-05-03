@@ -5,6 +5,7 @@ import type { Route } from "next";
 import type { CSSProperties } from "react";
 import { ContentCard } from "@/components/Cards";
 import { SearchPanel } from "@/components/SearchPanel";
+import { featuredOfferings, productLines } from "@/lib/offerings";
 import {
   getAllContent,
   getContentStats,
@@ -43,6 +44,7 @@ export default function Home() {
   const playbooks = getPlaybooks().slice(0, 4);
   const industries = getIndustries().slice(0, 4);
   const allContent = getAllContent();
+  const leadOffering = featuredOfferings[0];
 
   return (
     <div>
@@ -60,23 +62,84 @@ export default function Home() {
             company operations, KPI logic, and the projects that move EBITDA,
             cash flow, risk, and exit quality.
           </p>
-        </div>
-        <div className="self-end border border-line/80 bg-paper/85 p-5 shadow-[0_18px_44px_oklch(31%_0.038_248_/_0.08)]">
-          <p className="font-mono-label text-accent">
-            Static corpus
-          </p>
-          <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-5">
+          <div className="mt-7 grid gap-3 sm:grid-cols-4">
             <Metric label="Fundamentals" value={stats.fundamentals} />
             <Metric label="Playbooks" value={stats.playbooks} />
             <Metric label="Industries" value={stats.industries} />
             <Metric label="KPIs" value={stats.kpis} />
-          </dl>
+          </div>
+        </div>
+        <div className="self-end border border-line/80 bg-paper/90 p-5 shadow-[0_18px_44px_oklch(31%_0.038_248_/_0.08)]">
+          <p className="font-mono-label text-accent">Paid operating assets</p>
+          <h2 className="mt-4 font-newsreader text-2xl leading-tight text-ink">
+            {leadOffering.title}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-stone font-geist">
+            {leadOffering.description}
+          </p>
+          <div className="mt-4 flex items-end justify-between gap-4 border-t border-line/80 pt-4">
+            <p className="font-newsreader text-3xl text-accent">
+              {leadOffering.price}
+            </p>
+            <Link
+              href="/offerings"
+              className="font-mono-label text-accent hover:opacity-80 transition-opacity"
+            >
+              View offerings
+            </Link>
+          </div>
         </div>
       </section>
 
       <div className="mt-10">
         <SearchPanel items={allContent} />
       </div>
+
+      <section className="mt-10 border border-line/80 bg-paper p-5">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-mono-label text-accent">
+              Tools to do the work
+            </p>
+            <h2 className="mt-3 font-newsreader text-2xl text-ink">
+              Paid assets for the workflows behind the briefings.
+            </h2>
+          </div>
+          <Link
+            href="/offerings"
+            className="font-mono-label text-accent hover:opacity-80 transition-opacity"
+          >
+            Open catalog
+          </Link>
+        </div>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          {productLines.map((line) => (
+            <article
+              key={line.title}
+              className="border border-line/80 bg-bone/45 p-5"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="font-newsreader text-xl text-ink">
+                  {line.title}
+                </h3>
+                <p className="shrink-0 font-mono-label text-accent">
+                  {line.price}
+                </p>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-stone font-geist">
+                {line.description}
+              </p>
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-stone font-geist">
+                {line.examples.slice(0, 2).map((example) => (
+                  <li key={example} className="border-t border-line/70 pt-2">
+                    {example}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="mt-10 grid gap-5 lg:grid-cols-[16rem_minmax(0,1fr)]">
         <div>
@@ -194,12 +257,12 @@ export default function Home() {
 function Metric({ label, value }: { label: string; value: string | number }) {
   return (
     <div>
-      <dt className="font-mono-label text-stone">
+      <p className="font-mono-label text-stone">
         {label}
-      </dt>
-      <dd className="mt-1 font-newsreader text-3xl text-accent">
+      </p>
+      <p className="mt-1 font-newsreader text-3xl text-accent">
         {value}
-      </dd>
+      </p>
     </div>
   );
 }
