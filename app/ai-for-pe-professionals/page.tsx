@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/Cards";
 export const metadata: Metadata = {
   title: "AI for PE Professionals | Ops2EBITDA",
   description:
-    "A plain-English knowledge-base guide to AI projects, reusable skill.md files, and common AI tools for private equity professionals and consultants.",
+    "A plain-English knowledge-base guide to AI projects, AI skills, and common AI tools for private equity professionals and consultants.",
 };
 
 const projectExample = [
@@ -35,11 +35,34 @@ const differences = [
     example: "A diligence project that remembers the files, rules, examples, and desired output format for that deal.",
   },
   {
-    item: "skill.md",
+    item: "AI skill",
     simpleMeaning:
-      "A markdown file that works like a reusable checklist or method the AI follows.",
+      "A reusable checklist or method the AI follows. In Claude-style workflows, this is often written as a skill.md file.",
     example:
-      "A KPI diagnostic skill.md that always separates symptoms, likely causes, data needed, and EBITDA impact.",
+      "A KPI diagnostic skill that always separates symptoms, likely causes, data needed, and EBITDA impact.",
+  },
+];
+
+const skillExamples = [
+  {
+    name: "KPI diagnostic skill",
+    description:
+      "Takes a metric miss and turns it into likely causes, missing data, management questions, and possible EBITDA or cash impact.",
+  },
+  {
+    name: "IC memo pressure-test skill",
+    description:
+      "Reviews a draft investment memo for unsupported claims, vague operating logic, missing diligence, and unclear downside risks.",
+  },
+  {
+    name: "Board update writer skill",
+    description:
+      "Turns KPI packs, CEO notes, and action trackers into a clearer board narrative: what changed, why it matters, and what needs a decision.",
+  },
+  {
+    name: "Diligence question builder skill",
+    description:
+      "Uses a CIM, market notes, and thesis assumptions to draft sharper questions for management, experts, customers, or functional leaders.",
   },
 ];
 
@@ -79,14 +102,14 @@ const useCases = [
 const tools = [
   {
     name: "Claude Projects and Skills",
-    opinion: "Best default for reusable skill.md workflows.",
-    fit: "Claude is the strongest fit when the work depends on reusable skill.md files because Skills are a native Claude concept. You can package instructions, reference files, and workflow steps so Claude can load the right method when the task calls for it.",
+    opinion: "Best default for reusable AI skill workflows.",
+    fit: "Claude is the strongest fit when the work depends on reusable AI skills because Skills are a native Claude concept. The underlying instruction file is typically a skill.md, which can package workflow steps, reference files, and rules so Claude can load the right method when the task calls for it.",
     source: "https://support.claude.com/en/articles/12512176-what-are-skills",
   },
   {
     name: "ChatGPT Projects and GPTs",
-    opinion: "Good for broad project work, weaker for true skill.md packages.",
-    fit: "Useful when you want a saved workspace or custom assistant with files, instructions, and repeatable behavior. It can approximate parts of a skill.md workflow, but it does not map as directly to portable skill folders.",
+    opinion: "Good for broad project work, weaker for true AI skill packages.",
+    fit: "Useful when you want a saved workspace or custom assistant with files, instructions, and repeatable behavior. It can approximate parts of an AI skill workflow, but it does not map as directly to portable skill folders.",
     source: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
   },
   {
@@ -99,7 +122,7 @@ const tools = [
   {
     name: "Perplexity Spaces",
     opinion: "Best for fast external research workflows.",
-    fit: "Useful for research workflows that combine web search, uploaded files, saved threads, and shared spaces. Strong for finding and comparing outside information, less direct for reusable internal skill.md files.",
+    fit: "Useful for research workflows that combine web search, uploaded files, saved threads, and shared spaces. Strong for finding and comparing outside information, less direct for reusable internal AI skills.",
     source:
       "https://www.perplexity.ai/help-center/en/articles/10352961-what-are-spaces",
   },
@@ -113,7 +136,7 @@ const tools = [
   {
     name: "Gemini Gems",
     opinion: "Useful for simple saved assistants.",
-    fit: "Useful for saved assistants that repeat a task or style of thinking inside Gemini. Good for lightweight repetition, but not the cleanest home for structured PE skill.md packages.",
+    fit: "Useful for saved assistants that repeat a task or style of thinking inside Gemini. Good for lightweight repetition, but not the cleanest home for structured PE AI skill packages.",
     source: "https://support.google.com/gemini/answer/15236321?hl=en",
   },
 ];
@@ -132,7 +155,7 @@ export default function AIForPEProfessionalsPage() {
       <PageHeader
         eyebrow="Knowledge Base"
         title="AI for PE professionals."
-        summary="A plain-English guide to AI projects, reusable skill.md files, and how private equity professionals can use them in real work."
+        summary="A plain-English guide to AI projects, AI skills, and how private equity professionals can use them in real work."
       />
 
       <section className="border-y border-line/80 py-8">
@@ -154,7 +177,7 @@ export default function AIForPEProfessionalsPage() {
               PE work is repetitive in a good way. Diligence, board updates,
               IC memos, KPI reviews, expert calls, and value creation plans all
               have recurring inputs and recurring outputs. AI projects and
-              skill.md files help make those recurring workflows easier to reuse.
+              AI skills help make those recurring workflows easier to reuse.
             </p>
           </div>
         </div>
@@ -196,26 +219,32 @@ export default function AIForPEProfessionalsPage() {
       <section id="skills" className="scroll-mt-24 border-b border-line/80 py-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="font-mono-label text-accent">skill.md</p>
+            <p className="font-mono-label text-accent">AI skills</p>
             <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              A skill.md file is like a reusable checklist.
+              An AI skill is like a reusable checklist.
             </h2>
           </div>
           <div className="space-y-5 text-sm leading-7 text-stone font-geist">
             <p>
-              A skill.md file does not need to hold a whole deal room. It tells
-              the AI how to do one specific task. Think of it like a short
-              standard operating procedure written in markdown: when this task
-              appears, follow these steps, ask for these inputs, avoid these
-              mistakes, and format the answer this way.
+              An AI skill does not need to hold a whole deal room. It tells the
+              AI how to do one specific task. Think of it like a short standard
+              operating procedure: when this task appears, follow these steps,
+              ask for these inputs, avoid these mistakes, and format the answer
+              this way.
+            </p>
+            <p>
+              In Claude-style workflows, that skill is usually represented by a
+              markdown file called <code>skill.md</code>. The file name matters
+              because it is the artifact the AI tool can read, reuse, and load
+              when the workflow calls for it.
             </p>
             <div className="border border-line/80 bg-paper p-5">
               <p className="font-mono-label text-stone">Simple example</p>
               <p className="mt-3">
-                A KPI diagnostic skill.md might always ask: What moved? What
-                could have caused it? What data would prove or disprove each
-                cause? What is the EBITDA or cash impact? What should management
-                do next?
+                A KPI diagnostic skill might live in a <code>skill.md</code>{" "}
+                file and always ask: What moved? What could have caused it?
+                What data would prove or disprove each cause? What is the EBITDA
+                or cash impact? What should management do next?
               </p>
             </div>
           </div>
@@ -223,9 +252,28 @@ export default function AIForPEProfessionalsPage() {
       </section>
 
       <section className="border-b border-line/80 py-8">
+        <p className="font-mono-label text-accent">Skill examples</p>
+        <h2 className="mt-3 max-w-3xl font-newsreader text-3xl text-ink">
+          Examples of AI skills a PE professional might use.
+        </h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {skillExamples.map((skill) => (
+            <article key={skill.name} className="border border-line/80 bg-paper p-5">
+              <h3 className="font-newsreader text-xl text-ink">
+                {skill.name}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-stone font-geist">
+                {skill.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-b border-line/80 py-8">
         <p className="font-mono-label text-accent">The difference</p>
         <h2 className="mt-3 max-w-3xl font-newsreader text-3xl text-ink">
-          Chat, project, and skill.md are not the same thing.
+          Chat, project, and AI skill are not the same thing.
         </h2>
         <div className="mt-6 divide-y divide-line/80 border-y border-line/80">
           {differences.map((row) => (
@@ -284,7 +332,7 @@ export default function AIForPEProfessionalsPage() {
         </h2>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-stone font-geist">
           The names differ by vendor. For PE professionals who want reusable
-          skill.md packages, Claude is the best starting point by far because it
+          AI skill packages, Claude is the best starting point by far because it
           has native Skills. Other tools can still be useful, but they usually
           recreate the same idea through saved instructions, custom assistants,
           agents, notebooks, or research spaces.
@@ -339,7 +387,7 @@ export default function AIForPEProfessionalsPage() {
         <p className="font-mono-label text-stone">Related</p>
         <div className="mt-3 flex flex-col gap-3 text-sm leading-7 text-stone font-geist sm:flex-row sm:items-center sm:justify-between">
           <p>
-            The offerings page includes examples of project kits and skill.md files, but
+            The offerings page includes examples of project kits and AI skills, but
             this knowledge page is meant to stand on its own.
           </p>
           <Link

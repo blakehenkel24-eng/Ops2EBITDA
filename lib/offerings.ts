@@ -52,9 +52,9 @@ export const productLines: ProductLine[] = [
     title: "Skill Packages",
     price: "$39 each",
     description:
-      "Reusable skill.md bundles for PE communication, diagnostics, diligence, and quality control.",
+      "Reusable AI skill bundles for PE communication, diagnostics, diligence, and quality control.",
     learnHref: "/ai-for-pe-professionals#skills",
-    learnLabel: "What is a reusable skill.md?",
+    learnLabel: "What is a reusable AI skill?",
     examples: [
       "Executive Communication Skills",
       "Operating Diagnostic Skills",
@@ -69,7 +69,7 @@ export const featuredOfferings: Offering[] = [
     category: "Bundle",
     price: "$699",
     description:
-      "The complete operating asset library: models, project kits, and reusable skill.md packages.",
+      "The complete operating asset library: models, project kits, and reusable AI skill packages.",
     items: [
       "Excel model library",
       "AI project kit library",
