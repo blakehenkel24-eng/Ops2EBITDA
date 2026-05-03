@@ -15,11 +15,13 @@ import {
   Package,
   X,
 } from 'lucide-react';
+import { aiNavLinks } from '@/lib/aiForPE';
 
 export function ClientNav() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [knowledgeMenuOpen, setKnowledgeMenuOpen] = useState(false);
+  const [aiMenuOpen, setAiMenuOpen] = useState(false);
 
   const knowledgeLinks = [
     { href: '/', label: 'Library Home', icon: BookOpen },
@@ -27,7 +29,6 @@ export function ClientNav() {
     { href: '/playbooks', label: 'Playbooks', icon: BriefcaseBusiness },
     { href: '/industries', label: 'Industries', icon: Factory },
     { href: '/kpis', label: 'KPIs', icon: Activity },
-    { href: '/ai-for-pe-professionals', label: 'AI for PE Professionals', icon: BrainCircuit },
   ];
 
   const isActive = (href: string) => {
@@ -35,8 +36,15 @@ export function ClientNav() {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
+  const isAiLinkActive = (href: string) => {
+    if (href === '/ai-for-pe-professionals') {
+      return pathname === href;
+    }
+    return isActive(href);
+  };
+
   const knowledgeActive = knowledgeLinks.some((link) => isActive(link.href));
-  const offeringsActive = isActive('/offerings');
+  const aiActive = isActive('/ai-for-pe-professionals');
 
   return (
     <>
@@ -86,18 +94,48 @@ export function ClientNav() {
           </div>
         </div>
 
-        <Link
-          href="/offerings"
-          className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
-            offeringsActive
-              ? 'border-accent/20 text-accent bg-accent-soft'
-              : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
-          }`}
-          aria-current={offeringsActive ? 'page' : undefined}
-        >
-          <Package size={14} strokeWidth={1.7} aria-hidden="true" />
-          Offerings
-        </Link>
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setAiMenuOpen((open) => !open)}
+            className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
+              aiActive
+                ? 'border-accent/20 text-accent bg-accent-soft'
+                : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
+            }`}
+            aria-expanded={aiMenuOpen}
+            aria-haspopup="menu"
+          >
+            <BrainCircuit size={14} strokeWidth={1.7} aria-hidden="true" />
+            AI for PE Professionals
+            <ChevronDown size={13} strokeWidth={1.8} aria-hidden="true" />
+          </button>
+          <div
+            className={`absolute right-0 top-full z-50 mt-2 w-72 border border-line/80 bg-paper p-2 shadow-[0_20px_50px_oklch(31%_0.038_248_/_0.14)] transition-all duration-150 ${
+              aiMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'
+            }`}
+          >
+            {aiNavLinks.map((link) => {
+              const active = isAiLinkActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setAiMenuOpen(false)}
+                  className={`flex items-center gap-3 px-3 py-3 text-sm transition-colors ${
+                    active
+                      ? 'bg-accent-soft text-accent'
+                      : 'text-stone hover:bg-bone hover:text-ink'
+                  }`}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  <BrainCircuit size={15} strokeWidth={1.7} aria-hidden="true" />
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
 
         <Link
           href="/offerings#toolkit"
@@ -152,8 +190,38 @@ export function ClientNav() {
             })}
           </div>
 
+          <Link
+            href="/ai-for-pe-professionals"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`flex items-center gap-3 font-mono-label p-3 transition-colors ${
+              aiActive ? 'bg-accent-soft text-accent' : 'text-stone hover:bg-bone hover:text-ink'
+            }`}
+            aria-current={aiActive ? 'page' : undefined}
+          >
+            <BrainCircuit size={15} strokeWidth={1.7} aria-hidden="true" />
+            AI for PE Professionals
+          </Link>
+          <div className="ml-4 border-l border-line/80 pl-3">
+            {aiNavLinks.slice(1).map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center gap-3 p-3 text-sm transition-colors ${
+                    active ? 'bg-accent-soft text-accent' : 'text-stone hover:bg-bone hover:text-ink'
+                  }`}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  <BrainCircuit size={15} strokeWidth={1.7} aria-hidden="true" />
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+
           {[
-            { href: '/offerings', label: 'Offerings', icon: Package, active: offeringsActive },
             { href: '/offerings#toolkit', label: 'Get the Toolkit', icon: Package, active: false },
           ].map((link) => (
             <Link
