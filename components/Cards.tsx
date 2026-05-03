@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from 'lucide-react';
 import type { Route } from "next";
-import { labelForType } from "@/lib/format";
-import { hrefFor } from "@/lib/routes";
-import type { AnyContent } from "@/lib/types";
 
 interface CardProps {
   title: string;

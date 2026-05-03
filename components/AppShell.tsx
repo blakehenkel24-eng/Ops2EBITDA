@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Search, BookOpen, Layers } from 'lucide-react';
 import { Ops2EBITDALogo } from './Ops2EBITDALogo';
+import { ClientNav } from './ClientNav';
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
@@ -10,20 +10,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <Link href="/" className="text-2xl hover:opacity-80 transition-opacity">
             <Ops2EBITDALogo />
           </Link>
-          <nav className="hidden md:flex gap-6 font-geist text-sm font-medium">
-            <Link href="/" className="flex items-center gap-2 hover:text-ochre transition-colors">
-              <BookOpen size={16} strokeWidth={1.5} />
-              Library
-            </Link>
-            <Link href="/study" className="flex items-center gap-2 hover:text-ochre transition-colors">
-              <Layers size={16} strokeWidth={1.5} />
-              Study Plans
-            </Link>
-          </nav>
-          <div className="md:hidden flex items-center">
-            {/* Mobile menu stub */}
-            <button className="p-2 text-stone hover:text-ink"><Search size={20} strokeWidth={1.5}/></button>
-          </div>
+          <ClientNav />
         </div>
       </header>
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 md:px-8 py-8 md:py-12">
