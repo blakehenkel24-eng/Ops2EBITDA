@@ -7,5 +7,6 @@ dist
 *.tsbuildinfo
 .DS_Store
 .worktrees/
+.superpowers/
 *.pdf
 *.epub
