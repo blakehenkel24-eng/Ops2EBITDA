@@ -24,6 +24,7 @@ export function ClientNav() {
     { href: '/', label: 'Library Home', icon: BookOpen },
     { href: '/fundamentals', label: 'Fundamentals', icon: Database },
     { href: '/playbooks', label: 'Playbooks', icon: BriefcaseBusiness },
+    { href: '/ai-for-deal-teams', label: 'AI for Deal Teams', icon: Activity },
     { href: '/industries', label: 'Industries', icon: Factory },
     { href: '/kpis', label: 'KPIs', icon: Activity },
   ];

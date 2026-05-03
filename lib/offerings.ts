@@ -9,6 +9,8 @@ export type ProductLine = {
   price: string;
   description: string;
   examples: string[];
+  learnHref?: string;
+  learnLabel?: string;
 };
 
 export type Offering = {
@@ -38,6 +40,8 @@ export const productLines: ProductLine[] = [
     price: "$49 each",
     description:
       "Ready-to-build AI workspaces for recurring PE operating workflows and executive outputs.",
+    learnHref: "/ai-for-deal-teams#ai-projects",
+    learnLabel: "What is an AI project kit?",
     examples: [
       "Operating Partner Copilot",
       "Board Pack & Executive Update Builder",
@@ -49,6 +53,8 @@ export const productLines: ProductLine[] = [
     price: "$39 each",
     description:
       "Reusable markdown skill bundles for PE communication, diagnostics, diligence, and quality control.",
+    learnHref: "/ai-for-deal-teams#skills",
+    learnLabel: "What is a reusable AI skill?",
     examples: [
       "Executive Communication Skills",
       "Operating Diagnostic Skills",

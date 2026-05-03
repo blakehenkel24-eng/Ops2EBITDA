@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/Cards";
 import { featuredOfferings, productLines } from "@/lib/offerings";
+import Link from "next/link";
 
 export default function OfferingsPage() {
   return (
@@ -27,6 +28,14 @@ export default function OfferingsPage() {
             <p className="mt-4 text-sm leading-7 text-stone font-geist">
               {line.description}
             </p>
+            {line.learnHref ? (
+              <Link
+                href={line.learnHref}
+                className="mt-4 inline-flex border border-accent/30 bg-paper px-3 py-2 font-mono-label text-accent transition-colors hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink"
+              >
+                {line.learnLabel}
+              </Link>
+            ) : null}
             <ul className="mt-5 divide-y divide-line/80 border-y border-line/80 text-sm leading-6 text-stone font-geist">
               {line.examples.map((example) => (
                 <li key={example} className="py-3">
