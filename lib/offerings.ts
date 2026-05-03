@@ -40,7 +40,7 @@ export const productLines: ProductLine[] = [
     price: "$49 each",
     description:
       "Ready-to-build AI workspaces for recurring PE operating workflows and executive outputs.",
-    learnHref: "/ai-for-deal-teams#ai-projects",
+    learnHref: "/ai-for-pe-professionals#ai-projects",
     learnLabel: "What is an AI project kit?",
     examples: [
       "Operating Partner Copilot",
@@ -53,7 +53,7 @@ export const productLines: ProductLine[] = [
     price: "$39 each",
     description:
       "Reusable markdown skill bundles for PE communication, diagnostics, diligence, and quality control.",
-    learnHref: "/ai-for-deal-teams#skills",
+    learnHref: "/ai-for-pe-professionals#skills",
     learnLabel: "What is a reusable AI skill?",
     examples: [
       "Executive Communication Skills",
