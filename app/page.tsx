@@ -1,3 +1,5 @@
+import { labelForType } from "@/lib/format";
+import { hrefFor } from "@/lib/routes";
 import Link from "next/link";
 import type { Route } from "next";
 import { ContentCard } from "@/components/Cards";
@@ -129,7 +131,7 @@ export default function Home() {
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {playbooks.map((item) => (
-            <ContentCard key={item.slug} item={item} />
+            <ContentCard key={item.slug} title={item.title} description={item.summary} href={hrefFor(item)} tag={labelForType(item.type)} />
           ))}
         </div>
       </section>
@@ -145,7 +147,7 @@ export default function Home() {
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {industries.map((item) => (
-            <ContentCard key={item.slug} item={item} />
+            <ContentCard key={item.slug} title={item.title} description={item.summary} href={hrefFor(item)} tag={labelForType(item.type)} />
           ))}
         </div>
       </section>

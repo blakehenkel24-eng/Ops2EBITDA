@@ -1,8 +1,16 @@
 import Link from "next/link";
+import { ArrowRight } from 'lucide-react';
 import type { Route } from "next";
 import { labelForType } from "@/lib/format";
 import { hrefFor } from "@/lib/routes";
 import type { AnyContent } from "@/lib/types";
+
+interface CardProps {
+  title: string;
+  description: string;
+  href: string;
+  tag?: string;
+}
 
 export function PageHeader({
   eyebrow,
@@ -28,33 +36,25 @@ export function PageHeader({
   );
 }
 
-export function ContentCard({ item, className = "" }: { item: AnyContent; className?: string }) {
+export function ContentCard({ title, description, href, tag }: CardProps) {
   return (
-    <Link
-      href={hrefFor(item) as Route}
-      className={`group flex min-h-52 flex-col justify-between rounded-[24px] border border-[var(--line)] bg-[var(--panel)] p-6 transition-all duration-200 ease-in-out cursor-pointer hover:border-[var(--accent)] hover:bg-[var(--accent-soft)] hover:shadow-lg hover:-translate-y-1 ${className}`}
-    >
-      <div>
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
-            {labelForType(item.type)}
+    <Link href={href as Route} className="group block h-full">
+      <article className="bg-paper border border-stone/30 h-full p-6 flex flex-col transition-all duration-200 hover:border-ochre">
+        {tag && (
+          <span className="font-mono-label text-stone mb-4 block group-hover:text-ochre transition-colors">
+            {tag}
           </span>
-          {"difficulty" in item ? (
-            <span className="text-xs font-medium text-[var(--muted)]">
-              {item.difficulty}
-            </span>
-          ) : null}
-        </div>
-        <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.02em]">
-          {item.title}
-        </h2>
-        <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
-          {item.summary}
+        )}
+        <h3 className="font-newsreader text-2xl mb-3 text-ink group-hover:text-ochre transition-colors">
+          {title}
+        </h3>
+        <p className="text-stone text-sm font-geist leading-relaxed flex-1 mb-6">
+          {description}
         </p>
-      </div>
-      <span className="mt-5 text-sm font-semibold text-[var(--accent)]">
-        Open briefing
-      </span>
+        <div className="flex items-center text-ochre font-mono-label mt-auto opacity-0 group-hover:opacity-100 transition-opacity">
+          Open briefing <ArrowRight size={14} className="ml-2" strokeWidth={1.5} />
+        </div>
+      </article>
     </Link>
   );
 }

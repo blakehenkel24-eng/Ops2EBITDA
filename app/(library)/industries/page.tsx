@@ -1,3 +1,5 @@
+import { labelForType } from "@/lib/format";
+import { hrefFor } from "@/lib/routes";
 import { ContentCard, PageHeader } from "@/components/Cards";
 import { getIndustries } from "@/lib/content";
 
@@ -13,7 +15,7 @@ export default function IndustriesPage() {
       />
       <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-3">
         {items.map((item) => (
-          <ContentCard key={item.slug} item={item} />
+          <ContentCard key={item.slug} title={item.title} description={item.summary} href={hrefFor(item)} tag={labelForType(item.type)} />
         ))}
       </div>
     </div>
