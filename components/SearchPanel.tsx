@@ -55,7 +55,7 @@ export function SearchPanel({ items }: { items: AnyContent[] }) {
             <span className="font-mono-label text-stone">
               {labelForType(item.type)}
             </span>
-            <p className="mt-2 text-lg font-semibold text-ink">
+            <p className="mt-2 text-lg font-newsreader text-ink">
               {item.title}
             </p>
           </Link>

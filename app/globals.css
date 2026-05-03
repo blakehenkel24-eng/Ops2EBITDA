@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-newsreader: var(--font-newsreader), serif;
-  --font-geist: var(--font-geist), sans-serif;
-  --font-jetbrains: var(--font-jetbrains), monospace;
+  --font-newsreader: var(--font-family-newsreader), serif;
+  --font-geist: var(--font-family-geist), sans-serif;
+  --font-jetbrains: var(--font-family-jetbrains), monospace;
 
   --color-bone: #F4EFE6;
   --color-paper: #FBF8F2;

@@ -3,9 +3,9 @@ import { Newsreader, Geist, JetBrains_Mono } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import "./globals.css";
 
-const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-newsreader" });
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
+const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-family-newsreader" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-family-geist" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-family-jetbrains" });
 
 export const metadata: Metadata = {
   title: "PE Ops Knowledge Base",
