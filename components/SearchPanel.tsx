@@ -24,13 +24,13 @@ export function SearchPanel({ items }: { items: AnyContent[] }) {
           .slice(0, 10);
 
   return (
-    <section className="rounded-[24px] border border-[var(--line)] bg-[var(--panel)] p-6">
+    <section className="border border-stone/30 bg-paper p-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center">
         <div className="flex-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+          <p className="font-mono-label text-stone">
             Search the knowledge base
           </p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-[-0.02em]">
+          <h2 className="font-newsreader text-4xl mb-4 text-ink mt-2">
             Find a lever, KPI, or industry
           </h2>
         </div>
@@ -42,7 +42,7 @@ export function SearchPanel({ items }: { items: AnyContent[] }) {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Try: churn, procurement, SaaS, DSO..."
-          className="w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--ink)] placeholder:text-[var(--subtle)] md:max-w-md"
+          className="w-full border border-stone bg-paper px-4 py-3 text-sm text-ink placeholder:text-stone md:max-w-md focus:outline focus:outline-2 focus:outline-ochre"
         />
       </div>
       <div className="mt-5 grid gap-2 md:grid-cols-2">
@@ -50,12 +50,12 @@ export function SearchPanel({ items }: { items: AnyContent[] }) {
           <Link
             key={`${item.type}-${item.slug}`}
             href={hrefFor(item) as Route}
-            className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 transition-all duration-200 ease-in-out cursor-pointer hover:border-[var(--accent)] hover:bg-[var(--accent-soft)] hover:shadow-md"
+            className="border border-stone/30 bg-paper p-4 transition-all duration-200 ease-in-out cursor-pointer hover:border-ochre hover:bg-bone"
           >
-            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            <span className="font-mono-label text-stone">
               {labelForType(item.type)}
             </span>
-            <p className="mt-2 text-lg font-semibold tracking-[-0.01em]">
+            <p className="mt-2 text-lg font-semibold text-ink">
               {item.title}
             </p>
           </Link>

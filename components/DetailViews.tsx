@@ -32,19 +32,19 @@ function ArticlePage({ item }: { item: AnyContent }) {
             key={`${section.title}-${index}`}
             className="knowledge-article"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+            <p className="font-mono-label text-stone mb-2">
               {String(index + 1).padStart(2, "0")}
             </p>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.02em]">
+            <h2 className="font-newsreader text-4xl mb-4 text-ink leading-tight">
               {section.title}
             </h2>
-            <div className="mt-5 text-base leading-8 text-[var(--muted)]">
+            <div className="mt-5 text-base leading-8 text-ink">
               {section.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             {section.callout ? (
-              <div className="mt-8 rounded-lg border border-[var(--line)] bg-[var(--panel-strong)] p-6 text-lg font-semibold leading-7 text-[var(--ink)] shadow-sm">
+              <div className="mt-8 border border-stone/30 bg-paper p-6 text-lg font-semibold leading-7 text-ink">
                 {section.callout}
               </div>
             ) : null}
