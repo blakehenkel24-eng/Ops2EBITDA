@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BookOpen, Layers, Menu, X } from 'lucide-react';
+import { BookOpen, Layers, Menu, X, Database, Briefcase, Factory, Activity } from 'lucide-react';
 
 export function ClientNav() {
   const pathname = usePathname();
@@ -11,24 +11,33 @@ export function ClientNav() {
 
   const links = [
     { href: '/', label: 'Library', icon: BookOpen },
+    { href: '/fundamentals', label: 'Fundamentals', icon: Database },
+    { href: '/playbooks', label: 'Playbooks', icon: Briefcase },
+    { href: '/industries', label: 'Industries', icon: Factory },
+    { href: '/kpis', label: 'KPIs', icon: Activity },
     { href: '/study', label: 'Study Plans', icon: Layers },
   ];
 
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <>
-      <nav className="hidden md:flex gap-6 font-geist text-sm font-medium">
+      <nav className="hidden md:flex items-center gap-1 overflow-x-auto">
         {links.map((link) => {
-          const Icon = link.icon;
-          const isActive = pathname === link.href;
+          const active = isActive(link.href);
           return (
             <Link
               key={link.href}
               href={link.href}
-              className={`flex items-center gap-2 transition-colors ${
-                isActive ? 'text-ochre' : 'hover:text-ochre'
+              className={`font-mono-label px-3 py-2 transition-all duration-200 border-b-2 whitespace-nowrap ${
+                active 
+                  ? 'border-ochre text-ochre bg-paper' 
+                  : 'border-transparent text-stone hover:text-ink hover:bg-paper'
               }`}
             >
-              <Icon size={16} strokeWidth={1.5} />
               {link.label}
             </Link>
           );
@@ -46,20 +55,18 @@ export function ClientNav() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-bone border-b border-stone/30 shadow-sm md:hidden p-4 flex flex-col gap-2 z-40">
+        <div className="absolute top-16 left-0 right-0 bg-paper border-b border-stone/30 shadow-lg md:hidden p-4 flex flex-col gap-1 z-40">
           {links.map((link) => {
-            const Icon = link.icon;
-            const isActive = pathname === link.href;
+            const active = isActive(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center gap-3 font-geist text-base font-medium p-3 rounded-md transition-colors ${
-                  isActive ? 'bg-stone/10 text-ochre' : 'text-ink hover:bg-stone/5 hover:text-ochre'
+                className={`flex items-center gap-3 font-mono-label p-3 transition-colors ${
+                  active ? 'bg-bone text-ochre' : 'text-stone hover:bg-bone hover:text-ink'
                 }`}
               >
-                <Icon size={18} strokeWidth={1.5} />
                 {link.label}
               </Link>
             );
