@@ -38,7 +38,7 @@ export default function OfferingsPage() {
         ))}
       </section>
 
-      <section className="mt-10">
+      <section id="toolkit" className="mt-10 scroll-mt-24">
         <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-mono-label text-accent">

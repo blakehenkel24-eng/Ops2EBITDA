@@ -10,7 +10,6 @@ import {
   ChevronDown,
   Database,
   Factory,
-  Layers,
   Menu,
   Package,
   X,
@@ -36,7 +35,6 @@ export function ClientNav() {
 
   const knowledgeActive = knowledgeLinks.some((link) => isActive(link.href));
   const offeringsActive = isActive('/offerings');
-  const startHereActive = isActive('/study');
 
   return (
     <>
@@ -100,16 +98,11 @@ export function ClientNav() {
         </Link>
 
         <Link
-          href="/study"
-          className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
-            startHereActive
-              ? 'border-accent/20 text-accent bg-accent-soft'
-              : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
-          }`}
-          aria-current={startHereActive ? 'page' : undefined}
+          href="/offerings#toolkit"
+          className="font-mono-label flex items-center gap-2 border border-accent/25 bg-accent text-paper px-3 py-2 transition-all duration-200 whitespace-nowrap hover:bg-ink hover:border-ink"
         >
-          <Layers size={14} strokeWidth={1.7} aria-hidden="true" />
-          Start Here
+          <Package size={14} strokeWidth={1.7} aria-hidden="true" />
+          Get the Toolkit
         </Link>
       </nav>
       
@@ -159,7 +152,7 @@ export function ClientNav() {
 
           {[
             { href: '/offerings', label: 'Offerings', icon: Package, active: offeringsActive },
-            { href: '/study', label: 'Start Here', icon: Layers, active: startHereActive },
+            { href: '/offerings#toolkit', label: 'Get the Toolkit', icon: Package, active: false },
           ].map((link) => (
             <Link
               key={link.href}
