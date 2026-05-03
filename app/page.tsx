@@ -39,20 +39,20 @@ export default function Home() {
     <div>
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+          <p className="font-mono-label text-stone">
             Private Equity Operations
           </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-[-0.03em] md:text-5xl text-brand-gradient">
+          <h1 className="mt-4 max-w-3xl font-newsreader text-4xl leading-tight md:text-5xl text-ink">
             A field guide for operating partner thinking.
           </h1>
-          <p className="mt-5 text-lg leading-8 text-[var(--muted)]">
+          <p className="mt-5 text-lg leading-8 text-stone font-geist">
             Deep-dive briefings on value creation, industry dynamics, portfolio
             company operations, KPI logic, and the projects that move EBITDA,
             cash flow, risk, and exit quality.
           </p>
         </div>
-        <div className="self-end rounded-[24px] border border-[var(--line)] bg-[var(--panel)] p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+        <div className="self-end border border-stone/30 bg-paper p-5">
+          <p className="font-mono-label text-stone">
             Static corpus
           </p>
           <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-5">
@@ -70,24 +70,24 @@ export default function Home() {
 
       <section className="mt-10 grid gap-5 lg:grid-cols-[16rem_minmax(0,1fr)]">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+          <p className="font-mono-label text-stone">
             Operator agenda
           </p>
-          <h2 className="mt-3 text-2xl font-semibold leading-tight tracking-[-0.02em]">
+          <h2 className="mt-3 font-newsreader text-2xl text-ink leading-tight">
             Start from the decision, not the module.
           </h2>
         </div>
-        <div className="divide-y divide-[var(--line)] rounded-[24px] border border-[var(--line)] bg-[var(--panel)]">
+        <div className="divide-y divide-stone/30 border border-stone/30 bg-paper">
           {operatingAgendas.map((agenda) => (
             <Link
               key={agenda.title}
               href={agenda.href}
-              className="grid gap-3 p-5 transition-all duration-200 ease-in-out cursor-pointer hover:bg-[var(--accent-soft)] md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"
+              className="grid gap-3 p-5 transition-all duration-200 ease-in-out cursor-pointer hover:bg-bone hover:border-l-2 hover:border-l-ochre md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"
             >
-              <h3 className="text-xl font-semibold tracking-[-0.01em]">
+              <h3 className="font-newsreader text-xl text-ink">
                 {agenda.title}
               </h3>
-              <p className="text-sm leading-7 text-[var(--muted)]">
+              <p className="text-sm leading-7 text-stone font-geist">
                 {agenda.detail}
               </p>
             </Link>
@@ -95,23 +95,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-10 rounded-[24px] border border-[var(--line)] bg-[var(--panel)] p-5">
+      <section className="mt-10 border border-stone/30 bg-paper p-5">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+          <p className="font-mono-label text-stone">
             Value creation logic
           </p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em]">
+          <h2 className="mt-3 font-newsreader text-2xl text-ink">
             From operating issue to exit narrative.
           </h2>
         </div>
         <ol className="mt-5 grid gap-3 md:grid-cols-5">
           {["Problem", "Diagnostic", "Action", "KPI", "Enterprise value"].map(
             (step, index) => (
-              <li key={step} className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
-                <p className="text-xs font-semibold text-[var(--accent)]">
+              <li key={step} className="border border-stone/30 bg-bone p-4">
+                <p className="font-mono-label text-ochre">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-3 text-base font-semibold">
+                <p className="mt-3 text-base font-newsreader text-ink">
                   {step}
                 </p>
               </li>
@@ -122,10 +122,10 @@ export default function Home() {
 
       <section className="mt-10">
         <div className="mb-4 flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-semibold tracking-[-0.02em]">
+          <h2 className="font-newsreader text-2xl text-ink">
             Featured briefings
           </h2>
-          <Link href="/playbooks" className="font-semibold text-[var(--accent)]">
+          <Link href="/playbooks" className="font-mono-label text-ochre hover:opacity-80 transition-opacity">
             View value creation
           </Link>
         </div>
@@ -138,10 +138,10 @@ export default function Home() {
 
       <section className="mt-10">
         <div className="mb-4 flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-semibold tracking-[-0.02em]">
+          <h2 className="font-newsreader text-2xl text-ink">
             Industry intelligence
           </h2>
-          <Link href="/industries" className="font-semibold text-[var(--accent)]">
+          <Link href="/industries" className="font-mono-label text-ochre hover:opacity-80 transition-opacity">
             View industries
           </Link>
         </div>
@@ -161,7 +161,7 @@ export default function Home() {
           <Link
             key={label}
             href={href}
-            className="rounded-[24px] border border-[var(--line)] bg-[var(--panel)] p-6 text-xl font-semibold transition-all duration-200 ease-in-out cursor-pointer hover:border-[var(--accent)] hover:bg-[var(--accent-soft)] hover:-translate-y-1 hover:shadow-lg"
+            className="border border-stone/30 bg-paper p-6 font-newsreader text-xl text-ink transition-all duration-200 ease-in-out cursor-pointer hover:border-ochre hover:bg-bone hover:-translate-y-1"
           >
             {label}
           </Link>
@@ -174,10 +174,10 @@ export default function Home() {
 function Metric({ label, value }: { label: string; value: string | number }) {
   return (
     <div>
-      <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+      <dt className="font-mono-label text-stone">
         {label}
       </dt>
-      <dd className="mt-1 text-3xl font-semibold tracking-[-0.03em]">
+      <dd className="mt-1 font-newsreader text-3xl text-ink">
         {value}
       </dd>
     </div>

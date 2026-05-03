@@ -20,13 +20,13 @@ export function PageHeader({
 }) {
   return (
     <header className="mb-8 max-w-3xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+      <p className="font-mono-label text-stone mb-3">
         {eyebrow}
       </p>
-      <h1 className="mt-3 text-4xl font-bold leading-tight tracking-[-0.03em] md:text-5xl text-brand-gradient">
+      <h1 className="font-newsreader text-4xl leading-tight md:text-5xl text-ink">
         {title}
       </h1>
-      <p className="mt-4 text-base leading-7 text-[var(--muted)]">
+      <p className="mt-4 text-base leading-7 text-stone font-geist">
         {summary}
       </p>
     </header>
@@ -64,11 +64,11 @@ export function StatCard({
   value: string | number;
 }) {
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4">
-      <p className="text-3xl font-semibold tracking-[-0.03em]">
+    <div className="border border-stone/30 bg-paper p-4">
+      <p className="font-newsreader text-3xl text-ink">
         {value}
       </p>
-      <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+      <p className="mt-2 font-mono-label text-stone">
         {label}
       </p>
     </div>
@@ -83,9 +83,9 @@ export function SectionBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-6">
-      <h2 className="text-2xl font-semibold tracking-[-0.02em]">{title}</h2>
-      <div className="mt-4 text-sm leading-7 text-[var(--muted)]">
+    <section className="border border-stone/30 bg-paper p-6">
+      <h2 className="font-newsreader text-2xl text-ink">{title}</h2>
+      <div className="mt-4 text-sm leading-7 text-stone font-geist">
         {children}
       </div>
     </section>
@@ -98,7 +98,7 @@ export function PillList({ items }: { items: string[] }) {
       {items.map((item) => (
         <span
           key={item}
-          className="rounded-full border border-[var(--line)] bg-[var(--panel)] px-3 py-1 text-xs font-bold text-[var(--muted)]"
+          className="border border-stone/30 bg-paper px-3 py-1 font-mono-label text-stone"
         >
           {item}
         </span>
