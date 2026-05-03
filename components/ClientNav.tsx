@@ -32,12 +32,13 @@ export function ClientNav() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-mono-label px-3 py-2 transition-all duration-200 border-b-2 whitespace-nowrap ${
+              className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
                 active 
-                  ? 'border-ochre text-ochre bg-paper' 
-                  : 'border-transparent text-stone hover:text-ink hover:bg-paper'
+                  ? 'border-accent/20 text-accent bg-accent-soft' 
+                  : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
               }`}
             >
+              <link.icon size={14} strokeWidth={1.7} aria-hidden="true" />
               {link.label}
             </Link>
           );
@@ -55,7 +56,7 @@ export function ClientNav() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-paper border-b border-stone/30 shadow-lg md:hidden p-4 flex flex-col gap-1 z-40">
+        <div className="absolute top-16 left-0 right-0 bg-paper border-b border-line/80 shadow-lg md:hidden p-4 flex flex-col gap-1 z-40">
           {links.map((link) => {
             const active = isActive(link.href);
             return (
@@ -64,9 +65,10 @@ export function ClientNav() {
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center gap-3 font-mono-label p-3 transition-colors ${
-                  active ? 'bg-bone text-ochre' : 'text-stone hover:bg-bone hover:text-ink'
+                  active ? 'bg-accent-soft text-accent' : 'text-stone hover:bg-bone hover:text-ink'
                 }`}
               >
+                <link.icon size={15} strokeWidth={1.7} aria-hidden="true" />
                 {link.label}
               </Link>
             );

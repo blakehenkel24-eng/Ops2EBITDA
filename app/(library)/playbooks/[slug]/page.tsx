@@ -20,8 +20,13 @@ export default async function PlaybookPage({
   }
 
   return (
-    <div>
-      <PageHeader eyebrow={item.category} title={item.title} summary={item.summary} />
+    <div className="reader-layout">
+      <PageHeader
+        eyebrow={item.category}
+        title={item.title}
+        summary={item.summary}
+        className="reader-header"
+      />
       <PlaybookDetail item={item} />
     </div>
   );

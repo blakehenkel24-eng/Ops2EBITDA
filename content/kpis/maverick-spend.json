@@ -71,9 +71,9 @@
   ],
   "diagrams": [
     {
-      "title": "Maverick Spend action loop",
-      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
-      "chart": "flowchart TB\n  A[\"Define Maverick Spend\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+      "title": "Maverick Spend value path",
+      "description": "A metric-specific view of how the KPI is calculated, diagnosed, and connected to operating value.",
+      "chart": "flowchart TB\n  A[\"Total spend\"] --> B[\"Contracted spend\"]\n  A --> C[\"Off-contract spend\"]\n  C --> D[\"Maverick spend\"]\n  D --> E[\"Buying control gaps\"]\n  E --> F[\"Policy and system controls\"]\n  F --> G[\"Leakage reduction\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
     }
   ]
 }

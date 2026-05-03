@@ -71,9 +71,9 @@
   ],
   "diagrams": [
     {
-      "title": "On-Time Delivery action loop",
-      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
-      "chart": "flowchart TB\n  A[\"Define On-Time Delivery\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+      "title": "On-Time Delivery value path",
+      "description": "A metric-specific view of how the KPI is calculated, diagnosed, and connected to operating value.",
+      "chart": "flowchart TB\n  A[\"Customer due date\"] --> B[\"Actual delivery date\"]\n  B --> C[\"On-time delivery\"]\n  C --> D[\"Late order reason codes\"]\n  D --> E[\"Scheduling / inventory / carrier fixes\"]\n  E --> F[\"Service level improvement\"]\n  F --> G[\"Retention and working capital impact\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
     }
   ]
 }

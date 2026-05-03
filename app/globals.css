@@ -5,13 +5,23 @@
   --font-geist: var(--font-family-geist), sans-serif;
   --font-jetbrains: var(--font-family-jetbrains), monospace;
 
-  --color-bone: #F4EFE6;
-  --color-paper: #FBF8F2;
-  --color-ink: #161413;
-  --color-stone: #928B7E;
-  --color-ochre: #B8862F;
-  --color-ochre-soft: #DEB870;
-  --color-sienna: #7A2E1F;
+  --color-bone: oklch(96.5% 0.008 240);
+  --color-paper: oklch(98.7% 0.006 235);
+  --color-ink: oklch(18% 0.018 248);
+  --color-stone: oklch(54% 0.025 240);
+  --color-accent: oklch(34% 0.105 252);
+  --color-accent-soft: oklch(91% 0.035 245);
+  --color-teal: oklch(47% 0.09 197);
+  --color-teal-soft: oklch(92% 0.04 198);
+  --color-plum: oklch(42% 0.095 318);
+  --color-plum-soft: oklch(93% 0.036 318);
+  --color-amber: oklch(66% 0.115 78);
+  --color-amber-soft: oklch(93% 0.052 82);
+  --color-line: oklch(78% 0.018 240);
+  --color-panel-shadow: oklch(31% 0.038 248);
+  --color-ochre: var(--color-accent);
+  --color-ochre-soft: var(--color-accent-soft);
+  --color-sienna: var(--color-plum);
 }
 
 * {
@@ -24,7 +34,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-bone);
+  background:
+    radial-gradient(circle at 12% 0%, oklch(92% 0.038 245 / 0.75), transparent 28rem),
+    radial-gradient(circle at 88% 8%, oklch(93% 0.04 198 / 0.55), transparent 22rem),
+    var(--color-bone);
   color: var(--color-ink);
   font-family: var(--font-geist);
   text-rendering: optimizeLegibility;
@@ -68,16 +81,16 @@ p {
 }
 
 ::selection {
-  background: var(--color-stone);
-  color: var(--color-bone);
+  background: var(--color-accent);
+  color: var(--color-paper);
 }
 
 a, button, input {
-  outline-color: var(--color-ochre);
+  outline-color: var(--color-accent);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-ochre);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -87,8 +100,192 @@ pre {
 }
 
 .editorial-rule {
-  background: var(--color-stone);
+  background: var(--color-line);
   height: 1px;
+}
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid oklch(72% 0.028 242 / 0.72);
+  background:
+    linear-gradient(135deg, oklch(98.7% 0.006 235 / 0.98) 0%, oklch(95% 0.025 245 / 0.9) 54%, oklch(93% 0.038 198 / 0.72) 100%);
+  box-shadow:
+    0 1px 0 oklch(99% 0.004 235 / 0.88) inset,
+    0 26px 70px oklch(31% 0.038 248 / 0.11);
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, oklch(34% 0.105 252 / 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, oklch(34% 0.105 252 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 82%, transparent 100%);
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  right: clamp(1rem, 4vw, 3rem);
+  top: clamp(1rem, 4vw, 3rem);
+  width: clamp(6rem, 18vw, 12rem);
+  aspect-ratio: 1;
+  border: 1px solid oklch(47% 0.09 197 / 0.28);
+  background:
+    linear-gradient(135deg, oklch(47% 0.09 197 / 0.1), transparent 58%),
+    repeating-linear-gradient(135deg, oklch(34% 0.105 252 / 0.12) 0 1px, transparent 1px 10px);
+  transform: rotate(8deg);
+}
+
+.home-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.signal-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-teal);
+  box-shadow: 0 0 0 5px oklch(47% 0.09 197 / 0.12);
+}
+
+.pressable {
+  transition:
+    transform 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.pressable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px oklch(31% 0.038 248 / 0.09);
+}
+
+.pressable:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px oklch(31% 0.038 248 / 0.07);
+}
+
+.step-card {
+  background:
+    linear-gradient(180deg, var(--step-tint, var(--color-accent-soft)), var(--color-paper));
+}
+
+.reader-layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: clamp(2rem, 3vw, 3rem) clamp(1.25rem, 3vw, 2.5rem);
+  background:
+    linear-gradient(
+      90deg,
+      oklch(94% 0.011 240 / 0.95) 0%,
+      oklch(96% 0.008 240 / 0.98) calc(50% - 37rem),
+      oklch(98.7% 0.006 235) calc(50% - 34rem),
+      oklch(98.7% 0.006 235) calc(50% + 34rem),
+      oklch(96% 0.008 240 / 0.98) calc(50% + 37rem),
+      oklch(94% 0.011 240 / 0.95) 100%
+    );
+  border-block: 1px solid oklch(72% 0.028 242 / 0.26);
+  border-inline: 0;
+  box-shadow:
+    0 1px 0 oklch(99% 0.004 235 / 0.7) inset,
+    0 20px 44px oklch(31% 0.038 248 / 0.055);
+}
+
+.reader-layout::before,
+.reader-layout::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: max(0px, calc((100vw - 68rem) / 2));
+  pointer-events: none;
+}
+
+.reader-layout::before {
+  left: 0;
+  border-inline-end: 1px solid oklch(72% 0.028 242 / 0.18);
+  background:
+    linear-gradient(90deg, oklch(34% 0.105 252 / 0.045) 0%, oklch(96.5% 0.008 240 / 0) 100%),
+    repeating-linear-gradient(
+      180deg,
+      oklch(54% 0.025 240 / 0.045) 0,
+      oklch(54% 0.025 240 / 0.045) 1px,
+      transparent 1px,
+      transparent 24px
+    );
+}
+
+.reader-layout::after {
+  right: 0;
+  border-inline-start: 1px solid oklch(72% 0.028 242 / 0.18);
+  background:
+    linear-gradient(270deg, oklch(47% 0.09 197 / 0.04) 0%, oklch(96.5% 0.008 240 / 0) 100%),
+    repeating-linear-gradient(
+      180deg,
+      oklch(54% 0.025 240 / 0.04) 0,
+      oklch(54% 0.025 240 / 0.04) 1px,
+      transparent 1px,
+      transparent 24px
+    );
+}
+
+.reader-header,
+.reader-article {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  width: min(68rem, calc(100vw - 2.5rem));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reader-header {
+  width: 100%;
+  max-width: none;
+  padding: 0 0 clamp(2rem, 3vw, 2.5rem);
+  border-bottom: 1px solid oklch(72% 0.028 242 / 0.18);
+}
+
+.reader-header .page-header-content {
+  width: 100%;
+  max-width: 74ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reader-article {
+  padding: clamp(2rem, 3vw, 2.5rem) 0 0;
+}
+
+.reader-article-column {
+  position: relative;
+  max-width: 74ch;
+}
+
+@media (max-width: 768px) {
+  .reader-layout {
+    padding: 1.25rem 1.125rem 1.75rem;
+  }
+
+  .reader-layout::before,
+  .reader-layout::after {
+    display: none;
+  }
 }
 
 /* Mermaid adjustments */

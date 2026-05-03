@@ -25,8 +25,8 @@ function ArticlePage({ item }: { item: AnyContent }) {
   const diagrams = item.diagrams ?? [];
 
   return (
-    <article className="flex flex-col gap-12 xl:gap-16">
-      <div className="mx-auto w-full max-w-[72ch] space-y-16">
+    <article className="reader-article flex flex-col gap-12 xl:gap-16">
+      <div className="reader-article-column relative z-10 mx-auto w-full max-w-[72ch] space-y-16">
         {sections.map((section, index) => (
           <section
             key={`${section.title}-${index}`}
@@ -53,7 +53,7 @@ function ArticlePage({ item }: { item: AnyContent }) {
       </div>
 
       {diagrams.length > 0 && (
-        <div className="mx-auto w-full max-w-5xl space-y-16">
+        <div className="relative z-10 mx-auto w-full max-w-5xl space-y-16">
           <hr className="editorial-rule my-8" />
           {diagrams.map((diagram) => (
             <MermaidDiagram

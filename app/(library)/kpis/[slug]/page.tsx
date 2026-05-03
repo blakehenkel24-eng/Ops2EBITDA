@@ -20,8 +20,13 @@ export default async function KpiPage({
   }
 
   return (
-    <div>
-      <PageHeader eyebrow={item.function} title={item.title} summary={item.summary} />
+    <div className="reader-layout">
+      <PageHeader
+        eyebrow={item.function}
+        title={item.title}
+        summary={item.summary}
+        className="reader-header"
+      />
       <KpiDetail item={item} />
     </div>
   );

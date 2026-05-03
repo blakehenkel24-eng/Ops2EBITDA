@@ -20,8 +20,13 @@ export default async function IndustryPage({
   }
 
   return (
-    <div>
-      <PageHeader eyebrow="Industry Profile" title={item.title} summary={item.summary} />
+    <div className="reader-layout">
+      <PageHeader
+        eyebrow="Industry Profile"
+        title={item.title}
+        summary={item.summary}
+        className="reader-header"
+      />
       <IndustryDetail item={item} />
     </div>
   );

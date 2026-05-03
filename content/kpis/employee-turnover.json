@@ -72,9 +72,9 @@
   ],
   "diagrams": [
     {
-      "title": "Employee Turnover action loop",
-      "description": "How the KPI should move from definition to variance, action, and financial interpretation.",
-      "chart": "flowchart TB\n  A[\"Define Employee Turnover\"] --> B[\"Validate baseline\"]\n  B --> C[\"Segment variance\"]\n  C --> D[\"Identify controllable driver\"]\n  D --> E[\"Assign owner action\"]\n  E --> F[\"Track paired guardrail\"]\n  F --> G[\"Update value bridge\"]\n  G -.-> C\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+      "title": "Employee Turnover value path",
+      "description": "A metric-specific view of how the KPI is calculated, diagnosed, and connected to operating value.",
+      "chart": "flowchart TB\n  A[\"Average headcount\"] --> B[\"Departures\"]\n  B --> C[\"Turnover rate\"]\n  C --> D[\"Role / manager / site variance\"]\n  D --> E[\"Retention and hiring actions\"]\n  E --> F[\"Productivity and replacement cost\"]\n  F --> G[\"EBITDA stability\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
     }
   ]
 }

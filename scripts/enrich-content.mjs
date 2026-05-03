@@ -251,23 +251,478 @@ ${STYLES}
 }
 
 function kpiDiagrams(item) {
-  const chart = `flowchart TB
-  A["Define ${item.title}"] --> B["Validate baseline"]
-  B --> C["Segment variance"]
-  C --> D["Identify controllable driver"]
-  D --> E["Assign owner action"]
-  E --> F["Track paired guardrail"]
-  F --> G["Update value bridge"]
-  G -.-> C
+  const charts = {
+    "arr": `flowchart TB
+  A["Starting ARR"] --> B["New ARR"]
+  A --> C["Expansion ARR"]
+  A --> D["Contraction and churn"]
+  B --> E["Ending ARR"]
+  C --> E
+  D --> E
+  E --> F["Growth quality"]
+  F --> G["Revenue multiple support"]
 ${STYLES}
   class A,G strong
   class B,C,D base
-  class E,F accent`;
+  class E,F accent`,
+    "mrr": `flowchart TB
+  A["Starting MRR"] --> B["New MRR"]
+  A --> C["Expansion MRR"]
+  A --> D["Churned MRR"]
+  B --> E["Ending MRR"]
+  C --> E
+  D --> E
+  E --> F["ARR run-rate"]
+  F --> G["Forecast and valuation support"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "nrr": `flowchart TB
+  A["Starting customer revenue"] --> B["Expansion"]
+  A --> C["Contraction"]
+  A --> D["Churn"]
+  B --> E["Ending retained revenue"]
+  C --> E
+  D --> E
+  E --> F["NRR"]
+  F --> G["Durability and multiple"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "grr": `flowchart TB
+  A["Starting recurring revenue"] --> B["Lost logos"]
+  A --> C["Downgrades"]
+  B --> D["Retained base revenue"]
+  C --> D
+  D --> E["GRR"]
+  E --> F["Revenue floor"]
+  F --> G["Downside risk for buyers"]
+${STYLES}
+  class A,G strong
+  class B,C base
+  class D,E,F accent`,
+    "churn": `flowchart TB
+  A["Customer cohort"] --> B["Logo churn"]
+  A --> C["Revenue churn"]
+  B --> D["Reason codes"]
+  C --> D
+  D --> E["Save plays and onboarding fixes"]
+  E --> F["GRR / NRR movement"]
+  F --> G["Growth efficiency"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "logo-retention": `flowchart TB
+  A["Opening customer count"] --> B["Renewed logos"]
+  A --> C["Lost logos"]
+  B --> D["Logo retention"]
+  C --> D
+  D --> E["Referenceability"]
+  E --> F["New logo efficiency"]
+  F --> G["Exit story durability"]
+${STYLES}
+  class A,G strong
+  class B,C base
+  class D,E,F accent`,
+    "expansion-revenue": `flowchart TB
+  A["Existing customer base"] --> B["Seat expansion"]
+  A --> C["Cross-sell"]
+  A --> D["Price / package uplift"]
+  B --> E["Expansion revenue"]
+  C --> E
+  D --> E
+  E --> F["NRR lift"]
+  F --> G["Capital-efficient growth"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "cac": `flowchart TB
+  A["Sales and marketing spend"] --> B["Qualified opportunities"]
+  B --> C["New customers"]
+  A --> D["CAC"]
+  C --> D
+  D --> E["Gross profit payback"]
+  E --> F["Growth efficiency"]
+  F --> G["Valuation quality"]
+${STYLES}
+  class A,G strong
+  class B,C base
+  class D,E,F accent`,
+    "cac-payback": `flowchart TB
+  A["CAC"] --> B["New customer ARR"]
+  B --> C["Gross margin dollars"]
+  C --> D["Months to recover CAC"]
+  D --> E["Payback period"]
+  E --> F["Sales capacity decision"]
+  F --> G["Efficient growth thesis"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "cost-per-lead": `flowchart TB
+  A["Marketing spend"] --> B["Leads generated"]
+  A --> C["Cost per lead"]
+  B --> C
+  C --> D["Lead quality check"]
+  D --> E["MQL to SQL conversion"]
+  E --> F["CAC impact"]
+  F --> G["Channel allocation"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "campaign-roi": `flowchart TB
+  A["Campaign spend"] --> B["Attributed pipeline"]
+  B --> C["Closed-won revenue"]
+  C --> D["Gross profit"]
+  A --> E["ROI"]
+  D --> E
+  E --> F["Budget reallocation"]
+  F --> G["Growth efficiency"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "lead-conversion-rate": `flowchart TB
+  A["Leads"] --> B["Qualified leads"]
+  B --> C["Opportunities"]
+  C --> D["Closed won"]
+  A --> E["Conversion rate"]
+  D --> E
+  E --> F["Funnel bottleneck"]
+  F --> G["Bookings impact"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "pipeline-coverage": `flowchart TB
+  A["Bookings target"] --> B["Required qualified pipeline"]
+  C["Current qualified pipeline"] --> D["Coverage ratio"]
+  B --> D
+  D --> E["Stage-weighted gap"]
+  E --> F["Rep / segment action"]
+  F --> G["Forecast confidence"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "quota-attainment": `flowchart TB
+  A["Quota"] --> B["Bookings by rep"]
+  B --> C["Attainment distribution"]
+  C --> D["Territory / capacity issue"]
+  C --> E["Coaching / enablement issue"]
+  D --> F["Sales productivity"]
+  E --> F
+  F --> G["Revenue plan credibility"]
+${STYLES}
+  class A,G strong
+  class B,C base
+  class D,E,F accent`,
+    "sales-cycle-length": `flowchart TB
+  A["Opportunity created"] --> B["Qualified"]
+  B --> C["Proposal"]
+  C --> D["Negotiation"]
+  D --> E["Closed won / lost"]
+  E --> F["Cycle length by segment"]
+  F --> G["Pipeline velocity and cash timing"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "win-rate": `flowchart TB
+  A["Qualified opportunities"] --> B["Closed won"]
+  A --> C["Closed lost"]
+  B --> D["Win rate"]
+  C --> D
+  D --> E["Loss reason analysis"]
+  E --> F["Pricing / product / sales action"]
+  F --> G["Bookings productivity"]
+${STYLES}
+  class A,G strong
+  class B,C base
+  class D,E,F accent`,
+    "gross-margin": `flowchart TB
+  A["Revenue"] --> B["Direct costs"]
+  A --> C["Gross profit"]
+  B --> C
+  C --> D["Gross margin"]
+  D --> E["Price / mix / cost bridge"]
+  E --> F["EBITDA flow-through"]
+  F --> G["Enterprise value"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "ebitda-margin": `flowchart TB
+  A["Revenue"] --> B["Gross profit"]
+  B --> C["Operating expenses"]
+  C --> D["EBITDA"]
+  A --> E["EBITDA margin"]
+  D --> E
+  E --> F["Margin bridge"]
+  F --> G["Multiple and leverage capacity"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "cash-conversion-cycle": `flowchart TB
+  A["DSO"] --> D["Cash conversion cycle"]
+  B["Inventory days"] --> D
+  C["DPO"] --> D
+  D --> E["Cash trapped in operations"]
+  E --> F["Collections / inventory / terms actions"]
+  F --> G["Released cash"]
+  G --> H["Debt paydown or growth capacity"]
+${STYLES}
+  class A,H strong
+  class B,C,D base
+  class E,F,G accent`,
+    "dso": `flowchart TB
+  A["Credit sales"] --> B["Accounts receivable"]
+  B --> C["DSO"]
+  C --> D["Aging buckets"]
+  D --> E["Collections and billing fixes"]
+  E --> F["Cash acceleration"]
+  F --> G["Working capital release"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "dpo": `flowchart TB
+  A["Purchases"] --> B["Accounts payable"]
+  B --> C["DPO"]
+  C --> D["Supplier terms variance"]
+  D --> E["Terms negotiation and payment controls"]
+  E --> F["Cash retained"]
+  F --> G["Liquidity improvement"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "forecast-accuracy": `flowchart TB
+  A["Forecast"] --> B["Actual result"]
+  A --> C["Variance"]
+  B --> C
+  C --> D["Driver attribution"]
+  D --> E["Planning cadence fix"]
+  E --> F["Capital allocation confidence"]
+  F --> G["Board and lender credibility"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "addressable-spend": `flowchart TB
+  A["Total spend"] --> B["Exclude taxes, payroll, pass-throughs"]
+  B --> C["Addressable spend"]
+  C --> D["Category opportunity"]
+  D --> E["Sourcing waves"]
+  E --> F["Savings pipeline"]
+  F --> G["EBITDA opportunity"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "savings-percentage": `flowchart TB
+  A["Baseline spend"] --> B["Validated savings"]
+  A --> C["Savings percentage"]
+  B --> C
+  C --> D["Run-rate validation"]
+  D --> E["P&L recognition"]
+  E --> F["EBITDA bridge"]
+  F --> G["Value creation scorecard"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "maverick-spend": `flowchart TB
+  A["Total spend"] --> B["Contracted spend"]
+  A --> C["Off-contract spend"]
+  C --> D["Maverick spend"]
+  D --> E["Buying control gaps"]
+  E --> F["Policy and system controls"]
+  F --> G["Leakage reduction"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "contract-compliance": `flowchart TB
+  A["Contract terms"] --> B["Invoice and PO data"]
+  B --> C["Compliance check"]
+  C --> D["Price / SLA / rebate exceptions"]
+  D --> E["Recoveries and controls"]
+  E --> F["Realized savings"]
+  F --> G["Procurement EBITDA proof"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "vendor-count": `flowchart TB
+  A["Vendor master"] --> B["Active vendors"]
+  B --> C["Spend by category"]
+  C --> D["Fragmentation"]
+  D --> E["Consolidation candidates"]
+  E --> F["Negotiation leverage"]
+  F --> G["Savings and control improvement"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "inventory-turns": `flowchart TB
+  A["COGS"] --> C["Inventory turns"]
+  B["Average inventory"] --> C
+  C --> D["SKU / site variance"]
+  D --> E["Slow-moving inventory"]
+  E --> F["Replenishment and rationalization"]
+  F --> G["Cash release and carrying cost reduction"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "defect-rate": `flowchart TB
+  A["Total output"] --> B["Defects"]
+  B --> C["Defect rate"]
+  C --> D["Root cause by line / shift / supplier"]
+  D --> E["Quality corrective action"]
+  E --> F["Scrap, rework, warranty reduction"]
+  F --> G["Gross margin lift"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "scrap-rate": `flowchart TB
+  A["Production input"] --> B["Scrapped material"]
+  B --> C["Scrap rate"]
+  C --> D["Material / process root cause"]
+  D --> E["Yield improvement"]
+  E --> F["COGS reduction"]
+  F --> G["Gross margin lift"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "plant-oee": `flowchart TB
+  A["Availability"] --> D["OEE"]
+  B["Performance"] --> D
+  C["Quality"] --> D
+  D --> E["Hidden capacity"]
+  E --> F["Throughput without capex"]
+  F --> G["Margin and cash impact"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "throughput": `flowchart TB
+  A["Available capacity"] --> B["Bottleneck step"]
+  B --> C["Units / jobs completed"]
+  C --> D["Throughput"]
+  D --> E["Constraint removal"]
+  E --> F["Revenue capacity"]
+  F --> G["EBITDA flow-through"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "on-time-delivery": `flowchart TB
+  A["Customer due date"] --> B["Actual delivery date"]
+  B --> C["On-time delivery"]
+  C --> D["Late order reason codes"]
+  D --> E["Scheduling / inventory / carrier fixes"]
+  E --> F["Service level improvement"]
+  F --> G["Retention and working capital impact"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "utilization": `flowchart TB
+  A["Available capacity"] --> B["Productive capacity used"]
+  B --> C["Utilization"]
+  C --> D["Idle / non-billable time"]
+  D --> E["Scheduling and demand balancing"]
+  E --> F["Revenue per resource"]
+  F --> G["EBITDA margin"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "labor-productivity": `flowchart TB
+  A["Labor hours"] --> B["Output"]
+  B --> C["Productivity"]
+  C --> D["Variance by role / site / shift"]
+  D --> E["Staffing, training, process fixes"]
+  E --> F["Output per FTE"]
+  F --> G["Margin improvement"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "warehouse-picks-per-hour": `flowchart TB
+  A["Labor hours"] --> B["Completed picks"]
+  B --> C["Picks per hour"]
+  C --> D["Zone / picker / SKU variance"]
+  D --> E["Slotting and process changes"]
+  E --> F["Warehouse productivity"]
+  F --> G["Fulfillment cost reduction"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "branch-profitability": `flowchart TB
+  A["Branch revenue"] --> B["Gross margin"]
+  B --> C["Direct branch costs"]
+  C --> D["Branch EBITDA"]
+  D --> E["Profitability by location"]
+  E --> F["Pricing, labor, footprint actions"]
+  F --> G["Portfolio margin lift"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "provider-utilization": `flowchart TB
+  A["Available provider hours"] --> B["Booked productive hours"]
+  B --> C["Provider utilization"]
+  C --> D["Schedule gaps and no-shows"]
+  D --> E["Template and referral actions"]
+  E --> F["Visit capacity"]
+  F --> G["Revenue and margin impact"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "revenue-cycle-denial-rate": `flowchart TB
+  A["Submitted claims"] --> B["Denied claims"]
+  B --> C["Denial rate"]
+  C --> D["Root cause by payer / code / site"]
+  D --> E["Front-end and coding fixes"]
+  E --> F["Collections improvement"]
+  F --> G["Cash and EBITDA impact"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+    "employee-turnover": `flowchart TB
+  A["Average headcount"] --> B["Departures"]
+  B --> C["Turnover rate"]
+  C --> D["Role / manager / site variance"]
+  D --> E["Retention and hiring actions"]
+  E --> F["Productivity and replacement cost"]
+  F --> G["EBITDA stability"]
+${STYLES}
+  class A,G strong
+  class B,C,D base
+  class E,F accent`,
+  };
+
+  const chart = charts[item.slug];
+  if (!chart) return [];
 
   return [
     {
-      title: `${item.title} action loop`,
-      description: "How the KPI should move from definition to variance, action, and financial interpretation.",
+      title: `${item.title} value path`,
+      description: "A metric-specific view of how the KPI is calculated, diagnosed, and connected to operating value.",
       chart,
     },
   ];

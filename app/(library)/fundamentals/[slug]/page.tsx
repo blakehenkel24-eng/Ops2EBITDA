@@ -20,8 +20,13 @@ export default async function FundamentalPage({
   }
 
   return (
-    <div>
-      <PageHeader eyebrow="PE Fundamental" title={item.title} summary={item.summary} />
+    <div className="reader-layout">
+      <PageHeader
+        eyebrow="PE Fundamental"
+        title={item.title}
+        summary={item.summary}
+        className="reader-header"
+      />
       <FundamentalDetail item={item} />
     </div>
   );
