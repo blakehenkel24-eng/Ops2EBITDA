@@ -13,18 +13,19 @@ function loadMermaid() {
       theme: "base",
       themeVariables: {
         background: "transparent",
-        primaryColor: "#f0ece3",
-        primaryTextColor: "#22201c",
-        primaryBorderColor: "#ded8cd",
-        lineColor: "#9a9287",
-        secondaryColor: "#f1e4dc",
-        tertiaryColor: "#f8f6f1",
-        fontFamily: "Aptos, Avenir Next, Segoe UI, sans-serif",
+        primaryColor: "#FBF8F2", // Paper
+        primaryTextColor: "#161413", // Ink
+        primaryBorderColor: "#928B7E", // Stone
+        lineColor: "#928B7E", // Stone
+        secondaryColor: "#F4EFE6", // Bone
+        tertiaryColor: "#FBF8F2", // Paper
+        fontFamily: "var(--font-geist), sans-serif",
         fontSize: "13px",
         clusterBkg: "transparent",
-        clusterBorder: "#ded8cd",
-        edgeLabelBackground: "#fffdf8",
-        nodeTextColor: "#22201c",
+        clusterBorder: "#928B7E",
+        edgeLabelBackground: "#FBF8F2",
+        nodeTextColor: "#161413",
+        mainBkg: "#FBF8F2",
       },
     });
 
@@ -77,17 +78,17 @@ export function MermaidDiagram({
       aria-describedby={`${id}-description`}
     >
       <figcaption className="mb-6">
-        <h3 id={`${id}-title`} className="text-2xl font-semibold tracking-[-0.01em]">
+        <h3 id={`${id}-title`} className="font-newsreader text-2xl text-ink">
           {title}
         </h3>
         <p
           id={`${id}-description`}
-          className="mt-2 text-base leading-6 text-[var(--muted)]"
+          className="mt-2 text-base leading-6 text-stone font-geist"
         >
           {description}
         </p>
       </figcaption>
-      <div className="min-h-48 p-6 md:p-8">
+      <div className="min-h-48 p-6 md:p-8 border border-stone/30 bg-paper">
         {svg ? (
           <div
             className="mermaid-output"
@@ -96,7 +97,7 @@ export function MermaidDiagram({
         ) : error ? (
           <pre
             role="alert"
-            className="overflow-x-auto rounded-lg bg-[var(--accent-soft)] p-4 text-xs text-[var(--ink)]"
+            className="overflow-x-auto border border-sienna bg-bone p-4 text-xs text-sienna font-mono"
           >
             {error}
           </pre>
@@ -104,7 +105,7 @@ export function MermaidDiagram({
           <div
             role="status"
             aria-live="polite"
-            className="flex h-72 items-center justify-center text-sm font-bold text-[var(--muted)]"
+            className="flex h-72 items-center justify-center font-mono-label text-stone"
           >
             Rendering diagram...
           </div>
