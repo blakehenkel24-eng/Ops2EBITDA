@@ -11,8 +11,13 @@ import {
   ChevronDown,
   Database,
   Factory,
+  Landmark,
   Menu,
   Package,
+  SearchCheck,
+  ShieldCheck,
+  Sparkles,
+  Waypoints,
   X,
 } from 'lucide-react';
 import { aiNavLinks } from '@/lib/aiForPE';
@@ -45,6 +50,12 @@ export function ClientNav() {
 
   const knowledgeActive = knowledgeLinks.some((link) => isActive(link.href));
   const aiActive = isActive('/ai-for-pe-professionals');
+  const aiIcons = {
+    '/ai-for-pe-professionals': Sparkles,
+    '/ai-for-pe-professionals/use-cases': Waypoints,
+    '/ai-for-pe-professionals/tool-landscape': SearchCheck,
+    '/ai-for-pe-professionals/guardrails': ShieldCheck,
+  };
 
   return (
     <>
@@ -117,6 +128,7 @@ export function ClientNav() {
           >
             {aiNavLinks.map((link) => {
               const active = isAiLinkActive(link.href);
+              const Icon = aiIcons[link.href as keyof typeof aiIcons] ?? Landmark;
               return (
                 <Link
                   key={link.href}
@@ -129,7 +141,7 @@ export function ClientNav() {
                   }`}
                   aria-current={active ? 'page' : undefined}
                 >
-                  <BrainCircuit size={15} strokeWidth={1.7} aria-hidden="true" />
+                  <Icon size={15} strokeWidth={1.7} aria-hidden="true" />
                   {link.label}
                 </Link>
               );
@@ -204,6 +216,7 @@ export function ClientNav() {
           <div className="ml-4 border-l border-line/80 pl-3">
             {aiNavLinks.slice(1).map((link) => {
               const active = isActive(link.href);
+              const Icon = aiIcons[link.href as keyof typeof aiIcons] ?? Landmark;
               return (
                 <Link
                   key={link.href}
@@ -214,7 +227,7 @@ export function ClientNav() {
                   }`}
                   aria-current={active ? 'page' : undefined}
                 >
-                  <BrainCircuit size={15} strokeWidth={1.7} aria-hidden="true" />
+                  <Icon size={15} strokeWidth={1.7} aria-hidden="true" />
                   {link.label}
                 </Link>
               );

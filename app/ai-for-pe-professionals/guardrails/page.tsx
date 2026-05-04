@@ -15,7 +15,7 @@ export default function AIGuardrailsPage() {
       <PageHeader
         eyebrow="AI for PE Professionals"
         title="Guardrails and data security."
-        summary="How to make AI feel safe enough for real PE work: approved tools, enterprise controls, data-room discipline, source review, and clear contract language."
+        summary="The practical control model for using AI in PE: enterprise licenses, legal language, data classification, permission discipline, and review standards."
       />
 
       <AIPillarNav />
@@ -23,25 +23,24 @@ export default function AIGuardrailsPage() {
       <section className="border-y border-line/80 py-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="font-mono-label text-accent">The honest answer</p>
+            <p className="font-mono-label text-accent">Control model</p>
             <h2 className="mt-3 max-w-2xl font-newsreader text-3xl text-ink">
-              AI data risk is manageable, but only if the firm treats it like a
-              normal enterprise-control problem.
+              Treat AI like any other enterprise system that touches
+              confidential work.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
             <p>
-              People are right to be cautious. PE work involves CIMs, data rooms,
-              board materials, customer information, employee data, legal
-              documents, and nonpublic financials. Those materials should not be
-              pasted into random consumer tools.
+              The facts matter more than the anxiety. Enterprise AI products can
+              provide contractual privacy terms, no-training commitments for
+              business data, admin controls, retention settings, encryption,
+              access management, auditability, and security documentation.
             </p>
             <p>
-              The good news is that enterprise AI products, approved data-room
-              platforms, and normal legal provisions can reduce the risk
-              substantially. The goal is not blind trust. The goal is controlled
-              usage: approved accounts, clear permissions, documented retention,
-              no-training commitments where available, and human review.
+              The right posture is straightforward: use approved enterprise
+              accounts, put AI language into legal documents, define what data
+              can go where, keep permissions attached to the underlying content,
+              and require human review before investment or client-ready use.
             </p>
           </div>
         </div>
@@ -75,10 +74,10 @@ export default function AIGuardrailsPage() {
             <p>
               This is not legal advice, but the practical checklist is
               straightforward. Engagement letters, NDAs, vendor agreements, and
-              portfolio company policies can address whether AI tools may be
-              used, which tools are approved, whether confidential information
-              can be uploaded, whether data can be retained or used for model
-              training, and who is responsible for reviewing AI-assisted work.
+              portfolio company policies can specify whether AI tools may be
+              used, which tools are approved, what confidential information may
+              be uploaded, whether customer content can be retained or used for
+              training, and who reviews AI-assisted work.
             </p>
             <p>
               For high-sensitivity matters, the default should be conservative:
@@ -94,7 +93,9 @@ export default function AIGuardrailsPage() {
         sources={sourceLinks.filter((source) =>
           [
             "OpenAI business data privacy",
+            "Claude Enterprise",
             "Anthropic data processor guidance",
+            "Google Workspace Gemini Privacy Hub",
             "Microsoft 365 Copilot data security",
             "Intralinks DealCentre AI overview",
           ].includes(source.label),

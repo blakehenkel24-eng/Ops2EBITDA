@@ -14,8 +14,8 @@ export default function AIUseCasesPage() {
     <div>
       <PageHeader
         eyebrow="AI for PE Professionals"
-        title="Top use cases for PE professionals."
-        summary="What investment teams, operating partners, and consultants are using AI for today: faster diligence, sharper memos, better portfolio monitoring, and more repeatable operating work."
+        title="Top use-case themes."
+        summary="Where AI is actually useful for PE professionals today: compressing diligence, improving judgment support, turning portfolio reporting into signal, and reusing firm knowledge."
       />
 
       <AIPillarNav />
@@ -23,24 +23,24 @@ export default function AIUseCasesPage() {
       <section className="border-y border-line/80 py-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="font-mono-label text-accent">What is actually useful</p>
+            <p className="font-mono-label text-accent">The real pattern</p>
             <h2 className="mt-3 max-w-2xl font-newsreader text-3xl text-ink">
-              The near-term value is not magic. It is compression of repetitive
-              knowledge work.
+              The value is one click above the task, not buried inside a single
+              task.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
             <p>
-              The best PE use cases usually sit where the work is document
-              heavy, time-sensitive, judgment-intensive, and repeated across
-              deals or portfolio companies. AI helps the team get to a sharper
-              first draft, a better question list, or a more complete issue tree
-              sooner.
+              The best use cases are not random prompts. They sit one level
+              above the repetitive work: diligence compression, IC pressure
+              testing, portfolio signal detection, value creation planning,
+              market mapping, and firm knowledge reuse.
             </p>
             <p>
-              It is most valuable when the human already knows what good work
-              looks like. The model can read, summarize, compare, draft, and
-              pressure-test. The professional still decides what matters.
+              AI creates leverage when the professional already has judgment and
+              process. The model reads, compares, drafts, structures, and
+              pressure-tests. The PE professional decides what deserves
+              conviction.
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function AIUseCasesPage() {
                   {useCase.title}
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-stone font-geist">
-                  {useCase.value}
+                  {useCase.take}
                 </p>
               </div>
               <div className="grid gap-4 text-sm leading-7 text-stone font-geist md:grid-cols-2">
@@ -74,12 +74,18 @@ export default function AIUseCasesPage() {
                   <p className="mt-2">{useCase.workflow}</p>
                 </div>
                 <div>
-                  <p className="font-mono-label text-stone">Output</p>
-                  <p className="mt-2">{useCase.output}</p>
+                  <p className="font-mono-label text-stone">Where it pays</p>
+                  <p className="mt-2">{useCase.payoff}</p>
                 </div>
-                <div>
-                  <p className="font-mono-label text-stone">Watch-out</p>
-                  <p className="mt-2">{useCase.caution}</p>
+                <div className="md:col-span-2">
+                  <p className="font-mono-label text-stone">Sub-use cases</p>
+                  <ul className="mt-2 grid gap-2 md:grid-cols-2">
+                    {useCase.examples.map((example) => (
+                      <li key={example} className="border-t border-line/80 pt-2">
+                        {example}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -92,6 +98,8 @@ export default function AIUseCasesPage() {
           [
             "McKinsey: Gen AI for outside-in diligence",
             "McKinsey: Gen AI in private markets",
+            "McKinsey: 2026 private equity report",
+            "BCG: Inside the AI-first PE firm",
             "Bain: Generative AI in M&A",
             "Bain: Generative AI in Private Equity",
             "PwC: GenAI for PE investment teams",

@@ -7,7 +7,7 @@ import { differences, projectExample, skillExamples } from "@/lib/aiForPE";
 export const metadata: Metadata = {
   title: "AI for PE Professionals | Ops2EBITDA",
   description:
-    "A plain-English starting point for AI projects, AI skills, skill.md files, and practical AI workflows for private equity professionals.",
+    "A practical starting point for AI projects, AI skills, skill.md files, and AI workflows for private equity professionals.",
 };
 
 export default function AIForPEProfessionalsPage() {
@@ -16,7 +16,7 @@ export default function AIForPEProfessionalsPage() {
       <PageHeader
         eyebrow="AI for PE Professionals"
         title="Start here."
-        summary="A plain-English guide to custom AI projects, AI skills, and why they matter for private equity work."
+        summary="A practical orientation to custom AI projects, AI skills, and why reusable AI workflows matter for private equity work."
       />
 
       <AIPillarNav />
@@ -24,23 +24,23 @@ export default function AIForPEProfessionalsPage() {
       <section className="border-y border-line/80 py-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="font-mono-label text-accent">The basic idea</p>
+            <p className="font-mono-label text-accent">Working mental model</p>
             <h2 className="mt-3 max-w-2xl font-newsreader text-3xl text-ink">
-              Most PE use cases are simple: give the AI better context, then ask
-              for the same useful output again and again.
+              The best AI workflows combine context, instructions, examples,
+              and a repeatable output standard.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
             <p>
-              A normal chatbot starts with almost no context. You paste
-              something in, ask a question, and get an answer. That works for
-              quick tasks, but it gets messy when the work repeats.
+              A blank chat is useful for quick work. It is less useful when the
+              task repeats across deals, portfolio companies, board cycles, and
+              diligence workstreams. That is where projects and reusable
+              instructions matter.
             </p>
             <p>
-              PE work repeats constantly. Diligence, board updates, IC memos,
-              KPI reviews, expert calls, and value creation plans all have
-              recurring inputs and recurring outputs. AI projects and AI skills
-              make those workflows easier to reuse.
+              The goal is not to make AI sound impressive. The goal is to make a
+              recurring professional workflow easier to run: same inputs, same
+              standards, better first draft, faster review cycle.
             </p>
           </div>
         </div>

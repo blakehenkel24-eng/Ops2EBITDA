@@ -1,11 +1,11 @@
 export const aiNavLinks = [
   { href: "/ai-for-pe-professionals", label: "Start Here" },
   { href: "/ai-for-pe-professionals/use-cases", label: "Top Use Cases" },
+  { href: "/ai-for-pe-professionals/tool-landscape", label: "Tool Landscape" },
   {
     href: "/ai-for-pe-professionals/guardrails",
     label: "Guardrails & Data Security",
   },
-  { href: "/ai-for-pe-professionals/tool-landscape", label: "Tool Landscape" },
 ];
 
 export const projectExample = [
@@ -69,211 +69,313 @@ export const skillExamples = [
 
 export const useCases = [
   {
-    title: "Outside-in diligence synthesis",
-    stakeholder: "Investment team, operating partner, diligence consultant",
-    value:
-      "Moves faster from document overload to a first operating view of the target.",
+    title: "Diligence compression",
+    stakeholder: "Deal teams, operating partners, diligence advisors",
+    take:
+      "The highest-confidence use case is not replacing diligence. It is getting from a messy source pack to the first real issue tree faster.",
     inputs:
-      "CIM, management presentation, expert-call notes, public filings, customer reviews, competitor pages, prior deal notes.",
+      "CIM, management deck, Q&A log, expert-call transcripts, customer notes, industry research, public filings, KPI definitions.",
     workflow:
-      "Create a deal project, load the source pack, ask the model to build an issue tree, extract operating claims, separate facts from assumptions, and list diligence questions by function.",
-    output:
-      "A sharper management-meeting guide, risk register, data-request list, and first-pass value creation hypotheses.",
-    caution:
-      "Use it to find questions and patterns, not to replace primary diligence or source verification.",
+      "Load the source set, force the model to separate evidence from assumptions, then ask for an issue tree by commercial, operational, financial, technology, and management diligence angle.",
+    payoff:
+      "A better first meeting guide, cleaner data request list, faster transcript synthesis, and fewer obvious gaps making it to the partner review.",
+    examples: [
+      "Turn a CIM and management deck into a diligence issue tree.",
+      "Compare five expert calls and isolate agreement, disagreement, and underwriting implications.",
+      "Extract every management claim that still needs proof.",
+      "Draft management meeting questions by function and by risk theme.",
+    ],
   },
   {
-    title: "IC memo pressure testing",
-    stakeholder: "Associate, VP, principal, investment committee prep lead",
-    value:
-      "Improves memo quality by finding weak claims before the committee does.",
+    title: "Investment judgment support",
+    stakeholder: "Associates, VPs, principals, IC prep leads",
+    take:
+      "AI is useful when it plays the skeptical reviewer: not deciding whether to invest, but finding where the argument is soft.",
     inputs:
-      "Draft IC memo, diligence findings, underwriting assumptions, market notes, Q&A log, management responses.",
+      "Draft IC memo, investment thesis, model assumptions, diligence findings, downside case, market notes, partner comments.",
     workflow:
-      "Ask the model to read like a skeptical IC member: identify unsupported claims, missing evidence, unclear risk ownership, and places where operating logic does not connect to valuation.",
-    output:
-      "A punch list of memo edits, diligence follow-ups, downside scenarios, and cleaner investment-thesis language.",
-    caution:
-      "The model can over-polish a weak thesis. Keep the critique grounded in actual evidence.",
+      "Ask it to read like the toughest IC member in the room: identify unsupported claims, circular logic, missing risks, valuation leaps, and places where the operating plan does not connect to the model.",
+    payoff:
+      "A tighter memo, sharper risk framing, better downside cases, and a clearer list of diligence still required before signing.",
+    examples: [
+      "Pressure-test the investment thesis against the evidence actually provided.",
+      "Translate diligence findings into IC-ready risks and mitigants.",
+      "Find the model assumptions that need operating proof.",
+      "Rewrite a vague thesis into specific value drivers, milestones, and evidence requirements.",
+    ],
   },
   {
-    title: "Board update and portfolio narrative drafting",
-    stakeholder: "Operating partner, portfolio ops team, CFO support",
-    value:
-      "Turns monthly reporting into a better discussion of what changed, why it changed, and what should happen next.",
+    title: "Portfolio signal intelligence",
+    stakeholder: "Operating partners, portfolio ops, CFO support teams",
+    take:
+      "The value is turning recurring reporting into a stronger operating signal: what changed, why it matters, and what deserves management attention.",
     inputs:
-      "KPI pack, budget variance, CEO notes, prior board deck, action tracker, sales pipeline, margin bridge.",
+      "Monthly KPI packs, budget variance, sales pipeline, churn data, margin bridge, action tracker, CEO notes, prior board decks.",
     workflow:
-      "Use a project with the board format and prior examples, then ask for a plain-English operating narrative organized by wins, misses, leading indicators, decisions needed, and follow-up questions.",
-    output:
-      "A draft board narrative, issue list, management questions, and follow-up agenda.",
-    caution:
-      "Finance and KPI math still need human review. AI is best at narrative structure and question generation.",
+      "Use the same review structure every month: trend changes, leading indicators, root-cause hypotheses, open actions, decisions needed, and questions for management.",
+    payoff:
+      "Cleaner board prep, faster issue spotting, better follow-through on open actions, and a more consistent view across portfolio companies.",
+    examples: [
+      "Summarize a KPI pack into board-level operating themes.",
+      "Compare this month to the prior three updates and flag changes in trend or tone.",
+      "Turn CFO notes into a tighter margin, cash, and growth narrative.",
+      "Create an early-warning memo for churn, pipeline quality, working capital, or covenant pressure.",
+    ],
   },
   {
-    title: "KPI root-cause diagnosis",
-    stakeholder: "Operating partner, portfolio analyst, functional leader",
-    value:
-      "Helps a team move from observing a metric miss to forming testable hypotheses.",
+    title: "Value creation operating leverage",
+    stakeholder: "Operating partners, functional advisors, management teams",
+    take:
+      "AI helps most when the firm already has a point of view on how value is created. It can turn that point of view into repeatable operating playbooks.",
     inputs:
-      "Metric definitions, monthly results, segment detail, pipeline data, customer cohorts, SKU data, labor or procurement data.",
+      "Diligence findings, KPI baseline, functional playbooks, org chart, customer cohorts, pricing files, procurement data, sales process notes.",
     workflow:
-      "Use a diagnostic skill to force the model to separate symptom, likely cause, data needed, operating lever, value impact, and next management question.",
-    output:
-      "An issue tree, data-request list, likely causes, and proposed operating interventions.",
-    caution:
-      "AI should suggest hypotheses. It should not pretend it has proven root cause without data.",
+      "Use AI to structure the workstream: baseline, hypotheses, data needed, operating levers, owner map, 30/60/90-day actions, and EBITDA or cash linkage.",
+    payoff:
+      "A faster first draft of the value creation plan and better reuse of firm expertise across similar situations.",
+    examples: [
+      "Build a 100-day plan from diligence notes and management priorities.",
+      "Create a pricing, procurement, sales productivity, or working capital workstream plan.",
+      "Convert an operating partner's checklist into a reusable project template.",
+      "Identify where AI itself can reduce cost or cycle time inside a portfolio company.",
+    ],
   },
   {
-    title: "Expert call and management meeting synthesis",
-    stakeholder: "Deal team, diligence lead, consultant",
-    value:
-      "Finds recurring themes, contradictions, and open questions across messy transcript material.",
+    title: "Origination and market mapping",
+    stakeholder: "Business development, investment teams, strategy teams",
+    take:
+      "AI will not create proprietary deal flow by itself, but it can make thesis research and market mapping much less manual.",
     inputs:
-      "Expert call transcripts, interview notes, prepared questions, thesis notes, market map.",
+      "Investment criteria, known targets, competitor names, trade associations, founder-led company lists, web research, CRM notes, conference lists.",
     workflow:
-      "Load transcripts into a source-grounded workspace and ask for themes by diligence topic, contradictory evidence, quotes to revisit, and implications for underwriting.",
-    output:
-      "A synthesis memo, quote bank, contradiction log, and follow-up question set.",
-    caution:
-      "Transcripts can be noisy. Ask the model to cite speaker/source and avoid over-weighting one anecdote.",
+      "Start with a thesis, then ask AI tools to expand the universe, classify companies, explain why each fits or does not fit, and identify source evidence to verify.",
+    payoff:
+      "Faster theme development, better long lists, cleaner market maps, and more targeted outreach preparation.",
+    examples: [
+      "Map niche verticals where traditional databases are incomplete.",
+      "Find lookalike companies based on business model, customer type, and operating signals.",
+      "Draft thesis-specific outreach angles from public company evidence.",
+      "Summarize market structure before a banker meeting or conference.",
+    ],
   },
   {
-    title: "Market mapping and white-space research",
-    stakeholder: "Origination, strategy, investment team",
-    value:
-      "Accelerates the early map of a market before the team spends expensive human hours on deeper work.",
+    title: "Firm knowledge reuse",
+    stakeholder: "Investment teams, portfolio teams, platform leaders",
+    take:
+      "The underappreciated use case is institutional memory. PE firms repeat patterns, but the knowledge is often buried in old memos, decks, diligence folders, and partner comments.",
     inputs:
-      "Target description, industry keywords, competitor names, customer segments, trade associations, public company comps.",
+      "Prior IC memos, board decks, investment theses, diligence reports, playbooks, operating templates, portfolio case studies.",
     workflow:
-      "Use web research tools to build a rough market map, then ask for segments, competitors, value-chain roles, demand drivers, red flags, and sources to verify.",
-    output:
-      "A starter market map, competitor table, diligence angles, and source list.",
-    caution:
-      "AI research can miss private companies and niche terminology. Treat the output as a starting map.",
-  },
-  {
-    title: "Portfolio monitoring and early-warning summaries",
-    stakeholder: "Portfolio ops team, deal team, CFO, board prep owner",
-    value:
-      "Surfaces emerging issues earlier by comparing repeated updates in a consistent format.",
-    inputs:
-      "Monthly KPI packs, action trackers, covenant reporting, pipeline updates, customer churn notes, margin bridges.",
-    workflow:
-      "Create a recurring project that compares current-period updates to prior months and asks for changes in trend, tone, risk, and management follow-through.",
-    output:
-      "Early-warning memo, open-action tracker, watchlist, and board-prep questions.",
-    caution:
-      "The data model matters. Bad metric definitions or inconsistent reporting will limit the value.",
-  },
-  {
-    title: "Value creation plan drafting",
-    stakeholder: "Operating partner, investment team, management team",
-    value:
-      "Converts diligence findings into an initial operating agenda faster.",
-    inputs:
-      "Diligence workstreams, KPI baseline, management priorities, org chart, synergy model, first-100-days template.",
-    workflow:
-      "Ask the model to group opportunities by workstream, assign likely owners, identify quick wins versus hard changes, and tie each lever to EBITDA, cash, risk, or growth.",
-    output:
-      "Draft 100-day plan, workstream list, owner map, KPI dashboard outline, and first data requests.",
-    caution:
-      "Management buy-in and operating feasibility are still human work.",
+      "Create approved repositories and retrieval workflows so teams can ask, 'where have we seen this before?' without manually searching old folders.",
+    payoff:
+      "Better reuse of prior work, faster onboarding, stronger pattern recognition, and less dependence on whoever remembers the last similar deal.",
+    examples: [
+      "Pull precedent risks from prior deals in the same sector.",
+      "Find old board narratives that handled similar KPI patterns.",
+      "Create a house-style memo assistant grounded in prior approved examples.",
+      "Summarize firm playbooks into reusable workflows for analysts and operating partners.",
+    ],
   },
 ];
 
 export const guardrailPractices = [
   {
-    title: "Use enterprise or approved business accounts",
-    body: "Consumer AI accounts are usually the wrong place for deal data. Enterprise and business products typically add admin controls, contractual terms, training protections, auditability, and support paths that a free account will not provide.",
+    title: "Use enterprise accounts for enterprise data",
+    body: "The security posture changes materially when a firm uses approved business or enterprise accounts. Look for contractual commitments, admin controls, SSO, MFA, audit logs, role-based access, retention settings, and clear language on whether customer content is used for model training.",
   },
   {
-    title: "Write the AI policy in normal business language",
-    body: "The policy should say what data can be used, which tools are approved, when redaction is required, who can upload data-room material, and what outputs need human review.",
+    title: "Classify tools by data sensitivity",
+    body: "A practical policy does not need to be long. Define which tools can handle public research, internal operating documents, data-room exports, board materials, customer data, employee data, and legal material. Then make the approved path easy to follow.",
   },
   {
-    title: "Put AI terms into contracts and engagement letters",
-    body: "For consultants, vendors, advisors, and portfolio company teams, add provisions covering approved tools, confidential information, client data, model training, retention, subcontractors, audit rights, and breach notification. Legal counsel should own the final language.",
+    title: "Put AI use into legal documents",
+    body: "Engagement letters, NDAs, vendor agreements, portfolio company policies, and consultant SOWs can address approved tools, confidential information, data retention, model training, subprocessors, audit rights, breach notification, and human review obligations.",
   },
   {
-    title: "Use source-grounded workflows for sensitive work",
-    body: "For diligence and board work, prefer tools that can cite the source file or passage behind a claim. This makes the output easier to review and less likely to become unsupported narrative.",
+    title: "Prefer source-grounded workflows",
+    body: "For diligence, board work, and investment memos, outputs should cite the file, transcript, or passage behind material claims. Source grounding makes review faster and reduces the chance that polished language turns into unsupported conviction.",
   },
   {
-    title: "Separate confidential data from public research",
-    body: "Use public web tools for market mapping and source discovery. Use approved enterprise workspaces or secure deal platforms for confidential CIMs, transcripts, board decks, financials, and data-room exports.",
+    title: "Keep permissions attached to the content",
+    body: "The best AI deployments inherit existing permissions from Microsoft 365, Google Workspace, Slack, data rooms, or internal repositories. If a user should not see a document normally, AI should not surface it through search or chat.",
   },
   {
-    title: "Keep permissions boring and strict",
-    body: "Role-based access, least privilege, MFA, document permissions, logging, and retention controls matter more than clever prompts. AI should inherit strong access controls, not bypass them.",
+    title: "Govern the workflow, not just the model",
+    body: "Prompt rules are not governance. The operating model should define approved use cases, data classes, review requirements, output labeling, escalation paths, and who owns the policy as tools and contracts change.",
   },
 ];
 
 export const toolLandscape = [
   {
-    name: "Claude Projects and Skills",
-    opinion: "Best default for reusable AI skill workflows.",
+    name: "Claude",
+    category: "General enterprise AI workspace",
+    opinion: "Best default for serious PE knowledge work.",
     bestFor:
-      "Reusable skill.md workflows, long-form reasoning, structured diligence support, writing and rewriting operating narratives, and project-based work with source context.",
+      "Long-context synthesis, structured reasoning, writing quality, reusable Projects, artifacts, and repeatable workflows. Claude is the tool I would push hardest for operating partners and deal professionals who want one primary AI workspace.",
+    whyUse:
+      "It is especially strong at turning messy materials into clean judgment support: issue trees, memo rewrites, board narratives, diligence questions, and operating plans. Claude Skills also make it the cleanest home for reusable workflow files when a firm wants repeatability.",
     limitations:
-      "Teams still need an enterprise setup, clear data policy, and review discipline. Claude is not a diligence database by itself.",
-    source: "https://support.claude.com/en/articles/12512176-what-are-skills",
+      "It is not a financial database, expert network, data room, or CRM. The firm still needs approved enterprise setup, source discipline, and human review.",
+    source: "https://claude.com/pricing/enterprise",
   },
   {
-    name: "ChatGPT Projects and GPTs",
-    opinion: "Strong general-purpose workspace, less direct for portable skills.",
+    name: "ChatGPT",
+    category: "General enterprise AI workspace",
+    opinion: "Best broad platform, especially where OpenAI is already approved.",
     bestFor:
-      "General research, project workspaces, brainstorming, drafting, analysis support, and custom assistants with instructions and files.",
+      "General analysis, brainstorming, drafting, data work, custom GPTs, Projects, app integrations, and broad enterprise adoption. It is often the easiest tool to roll out because people already know how to use it.",
+    whyUse:
+      "Use ChatGPT when you want a flexible horizontal AI layer across the firm, especially for analysts and associates who need a fast generalist for research, drafting, spreadsheet thinking, and workflow experimentation.",
     limitations:
-      "Can approximate skill behavior, but does not map as naturally to portable skill.md-style folders.",
-    source: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+      "It can support repeatable assistants, but Claude is cleaner for reusable skill-style operating methods. For PE-specific content, ChatGPT still needs strong source context and firm rules.",
+    source: "https://openai.com/index/business-data",
   },
   {
     name: "NotebookLM",
-    opinion: "Best for source-grounded study of a document set.",
+    category: "Source-grounded research notebook",
+    opinion: "Best for studying a fixed source pack.",
     bestFor:
-      "CIMs, transcripts, strategy decks, public research packs, management notes, and fast source-grounded synthesis.",
+      "CIMs, transcripts, strategy decks, public research packs, diligence notes, and source-grounded Q&A. It is excellent when the question is, 'what do these documents say?'",
+    whyUse:
+      "Use it as a reading room. The product shines when the source boundary matters and the user wants fast synthesis, citation-backed answers, briefing documents, and study-style outputs from a defined notebook.",
     limitations:
-      "Better as a research notebook than a reusable workflow system.",
+      "It is less compelling as a firmwide workflow engine. It helps you understand sources, but it will not replace a full diligence platform, data room, or operating playbook system.",
     source:
-      "https://support.google.com/notebooklm/answer/16215270?co=GENIE.Platform%3DDesktop&hl=en",
+      "https://support.google.com/a/answer/15706919?hl=en-VI&ref_topic=13853688",
   },
   {
-    name: "Perplexity Spaces",
-    opinion: "Best for external market research and source discovery.",
+    name: "Perplexity",
+    category: "External research and source discovery",
+    opinion: "Best for fast public-market and web research.",
     bestFor:
-      "Market scans, competitor research, source finding, public-company context, industry primers, and white-space mapping.",
+      "Market scans, competitor research, source discovery, industry primers, and public-company context. It is useful when the answer should start with current external sources rather than internal files.",
+    whyUse:
+      "Use it at the beginning of a market map or diligence sprint to find sources, terminology, competitors, and public evidence. It is a research accelerator, not a private-market truth machine.",
     limitations:
-      "Less suited for confidential internal data unless the firm has approved the setup.",
+      "Private company coverage will be uneven, and confidential work should stay inside approved enterprise workflows.",
     source:
-      "https://www.perplexity.ai/help-center/en/articles/10352961-what-are-spaces",
+      "https://www.perplexity.ai/help-center/en/articles/10352973-what-is-enterprise-pro",
   },
   {
-    name: "Microsoft 365 Copilot Agents",
-    opinion: "Best when the firm already runs on Microsoft 365.",
+    name: "Microsoft 365 Copilot",
+    category: "Enterprise productivity and internal knowledge",
+    opinion: "Best if the firm lives in Microsoft.",
     bestFor:
-      "Enterprise search, internal document workflows, SharePoint context, permissions-aware knowledge work, and firm-managed agents.",
+      "SharePoint, Teams, Outlook, Word, Excel, PowerPoint, internal document search, and permissions-aware productivity workflows.",
+    whyUse:
+      "Use it when the firm wants AI inside the existing Microsoft estate rather than another standalone destination. Its biggest advantage is proximity to the work people already do.",
     limitations:
-      "The quality depends heavily on tenant hygiene, permissions, and how well the firm has organized its files.",
+      "Quality depends on tenant hygiene. Bad permissions, duplicate files, stale folders, and inconsistent naming will show up in the AI experience.",
     source:
       "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder-build",
   },
   {
-    name: "Gemini Gems and Workspace Gemini",
-    opinion: "Useful for lightweight saved assistants and Google-native teams.",
+    name: "Gemini for Workspace",
+    category: "Google-native productivity",
+    opinion: "Useful for Google-native firms, but not my first PE default.",
     bestFor:
-      "Saved task styles, Google Workspace users, document support, email and productivity workflows, and simple recurring assistants.",
+      "Gmail, Docs, Sheets, Slides, Drive, and Google-native productivity. NotebookLM also gives Google a strong source-grounded research angle.",
+    whyUse:
+      "Use it when the firm already runs on Google Workspace and wants AI inside that permission and admin environment.",
     limitations:
-      "Less compelling than Claude for structured PE skill packages.",
+      "For PE professionals choosing one primary AI product, I would still favor Claude for reasoning, writing, and reusable workflows.",
     source: "https://support.google.com/gemini/answer/15236321?hl=en",
   },
   {
-    name: "AI-enabled data rooms and diligence platforms",
-    opinion: "Best when the workflow starts inside a controlled data room.",
+    name: "Hebbia",
+    category: "AI diligence and document workflow platform",
+    opinion: "Best known for high-stakes document-heavy financial workflows.",
     bestFor:
-      "Large data-room review, permissioned Q&A, redaction, document summaries, secure buyer/seller collaboration, and audit trails.",
+      "Data-room review, diligence synthesis, investment research, agentic workflows, and structured analysis across large volumes of documents.",
+    whyUse:
+      "Use Hebbia when the pain is not 'I need a chatbot,' but 'I need a finance-oriented AI system that can work through a large diligence corpus with traceability and repeatable process.'",
     limitations:
-      "Often narrower and more expensive than general AI tools, but better aligned with sensitive transaction material.",
+      "It is a specialized platform, so cost and workflow fit matter. It should be evaluated against the firm's actual diligence volume and process maturity.",
+    source: "https://www.hebbia.com/blog/private-equity-ai",
+  },
+  {
+    name: "Onyx",
+    category: "Enterprise search and internal AI layer",
+    opinion: "Best for firms that want an internal knowledge layer they can control.",
+    bestFor:
+      "Enterprise search, internal knowledge Q&A, RAG, connectors, permission-aware retrieval, and AI access across firm systems.",
+    whyUse:
+      "Use Onyx when the problem is fragmented firm knowledge: old decks, Slack, Drive, SharePoint, CRM notes, and operational documents scattered across systems.",
+    limitations:
+      "It is infrastructure-like. The value depends on implementation, connectors, permissions, and ongoing knowledge hygiene.",
+    source: "https://onyx.app/search",
+  },
+  {
+    name: "AlphaSense",
+    category: "Market intelligence and expert transcript search",
+    opinion: "Best for premium market intelligence and external research depth.",
+    bestFor:
+      "Public-company research, broker research, earnings transcripts, expert calls, news, competitive intelligence, and thematic market work.",
+    whyUse:
+      "Use AlphaSense when external content coverage matters more than flexible workflow design. It is a research platform first, not a general operating-partner workspace.",
+    limitations:
+      "It can be expensive and will not replace internal firm context, data rooms, or custom operating workflows.",
+    source: "https://www.alpha-sense.com/",
+  },
+  {
+    name: "S&P Capital IQ Pro AI",
+    category: "Financial data and market intelligence",
+    opinion: "Best when AI needs to sit on top of trusted market data.",
+    bestFor:
+      "Company data, financials, filings, transcripts, private markets data, market intelligence, and AI-assisted research inside Capital IQ Pro.",
+    whyUse:
+      "Use it when the answer must connect to an institutional data platform. For many investment teams, the advantage is not the AI alone, it is AI plus trusted S&P data.",
+    limitations:
+      "It is strongest inside the S&P ecosystem. It is not the place to run custom operating workflows across a firm's own deal materials.",
+    source:
+      "https://www.spglobal.com/market-intelligence/en/solutions/artificial-intelligence/professional-services-ai-solutions",
+  },
+  {
+    name: "PitchBook",
+    category: "Private-market data",
+    opinion: "Best for verified private-market data access.",
+    bestFor:
+      "Private companies, investors, funds, deals, valuation context, financing history, ownership, and market mapping.",
+    whyUse:
+      "Use PitchBook when the question depends on structured private-market data rather than open web search. The ChatGPT integration also makes it easier to query that data from an AI workflow.",
+    limitations:
+      "It is data infrastructure, not a replacement for diligence synthesis or portfolio operating work.",
+    source: "https://openai.com/business/apps/pitchbook/",
+  },
+  {
+    name: "Grata",
+    category: "Private-company sourcing and market mapping",
+    opinion: "Best for founder-led and private-company discovery.",
+    bestFor:
+      "Deal sourcing, niche market mapping, private-company discovery, thesis lists, and outreach preparation.",
+    whyUse:
+      "Use Grata when the team is trying to define a private-company universe that traditional databases may under-cover.",
+    limitations:
+      "AI can improve discovery, but it does not verify owner willingness, relationship warmth, or proprietary access.",
+    source: "https://grata.com/ai",
+  },
+  {
+    name: "FactSet Mercury and Dealmakers AI",
+    category: "Financial data, banking, and deal workflow",
+    opinion: "Strong for firms already standardized on FactSet.",
+    bestFor:
+      "Market data, banking workflows, pitch creation, document ingest, and AI-assisted research inside the FactSet ecosystem.",
+    whyUse:
+      "Use it when the firm already relies on FactSet and wants AI in the same research and dealmaking environment.",
+    limitations:
+      "Like S&P, the advantage is ecosystem depth. It is less relevant if the firm needs a flexible general AI workspace or custom PE operating toolkit.",
+    source: "https://investor.factset.com/node/18036/pdf",
+  },
+  {
+    name: "AI-enabled data rooms",
+    category: "Transaction control layer",
+    opinion: "Best when sensitive transaction material should stay in the data room.",
+    bestFor:
+      "Large document review, permissioned Q&A, summaries, redaction, buyer-seller workflows, audit trails, and secure collaboration.",
+    whyUse:
+      "Use data-room AI when the workflow begins with confidential transaction documents and the permission model matters as much as the summary quality.",
+    limitations:
+      "These tools are narrower than general AI workspaces, but the control environment can be exactly the point.",
     source:
       "https://support.intralinks.com/hc/en-us/articles/13607163211163-Overview-DealCentre-AI",
   },
@@ -287,6 +389,14 @@ export const sourceLinks = [
   {
     label: "McKinsey: Gen AI in private markets",
     href: "https://www.mckinsey.com/industries/private-capital/our-insights/harnessing-the-power-of-gen-ai-in-private-markets",
+  },
+  {
+    label: "McKinsey: 2026 private equity report",
+    href: "https://www.mckinsey.com/industries/private-capital/our-insights/global-private-markets-report/private-equity",
+  },
+  {
+    label: "BCG: Inside the AI-first PE firm",
+    href: "https://www.bcg.com/publications/2026/inside-the-ai-first-private-equity-firm",
   },
   {
     label: "Bain: Generative AI in M&A",
@@ -305,12 +415,48 @@ export const sourceLinks = [
     href: "https://openai.com/index/business-data",
   },
   {
+    label: "Claude Enterprise",
+    href: "https://claude.com/pricing/enterprise",
+  },
+  {
     label: "Anthropic data processor guidance",
     href: "https://support.anthropic.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller",
   },
   {
+    label: "Google Workspace Gemini Privacy Hub",
+    href: "https://support.google.com/a/answer/15706919?hl=en-VI&ref_topic=13853688",
+  },
+  {
     label: "Microsoft 365 Copilot data security",
     href: "https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-privacy?azure-portal=true",
+  },
+  {
+    label: "Onyx enterprise search",
+    href: "https://onyx.app/search",
+  },
+  {
+    label: "Hebbia: AI in private equity",
+    href: "https://www.hebbia.com/blog/private-equity-ai",
+  },
+  {
+    label: "AlphaSense market intelligence",
+    href: "https://www.alpha-sense.com/",
+  },
+  {
+    label: "S&P Capital IQ Pro AI",
+    href: "https://www.spglobal.com/market-intelligence/en/solutions/artificial-intelligence/professional-services-ai-solutions",
+  },
+  {
+    label: "PitchBook in ChatGPT",
+    href: "https://openai.com/business/apps/pitchbook/",
+  },
+  {
+    label: "Grata AI deal sourcing",
+    href: "https://grata.com/ai",
+  },
+  {
+    label: "FactSet AI pitch creator",
+    href: "https://investor.factset.com/node/18036/pdf",
   },
   {
     label: "Intralinks DealCentre AI overview",
