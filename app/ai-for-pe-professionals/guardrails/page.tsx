@@ -53,8 +53,8 @@ export default function AIGuardrailsPage() {
           <div>
             <p className="font-mono-label text-accent">Admin procedure</p>
             <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              Let IT manage the back end so professionals can use the tools
-              confidently.
+              Major enterprise AI providers already have robust retention and
+              privacy controls in place.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
