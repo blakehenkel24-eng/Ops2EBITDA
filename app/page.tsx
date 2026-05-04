@@ -32,11 +32,36 @@ const operatingAgendas = [
 ];
 
 const valueSteps = [
-  { label: "Problem", tint: "var(--color-accent-soft)", color: "text-accent" },
-  { label: "Diagnostic", tint: "var(--color-teal-soft)", color: "text-teal" },
-  { label: "Action", tint: "var(--color-amber-soft)", color: "text-amber" },
-  { label: "KPI", tint: "var(--color-plum-soft)", color: "text-plum" },
-  { label: "Enterprise value", tint: "var(--color-accent-soft)", color: "text-accent" },
+  { 
+    label: "Identify Leakage", 
+    desc: "Pinpoint margin degradation or trapped working capital.", 
+    tint: "var(--color-accent-soft)", 
+    color: "text-accent" 
+  },
+  { 
+    label: "Root Cause", 
+    desc: "Isolate the operational friction or data gap.", 
+    tint: "var(--color-teal-soft)", 
+    color: "text-teal" 
+  },
+  { 
+    label: "Execute Playbook", 
+    desc: "Deploy standard operating procedures and tech.", 
+    tint: "var(--color-amber-soft)", 
+    color: "text-amber" 
+  },
+  { 
+    label: "Track Impact", 
+    desc: "Measure EBITDA lift and cash conversion.", 
+    tint: "var(--color-plum-soft)", 
+    color: "text-plum" 
+  },
+  { 
+    label: "Exit Narrative", 
+    desc: "Frame the fix as a de-risked, scalable capability.", 
+    tint: "var(--color-accent-soft)", 
+    color: "text-accent" 
+  },
 ];
 
 export default function Home() {
@@ -196,6 +221,9 @@ export default function Home() {
                 </p>
                 <p className="mt-3 text-base font-newsreader text-ink">
                   {step.label}
+                </p>
+                <p className="mt-2 text-sm leading-5 text-stone font-geist">
+                  {step.desc}
                 </p>
               </li>
             ),

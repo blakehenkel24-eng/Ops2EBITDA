@@ -1,0 +1,116 @@
+{
+  "slug": "franchise-model",
+  "title": "Franchise Model",
+  "type": "industry",
+  "summary": "Asset-light franchisors generating highly predictable royalty streams by scaling proven operational concepts through independent owner-operators.",
+  "businessModel": "Developing a proprietary brand, operating system, and supply chain, and licensing it to independent franchisees who invest the capital to open and operate local units.",
+  "revenueModel": "Highly recurring royalty fees (typically 4-8% of franchisee gross sales), initial franchise fees (one-time upon signing), and mandatory marketing fund contributions.",
+  "costStructure": "Corporate overhead (legal, marketing, executive team), franchise development (sales), and field support personnel. Extremely capital-light.",
+  "keyKpis": [
+    "Franchisee Average Unit Volume (AUV)",
+    "System-Wide Sales Growth",
+    "Franchise Development Sales (Units Awarded)",
+    "Royalty Compliance / Collection Rate",
+    "Franchisee Unit Economics (EBITDA per unit)"
+  ],
+  "whyPeLikesIt": "The ultimate asset-light model. Franchisors generate massive, high-margin cash flows without the capital expenditure or labor headaches of operating physical locations, yielding incredibly high Returns on Invested Capital (ROIC).",
+  "investmentThesis": "Acquire a high-performing regional franchisor, aggressively accelerate unit growth by professionalizing the franchise sales engine, optimize franchisee unit economics to ensure system health, and acquire complementary franchise brands to build a multi-brand platform.",
+  "diligenceQuestions": [
+    "What is the true health of the franchisees (Item 19 FDD disclosures vs. reality)?",
+    "Is growth driven by selling new units or by organic AUV growth at existing units?",
+    "What is the litigation history and relationship with the Franchise Advisory Council (FAC)?"
+  ],
+  "operationalIssues": [
+    "Poor franchisee profitability leading to unit closures and brand degradation.",
+    "A weak franchise development (sales) engine reliant on organic leads.",
+    "Lack of technological integration between corporate and franchisees, preventing real-time data visibility."
+  ],
+  "valueCreationLevers": [
+    "Accelerating franchise development (unit sales)",
+    "Improving franchisee Average Unit Volume (AUV) and four-wall EBITDA",
+    "Supply chain rebates and procurement aggregation",
+    "Multi-brand platform consolidation (shared services)",
+    "Digital marketing and centralized lead generation"
+  ],
+  "projectPlaybooks": [
+    "Sales Productivity Improvement",
+    "Procurement Savings",
+    "Management Operating Cadence"
+  ],
+  "aiOpportunities": [
+    "Predictive site selection models using demographic and mobility data to optimize territory mapping.",
+    "AI-driven local marketing campaigns customized for each franchisee's territory.",
+    "Automated compliance auditing using computer vision on franchisee store cameras."
+  ],
+  "risks": [
+    "Joint-employer regulatory rulings classifying franchisees as employees.",
+    "Franchisee rebellion or class-action litigation.",
+    "Brand reputation damage caused by a single rogue operator.",
+    "Saturated territories limiting future development."
+  ],
+  "hundredDayPlan": [
+    "Audit and professionalize the Franchise Disclosure Document (FDD) to improve unit sales.",
+    "Implement daily data scraping of franchisee Point of Sale (POS) systems for real-time visibility.",
+    "Establish a shared-services back office if executing a multi-brand strategy."
+  ],
+  "exitReadiness": [
+    "A massive, predictable, recurring royalty stream from hundreds of open units.",
+    "A sold-out territory map with a multi-year backlog of paid, unopened units.",
+    "Exceptionally strong franchisee validation and unit-level profitability."
+  ],
+  "representativeExamples": [
+    "Roark Capital (Inspire Brands)",
+    "Neighborly",
+    "Driven Brands"
+  ],
+  "relatedPlaybooks": [
+    "Sales Productivity Improvement",
+    "Add-on Acquisition Integration",
+    "Procurement Savings"
+  ],
+  "relatedKpis": [
+    "EBITDA Margin",
+    "Revenue Growth",
+    "Retention"
+  ],
+  "tags": [
+    "industry",
+    "Franchising",
+    "Consumer",
+    "Asset-Light"
+  ],
+  "articleSections": [
+    {
+      "title": "Accelerating the Franchise Development Engine",
+      "body": [
+        "In the franchisor model, enterprise value is intrinsically tied to 'System-Wide Sales' (the total gross revenue of all franchisees), which is driven by two factors: Average Unit Volume (AUV) and total unit count. The most explosive value creation lever for a PE sponsor is professionalizing and accelerating the 'Franchise Development' (FranDev) engine. Many founder-led brands grow organically, relying on word-of-mouth or customer inquiries to sell new territories. We transform FranDev into a highly aggressive, data-driven B2B sales organization.",
+        "This transformation requires significant investment in lead generation, utilizing franchise broker networks (like FranNet), targeted digital marketing, and sophisticated CRM systems to track the pipeline of prospective owners. We redefine the 'Ideal Franchisee Profile'—shifting away from undercapitalized owner-operators who buy a single unit to 'buy a job,' and aggressively targeting multi-unit, well-capitalized institutional operators. Selling a 10-unit development agreement to an experienced operator guarantees faster unit openings, fewer operational headaches, and highly predictable royalty growth.",
+        "We measure the velocity of this engine through 'Units Awarded' and the 'Backlog' of signed but unopened units. A robust backlog provides massive visibility into future royalty streams. For a franchisor trading at a premium multiple, the PE sponsor must prove to the next buyer that the territory map is vast, the unit economics are attractive, and the FranDev engine is capable of consistently opening 50 to 100 new units annually without degrading the quality of the operator base."
+      ],
+      "callout": "Franchising is an aggressive B2B sales organization disguised as a consumer brand. Scaling unit count through institutional, multi-unit operators is the fastest path to outsized returns."
+    },
+    {
+      "title": "Optimizing Franchisee Unit Economics",
+      "body": [
+        "The fatal flaw of many franchisors is focusing exclusively on collecting royalty checks while ignoring the financial health of the underlying franchisees. If unit-level profitability deteriorates, franchisees cannot secure financing to open new locations, they stop paying royalties, and they eventually sue the franchisor—a catastrophic event for enterprise value. The sophisticated PE playbook dictates that the franchisor must be utterly obsessed with 'Four-Wall EBITDA' at the franchisee level. Strong unit economics are the engine of system growth.",
+        "We enforce this by implementing mandatory, standardized Point of Sale (POS) and accounting systems across the entire network. This provides the corporate office with real-time, daily visibility into the P&L of every single unit. Operating Partners utilize this data to benchmark performance, identifying the top quartile of operators and distilling their operational tactics into standardized playbooks. Field Support Consultants are then deployed not as compliance cops, but as business coaches, armed with data to help the bottom quartile reduce labor costs, optimize local marketing spend, and improve AUV.",
+        "Furthermore, the franchisor acts as a massive procurement aggregator. By pooling the purchasing power of hundreds of units, we negotiate deep discounts on equipment, software, and raw materials, passing those savings down to the franchisees to bolster their margins. When a franchisor can explicitly prove in their FDD (Item 19) that their average franchisee generates a 20%+ EBITDA margin and a two-year cash-on-cash return, selling new franchise territories becomes frictionless. Healthy franchisees validate the system, fueling the FranDev growth engine."
+      ]
+    },
+    {
+      "title": "The Multi-Brand Platform and Shared Services",
+      "body": [
+        "A dominant strategy in modern Private Equity franchising is the 'Platform Roll-Up' or 'Multi-Brand' strategy. Because the core competencies of a franchisor—legal compliance, real estate site selection, franchise sales, and digital marketing—are completely agnostic to the underlying product, PE firms acquire multiple disparate brands and consolidate them under a single corporate umbrella. Examples include Neighborly (home services) or Inspire Brands (QSR restaurants). This structure unlocks massive operational leverage.",
+        "Value creation is achieved by stripping out the redundant corporate overhead from the acquired brands and migrating them onto the platform's 'Shared Services' infrastructure. A newly acquired brand no longer needs its own CFO, its own IT department, or its own franchise development team; these functions are handled by highly sophisticated, centralized teams. This allows the acquired brand's leadership to focus entirely on product innovation and franchisee field support.",
+        "Crucially, the multi-brand platform also creates a captive, proprietary ecosystem for cross-selling. A highly successful, well-capitalized franchisee who owns five territory rights for a platform's HVAC brand is the perfect lead for the platform's newly acquired Plumbing or Electrical brand. This internal, frictionless cross-selling dramatically lowers the cost of franchise development. At exit, a multi-brand platform is viewed as an incredibly resilient, highly diversified royalty generator, commanding the absolute highest valuation multiples in the industry."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Franchise operating value tree",
+      "description": "A compact view of the levers that connect franchisor economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"Franchisor economics\"] --> B[\"Franchise Development (Unit Sales)\"]\n  A --> C[\"Franchisee Unit Economics (AUV)\"]\n  A --> D[\"Shared Services Platform\"]\n  B --> E[\"Royalty Stream Growth\"]\n  C --> F[\"System Health & Validation\"]\n  D --> G[\"Margin Expansion (Corporate)\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

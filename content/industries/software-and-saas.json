@@ -1,0 +1,124 @@
+{
+  "slug": "software-and-saas",
+  "title": "Software & B2B SaaS",
+  "type": "industry",
+  "summary": "High-margin, recurring revenue technology businesses where value is driven by the 'Rule of 40', net revenue retention (NRR), and efficient customer acquisition.",
+  "businessModel": "Developing and hosting proprietary software applications, licensing access to B2B enterprise or SMB customers on a subscription basis.",
+  "revenueModel": "Highly recurring Annual Recurring Revenue (ARR) subscriptions, tiered by user count, usage volume, or feature sets, often supplemented by one-time professional services.",
+  "costStructure": "Predominantly human capital (software engineers for R&D, sales reps for S&M) and cloud hosting infrastructure (AWS/Azure/GCP).",
+  "keyKpis": [
+    "Annual Recurring Revenue (ARR) Growth",
+    "Net Revenue Retention (NRR)",
+    "Customer Acquisition Cost (CAC) Payback Period",
+    "Rule of 40 (Growth Rate + EBITDA Margin)",
+    "Gross Revenue Retention (GRR)"
+  ],
+  "whyPeLikesIt": "Software offers the ultimate business model: near-zero marginal cost of replication, extreme revenue predictability via subscriptions, high switching costs, and the ability to scale globally with minimal CapEx.",
+  "investmentThesis": "Acquire a mission-critical SaaS platform, transition any legacy on-premise licenses to cloud subscriptions, professionalize the Go-To-Market (GTM) motion to lower CAC, and execute product-led add-ons to drive NRR.",
+  "diligenceQuestions": [
+    "What is the true Net Revenue Retention (NRR) excluding price increases?",
+    "Is the codebase technically sound, or is there massive hidden technical debt?",
+    "What is the fully burdened CAC Payback period by customer segment?"
+  ],
+  "operationalIssues": [
+    "Inefficient Sales & Marketing spend leading to unacceptably long CAC payback periods (>24 months).",
+    "High customer churn masking underlying product deficiencies.",
+    "R&D resources misallocated to custom client features rather than scalable core product development."
+  ],
+  "valueCreationLevers": [
+    "Go-To-Market (GTM) efficiency and pricing/packaging optimization",
+    "Migrating from legacy perpetual licenses to SaaS ARR",
+    "Customer Success professionalization to drive NRR",
+    "Offshoring/nearshoring R&D talent to expand margins",
+    "Strategic M&A to acquire adjacent modules and cross-sell"
+  ],
+  "projectPlaybooks": [
+    "Pricing Optimization",
+    "Sales Productivity Improvement",
+    "Customer Retention & Churn Reduction"
+  ],
+  "aiOpportunities": [
+    "AI-driven coding assistants (Copilot) to dramatically increase R&D velocity.",
+    "Predictive churn modeling using product telemetry data.",
+    "Automated customer support resolution via LLM-powered chatbots."
+  ],
+  "risks": [
+    "Rapid technological obsolescence and disruptive AI competitors.",
+    "Cybersecurity breaches or massive data loss.",
+    "Over-hiring during growth phases leading to cash burn.",
+    "Inability to integrate acquired codebases during roll-ups."
+  ],
+  "hundredDayPlan": [
+    "Implement standardized ARR and retention cohort reporting.",
+    "Conduct a pricing and packaging audit to identify immediate upsell opportunities.",
+    "Evaluate R&D velocity and map out technical debt remediation."
+  ],
+  "exitReadiness": [
+    "Consistent achievement of the 'Rule of 40' (e.g., 25% growth + 15% EBITDA).",
+    "World-class NRR (>110% for SMB, >120% for Enterprise).",
+    "A clean, scalable, cloud-native architecture."
+  ],
+  "representativeExamples": [
+    "Visma",
+    "Ellucian",
+    "Epicor"
+  ],
+  "relatedPlaybooks": [
+    "Pricing Optimization",
+    "Sales Productivity Improvement",
+    "Add-on Acquisition Integration"
+  ],
+  "relatedKpis": [
+    "ARR",
+    "Retention",
+    "Revenue Growth"
+  ],
+  "tags": [
+    "industry",
+    "Software",
+    "SaaS",
+    "Technology"
+  ],
+  "articleSections": [
+    {
+      "title": "Mastering the Rule of 40",
+      "body": [
+        "In the Private Equity software playbook, valuation is almost entirely dictated by the 'Rule of 40'—the principle that a SaaS company's revenue growth rate plus its EBITDA margin should equal or exceed 40%. Historically, venture-backed tech companies prioritized hyper-growth at the expense of massive cash burn (e.g., 60% growth with a -40% margin). The PE Operating Partner steps in to introduce strict financial discipline, transitioning the asset from a cash-incinerating growth engine into a balanced, profitable enterprise. This requires fundamentally rewiring the company's capital allocation strategy.",
+        "We attack the margin side of the equation by scrutinizing Sales & Marketing (S&M) and Research & Development (R&D) efficiency. We frequently find bloated middle management layers, expensive domestic engineering teams doing routine maintenance, and marketing budgets allocated to low-converting brand awareness campaigns. By selectively nearshoring R&D to high-talent, lower-cost regions (like Eastern Europe or Latin America) and shifting S&M spend toward highly measurable, intent-driven performance marketing, we can rapidly expand EBITDA margins by 10-15 percentage points without sacrificing the core product roadmap.",
+        "Crucially, optimizing for the Rule of 40 is not merely about indiscriminate cost-cutting; it is about profitable growth. We implement rigorous 'CAC Payback' thresholds, ensuring that the company only invests sales dollars into cohorts where the customer acquisition cost is fully recovered within 12 to 18 months. When a SaaS business demonstrates that it can reliably balance a 20% organic growth rate with a 20% EBITDA margin, it proves to subsequent buyers that the underlying unit economics are fundamentally sound, justifying a premium ARR multiple at exit."
+      ],
+      "callout": "The Rule of 40 is the ultimate balancing act in software. It forces the organization to prove that its growth is structurally profitable, not just subsidized by venture capital."
+    },
+    {
+      "title": "Net Revenue Retention (NRR) and the Land-and-Expand Motion",
+      "body": [
+        "While acquiring new logos is essential, the true compounding engine of a B2B SaaS business is its Net Revenue Retention (NRR). NRR measures the revenue generated from an existing cohort of customers over a year, factoring in upgrades, cross-sells, downgrades, and churn. An NRR of 120% means that even if the company acquires zero new customers, its existing revenue base will organically grow by 20% annually. PE firms value high-NRR businesses exceptionally highly because this growth is immensely capital-efficient; upselling an existing customer costs a fraction of acquiring a new one.",
+        "To drive NRR, we professionalize the 'Customer Success' (CS) function. In immature software companies, CS is often treated as a glorified, reactive tech support desk. We transform it into a proactive, revenue-generating organization. By embedding telemetry into the software, CS managers can monitor product usage in real-time, identifying 'health scores' that predict churn before it happens, or flagging 'power users' who are ripe for an enterprise-tier upsell. We inextricably link CS compensation to gross retention and expansion quotas, aligning their behavior with the firm's NRR goals.",
+        "Furthermore, we implement a 'Land-and-Expand' pricing architecture. This involves structuring pricing tiers so that the entry-level product is highly accessible (the 'Land'), but advanced features, increased usage limits, or API access require moving to premium tiers (the 'Expand'). As customers become more successful and their usage scales, the software automatically captures more of that value. A PE sponsor will almost always underwrite a higher exit multiple for a SaaS business with 115%+ NRR, as it demonstrates an incredibly sticky, mission-critical product."
+      ]
+    },
+    {
+      "title": "Pricing and Packaging Optimization",
+      "body": [
+        "One of the fastest, highest-leverage value creation levers in software is Pricing and Packaging optimization. Many founder-led SaaS companies underprice their software to win early market share and rarely revisit their pricing structure as the product matures. They often employ simple 'flat-rate' pricing that fails to capture the true value delivered to different segments of their customer base. During the first 100 days, we conduct a comprehensive conjoint analysis to understand exactly how much enterprise value is being left on the table.",
+        "We execute this by unbundling monolithic software packages into modular, 'Good-Better-Best' tiers, and by introducing usage-based 'value metrics' (e.g., pricing based on the number of transactions processed rather than just flat seats). This ensures that a massive enterprise client extracting millions of dollars of value from the software pays commensurately more than a small SMB user. Additionally, we institutionalize standard annual price escalators (typically 5-7%) into all multi-year master service agreements (MSAs) to combat inflation and drive automatic ARR growth.",
+        "The impact of a successful pricing execution is immediate and profound. Because software has a near-zero marginal cost, a 10% increase in Average Revenue Per User (ARPU) flows 100% to the EBITDA line. We expect the Operating Partner to establish a dedicated 'Pricing Committee' that continuously tests pricing elasticity and tightly controls discounting authority for the sales team. Establishing this pricing discipline transforms a static revenue model into a dynamic, highly monetizable asset."
+      ]
+    },
+    {
+      "title": "Transitioning from Legacy On-Premise to Cloud SaaS",
+      "body": [
+        "A classic PE 'turnaround' play involves acquiring a mature, sticky software company that is still selling legacy, on-premise perpetual licenses (where the customer pays a large upfront fee and smaller annual maintenance fees) and forcibly migrating it to a modern, cloud-hosted SaaS model. While this transition initially depresses top-line recognized revenue—as large upfront payments are replaced by smaller monthly subscriptions—it drastically increases the lifetime value of the customer and the predictability of the cash flows.",
+        "This migration is an immense operational challenge. It requires completely re-architecting the codebase to be multi-tenant and cloud-native (typically on AWS or Azure), retraining the sales force to sell subscriptions rather than massive capital expenditures, and carefully managing the customer base to avoid churn during the transition. We implement a rigorous 'End-of-Life' (EOL) strategy for the legacy product, gradually increasing maintenance fees on the old software to financially incentivize customers to migrate to the new cloud platform.",
+        "Success in this transition yields massive multiple arbitrage. A legacy on-premise software company might trade at 2-3x Revenue due to its lack of predictability and high support costs across fragmented versions. However, once that same customer base is successfully migrated to a modern, multi-tenant SaaS architecture with 90%+ recurring revenue, the business will frequently trade at 6-8x ARR. Navigating this 'valley of death' during the revenue transition requires an Operating Partner with an iron stomach and flawless execution mechanics."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "SaaS operating value tree",
+      "description": "A compact view of the levers that connect SaaS economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"SaaS economics\"] --> B[\"Sales & Marketing Efficiency\"]\n  A --> C[\"Net Revenue Retention (NRR)\"]\n  A --> D[\"Pricing & Packaging\"]\n  B --> E[\"Rule of 40 Optimization\"]\n  C --> F[\"Compounding ARR Growth\"]\n  D --> G[\"ARPU Expansion\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

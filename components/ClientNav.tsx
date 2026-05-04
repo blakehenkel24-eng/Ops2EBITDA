@@ -59,11 +59,14 @@ export function ClientNav() {
 
   return (
     <>
-      <nav className="hidden md:flex items-center gap-1">
+      <nav className="hidden md:flex items-center gap-3">
         <div className="relative">
           <button
             type="button"
-            onClick={() => setKnowledgeMenuOpen((open) => !open)}
+            onClick={() => {
+              setKnowledgeMenuOpen((open) => !open);
+              setAiMenuOpen(false);
+            }}
             className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
               knowledgeActive || pathname === '/'
                 ? 'border-accent/20 text-accent bg-accent-soft'
@@ -77,7 +80,7 @@ export function ClientNav() {
             <ChevronDown size={13} strokeWidth={1.8} aria-hidden="true" />
           </button>
           <div
-            className={`absolute right-0 top-full z-50 mt-2 w-56 border border-line/80 bg-paper p-2 shadow-[0_20px_50px_oklch(31%_0.038_248_/_0.14)] transition-all duration-150 ${
+            className={`absolute left-0 top-full z-50 mt-2 w-56 border border-line/80 bg-paper p-2 shadow-[0_20px_50px_oklch(31%_0.038_248_/_0.14)] transition-all duration-150 ${
               knowledgeMenuOpen
                 ? 'visible opacity-100'
                 : 'invisible opacity-0'
@@ -108,7 +111,10 @@ export function ClientNav() {
         <div className="relative">
           <button
             type="button"
-            onClick={() => setAiMenuOpen((open) => !open)}
+            onClick={() => {
+              setAiMenuOpen((open) => !open);
+              setKnowledgeMenuOpen(false);
+            }}
             className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
               aiActive
                 ? 'border-accent/20 text-accent bg-accent-soft'
@@ -122,7 +128,7 @@ export function ClientNav() {
             <ChevronDown size={13} strokeWidth={1.8} aria-hidden="true" />
           </button>
           <div
-            className={`absolute right-0 top-full z-50 mt-2 w-72 border border-line/80 bg-paper p-2 shadow-[0_20px_50px_oklch(31%_0.038_248_/_0.14)] transition-all duration-150 ${
+            className={`absolute left-0 top-full z-50 mt-2 w-72 border border-line/80 bg-paper p-2 shadow-[0_20px_50px_oklch(31%_0.038_248_/_0.14)] transition-all duration-150 ${
               aiMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'
             }`}
           >
