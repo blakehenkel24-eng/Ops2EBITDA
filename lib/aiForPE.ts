@@ -180,28 +180,36 @@ export const useCases = [
 
 export const guardrailPractices = [
   {
-    title: "Use enterprise accounts for enterprise data",
-    body: "The security posture changes materially when a firm uses approved business or enterprise accounts. Look for contractual commitments, admin controls, SSO, MFA, audit logs, role-based access, retention settings, and clear language on whether customer content is used for model training.",
+    title: "Standardize on approved enterprise accounts",
+    body: "Claude Enterprise, ChatGPT Enterprise or Business, Gemini for Workspace, and Microsoft 365 Copilot all publish enterprise data-use, privacy, security, and retention commitments. The baseline vendor concern is largely addressed when the firm uses the right paid enterprise workspace instead of consumer accounts.",
+  },
+  {
+    title: "Configure retention, history, and logging",
+    body: "Admins should explicitly set conversation history, retention windows, audit logs, export controls, and deletion procedures. Do not rely on defaults. The relevant question is not whether controls exist, but whether the firm has enabled and documented them.",
+  },
+  {
+    title: "Write operating procedures for AI use",
+    body: "A credible AI program needs procedures: approved tools, allowed data classes, upload rules, redaction expectations, review requirements, escalation paths, and owner responsibilities. The policy should be short enough to follow and specific enough to enforce.",
   },
   {
     title: "Classify tools by data sensitivity",
-    body: "A practical policy does not need to be long. Define which tools can handle public research, internal operating documents, data-room exports, board materials, customer data, employee data, and legal material. Then make the approved path easy to follow.",
+    body: "Define which tools can handle public research, internal operating documents, data-room exports, board materials, customer data, employee data, and legal material. Different data classes should have different approval paths.",
+  },
+  {
+    title: "Control connectors, agents, and shared repositories",
+    body: "Governance must cover more than chat. Admins should approve which connectors, agents, folders, drives, SharePoint sites, Slack channels, and data-room exports can be reached by AI tools. Retrieval should follow existing permissions, not create a new shadow access layer.",
+  },
+  {
+    title: "Require source-grounded outputs for sensitive work",
+    body: "For diligence, board work, and investment memos, outputs should cite the file, transcript, or passage behind material claims. Source grounding makes review faster and prevents polished language from becoming unsupported conviction.",
   },
   {
     title: "Put AI use into legal documents",
     body: "Engagement letters, NDAs, vendor agreements, portfolio company policies, and consultant SOWs can address approved tools, confidential information, data retention, model training, subprocessors, audit rights, breach notification, and human review obligations.",
   },
   {
-    title: "Prefer source-grounded workflows",
-    body: "For diligence, board work, and investment memos, outputs should cite the file, transcript, or passage behind material claims. Source grounding makes review faster and reduces the chance that polished language turns into unsupported conviction.",
-  },
-  {
-    title: "Keep permissions attached to the content",
-    body: "The best AI deployments inherit existing permissions from Microsoft 365, Google Workspace, Slack, data rooms, or internal repositories. If a user should not see a document normally, AI should not surface it through search or chat.",
-  },
-  {
-    title: "Govern the workflow, not just the model",
-    body: "Prompt rules are not governance. The operating model should define approved use cases, data classes, review requirements, output labeling, escalation paths, and who owns the policy as tools and contracts change.",
+    title: "Review the control set on a fixed cadence",
+    body: "Assign ownership for quarterly review of approved tools, admin settings, retention policies, incident procedures, and user training. AI governance is not a one-time memo; it is a recurring operating process.",
   },
 ];
 

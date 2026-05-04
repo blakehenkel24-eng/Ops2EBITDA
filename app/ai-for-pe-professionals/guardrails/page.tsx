@@ -6,7 +6,7 @@ import { guardrailPractices, sourceLinks } from "@/lib/aiForPE";
 export const metadata: Metadata = {
   title: "AI Guardrails & Data Security for PE | Ops2EBITDA",
   description:
-    "Practical guardrails for using AI with private equity workflows, confidential deal data, enterprise licenses, data rooms, and legal provisions.",
+    "Practical AI governance for private equity workflows, enterprise licenses, retention settings, admin controls, data rooms, and legal provisions.",
 };
 
 export default function AIGuardrailsPage() {
@@ -15,7 +15,7 @@ export default function AIGuardrailsPage() {
       <PageHeader
         eyebrow="AI for PE Professionals"
         title="Guardrails and data security."
-        summary="The practical control model for using AI in PE: enterprise licenses, legal language, data classification, permission discipline, and review standards."
+        summary="A practical control model for using enterprise AI in PE: vendor privacy terms, admin configuration, data classification, permission discipline, legal language, and review standards."
       />
 
       <AIPillarNav />
@@ -25,22 +25,50 @@ export default function AIGuardrailsPage() {
           <div>
             <p className="font-mono-label text-accent">Control model</p>
             <h2 className="mt-3 max-w-2xl font-newsreader text-3xl text-ink">
-              Treat AI like any other enterprise system that touches
-              confidential work.
+              The vendor privacy question is only the first layer of AI
+              governance.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
             <p>
-              The facts matter more than the anxiety. Enterprise AI products can
-              provide contractual privacy terms, no-training commitments for
-              business data, admin controls, retention settings, encryption,
-              access management, auditability, and security documentation.
+              Claude, ChatGPT, Gemini, Microsoft Copilot, and other major
+              enterprise AI platforms already provide formal privacy,
+              data-use, retention, and security commitments for business
+              accounts. With an approved enterprise account, the basic concern
+              is not whether the tool has a policy. It is whether the firm has
+              configured the account correctly.
             </p>
             <p>
-              The right posture is straightforward: use approved enterprise
-              accounts, put AI language into legal documents, define what data
-              can go where, keep permissions attached to the underlying content,
-              and require human review before investment or client-ready use.
+              The operating work is procedural: set retention and history
+              rules, approve connectors, govern repositories, document upload
+              standards, assign ownership, audit usage, and require human review
+              before investment or client-ready use.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-8 border-y border-line/80 py-8">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="font-mono-label text-accent">Admin procedure</p>
+            <h2 className="mt-3 font-newsreader text-3xl text-ink">
+              The practical question is configuration, not permission to
+              experiment.
+            </h2>
+          </div>
+          <div className="space-y-4 text-sm leading-7 text-stone font-geist">
+            <p>
+              A PE firm should have a named admin owner for each approved AI
+              workspace. That owner should maintain the settings register:
+              retention, chat history, data sharing, connector access, identity
+              controls, audit logs, export rules, and deletion process.
+            </p>
+            <p>
+              The governance standard should be explicit enough that a new
+              associate, operating partner, consultant, or portfolio CFO knows
+              which tool to use, what data can be uploaded, when redaction is
+              required, and when outputs need review.
             </p>
           </div>
         </div>
@@ -67,7 +95,7 @@ export default function AIGuardrailsPage() {
           <div>
             <p className="font-mono-label text-accent">Practical clause topics</p>
             <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              Contract language should make AI use explicit.
+              Contract language should match the operating policy.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
