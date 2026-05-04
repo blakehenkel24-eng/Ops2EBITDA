@@ -1,0 +1,120 @@
+{
+  "slug": "aerospace-and-defense",
+  "title": "Aerospace & Defense",
+  "type": "industry",
+  "summary": "Precision manufacturing, MRO (Maintenance, Repair, and Overhaul), and specialized services with high barriers to entry and sticky government or prime-contractor relationships.",
+  "businessModel": "Manufacturing highly engineered components or providing specialized maintenance and engineering services to OEMs and government entities.",
+  "revenueModel": "Long-term, programmatic contracts (often multi-year), aftermarket spare parts sales, and recurring MRO service revenue.",
+  "costStructure": "Highly skilled labor (machinists, engineers), specialized raw materials (exotic alloys), capital equipment (CNC machines), and rigorous compliance/QA overhead.",
+  "keyKpis": [
+    "Overall Equipment Effectiveness (OEE)",
+    "First Pass Yield / Defect Rate",
+    "On-Time Delivery (OTD)",
+    "Book-to-Bill Ratio",
+    "Win Rate (Capture Ratio)"
+  ],
+  "whyPeLikesIt": "Unparalleled revenue visibility through multi-year government budgets, massive barriers to entry via ITAR and AS9100 certifications, and the 'sticky' nature of being designed into a platform for decades.",
+  "investmentThesis": "Consolidate fragmented, highly specialized 'mom-and-pop' machine shops to create a scaled Tier 2/Tier 3 supplier that can offer full sub-assemblies to Tier 1 Primes, driving multiple expansion through scale.",
+  "diligenceQuestions": [
+    "What percentage of revenue is 'sole-source' versus competitively bid?",
+    "How exposed is the backlog to specific defense platforms or commercial aircraft build rates?",
+    "Are all ITAR, NIST, and AS9100 certifications current and auditable?"
+  ],
+  "operationalIssues": [
+    "Poor throughput and low OEE in the machine shop.",
+    "Inefficient capture management leading to low win rates on bids.",
+    "Over-reliance on outdated ERP systems and tribal knowledge for quoting."
+  ],
+  "valueCreationLevers": [
+    "Lean manufacturing and throughput optimization",
+    "Pricing power on sole-source or aftermarket parts",
+    "Professionalized business development and capture management",
+    "Supply chain consolidation",
+    "Strategic add-ons to acquire adjacent capabilities (e.g., adding composites to metal fabrication)"
+  ],
+  "projectPlaybooks": [
+    "Sales Productivity Improvement",
+    "Pricing Optimization",
+    "Management Operating Cadence"
+  ],
+  "aiOpportunities": [
+    "AI-driven quoting engines based on historical machine times and material costs.",
+    "Predictive maintenance for critical CNC machinery.",
+    "Automated inspection using computer vision to improve First Pass Yield."
+  ],
+  "risks": [
+    "Defense budget cuts or program cancellations.",
+    "Commercial aerospace cyclicality.",
+    "Severe shortages of highly skilled machinists and engineers.",
+    "Cybersecurity vulnerabilities leading to loss of clearance or contracts."
+  ],
+  "hundredDayPlan": [
+    "Assess and upgrade cybersecurity posture (CMMC compliance).",
+    "Implement daily shop-floor huddles tracking OEE and OTD.",
+    "Standardize the quoting and estimating process."
+  ],
+  "exitReadiness": [
+    "Strong, diversified backlog across multiple long-term platforms.",
+    "Bulletproof compliance and quality management records.",
+    "Demonstrated ability to deliver fully integrated sub-assemblies rather than isolated parts."
+  ],
+  "representativeExamples": [
+    "TransDigm Group",
+    "Heico",
+    "StandardAero"
+  ],
+  "relatedPlaybooks": [
+    "Procurement Savings",
+    "Sales Productivity Improvement",
+    "Add-on Acquisition Integration"
+  ],
+  "relatedKpis": [
+    "Gross Margin",
+    "EBITDA Margin",
+    "Revenue Growth"
+  ],
+  "tags": [
+    "industry",
+    "Aerospace",
+    "Defense",
+    "Manufacturing"
+  ],
+  "articleSections": [
+    {
+      "title": "Consolidating the Fragmented Supply Chain",
+      "body": [
+        "The Aerospace & Defense (A&D) supply chain is historically highly fragmented. Tier 1 'Primes' like Boeing, Lockheed Martin, or Raytheon are increasingly looking to rationalize their supply bases, preferring to deal with a few scaled Tier 2 suppliers who can provide complete sub-assemblies rather than managing thousands of small 'mom-and-pop' machine shops making individual widgets. The PE playbook here is straightforward: acquire a platform company with essential certifications and aggressively roll up smaller machine shops to build a comprehensive 'One-Stop-Shop' for the Primes.",
+        "Value creation is driven by multiple expansion. A $5M EBITDA machine shop might trade at 6x, but a $50M EBITDA integrated supplier with broad capabilities (e.g., metal machining, composites, coatings, and assembly) trades at 12-14x. The Operating Partner's role is to integrate these acquisitions smoothly, ensuring that quality standards (AS9100) are maintained across all facilities so as not to jeopardize existing prime contracts."
+      ],
+      "callout": "In A&D, Primes want to buy assemblies, not parts. Consolidation is the path to becoming an indispensable Tier 2 partner."
+    },
+    {
+      "title": "Throughput Optimization and the Shop Floor",
+      "body": [
+        "Manufacturing profitability in A&D is dictated by 'Overall Equipment Effectiveness' (OEE) and 'First Pass Yield.' Many founder-owned machine shops operate with significant inefficiencies—spindle time on expensive CNC machines might be less than 40% due to poor scheduling, long setup times, and material shortages. We implement rigorous Lean Manufacturing principles to drive throughput.",
+        "By focusing on 'SMED' (Single-Minute Exchange of Die) to reduce changeover times and organizing the shop floor for optimal flow, we can increase capacity without deploying additional CapEx. Furthermore, we institute daily management cadences—tracking 'On-Time Delivery' (OTD) and defect rates on a visual board. Moving OTD from 85% to 98% not only protects the margin from rework and expedited shipping costs but elevates the company's 'Supplier Scorecard' with the Primes, winning more programmatic work."
+      ]
+    },
+    {
+      "title": "Professionalizing Capture Management and Bidding",
+      "body": [
+        "Growth in defense contracting requires navigating complex, multi-year procurement cycles. Many target companies rely on passive relationships or 'tribal knowledge' for quoting. We professionalize the 'Capture Management' and business development process. This involves bringing in seasoned executives who understand the DoD budget cycle and implementing CRM systems to track the pipeline of upcoming Requests for Proposals (RFPs) years in advance.",
+        "Equally important is standardizing the estimating engine. We implement data-driven quoting models that accurately capture machine time, material waste, and overhead, moving away from 'gut feel' pricing. This ensures that the business is not only winning bids, but winning *profitable* bids, avoiding the 'Winner's Curse' on fixed-price contracts."
+      ]
+    },
+    {
+      "title": "Pricing Power in Aftermarket and Sole-Source Scenarios",
+      "body": [
+        "While new-build OEM contracts are often fiercely competitive and lower margin, the real EBITDA expansion in A&D comes from the 'Aftermarket'—spare parts and MRO (Maintenance, Repair, and Overhaul) services. Components that are designed into a 30-year aircraft platform enjoy a captive market. We conduct deep-dive margin analytics to identify 'Sole-Source' parts where our platform is the only certified manufacturer.",
+        "Because the cost of re-qualifying a new supplier is astronomically high for the Prime, these sole-source positions carry immense pricing power. We systematically implement strategic price increases on these proprietary or highly specialized components. Even a modest 5-7% price realization drops almost entirely to the bottom line, radically transforming the profitability profile of the acquired platform."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "A&D operating value tree",
+      "description": "A compact view of the levers that connect A&D economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"A&D economics\"] --> B[\"Manufacturing Throughput\"]\n  A --> C[\"Backlog & Capture\"]\n  A --> D[\"Pricing Power\"]\n  B --> E[\"OEE & Margin Expansion\"]\n  C --> F[\"Revenue Visibility (Multi-year)\"]\n  D --> G[\"Aftermarket EBITDA growth\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

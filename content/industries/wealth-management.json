@@ -1,0 +1,118 @@
+{
+  "slug": "wealth-management",
+  "title": "Wealth Management",
+  "type": "industry",
+  "summary": "Asset and wealth management firms, notably RIAs, where recurring AUM fees and M&A consolidation drive immense value.",
+  "businessModel": "Providing financial planning, investment management, and advisory services to high-net-worth individuals and institutions.",
+  "revenueModel": "Highly recurring, fee-based revenue typically calculated as a percentage of Assets Under Management (AUM), plus flat fees for financial planning.",
+  "costStructure": "Predominantly compensation (advisor payouts), followed by technology (CRM, portfolio management software), compliance, and real estate.",
+  "keyKpis": [
+    "AUM Growth",
+    "Net New Assets (NNA)",
+    "Client Retention Rate",
+    "Advisor Retention Rate",
+    "EBITDA Margin"
+  ],
+  "whyPeLikesIt": "PE loves the predictable, highly recurring revenue streams, extreme client stickiness, asset-light nature, and the massive opportunity for roll-up consolidation among retiring founders.",
+  "investmentThesis": "Acquire a platform RIA, aggressively roll up smaller 'tuck-in' practices, centralize back-office functions (compliance, HR, IT), and expand margins through scale while cross-selling ancillary services like tax or trust.",
+  "diligenceQuestions": [
+    "What is the average age of the client base and the plan for intergenerational wealth transfer?",
+    "How portable are the assets if a key advisor decides to leave?",
+    "What is the historical Net New Asset (NNA) growth excluding market appreciation?"
+  ],
+  "operationalIssues": [
+    "Over-reliance on rainmaker founders for business development.",
+    "Fragmented and outdated technology stacks that hinder advisor productivity.",
+    "Inefficient and highly manual compliance and reporting processes."
+  ],
+  "valueCreationLevers": [
+    "M&A and tuck-in integration",
+    "Back-office centralization",
+    "Technology modernization (CRM/Reporting)",
+    "Advisor recruitment and retention",
+    "Cross-selling ancillary services"
+  ],
+  "projectPlaybooks": [
+    "M&A Integration Playbook",
+    "Wealth Tech Stack Modernization",
+    "Advisor Compensation Restructuring"
+  ],
+  "aiOpportunities": [
+    "Automating client onboarding and document processing.",
+    "AI-driven portfolio rebalancing and tax-loss harvesting.",
+    "Drafting personalized client communications and meeting summaries."
+  ],
+  "risks": [
+    "Market volatility impacting AUM and fees.",
+    "Key advisor flight risk.",
+    "Regulatory and compliance exposure.",
+    "Fee compression from passive alternatives."
+  ],
+  "hundredDayPlan": [
+    "Standardize the M&A integration playbook.",
+    "Select and begin migrating to a unified tech stack (CRM, portfolio accounting).",
+    "Restructure advisor compensation to incentivize organic growth."
+  ],
+  "exitReadiness": [
+    "Demonstrated ability to acquire and seamlessly integrate tuck-ins.",
+    "Clean, auditable compliance record.",
+    "Strong, institutionalized management team independent of original founders."
+  ],
+  "representativeExamples": [
+    "Focus Financial Partners",
+    "Mercer Advisors",
+    "Hightower Advisors"
+  ],
+  "relatedPlaybooks": [
+    "Add-on Acquisition Integration",
+    "Finance Function Transformation"
+  ],
+  "relatedKpis": [
+    "EBITDA Margin",
+    "Retention",
+    "Revenue Growth"
+  ],
+  "tags": [
+    "industry",
+    "Wealth Management",
+    "Financial Services"
+  ],
+  "articleSections": [
+    {
+      "title": "The RIA Roll-Up Engine and M&A Arbitrage",
+      "body": [
+        "In the wealth management sector, particularly with Registered Investment Advisors (RIAs), Private Equity relies heavily on the 'Roll-Up' strategy. The industry is massively fragmented, with thousands of independent advisors nearing retirement age who lack a succession plan. PE firms acquire a 'Platform' RIA at a premium multiple (e.g., 12-15x EBITDA) and then aggressively acquire smaller 'tuck-in' practices at significantly lower multiples (e.g., 6-8x EBITDA). This multiple arbitrage is the foundational value creation lever in the space.",
+        "Successful execution requires an industrialized M&A integration playbook. The Operating Partner focuses on standardizing the onboarding process, moving acquired advisors onto the platform's proprietary technology stack, and migrating client assets to a unified custodian. By executing 5 to 10 tuck-ins per year, the platform can rapidly expand its AUM, driving massive enterprise value creation prior to exit."
+      ],
+      "callout": "RIA consolidation is an arbitrage game: buy local practices at single-digit multiples, integrate them seamlessly, and sell the aggregated platform at a mid-teens multiple."
+    },
+    {
+      "title": "Centralizing the Back-Office for Margin Expansion",
+      "body": [
+        "Independent advisors spend up to 40% of their time on non-revenue generating tasks: compliance, HR, billing, and IT. The PE value proposition is to offload these burdens to a centralized corporate team. By building a robust, institutional-grade back office, the platform can absorb acquired practices with minimal incremental overhead. This allows the newly acquired advisors to focus entirely on client relationship management and business development.",
+        "Margin expansion is achieved through economies of scale. Centralizing compliance oversight reduces regulatory risk, while consolidating technology contracts (CRM, portfolio management, financial planning software) drives down vendor costs. We typically target a 300-500 basis point margin improvement on acquired practices within the first 12 months post-close by eliminating redundant back-office expenses."
+      ]
+    },
+    {
+      "title": "Technology Modernization and Advisor Productivity",
+      "body": [
+        "A modernized technology stack is critical for both advisor retention and scalability. Many legacy wealth practices rely on outdated, disconnected systems that require manual data entry and lead to poor client experiences. We implement integrated 'WealthTech' ecosystems—combining tools like Salesforce (CRM), Orion or Tamarac (Portfolio Accounting), and eMoney (Financial Planning) into a seamless interface.",
+        "By automating client onboarding, performance reporting, and billing, we significantly increase 'Advisor Capacity.' An advisor who previously maxed out at 75 client households can now comfortably manage 120 households without a drop in service quality. This technology-driven productivity lift drives organic growth (Net New Assets) without requiring proportional increases in headcount."
+      ]
+    },
+    {
+      "title": "Advisor Compensation and Retention Structures",
+      "body": [
+        "In wealth management, the assets are effectively tied to the individual advisors. Therefore, 'Advisor Flight Risk' is the single largest threat to enterprise value. Traditional compensation models often reward AUM maintenance rather than organic growth. We restructure compensation to align advisor incentives with the PE firm's goals: offering equity participation at the platform level and tying bonus pools to Net New Asset (NNA) generation.",
+        "Implementing structured equity plans ensures that key rainmakers are locked in and motivated to drive the platform's overall valuation. Furthermore, we establish institutionalized marketing and lead-generation engines to feed prospective clients to our advisors, making it economically irrational for them to leave the platform and start their own independent shop."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Wealth Management operating value tree",
+      "description": "A compact view of the levers that connect RIA economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"Wealth Management economics\"] --> B[\"AUM & Revenue quality\"]\n  A --> C[\"Margin expansion\"]\n  A --> D[\"Advisor retention\"]\n  B --> E[\"Organic & Inorganic Growth\"]\n  C --> F[\"EBITDA multiple arbitrage\"]\n  D --> G[\"Asset stickiness\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

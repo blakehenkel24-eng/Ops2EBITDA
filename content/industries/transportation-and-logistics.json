@@ -1,0 +1,120 @@
+{
+  "slug": "transportation-and-logistics",
+  "title": "Transportation & Logistics",
+  "type": "industry",
+  "summary": "Asset-heavy carriers, asset-light 3PLs, and freight brokerages where network density, technology, and labor management drive margins.",
+  "businessModel": "Moving goods from origin to destination via trucking, rail, or air, or acting as an intermediary (broker/3PL) to arrange transportation.",
+  "revenueModel": "Transactional revenue per load, contract-based dedicated fleet revenue, or brokerage margins (spread between customer price and carrier cost).",
+  "costStructure": "For asset-heavy: fuel, driver compensation, maintenance, and equipment depreciation. For asset-light: purchased transportation (carrier pay) and personnel.",
+  "keyKpis": [
+    "Gross Margin / Brokerage Margin",
+    "Operating Ratio (OR)",
+    "Driver Retention Rate",
+    "Empty Miles / Deadhead %",
+    "Revenue per Truck/Week"
+  ],
+  "whyPeLikesIt": "PE is attracted to the immense fragmentation, the essential/non-discretionary nature of freight, and the vast opportunity to deploy technology to improve routing, pricing, and back-office efficiency.",
+  "investmentThesis": "Consolidate regional carriers or brokerages to build network density, implement advanced Transportation Management Systems (TMS) to optimize routing and pricing, and shift revenue mix toward sticky, contractual relationships.",
+  "diligenceQuestions": [
+    "What is the mix of spot market versus contractual freight?",
+    "How severe is driver turnover and what is the cost per hire?",
+    "Is the technology stack capable of real-time visibility and dynamic pricing?"
+  ],
+  "operationalIssues": [
+    "High empty miles (deadhead) eroding asset profitability.",
+    "Severe driver shortage and high turnover rates.",
+    "Manual pricing and load-matching processes in brokerages."
+  ],
+  "valueCreationLevers": [
+    "Network density and route optimization",
+    "Fleet purchasing and fuel hedging",
+    "Brokerage tech enablement (TMS)",
+    "Driver retention programs",
+    "Working capital management (DSO reduction)"
+  ],
+  "projectPlaybooks": [
+    "TMS Implementation and Optimization",
+    "Driver Retention and Recruiting",
+    "Fleet Maintenance Optimization"
+  ],
+  "aiOpportunities": [
+    "Predictive routing and load matching to eliminate empty miles.",
+    "Dynamic pricing models for spot freight.",
+    "Predictive maintenance for fleet assets to prevent breakdowns."
+  ],
+  "risks": [
+    "Cyclical freight rate volatility.",
+    "Fuel price fluctuations.",
+    "Regulatory changes (e.g., hours of service, emissions).",
+    "Labor unionization or driver misclassification risks."
+  ],
+  "hundredDayPlan": [
+    "Implement daily tracking of key operational metrics (Empty miles, OR, Margin per load).",
+    "Optimize fuel purchasing agreements and maintenance vendor contracts.",
+    "Launch targeted driver retention initiatives."
+  ],
+  "exitReadiness": [
+    "Demonstrated resilience through freight market cycles.",
+    "High percentage of contractual, recurring revenue.",
+    "State-of-the-art TMS and visibility tech stack."
+  ],
+  "representativeExamples": [
+    "Echo Global Logistics",
+    "Kenan Advantage Group",
+    "XPO Logistics"
+  ],
+  "relatedPlaybooks": [
+    "Working Capital Improvement",
+    "KPI Dashboard Buildout",
+    "Procurement Savings"
+  ],
+  "relatedKpis": [
+    "EBITDA Margin",
+    "Gross Margin",
+    "Revenue Growth"
+  ],
+  "tags": [
+    "industry",
+    "Transportation",
+    "Logistics",
+    "Supply Chain"
+  ],
+  "articleSections": [
+    {
+      "title": "Network Density and Route Optimization",
+      "body": [
+        "In asset-heavy transportation, profitability is governed by the 'Operating Ratio' (Operating Expenses / Net Sales). The most effective way to lower this ratio is by increasing 'Network Density.' Every time a truck drives without freight—known as 'Empty Miles' or 'Deadhead'—it burns fuel and labor without generating revenue. PE value creation focuses on acquiring overlapping regional carriers to create denser freight networks, allowing dispatchers to string together continuous revenue-generating routes.",
+        "We implement advanced routing algorithms and Transportation Management Systems (TMS) like McLeod or TMW to optimize asset utilization. By analyzing historical lane data and predictive volume trends, we can reduce empty miles from an industry average of 15-20% down to under 10%. This operational discipline drops directly to the bottom line, expanding EBITDA margins significantly without adding a single new truck to the fleet."
+      ],
+      "callout": "In logistics, density is destiny. Empty miles are the silent killer of the Operating Ratio."
+    },
+    {
+      "title": "Tech-Enablement in Freight Brokerage",
+      "body": [
+        "Asset-light freight brokerages (3PLs) operate on the margin between what the shipper pays and what the carrier charges. Historically, this involved 'boiler rooms' of brokers making manual phone calls to match loads with trucks. The PE playbook transforms these businesses through severe tech-enablement. We implement digital freight matching platforms that use API integrations to instantly connect shipper demand with carrier capacity.",
+        "By deploying automated pricing algorithms that read real-time spot market data, we ensure brokers are quoting competitive yet highly profitable rates. This 'Digital Brokerage' approach increases the loads handled per broker per day by 30-50%, driving massive operating leverage and allowing the platform to scale revenue without linearly scaling headcount."
+      ]
+    },
+    {
+      "title": "Driver Retention as a Profit Center",
+      "body": [
+        "The transportation industry suffers from a chronic, systemic driver shortage, with turnover rates frequently exceeding 90% annually in the truckload sector. Recruiting, onboarding, and training a new driver costs thousands of dollars and leaves equipment sitting idle. We reframe driver retention from an HR issue to a core operational profit center.",
+        "Value creation involves implementing structured career paths, upgrading to modern equipment, and ensuring predictable home time through better dispatching. We also utilize driver performance scorecards (tracking hard braking, idling, and fuel efficiency) linked to incentive pay. By reducing turnover by just 20%, a mid-sized carrier can unlock millions in hidden EBITDA through reduced recruiting costs and increased asset utilization."
+      ]
+    },
+    {
+      "title": "Procurement and Working Capital Management",
+      "body": [
+        "Transportation is inherently capital intensive, making procurement and working capital management vital levers. We aggregate spend across acquired platforms to negotiate national accounts for fuel, tires, parts, and insurance. Implementing rigorous fuel hedging strategies and forcing compliance with in-network fueling stations can shave pennies off every mile, which translates to massive savings at scale.",
+        "On the working capital side, 3PLs and carriers often suffer from high Days Sales Outstanding (DSO) as shippers stretch payment terms to 60 or 90 days, while carriers demand rapid pay. We professionalize the invoicing and collections process, implementing automated auditing and billing to reduce errors that delay payment. Optimizing this cash conversion cycle frees up the liquidity necessary to fund further acquisitions without drawing down expensive debt facilities."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "T&L operating value tree",
+      "description": "A compact view of the levers that connect logistics economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"T&L economics\"] --> B[\"Asset Utilization & Density\"]\n  A --> C[\"Brokerage Margins\"]\n  A --> D[\"Driver Retention\"]\n  B --> E[\"Operating Ratio (OR) optimization\"]\n  C --> F[\"Tech-enabled scalability\"]\n  D --> G[\"Reduced recruiting & idle costs\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

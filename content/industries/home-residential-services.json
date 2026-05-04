@@ -1,0 +1,119 @@
+{
+  "slug": "home-residential-services",
+  "title": "Home & Residential Services",
+  "type": "industry",
+  "summary": "HVAC, plumbing, electrical, and other routing-based trades characterized by high fragmentation, non-discretionary demand, and transition to recurring maintenance revenue.",
+  "businessModel": "Providing break-fix repair, replacement, and preventative maintenance services to residential homeowners.",
+  "revenueModel": "Transactional revenue for emergency repairs and high-ticket equipment replacements, layered with recurring revenue from annual maintenance agreements.",
+  "costStructure": "Technician labor, materials/equipment (e.g., HVAC units, parts), vehicle fleet operations, and local marketing/lead generation.",
+  "keyKpis": [
+    "Average Ticket Size",
+    "Close Rate (Sales Conversion)",
+    "Technician Utilization Rate",
+    "Cost per Lead / Customer Acquisition Cost (CAC)",
+    "Service Agreement Conversion Rate"
+  ],
+  "whyPeLikesIt": "Extremely fragmented (ideal for roll-ups), non-discretionary demand (the AC must be fixed), insulated from offshoring/Amazon, and massive potential for tech-enabled margin expansion.",
+  "investmentThesis": "Acquire a strong regional brand, roll up smaller competitors for geographic density, implement modern field service management software (like ServiceTitan), and convert transactional break-fix customers into recurring service agreement members.",
+  "diligenceQuestions": [
+    "What percentage of revenue comes from high-ticket replacements versus lower-margin repairs?",
+    "How many active recurring service agreements does the company hold?",
+    "Is the company overly reliant on expensive third-party lead generation (e.g., Angi, Yelp)?"
+  ],
+  "operationalIssues": [
+    "Poor routing and dispatching leading to low 'wrench time' (utilization).",
+    "Inconsistent pricing and lack of an organized 'good-better-best' sales presentation in the home.",
+    "High technician turnover and an inability to recruit new talent."
+  ],
+  "valueCreationLevers": [
+    "Field service tech enablement (ServiceTitan)",
+    "Pricing standardization and sales training",
+    "Dispatch and routing optimization",
+    "Digital marketing and SEO dominance",
+    "M&A for density and cross-selling trades (e.g., adding plumbing to HVAC)"
+  ],
+  "projectPlaybooks": [
+    "Pricing Optimization",
+    "Customer Retention & Churn Reduction",
+    "KPI Dashboard Buildout"
+  ],
+  "aiOpportunities": [
+    "AI-driven dispatching to match the most profitable technicians with the highest-probability replacement leads.",
+    "Predictive inventory management for truck stock.",
+    "Automated customer follow-ups and review generation."
+  ],
+  "risks": [
+    "Severe shortage of skilled trade labor.",
+    "Weather dependency (mild summers/winters suppress demand).",
+    "Supply chain disruptions for major equipment.",
+    "Rising digital customer acquisition costs in competitive markets."
+  ],
+  "hundredDayPlan": [
+    "Standardize a digital pricing book across all technicians.",
+    "Implement daily tracking of technician close rates and average ticket sizes.",
+    "Launch a technician recruiting and retention program."
+  ],
+  "exitReadiness": [
+    "A massive, sticky base of recurring service agreements.",
+    "Fully integrated M&A targets operating under a unified brand and tech stack.",
+    "Predictable organic growth driven by a dominant local marketing engine."
+  ],
+  "representativeExamples": [
+    "Apex Service Partners",
+    "Wrench Group",
+    "NearU Services"
+  ],
+  "relatedPlaybooks": [
+    "Pricing Optimization",
+    "Customer Retention & Churn Reduction",
+    "Add-on Acquisition Integration"
+  ],
+  "relatedKpis": [
+    "EBITDA Margin",
+    "Revenue Growth",
+    "Retention"
+  ],
+  "tags": [
+    "industry",
+    "Home Services",
+    "HVAC"
+  ],
+  "articleSections": [
+    {
+      "title": "The ServiceTitan Revolution and Field Efficiency",
+      "body": [
+        "The core of value creation in home services is transitioning a 'pen and paper' mom-and-pop shop into a data-driven enterprise. This almost universally begins with the implementation of modern Field Service Management (FSM) software, most notably ServiceTitan. By digitizing dispatch, invoicing, and customer history, we eliminate massive administrative bottlenecks.",
+        "The primary operational metric is 'Technician Utilization' or 'Wrench Time.' Every minute a technician spends driving across town inefficiently or waiting for parts at a supply house is margin destroyed. We implement intelligent dispatching—optimizing geographic routes to increase the number of calls a tech can complete from 3-4 per day to 5-6. This capacity unlock drops pure margin to the bottom line without hiring additional scarce labor."
+      ],
+      "callout": "In home services, inventory is time. Maximizing 'wrench time' through digital dispatch is the fastest path to EBITDA expansion."
+    },
+    {
+      "title": "Pricing Discipline and the 'Good-Better-Best' Model",
+      "body": [
+        "Historically, technicians priced jobs based on gut feel or outdated price books, often leaving money on the table. We professionalize the in-home sales process by decoupling the 'repair' from the 'replacement sale.' We train technicians to utilize tablet-based presentations offering 'Good, Better, Best' options for equipment replacements.",
+        "This standardized presentation not only improves the 'Close Rate' but dramatically increases the 'Average Ticket Size' as homeowners frequently opt for higher-efficiency, higher-margin systems when presented with clear financing options. We enforce strict margin floors in the digital price book, ensuring that every dispatched truck is generating its targeted gross profit per hour."
+      ]
+    },
+    {
+      "title": "The Holy Grail: Recurring Service Agreements",
+      "body": [
+        "Private equity values predictable, recurring revenue at a premium. The central thesis in home services is converting transactional break-fix customers into recurring 'Maintenance Agreement' members. A customer paying $15-20 a month for bi-annual HVAC tune-ups is highly unlikely to call a competitor when their unit eventually fails.",
+        "These agreements are the lifeblood of the platform. They provide guaranteed 'shoulder season' work to keep technicians busy during mild weather, and they represent a captive pipeline for high-margin equipment replacements. We incentivize technicians heavily on selling these memberships, targeting a base where service agreements cover 100% of the platform's fixed overhead costs."
+      ]
+    },
+    {
+      "title": "Marketing Dominance and Lowering CAC",
+      "body": [
+        "Local home services markets are fiercely competitive, and relying on third-party lead aggregators (like Yelp or Angi) erodes margins. We build a 'Centralized Marketing Engine' focused on local SEO dominance, highly targeted pay-per-click (PPC), and professionalized brand presence (truck wraps, uniforms).",
+        "By aggressively acquiring smaller local competitors and rolling them under a single dominant master brand, we gain massive economies of scale in marketing spend. We track 'Cost Per Lead' and 'Customer Acquisition Cost' (CAC) relentlessly, reallocating budget daily to the highest-converting channels. This marketing dominance creates an impenetrable moat around our geographic territory."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Home Services operating value tree",
+      "description": "A compact view of the levers that connect residential trades economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"Home Services economics\"] --> B[\"Technician Efficiency\"]\n  A --> C[\"Ticket Size & Conversion\"]\n  A --> D[\"Recurring Revenue Base\"]\n  B --> E[\"Margin Expansion (Wrench Time)\"]\n  C --> F[\"Revenue Growth\"]\n  D --> G[\"EBITDA Multiple Premium\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}

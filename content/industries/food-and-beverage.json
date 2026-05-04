@@ -1,0 +1,120 @@
+{
+  "slug": "food-and-beverage",
+  "title": "Food & Beverage Manufacturing",
+  "type": "industry",
+  "summary": "Co-packing, private label, and specialty ingredient manufacturing characterized by high volume, stringent quality controls, and supply chain complexity.",
+  "businessModel": "Manufacturing food and beverage products either under proprietary brands, private labels for grocery retailers, or as a contract manufacturer (co-packer) for large CPG companies.",
+  "revenueModel": "Volume-based unit sales driven by retail distribution expansion or long-term take-or-pay manufacturing contracts with brands.",
+  "costStructure": "Raw materials/ingredients, packaging, direct labor (line workers), facility overhead (cold storage, utilities), and logistics/freight.",
+  "keyKpis": [
+    "Gross Margin",
+    "Material Yield / Scrap Rate",
+    "Overall Equipment Effectiveness (OEE)",
+    "Order Fill Rate (OTIF - On Time In Full)",
+    "Labor Cost per Unit"
+  ],
+  "whyPeLikesIt": "Highly defensive, recession-resistant demand profile, stable cash flows, and immense opportunities to drive margin through supply chain optimization and manufacturing lean principles.",
+  "investmentThesis": "Acquire a niche manufacturer with strong retailer or brand relationships, optimize plant operations to unlock capacity and improve yield, and execute M&A to expand product categories or geographic distribution footprint.",
+  "diligenceQuestions": [
+    "How exposed are the margins to commodity price fluctuations, and what hedging mechanisms are in place?",
+    "What is the customer concentration, and are contracts easily cancelable?",
+    "Are the facilities SQF (Safe Quality Food) or BRC certified, and what is the recent audit history?"
+  ],
+  "operationalIssues": [
+    "High material waste/scrap due to poor line changeovers or recipe control.",
+    "Inability to pass commodity inflation through to retail customers.",
+    "Excessive downtime leading to poor OEE and missed customer orders (OTIF)."
+  ],
+  "valueCreationLevers": [
+    "Yield optimization and scrap reduction",
+    "Pricing discipline and index-based contracting",
+    "Line automation and labor reduction",
+    "Supply chain and procurement aggregation",
+    "SKU rationalization (cutting low-margin products)"
+  ],
+  "projectPlaybooks": [
+    "Procurement Savings",
+    "Pricing Optimization",
+    "Management Operating Cadence"
+  ],
+  "aiOpportunities": [
+    "Machine vision for automated quality inspection on the line.",
+    "Predictive demand forecasting to optimize raw material purchasing.",
+    "AI-optimized production scheduling to minimize allergen washdowns and changeover time."
+  ],
+  "risks": [
+    "Food safety recalls or contamination events (existential threat).",
+    "Severe commodity or packaging inflation.",
+    "Customer concentration with demanding big-box retailers (e.g., Walmart).",
+    "Labor shortages for frontline manufacturing roles."
+  ],
+  "hundredDayPlan": [
+    "Conduct a deep dive SKU-level profitability analysis to cull margin-dilutive products.",
+    "Implement daily shift-level reporting on Yield, Scrap, and OEE.",
+    "Review and tighten quality assurance and food safety protocols."
+  ],
+  "exitReadiness": [
+    "A clean, highly automated facility with top-tier SQF audit scores.",
+    "Diversified customer base with index-based pricing contracts.",
+    "Proven track record of launching and scaling new product innovations."
+  ],
+  "representativeExamples": [
+    "Hearthside Food Solutions",
+    "TreeHouse Foods",
+    "Refresco"
+  ],
+  "relatedPlaybooks": [
+    "Procurement Savings",
+    "Pricing Optimization",
+    "Working Capital Improvement"
+  ],
+  "relatedKpis": [
+    "Gross Margin",
+    "EBITDA Margin",
+    "Revenue Growth"
+  ],
+  "tags": [
+    "industry",
+    "Food and Beverage",
+    "Manufacturing",
+    "Consumer"
+  ],
+  "articleSections": [
+    {
+      "title": "Yield Optimization and Scrap Reduction",
+      "body": [
+        "In Food & Beverage (F&B) manufacturing, raw materials and packaging often account for 60-70% of total costs. Therefore, the most direct path to EBITDA expansion is 'Yield Optimization.' If a recipe calls for 100 lbs of ingredients, but poor machinery calibration or spillage results in only 92 lbs of saleable product, that 8% variance destroys the gross margin. We implement rigorous, shift-by-shift tracking of material variance and scrap.",
+        "By instituting standard operating procedures for ingredient handling and investing in precision dosing and weighing equipment, we minimize 'giveaway' (overfilling packages to ensure compliance). A 2-3% improvement in yield across a high-volume facility generates massive, pure-profit flow-through to the bottom line without requiring a single new customer."
+      ],
+      "callout": "In high-volume F&B, gross margin is won or lost on the plant floor. Yield optimization is the most critical operational lever."
+    },
+    {
+      "title": "Pricing Power and Commodity Hedging",
+      "body": [
+        "F&B manufacturers are highly exposed to commodity cycles (e.g., wheat, dairy, oils). Target companies often suffer margin compression because they agree to fixed-price contracts with powerful retailers but buy ingredients on the volatile spot market. The PE playbook involves fundamentally restructuring the pricing model.",
+        "We implement 'Index-Based Pricing' or 'Pass-Through' mechanisms in customer contracts, ensuring that raw material inflation is automatically passed down to the buyer. Where that is impossible, we establish sophisticated forward-purchasing and hedging strategies to lock in margins. Disciplined pricing ensures the platform captures the value of its operational improvements rather than subsidizing the retailer's margin."
+      ]
+    },
+    {
+      "title": "OEE and Maximizing Asset Capacity",
+      "body": [
+        "Building a new food manufacturing facility is a capital-intensive process that can take years. Unlocking 'hidden capacity' within the existing four walls is the holy grail. We focus relentlessly on Overall Equipment Effectiveness (OEE). High downtime in F&B is often caused by inefficient changeovers—specifically, the time required to clean lines between different products (allergen washdowns).",
+        "We use algorithmic scheduling to sequence production runs (e.g., running light to dark colors, or allergen-free to allergen-containing) to minimize washdowns. Applying 'SMED' (Single-Minute Exchange of Die) principles to packaging lines reduces changeover times from hours to minutes. Increasing OEE from 60% to 75% effectively adds a 'free' production line to the facility, enabling revenue growth with zero CapEx."
+      ]
+    },
+    {
+      "title": "SKU Rationalization and Complexity Reduction",
+      "body": [
+        "Over time, F&B manufacturers often proliferate their product offerings to appease various customers, resulting in a 'long tail' of low-volume, highly complex SKUs. Complexity is the enemy of efficiency; short production runs destroy OEE and require excess raw material inventory. We execute a ruthless SKU rationalization program during the first 100 days.",
+        "By utilizing activity-based costing, we identify SKUs that are quietly bleeding EBITDA due to high changeover requirements. We either mandate significant price increases on these items or discontinue them entirely. This 'simplification' frees up line time for high-margin, high-volume core products and drastically reduces working capital tied up in niche packaging and ingredients."
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Food & Beverage operating value tree",
+      "description": "A compact view of the levers that connect F&B manufacturing economics to enterprise value.",
+      "chart": "flowchart TB\n  A[\"F&B economics\"] --> B[\"Yield & Material Costs\"]\n  A --> C[\"OEE & Asset Utilization\"]\n  A --> D[\"Pricing & Commodity Risk\"]\n  B --> E[\"Gross Margin Expansion\"]\n  C --> F[\"Capacity unlock without CapEx\"]\n  D --> G[\"Margin Protection & Stability\"]\n  E --> H[\"Enterprise value\"]\n  F --> H\n  G --> H\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,H strong\n  class B,C,D base\n  class E,F,G accent"
+    }
+  ]
+}
