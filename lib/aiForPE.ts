@@ -180,36 +180,36 @@ export const useCases = [
 
 export const guardrailPractices = [
   {
-    title: "Standardize on approved enterprise accounts",
-    body: "Claude Enterprise, ChatGPT Enterprise or Business, Gemini for Workspace, and Microsoft 365 Copilot all publish enterprise data-use, privacy, security, and retention commitments. The baseline vendor concern is largely addressed when the firm uses the right paid enterprise workspace instead of consumer accounts.",
+    title: "Use enterprise workspaces, not personal accounts",
+    body: "Claude Enterprise, ChatGPT Enterprise or Business, Gemini for Workspace, and Microsoft 365 Copilot all publish business data-use, privacy, security, and retention commitments. That is the right baseline for PE work.",
   },
   {
-    title: "Configure retention, history, and logging",
-    body: "Admins should explicitly set conversation history, retention windows, audit logs, export controls, and deletion procedures. Do not rely on defaults. The relevant question is not whether controls exist, but whether the firm has enabled and documented them.",
+    title: "Have IT configure the settings",
+    body: "Admins should set the practical controls: retention, chat history, SSO, MFA, connector access, audit logs, export rules, and deletion process. Once configured, the tools are much easier to use with confidence.",
   },
   {
-    title: "Write operating procedures for AI use",
-    body: "A credible AI program needs procedures: approved tools, allowed data classes, upload rules, redaction expectations, review requirements, escalation paths, and owner responsibilities. The policy should be short enough to follow and specific enough to enforce.",
+    title: "Keep the policy short and usable",
+    body: "The operating policy can be simple: use approved tools, avoid unnecessary sensitive uploads, redact where appropriate, cite sources for important claims, and keep human review on client-ready or investment work.",
   },
   {
-    title: "Classify tools by data sensitivity",
-    body: "Define which tools can handle public research, internal operating documents, data-room exports, board materials, customer data, employee data, and legal material. Different data classes should have different approval paths.",
+    title: "Avoid unnecessary PII and personal data",
+    body: "For transcripts, customer files, HR material, survey exports, and call notes, remove personal information that is not needed for the analysis. The less sensitive data uploaded, the easier the workflow is to approve.",
   },
   {
-    title: "Control connectors, agents, and shared repositories",
-    body: "Governance must cover more than chat. Admins should approve which connectors, agents, folders, drives, SharePoint sites, Slack channels, and data-room exports can be reached by AI tools. Retrieval should follow existing permissions, not create a new shadow access layer.",
+    title: "Be thoughtful with transcripts",
+    body: "Recording and transcript workflows are useful, but they should be handled cleanly. Confirm consent practices, remove irrelevant personal details where possible, and avoid uploading raw transcripts when a cleaned version will do.",
   },
   {
-    title: "Require source-grounded outputs for sensitive work",
-    body: "For diligence, board work, and investment memos, outputs should cite the file, transcript, or passage behind material claims. Source grounding makes review faster and prevents polished language from becoming unsupported conviction.",
+    title: "Keep access tied to existing permissions",
+    body: "If AI connects to Drive, SharePoint, Slack, a CRM, or a data room, it should respect the permissions already in place. The tool should not expose documents a user could not otherwise access.",
   },
   {
-    title: "Put AI use into legal documents",
-    body: "Engagement letters, NDAs, vendor agreements, portfolio company policies, and consultant SOWs can address approved tools, confidential information, data retention, model training, subprocessors, audit rights, breach notification, and human review obligations.",
+    title: "Cover AI use in engagement language",
+    body: "Engagement letters, NDAs, vendor agreements, consultant SOWs, and portfolio company policies can make approved AI use explicit. The language should cover confidentiality, approved tools, data handling, and human review.",
   },
   {
-    title: "Review the control set on a fixed cadence",
-    body: "Assign ownership for quarterly review of approved tools, admin settings, retention policies, incident procedures, and user training. AI governance is not a one-time memo; it is a recurring operating process.",
+    title: "Review settings periodically",
+    body: "AI products change quickly. IT or the platform owner should periodically review approved tools, admin settings, connector permissions, retention controls, and user guidance.",
   },
 ];
 

@@ -6,7 +6,7 @@ import { guardrailPractices, sourceLinks } from "@/lib/aiForPE";
 export const metadata: Metadata = {
   title: "AI Guardrails & Data Security for PE | Ops2EBITDA",
   description:
-    "Practical AI governance for private equity workflows, enterprise licenses, retention settings, admin controls, data rooms, and legal provisions.",
+    "Practical AI guardrails for private equity workflows, enterprise licenses, retention settings, admin controls, sensitive uploads, transcripts, and legal provisions.",
 };
 
 export default function AIGuardrailsPage() {
@@ -15,7 +15,7 @@ export default function AIGuardrailsPage() {
       <PageHeader
         eyebrow="AI for PE Professionals"
         title="Guardrails and data security."
-        summary="A practical control model for using enterprise AI in PE: vendor privacy terms, admin configuration, data classification, permission discipline, legal language, and review standards."
+        summary="How PE teams can use enterprise AI confidently: rely on provider privacy and retention controls, configure admin settings, use basic data hygiene, and cover AI use in legal language."
       />
 
       <AIPillarNav />
@@ -23,26 +23,26 @@ export default function AIGuardrailsPage() {
       <section className="border-y border-line/80 py-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="font-mono-label text-accent">Control model</p>
+            <p className="font-mono-label text-accent">The practical answer</p>
             <h2 className="mt-3 max-w-2xl font-newsreader text-3xl text-ink">
-              The vendor privacy question is only the first layer of AI
-              governance.
+              Enterprise AI is built for this. The firm just needs basic
+              operating hygiene.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
             <p>
-              Claude, ChatGPT, Gemini, Microsoft Copilot, and other major
-              enterprise AI platforms already provide formal privacy,
-              data-use, retention, and security commitments for business
-              accounts. With an approved enterprise account, the basic concern
-              is not whether the tool has a policy. It is whether the firm has
-              configured the account correctly.
+              Claude, ChatGPT, Gemini, Microsoft Copilot, and the other major
+              enterprise AI platforms already have business privacy, security,
+              retention, and data-use policies in place. If the firm is using an
+              approved enterprise account, the baseline data-storage concern is
+              manageable.
             </p>
             <p>
-              The operating work is procedural: set retention and history
-              rules, approve connectors, govern repositories, document upload
-              standards, assign ownership, audit usage, and require human review
-              before investment or client-ready use.
+              The remaining work is straightforward: let IT own the admin
+              settings, configure retention and history rules, avoid unnecessary
+              personal information, clean transcripts before upload when needed,
+              and make sure AI use is covered in policies, engagement letters,
+              and vendor terms.
             </p>
           </div>
         </div>
@@ -53,22 +53,24 @@ export default function AIGuardrailsPage() {
           <div>
             <p className="font-mono-label text-accent">Admin procedure</p>
             <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              The practical question is configuration, not permission to
-              experiment.
+              Let IT manage the back end so professionals can use the tools
+              confidently.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
             <p>
-              A PE firm should have a named admin owner for each approved AI
-              workspace. That owner should maintain the settings register:
-              retention, chat history, data sharing, connector access, identity
-              controls, audit logs, export rules, and deletion process.
+              A PE firm does not need to turn AI adoption into a legal project
+              every time someone wants to use Claude or ChatGPT. It needs a
+              named admin owner for each approved workspace and a simple
+              settings register covering retention, chat history, data sharing,
+              connector access, identity controls, audit logs, export rules, and
+              deletion process.
             </p>
             <p>
-              The governance standard should be explicit enough that a new
-              associate, operating partner, consultant, or portfolio CFO knows
-              which tool to use, what data can be uploaded, when redaction is
-              required, and when outputs need review.
+              Once that is in place, the usage rules can be plain: use approved
+              enterprise accounts, avoid uploading unnecessary PII, remove
+              sensitive personal details from transcripts where possible, and
+              keep human review on investment or client-ready outputs.
             </p>
           </div>
         </div>
@@ -95,23 +97,23 @@ export default function AIGuardrailsPage() {
           <div>
             <p className="font-mono-label text-accent">Practical clause topics</p>
             <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              Contract language should match the operating policy.
+              Legal language should cover the obvious cases.
             </h2>
           </div>
           <div className="space-y-4 text-sm leading-7 text-stone font-geist">
             <p>
               This is not legal advice, but the practical checklist is
               straightforward. Engagement letters, NDAs, vendor agreements, and
-              portfolio company policies can specify whether AI tools may be
-              used, which tools are approved, what confidential information may
-              be uploaded, whether customer content can be retained or used for
-              training, and who reviews AI-assisted work.
+              portfolio company policies can say that approved enterprise AI
+              tools may be used to support analysis, drafting, summarization,
+              and workflow automation, subject to confidentiality, retention,
+              privacy, and human-review standards.
             </p>
             <p>
-              For high-sensitivity matters, the default should be conservative:
-              approved enterprise account, access controls, no model training on
-              customer content where available, source-linked outputs, and no
-              unreviewed AI text in client-ready or investment-decision work.
+              That is usually enough for practical coverage: use approved tools,
+              avoid unnecessary personal information, redact sensitive
+              transcripts when appropriate, preserve confidentiality, and keep a
+              human accountable for final work product.
             </p>
           </div>
         </div>
