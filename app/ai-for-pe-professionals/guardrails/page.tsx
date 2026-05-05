@@ -48,34 +48,6 @@ export default function AIGuardrailsPage() {
         </div>
       </section>
 
-      <section className="mt-8 border-y border-line/80 py-8">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="font-mono-label text-accent">Admin procedure</p>
-            <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              Major enterprise AI providers already have robust retention and
-              privacy controls in place.
-            </h2>
-          </div>
-          <div className="space-y-4 text-sm leading-7 text-stone font-geist">
-            <p>
-              A PE firm does not need to turn AI adoption into a legal project
-              every time someone wants to use Claude or ChatGPT. It needs a
-              named admin owner for each approved workspace and a simple
-              settings register covering retention, chat history, data sharing,
-              connector access, identity controls, audit logs, export rules, and
-              deletion process.
-            </p>
-            <p>
-              Once that is in place, the usage rules can be plain: use approved
-              enterprise accounts, avoid uploading unnecessary PII, remove
-              sensitive personal details from transcripts where possible, and
-              keep human review on investment or client-ready outputs.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="mt-8 grid gap-4 md:grid-cols-2">
         {guardrailPractices.map((practice) => (
           <article
