@@ -2,16 +2,33 @@ import { labelForType } from "@/lib/format";
 import { hrefFor } from "@/lib/routes";
 import Link from "next/link";
 import type { Route } from "next";
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { ContentCard } from "@/components/Cards";
 import { SearchPanel } from "@/components/SearchPanel";
 import { featuredOfferings, productLines } from "@/lib/offerings";
+import { absoluteUrl, pageMetadata, siteDescription, siteName } from "@/lib/seo";
 import {
   getAllContent,
   getContentStats,
   getIndustries,
   getPlaybooks,
 } from "@/lib/content";
+
+const homeDescription =
+  "A private equity operations field guide for value creation, KPI logic, industry dynamics, portfolio company playbooks, and AI-enabled operating assets.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Private Equity Operations Field Guide",
+  description: homeDescription,
+  path: "/",
+  keywords: [
+    "private equity operating partner",
+    "value creation playbooks",
+    "PE operating assets",
+    "portfolio operations",
+  ],
+});
 
 const operatingAgendas = [
   {
@@ -70,9 +87,64 @@ export default function Home() {
   const industries = getIndustries().slice(0, 4);
   const allContent = getAllContent();
   const leadOffering = featuredOfferings[0];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${absoluteUrl("/")}#organization`,
+        name: siteName,
+        url: absoluteUrl("/"),
+        description: siteDescription,
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${absoluteUrl("/")}#website`,
+        name: siteName,
+        url: absoluteUrl("/"),
+        description: siteDescription,
+        publisher: {
+          "@id": `${absoluteUrl("/")}#organization`,
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${absoluteUrl("/")}#webpage`,
+        name: "Private Equity Operations Field Guide",
+        url: absoluteUrl("/"),
+        description: homeDescription,
+        isPartOf: {
+          "@id": `${absoluteUrl("/")}#website`,
+        },
+        about: [
+          "Private equity operations",
+          "Value creation",
+          "Operating partner workflows",
+          "EBITDA improvement",
+          "Portfolio company KPIs",
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${absoluteUrl("/offerings")}#paid-operating-assets`,
+        name: "Paid operating assets for private equity value creation",
+        itemListElement: productLines.map((line, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: line.title,
+          description: line.description,
+          url: absoluteUrl("/offerings"),
+        })),
+      },
+    ],
+  };
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="home-hero grid gap-8 p-6 md:p-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div>
           <p className="font-mono-label flex items-center gap-3 text-accent">
@@ -107,10 +179,10 @@ export default function Home() {
               {leadOffering.price}
             </p>
             <Link
-              href="/offerings"
+              href="/offerings#toolkit"
               className="font-mono-label text-accent hover:opacity-80 transition-opacity"
             >
-              View offerings
+              Get the toolkit
             </Link>
           </div>
         </div>
@@ -131,10 +203,10 @@ export default function Home() {
             </h2>
           </div>
           <Link
-            href="/offerings"
+            href="/offerings#toolkit"
             className="font-mono-label text-accent hover:opacity-80 transition-opacity"
           >
-            Open catalog
+            Shop bundles
           </Link>
         </div>
         <div className="mt-5 grid gap-4 md:grid-cols-3">

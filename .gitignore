@@ -8,5 +8,6 @@ dist
 .DS_Store
 .worktrees/
 .superpowers/
+.claude/
 *.pdf
 *.epub
