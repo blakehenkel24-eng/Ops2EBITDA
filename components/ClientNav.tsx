@@ -156,6 +156,18 @@ export function ClientNav() {
         </div>
 
         <Link
+          href="/atlas-iq"
+          className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
+            pathname.startsWith('/atlas-iq')
+              ? 'border-accent/20 text-accent bg-accent-soft'
+              : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
+          }`}
+        >
+          <Sparkles size={14} strokeWidth={1.7} aria-hidden="true" />
+          Atlas IQ
+        </Link>
+
+        <Link
           href="/offerings#toolkit"
           className="font-mono-label flex items-center gap-2 border border-accent/35 bg-paper/90 text-accent px-3 py-2 transition-all duration-200 whitespace-nowrap hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink"
         >
@@ -239,6 +251,20 @@ export function ClientNav() {
               );
             })}
           </div>
+
+          <Link
+            href="/atlas-iq"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`flex items-center gap-3 font-mono-label p-3 transition-colors ${
+              pathname.startsWith('/atlas-iq')
+                ? 'bg-accent-soft text-accent'
+                : 'text-stone hover:bg-bone hover:text-ink'
+            }`}
+            aria-current={pathname.startsWith('/atlas-iq') ? 'page' : undefined}
+          >
+            <Sparkles size={15} strokeWidth={1.7} aria-hidden="true" />
+            Atlas IQ
+          </Link>
 
           {[
             { href: '/offerings#toolkit', label: 'Get the Toolkit', icon: Package, active: false },

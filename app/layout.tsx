@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Newsreader, Geist, JetBrains_Mono } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
+import { AtlasSidebar } from "@/components/AtlasSidebar";
 import { siteDescription, siteName, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${newsreader.variable} ${geist.variable} ${jetbrains.variable}`}>
       <body>
         <AppShell>{children}</AppShell>
+        <AtlasSidebar />
       </body>
     </html>
   );
