@@ -6,7 +6,22 @@ import { searchOperatingLibrary, buildLibraryContext } from "@/lib/atlas/library
 export const maxDuration = 60;
 
 export async function POST(req: Request) {
-  const { messages, mode = "chat" } = await req.json();
+  const { messages: rawMessages, mode = "chat" } = await req.json();
+
+  // v6 useChat sends {role, parts: [{type:"text", text:"..."}]}
+  // streamText expects {role, content: "..."}
+  const messages = rawMessages.map(
+    (m: { role: string; content?: string; parts?: { type: string; text: string }[] }) => ({
+      role: m.role,
+      content:
+        m.content ??
+        (m.parts
+          ?.filter((p: { type: string }) => p.type === "text")
+          .map((p: { text: string }) => p.text)
+          .join("") || ""),
+    })
+  );
+
   const lastMessage = messages[messages.length - 1]?.content || "";
 
   const command = ATLAS_COMMANDS.find(

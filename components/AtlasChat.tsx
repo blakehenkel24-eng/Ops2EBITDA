@@ -1,7 +1,7 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport, isTextUIPart, UIMessagePart, UIDataTypes, UITools } from "ai";
+import { TextStreamChatTransport, isTextUIPart, UIMessagePart, UIDataTypes, UITools } from "ai";
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
 import { AtlasChatMessage } from "./AtlasChatMessage";
 import { AtlasResearchProgress } from "./AtlasResearchProgress";
@@ -23,7 +23,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   const transport = useMemo(
     () =>
-      new DefaultChatTransport({
+      new TextStreamChatTransport({
         api: "/api/atlas/chat",
         body: { mode: researchMode },
       }),
