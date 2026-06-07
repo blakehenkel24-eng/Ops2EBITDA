@@ -23,8 +23,8 @@ export function AtlasChatMessage({
 }: AtlasChatMessageProps) {
   if (role === "user") {
     return (
-      <div className="flex justify-end mb-5">
-        <div className="max-w-[70%] bg-accent text-white px-4 py-3 rounded-xl rounded-br-sm text-sm leading-relaxed">
+      <div className="flex justify-end mb-4">
+        <div className="max-w-[75%] bg-accent text-white px-4 py-2.5 rounded-2xl rounded-br-sm text-sm leading-relaxed">
           {content}
         </div>
       </div>
@@ -32,7 +32,7 @@ export function AtlasChatMessage({
   }
 
   return (
-    <div className="mb-5">
+    <div className="mb-4">
       {memo && sources ? (
         <AtlasMemoCard
           mode={memo.mode}
@@ -43,40 +43,123 @@ export function AtlasChatMessage({
           createdAt={memo.createdAt}
         />
       ) : (
-        <div className="max-w-[85%] bg-paper border border-line/80 px-5 py-4 rounded-sm rounded-tl-xl text-sm leading-7 text-stone font-geist">
-          <MemoContentInline content={content} />
+        <div className="max-w-[88%] atlas-response text-sm leading-7 text-ink/85 font-geist">
+          <MarkdownContent content={content} />
         </div>
       )}
       {onCommand && !isStreaming && (
-        <AtlasCommandBar onCommand={onCommand} compact />
+        <div className="mt-2">
+          <AtlasCommandBar onCommand={onCommand} compact />
+        </div>
       )}
     </div>
   );
 }
 
-function MemoContentInline({ content }: { content: string }) {
+/** Inline markdown renderer: handles headings, bold, bullets, rules, paragraphs */
+function MarkdownContent({ content }: { content: string }) {
   const lines = content.split("\n");
+  const elements: React.ReactNode[] = [];
+  let listBuffer: string[] = [];
+  let key = 0;
+
+  const flushList = () => {
+    if (listBuffer.length === 0) return;
+    elements.push(
+      <ul key={key++} className="space-y-1 my-2 ml-4">
+        {listBuffer.map((item, i) => (
+          <li key={i} className="list-disc text-ink/80 pl-0.5">
+            <InlineMarkdown text={item} />
+          </li>
+        ))}
+      </ul>
+    );
+    listBuffer = [];
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Horizontal rule
+    if (trimmed === "---" || trimmed === "***" || trimmed === "___") {
+      flushList();
+      elements.push(<hr key={key++} className="border-line/40 my-4" />);
+      continue;
+    }
+
+    // Headings
+    if (trimmed.startsWith("### ")) {
+      flushList();
+      elements.push(
+        <h4 key={key++} className="font-newsreader text-[15px] text-ink font-medium mt-4 mb-1.5">
+          {trimmed.replace("### ", "")}
+        </h4>
+      );
+      continue;
+    }
+    if (trimmed.startsWith("## ")) {
+      flushList();
+      elements.push(
+        <h3 key={key++} className="font-newsreader text-base text-ink font-medium mt-5 mb-2">
+          {trimmed.replace("## ", "")}
+        </h3>
+      );
+      continue;
+    }
+    if (trimmed.startsWith("#### ")) {
+      flushList();
+      elements.push(
+        <h5 key={key++} className="font-mono-label text-accent mt-3 mb-1">
+          {trimmed.replace("#### ", "")}
+        </h5>
+      );
+      continue;
+    }
+
+    // Bullet points
+    if (trimmed.startsWith("- ") || trimmed.startsWith("* ") || /^\d+\.\s/.test(trimmed)) {
+      const text = trimmed.replace(/^[-*]\s/, "").replace(/^\d+\.\s/, "");
+      listBuffer.push(text);
+      continue;
+    }
+
+    // Empty line
+    if (!trimmed) {
+      flushList();
+      continue;
+    }
+
+    // Paragraph
+    flushList();
+    elements.push(
+      <p key={key++} className="mb-2 max-w-[65ch]">
+        <InlineMarkdown text={trimmed} />
+      </p>
+    );
+  }
+
+  flushList();
+  return <>{elements}</>;
+}
+
+/** Handles inline **bold** and *italic* */
+function InlineMarkdown({ text }: { text: string }) {
+  // Split on **bold** and *italic* patterns
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
   return (
     <>
-      {lines.map((line, i) => {
-        if (line.startsWith("## ")) {
+      {parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
           return (
-            <h4 key={i} className="font-newsreader text-base text-ink mt-3 mb-1">
-              {line.replace("## ", "")}
-            </h4>
+            <strong key={i} className="font-semibold text-ink">
+              {part.slice(2, -2)}
+            </strong>
           );
         }
-        if (line.startsWith("- ")) {
-          return (
-            <li key={i} className="ml-4 list-disc text-stone">
-              {line.replace("- ", "")}
-            </li>
-          );
+        if (part.startsWith("*") && part.endsWith("*")) {
+          return <em key={i}>{part.slice(1, -1)}</em>;
         }
-        if (line.trim()) {
-          return <p key={i} className="mb-1.5">{line}</p>;
-        }
-        return null;
+        return <span key={i}>{part}</span>;
       })}
     </>
   );

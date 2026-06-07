@@ -5,7 +5,7 @@ import { TextStreamChatTransport, isTextUIPart, UIMessagePart, UIDataTypes, UITo
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
 import { AtlasChatMessage } from "./AtlasChatMessage";
 import { AtlasResearchProgress } from "./AtlasResearchProgress";
-import { AtlasWelcome } from "./AtlasWelcome";
+import { AtlasWelcome, AtlasReportButtons } from "./AtlasWelcome";
 import { Send } from "lucide-react";
 
 function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
@@ -19,6 +19,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [researchMode, setResearchMode] = useState<string>("chat");
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const transport = useMemo(
     () =>
@@ -71,10 +72,9 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     <div
       className={`flex flex-col ${fullPage ? "h-[calc(100vh-4rem)]" : "h-full"}`}
     >
+      {/* Messages area */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 md:px-8 py-6">
-        {!hasMessages && (
-          <AtlasWelcome onStartResearch={handleStartResearch} />
-        )}
+        {!hasMessages && <AtlasWelcome onStartResearch={handleStartResearch} />}
 
         {messages.map((message) => (
           <AtlasChatMessage
@@ -93,22 +93,29 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
         />
       </div>
 
+      {/* Report buttons — above input, hidden once conversation starts */}
+      {!hasMessages && !isLoading && (
+        <AtlasReportButtons onStartResearch={handleStartResearch} />
+      )}
+
+      {/* Chat input — always visible */}
       <form
         onSubmit={handleSubmit}
         className="border-t border-line/70 bg-paper px-4 md:px-8 py-3 flex items-center gap-3"
       >
         <input
+          ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask Atlas IQ anything about PE operations..."
-          className="flex-1 bg-bone border border-line/80 rounded-lg px-4 py-2.5 text-sm text-ink placeholder:text-stone focus:outline-none focus:border-accent/50 transition-colors font-geist"
+          placeholder={hasMessages ? "Follow up, or type / for commands..." : "Ask Atlas IQ anything..."}
+          className="flex-1 bg-bone border border-line/80 rounded-lg px-4 py-2.5 text-sm text-ink placeholder:text-stone/60 focus:outline-none focus:border-accent/50 transition-colors font-geist"
         />
         <button
           type="submit"
           disabled={isLoading || !input.trim()}
-          className="bg-accent text-white w-9 h-9 rounded-lg flex items-center justify-center disabled:opacity-40 transition-opacity"
+          className="bg-accent text-white w-9 h-9 rounded-lg flex items-center justify-center disabled:opacity-30 transition-opacity"
         >
-          <Send size={16} strokeWidth={1.5} />
+          <Send size={15} strokeWidth={1.5} />
         </button>
       </form>
     </div>
