@@ -12,13 +12,14 @@ export function AtlasCommandBar({
   const commands = compact ? ATLAS_COMMANDS.slice(0, 5) : ATLAS_COMMANDS;
 
   return (
-    <div className="flex flex-wrap gap-1.5 mt-2">
+    <div className="flex flex-wrap gap-1.5">
       {commands.map((cmd) => (
         <button
           key={cmd.name}
           type="button"
           onClick={() => onCommand(`/${cmd.name}`)}
-          className="font-mono-label text-stone bg-paper border border-line/80 px-2.5 py-1 hover:text-accent hover:border-accent/40 transition-colors"
+          title={cmd.prompt}
+          className="font-mono-label text-[10px] text-stone/70 bg-transparent border border-line/50 px-2 py-1 rounded-full hover:text-accent hover:border-accent/30 hover:bg-accent/4 transition-all duration-150"
         >
           {cmd.label}
         </button>
