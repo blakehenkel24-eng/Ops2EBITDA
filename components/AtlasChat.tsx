@@ -17,7 +17,6 @@ function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
 
 export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [researchMode, setResearchMode] = useState<string>("chat");
-  const [started, setStarted] = useState(false);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -34,6 +33,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const { messages, sendMessage, status } = useChat({ transport });
 
   const isLoading = status === "submitted" || status === "streaming";
+  const hasMessages = messages.length > 0;
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
@@ -52,7 +52,6 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const handleStartResearch = useCallback(
     (mode: string, query: string) => {
       setResearchMode(mode);
-      setStarted(true);
       sendMessage({ text: query });
     },
     [sendMessage]
@@ -62,22 +61,21 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     (e: React.FormEvent) => {
       e.preventDefault();
       if (!input.trim()) return;
-      if (!started) setStarted(true);
       sendMessage({ text: input });
       setInput("");
     },
-    [input, started, sendMessage]
+    [input, sendMessage]
   );
-
-  if (!started && messages.length === 0) {
-    return <AtlasWelcome onStartResearch={handleStartResearch} />;
-  }
 
   return (
     <div
       className={`flex flex-col ${fullPage ? "h-[calc(100vh-4rem)]" : "h-full"}`}
     >
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 md:px-8 py-6">
+        {!hasMessages && (
+          <AtlasWelcome onStartResearch={handleStartResearch} />
+        )}
+
         {messages.map((message) => (
           <AtlasChatMessage
             key={message.id}
@@ -102,7 +100,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Follow up, or type / for commands..."
+          placeholder="Ask Atlas IQ anything about PE operations..."
           className="flex-1 bg-bone border border-line/80 rounded-lg px-4 py-2.5 text-sm text-ink placeholder:text-stone focus:outline-none focus:border-accent/50 transition-colors font-geist"
         />
         <button
