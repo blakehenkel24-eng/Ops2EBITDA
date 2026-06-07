@@ -25,8 +25,17 @@ const SUGGESTIONS = [
   "Compare maintenance vs. project revenue quality",
 ];
 
+export interface ProgressStage {
+  id: string;
+  label: string;
+  status: "active" | "done";
+}
+
+const PROGRESS_PREFIX = "§§P";
+
 export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [researchMode, setResearchMode] = useState<string>("chat");
+  const [progressStages, setProgressStages] = useState<ProgressStage[]>([]);
   const [input, setInput] = useState("");
   const [slashDismissed, setSlashDismissed] = useState(false);
   const [slashIndex, setSlashIndex] = useState(0);
@@ -34,21 +43,112 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const slashMenuRef = useRef<HTMLDivElement>(null);
 
+  // Ref-based progress updater so custom fetch stays stable
+  const progressRef = useRef<(stage: ProgressStage) => void>(() => {});
+  progressRef.current = (stage: ProgressStage) => {
+    setProgressStages((prev) => {
+      const idx = prev.findIndex((s) => s.id === stage.id);
+      if (idx >= 0) {
+        const updated = [...prev];
+        updated[idx] = stage;
+        return updated;
+      }
+      return [...prev, stage];
+    });
+  };
+
+  // Custom fetch that intercepts §§P progress lines before they reach the transport
+  const customFetch = useMemo(() => {
+    const fn: typeof globalThis.fetch = async (input, init) => {
+      const res = await globalThis.fetch(input, init);
+      if (!res.body) return res;
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      const encoder = new TextEncoder();
+      let buffer = "";
+      let inProgressPhase = true;
+
+      const filtered = new ReadableStream({
+        async pull(controller) {
+          const { done, value } = await reader.read();
+          if (done) {
+            if (buffer) controller.enqueue(encoder.encode(buffer));
+            controller.close();
+            return;
+          }
+
+          // After progress phase, pass through raw bytes directly
+          if (!inProgressPhase) {
+            controller.enqueue(value);
+            return;
+          }
+
+          buffer += decoder.decode(value, { stream: true });
+
+          // Process complete lines looking for progress events
+          let nlIdx: number;
+          while ((nlIdx = buffer.indexOf("\n")) !== -1) {
+            const line = buffer.slice(0, nlIdx);
+            buffer = buffer.slice(nlIdx + 1);
+
+            if (line.startsWith(PROGRESS_PREFIX)) {
+              try {
+                const data = JSON.parse(line.slice(PROGRESS_PREFIX.length));
+                progressRef.current({ id: data.stage, label: data.label, status: data.status });
+              } catch {
+                // malformed progress line, skip
+              }
+            } else {
+              // First non-progress line — exit progress phase
+              inProgressPhase = false;
+              const remaining = line + "\n" + buffer;
+              buffer = "";
+              if (remaining) controller.enqueue(encoder.encode(remaining));
+              return;
+            }
+          }
+
+          // If buffer doesn't look like start of a progress line, flush it
+          if (buffer.length > 3 && !buffer.startsWith("§")) {
+            inProgressPhase = false;
+            controller.enqueue(encoder.encode(buffer));
+            buffer = "";
+          }
+        },
+      });
+
+      return new Response(filtered, {
+        status: res.status,
+        statusText: res.statusText,
+        headers: res.headers,
+      });
+    };
+    return fn;
+  }, []);
+
   const transport = useMemo(
     () =>
       new TextStreamChatTransport({
         api: "/api/atlas/chat",
-        // Mode always "chat" — report mode is sent via [mode:X] prefix
-        // in message text so it's never stale
         body: { mode: "chat" },
+        fetch: customFetch,
       }),
-    []
+    [customFetch]
   );
 
   const { messages, sendMessage, status } = useChat({ transport });
 
   const isLoading = status === "submitted" || status === "streaming";
   const hasMessages = messages.length > 0;
+
+  // Clear progress when loading finishes
+  useEffect(() => {
+    if (!isLoading) {
+      setProgressStages([]);
+      if (researchMode !== "chat") setResearchMode("chat");
+    }
+  }, [isLoading, researchMode]);
 
   // Find last assistant message index for command bar
   const lastAssistantIdx = useMemo(() => {
@@ -255,6 +355,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
             <AtlasResearchProgress
               visible
               mode={researchMode}
+              stages={progressStages}
             />
           )}
         </div>

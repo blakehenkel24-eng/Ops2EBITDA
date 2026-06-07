@@ -157,14 +157,15 @@ export function ClientNav() {
 
         <Link
           href="/atlas-iq"
-          className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
+          className={`atlas-nav-flagship font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 whitespace-nowrap ${
             pathname.startsWith('/atlas-iq')
-              ? 'border-accent/20 text-accent bg-accent-soft'
-              : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
+              ? 'is-active text-paper'
+              : 'text-accent hover:text-paper'
           }`}
         >
           <Sparkles size={14} strokeWidth={1.7} aria-hidden="true" />
-          Atlas IQ
+          <span>Atlas IQ</span>
+          <span className="atlas-nav-flagship__tag">Flagship</span>
         </Link>
 
         <Link

@@ -29,20 +29,23 @@ const capabilities = [
   {
     icon: Landmark,
     label: "Market Reports",
+    kicker: "Sector memo",
     description:
-      "Full sector analysis with sizing, fragmentation, M&A activity, and sponsor thesis angles. IC pre-read ready.",
+      "Sector sizing, fragmentation, M&A patterns, buyer universe, and sponsor thesis angles assembled into an IC pre-read.",
   },
   {
     icon: Building2,
     label: "Company Reports",
+    kicker: "Target screen",
     description:
-      "Target evaluation from an LMM sponsor perspective: business quality, red flags, platform fit, diligence agenda.",
+      "LMM sponsor lens on business quality, red flags, platform fit, diligence agenda, and where value creation has to prove out.",
   },
   {
     icon: MessageCircle,
     label: "Research Chat",
+    kicker: "Deal room",
     description:
-      "Conversational PE copilot. Challenge assumptions, dig into subsectors, pressure-test investment logic.",
+      "A PE copilot for follow-ups: challenge assumptions, dig into subsectors, and pressure-test investment logic before it reaches the memo.",
   },
 ];
 
@@ -50,12 +53,14 @@ const differentiators = [
   {
     icon: BookOpen,
     label: "Operating Library",
-    description: "Grounded in 1,100+ curated PE operating knowledge chunks, not generic web data.",
+    description:
+      "Grounded in 1,100+ curated PE operating patterns, value creation playbooks, and diligence frameworks, not generic web summaries.",
   },
   {
     icon: Zap,
     label: "Workflow Commands",
-    description: "Type /brief, /thesis, /redflags, /diligence to transform any response into deal-ready output.",
+    description:
+      "Use /brief, /thesis, /redflags, and /diligence to turn raw research into deal-ready work product.",
   },
   {
     icon: Shield,
@@ -66,59 +71,78 @@ const differentiators = [
 
 export default function AtlasIQPage() {
   return (
-    <div className="max-w-3xl mx-auto">
-      {/* Hero */}
-      <div className="text-center pt-8 pb-12">
-        <div className="w-14 h-14 rounded-full bg-accent/8 flex items-center justify-center mx-auto mb-6">
-          <span className="text-accent font-newsreader text-xl font-semibold">IQ</span>
+    <div className="atlas-page mx-auto max-w-5xl">
+      <section className="atlas-hero overflow-hidden border border-line/70">
+        <div className="atlas-hero__grid">
+          <div className="atlas-mark" aria-hidden="true">
+            <span>IQ</span>
+          </div>
+          <p className="font-mono-label text-accent">Proprietary research system</p>
+          <h1 className="mt-4 font-newsreader text-5xl leading-[0.95] text-ink sm:text-6xl md:text-7xl">
+            Atlas IQ
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-stone sm:text-lg">
+            Sponsor-ready market research and company analysis, powered by PE-specific
+            intelligence. Ask a sharper question. Get a memo the deal team can use.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/atlas-iq/chat"
+              className="atlas-primary-cta inline-flex items-center justify-center gap-3 px-6 py-3.5 font-mono-label text-[0.72rem] text-paper transition hover:-translate-y-0.5 hover:shadow-[0_18px_34px_oklch(31%_0.038_248_/_0.16)] focus-visible:outline-offset-4"
+            >
+              Start research
+              <ArrowRight size={14} strokeWidth={2} />
+            </Link>
+            <span className="text-sm leading-6 text-stone">
+              Market, company, and thesis work in one research surface.
+            </span>
+          </div>
         </div>
-        <h1 className="font-newsreader text-4xl md:text-5xl text-ink mb-3 tracking-tight">
-          Atlas IQ
-        </h1>
-        <p className="text-stone text-base max-w-md mx-auto leading-relaxed mb-8">
-          Sponsor-ready market research and company analysis, powered by
-          PE-specific intelligence. Ask a question. Get a memo.
-        </p>
-        <Link
-          href="/atlas-iq/chat"
-          className="inline-flex items-center gap-2.5 bg-accent text-white px-7 py-3 font-mono-label text-xs tracking-wider hover:opacity-90 transition-opacity"
-        >
-          Start Research
-          <ArrowRight size={13} strokeWidth={2} />
-        </Link>
-      </div>
-
-      {/* Capabilities */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-line/50 border border-line/50 mb-10">
-        {capabilities.map(({ icon: Icon, label, description }) => (
-          <article key={label} className="bg-paper p-5">
-            <Icon size={18} strokeWidth={1.3} className="text-accent mb-3" />
-            <h3 className="font-mono-label text-ink text-xs mb-2">{label}</h3>
-            <p className="text-sm text-stone leading-relaxed">{description}</p>
-          </article>
-        ))}
-      </div>
-
-      {/* Differentiators */}
-      <div className="space-y-0 border-t border-line/50 mb-12">
-        {differentiators.map(({ icon: Icon, label, description }) => (
-          <div key={label} className="flex items-start gap-4 py-4 border-b border-line/30">
-            <div className="w-8 h-8 rounded bg-accent/6 flex items-center justify-center shrink-0 mt-0.5">
-              <Icon size={15} strokeWidth={1.5} className="text-accent" />
-            </div>
-            <div>
-              <h4 className="font-mono-label text-ink text-xs mb-0.5">{label}</h4>
-              <p className="text-sm text-stone leading-relaxed">{description}</p>
+        <div className="atlas-hero__artifact" aria-hidden="true">
+          <div className="atlas-memo-sheet">
+            <span className="font-mono-label text-accent">Memo preview</span>
+            <div className="mt-5 space-y-3">
+              <span />
+              <span />
+              <span />
+              <span />
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
 
-      {/* Bottom CTA */}
-      <div className="text-center pb-12">
+      <section className="mt-7 grid grid-cols-1 border border-line/70 bg-line/60 shadow-[0_22px_60px_oklch(31%_0.038_248_/_0.07)] md:grid-cols-3 md:gap-px">
+        {capabilities.map(({ icon: Icon, label, kicker, description }) => (
+          <article key={label} className="atlas-capability bg-paper p-6 md:min-h-64">
+            <div className="mb-6 flex items-center justify-between">
+              <Icon size={20} strokeWidth={1.35} className="text-accent" />
+              <span className="font-mono-label text-[0.62rem] text-stone">{kicker}</span>
+            </div>
+            <h2 className="font-newsreader text-2xl text-ink">{label}</h2>
+            <p className="mt-4 text-sm leading-7 text-stone">{description}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="atlas-dossier mt-10 border-y border-line/60 py-3">
+        {differentiators.map(({ icon: Icon, label, description }) => (
+          <article
+            key={label}
+            className="grid gap-4 border-b border-line/35 py-5 last:border-b-0 sm:grid-cols-[2.75rem_13rem_1fr] sm:items-start"
+          >
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-line/55 bg-accent-soft/45 shadow-[0_1px_0_oklch(99%_0.004_235_/_0.9)_inset]">
+              <Icon size={15} strokeWidth={1.5} className="text-accent" />
+            </div>
+            <h3 className="font-mono-label pt-1.5 text-xs text-ink">{label}</h3>
+            <p className="text-sm leading-7 text-stone">{description}</p>
+          </article>
+        ))}
+      </section>
+
+      <div className="flex justify-center py-10">
         <Link
           href="/atlas-iq/chat"
-          className="inline-flex items-center gap-2 text-accent font-mono-label text-xs hover:underline underline-offset-4"
+          className="inline-flex items-center gap-2 border-b border-accent/45 pb-1 font-mono-label text-xs text-accent transition-colors hover:border-accent hover:text-ink"
         >
           Open Atlas IQ
           <ArrowRight size={12} strokeWidth={2} />

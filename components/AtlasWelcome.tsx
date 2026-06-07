@@ -9,14 +9,53 @@ interface AtlasWelcomeProps {
 
 export function AtlasWelcome({ onStartResearch }: AtlasWelcomeProps) {
   return (
-    <div className="flex flex-col items-center justify-center pt-12 pb-4 px-4">
-      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-5 ring-1 ring-accent/10">
-        <span className="text-accent font-newsreader text-lg font-semibold tracking-tight">IQ</span>
+    <div className="atlas-chat-welcome">
+      <div className="atlas-wordmark" aria-hidden="true">
+        <span>Atlas</span>
+        <strong>IQ</strong>
       </div>
-      <h1 className="font-newsreader text-2xl text-ink mb-1.5 tracking-tight">Atlas IQ</h1>
-      <p className="text-stone/70 text-sm max-w-xs text-center leading-relaxed font-geist">
-        Your PE research copilot. Ask a question, generate a report, or explore an operating thesis.
+      <p className="font-mono-label text-accent">Sponsor research desk</p>
+      <h1 className="mt-3 font-newsreader text-4xl leading-tight text-ink md:text-5xl">
+        Start with a question. Leave with a memo.
+      </h1>
+      <p className="mt-4 max-w-2xl text-base leading-8 text-stone font-geist">
+        Use Atlas IQ for market maps, target screens, diligence agendas, and
+        thesis pressure-tests grounded in PE operating patterns.
       </p>
+      <div className="mt-7 grid w-full max-w-2xl gap-3 sm:grid-cols-2">
+        <button
+          type="button"
+          onClick={() =>
+            onStartResearch(
+              "market",
+              "Build a sponsor-ready market memo for commercial HVAC services."
+            )
+          }
+          className="atlas-welcome-action"
+        >
+          <Landmark size={16} strokeWidth={1.6} />
+          <span>
+            <strong>Market memo</strong>
+            <small>Sector structure, buyer universe, M&A logic</small>
+          </span>
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            onStartResearch(
+              "company",
+              "Create a sponsor screen for a lower-middle-market facilities services target."
+            )
+          }
+          className="atlas-welcome-action"
+        >
+          <Building2 size={16} strokeWidth={1.6} />
+          <span>
+            <strong>Company screen</strong>
+            <small>Quality, risks, platform fit, diligence agenda</small>
+          </span>
+        </button>
+      </div>
     </div>
   );
 }
@@ -223,7 +262,7 @@ function MarketReportForm({
           <button
             type="submit"
             disabled={!canSubmit}
-            className="bg-accent text-white px-4 py-2 rounded-lg flex items-center gap-1.5 font-mono-label text-[10px] disabled:opacity-25 transition-opacity hover:opacity-90"
+            className="bg-accent text-paper px-4 py-2 rounded-lg flex items-center gap-1.5 font-mono-label text-[10px] disabled:opacity-25 transition-opacity hover:opacity-90"
           >
             Generate report
             <ArrowRight size={10} strokeWidth={2} />
@@ -329,7 +368,7 @@ function CompanyReportForm({
           <button
             type="submit"
             disabled={!canSubmit}
-            className="bg-accent text-white px-4 py-2 rounded-lg flex items-center gap-1.5 font-mono-label text-[10px] disabled:opacity-25 transition-opacity hover:opacity-90"
+            className="bg-accent text-paper px-4 py-2 rounded-lg flex items-center gap-1.5 font-mono-label text-[10px] disabled:opacity-25 transition-opacity hover:opacity-90"
           >
             Generate report
             <ArrowRight size={10} strokeWidth={2} />
