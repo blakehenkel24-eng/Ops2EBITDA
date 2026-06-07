@@ -31,6 +31,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [slashIndex, setSlashIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const slashMenuRef = useRef<HTMLDivElement>(null);
 
   const transport = useMemo(
     () =>
@@ -80,6 +81,15 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     ta.style.height = "auto";
     ta.style.height = Math.min(ta.scrollHeight, 160) + "px";
   }, [input]);
+
+  // Scroll selected slash command into view
+  useEffect(() => {
+    if (!showSlashMenu || !slashMenuRef.current) return;
+    const items = slashMenuRef.current.children;
+    if (items[slashIndex]) {
+      items[slashIndex].scrollIntoView({ block: "nearest" });
+    }
+  }, [slashIndex, showSlashMenu]);
 
   // Detect slash command typing
   useEffect(() => {
@@ -234,7 +244,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
               <div className="px-3 py-2 border-b border-line/30">
                 <span className="font-mono-label text-[10px] text-stone/50">COMMANDS</span>
               </div>
-              <div className="max-h-52 overflow-y-auto py-1">
+              <div ref={slashMenuRef} className="max-h-52 overflow-y-auto py-1">
                 {filteredCommands.map((cmd, i) => (
                   <button
                     key={cmd.name}
