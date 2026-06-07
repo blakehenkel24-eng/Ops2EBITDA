@@ -15,5 +15,6 @@ export function getAtlasProvider() {
 export function getAtlasModel() {
   const provider = getAtlasProvider();
   const modelId = process.env.OPENROUTER_MODEL || "deepseek/deepseek-chat";
-  return provider(modelId);
+  // .chat() forces Chat Completions API — OpenRouter doesn't support the Responses API
+  return provider.chat(modelId);
 }
