@@ -1,0 +1,59 @@
+{
+  "slug": "investment-committee-process",
+  "title": "Investment Committee Process",
+  "type": "fundamental",
+  "summary": "The Investment Committee Process explains how a PE firm turns diligence findings into an approved decision to deploy capital.",
+  "definition": "The Investment Committee process is the sponsor's internal governance path for evaluating, challenging, approving, or rejecting a transaction.",
+  "whyItMatters": "PE operators care because the IC memo becomes the first binding version of the investment thesis, value creation plan, downside case, and accountability model.",
+  "example": "An IC may approve a platform investment only after the deal team proves the EBITDA bridge, diligence risks, management plan, debt capacity, and exit path are credible.",
+  "diagram": "graph TD\n  A[Deal Sourcing] --> B[Preliminary IC]\n  B --> C[Diligence Workstreams]\n  C --> D[Final IC Memo]\n  D --> E[Challenge Session]\n  E --> F[Approval]\n  F --> G[Post-Close Plan]",
+  "relatedPlaybooks": [
+    "100-Day Value Creation Plan",
+    "Operational Diligence",
+    "Commercial Diligence",
+    "Value Creation Planning"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "investment process"
+  ],
+  "articleSections": [
+    {
+      "title": "The Firm's Capital Allocation Courtroom",
+      "body": [
+        "The Investment Committee is where a deal team must prove that a transaction deserves the firm's capital, reputation, and operating bandwidth. It is not a status meeting. It is an internal courtroom where the thesis, valuation, risks, leverage, management team, diligence findings, and exit path are attacked before the market gets a chance to punish weak thinking.",
+        "Strong IC processes create institutional discipline. They prevent deal momentum, banker pressure, or partner enthusiasm from overwhelming evidence. Every major assumption must be visible: purchase multiple, EBITDA adjustments, growth plan, debt capacity, covenant cushion, management quality, integration burden, and expected buyer universe."
+      ],
+      "callout": "The IC memo is the first draft of the sponsor's future accountability."
+    },
+    {
+      "title": "From Screening to Final Approval",
+      "body": [
+        "Most firms use staged approval. Early screens test whether the opportunity fits mandate, sector thesis, size, return profile, and competitive dynamics. Preliminary IC may authorize resources for deeper diligence or a first-round bid. Final IC decides whether the firm can sign a purchase agreement and commit capital.",
+        "As diligence advances, the memo becomes increasingly specific. Commercial diligence validates market demand. Operational diligence tests scalability. QofE defends normalized EBITDA. Debt financing defines leverage capacity. Legal and tax expose structural risk. The deal team must synthesize all workstreams into one coherent decision case."
+      ]
+    },
+    {
+      "title": "The IC Memo as Operating Contract",
+      "body": [
+        "A good IC memo is not only a deal approval document. It becomes the operating contract for the hold period. It defines why the firm bought the company, what must happen to create value, which risks were accepted, and what milestones should prove the thesis after close. The 100-Day Plan should be a direct extension of the final IC memo.",
+        "This is why vague value creation language is dangerous. If the memo says 'professionalize sales' without defining pipeline coverage, quota attainment, sales process, CRM adoption, and revenue productivity targets, management inherits ambiguity. The operating team must convert IC language into measurable workstreams before closing."
+      ]
+    },
+    {
+      "title": "Downside Case and Kill Discipline",
+      "body": [
+        "The most important part of IC is often the downside case. Sponsors must know what happens if revenue slows, margins compress, debt costs rise, integrations fail, or exit multiples contract. The question is not whether the base case is attractive. The question is whether the firm can survive being wrong and still protect LP capital.",
+        "Elite firms have kill discipline. They walk away when diligence breaks the thesis, when valuation outruns operating reality, or when management risk cannot be mitigated. This discipline is painful because broken-deal costs are real, but buying a flawed asset is far more expensive. IC exists to make that restraint institutionally possible."
+      ]
+    }
+  ],
+  "diagrams": []
+}

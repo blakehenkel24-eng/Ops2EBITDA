@@ -11,3 +11,5 @@ dist
 .claude/
 *.pdf
 *.epub
+.vercel
+linkedin-assets/

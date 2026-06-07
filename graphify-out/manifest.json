@@ -1,0 +1,1267 @@
+{
+  ".gemini/skills/ui-ux-pro-max/scripts/core.py": {
+    "mtime": 1777751839.6375525,
+    "ast_hash": "3df4734a785963a8242a56c1b926adfd",
+    "semantic_hash": "3df4734a785963a8242a56c1b926adfd"
+  },
+  ".gemini/skills/ui-ux-pro-max/scripts/design_system.py": {
+    "mtime": 1777751839.6373925,
+    "ast_hash": "08f84d04608a19049c90fc2b1ef314f9",
+    "semantic_hash": "08f84d04608a19049c90fc2b1ef314f9"
+  },
+  ".gemini/skills/ui-ux-pro-max/scripts/search.py": {
+    "mtime": 1777751839.6384132,
+    "ast_hash": "8c7e35426fe8f6f3ed91e9dce0ed7af1",
+    "semantic_hash": "8c7e35426fe8f6f3ed91e9dce0ed7af1"
+  },
+  "app/(library)/fundamentals/[slug]/page.tsx": {
+    "mtime": 1777770004.6627307,
+    "ast_hash": "f67cf206f68718d09eb9759baf1e3707",
+    "semantic_hash": "f67cf206f68718d09eb9759baf1e3707"
+  },
+  "app/(library)/fundamentals/page.tsx": {
+    "mtime": 1777766813.6766882,
+    "ast_hash": "dc25de6969800467e701b495b9ce903e",
+    "semantic_hash": "dc25de6969800467e701b495b9ce903e"
+  },
+  "app/(library)/industries/[slug]/page.tsx": {
+    "mtime": 1777770009.5815098,
+    "ast_hash": "d1747094756b0f4ad79e87bcfd1c0974",
+    "semantic_hash": "d1747094756b0f4ad79e87bcfd1c0974"
+  },
+  "app/(library)/industries/page.tsx": {
+    "mtime": 1777766813.6790361,
+    "ast_hash": "3f3a6437ac48b289b0edeeb98a334b84",
+    "semantic_hash": "3f3a6437ac48b289b0edeeb98a334b84"
+  },
+  "app/(library)/kpis/[slug]/page.tsx": {
+    "mtime": 1777770014.360649,
+    "ast_hash": "841901f8c6dcdd2df397b69ad9a7fd96",
+    "semantic_hash": "841901f8c6dcdd2df397b69ad9a7fd96"
+  },
+  "app/(library)/kpis/page.tsx": {
+    "mtime": 1777766813.6792395,
+    "ast_hash": "64440ca4af37237a079ec1547503e6f8",
+    "semantic_hash": "64440ca4af37237a079ec1547503e6f8"
+  },
+  "app/(library)/playbooks/[slug]/page.tsx": {
+    "mtime": 1777769998.5797966,
+    "ast_hash": "8a4a9955fb6d4082aa9eac5574d162a6",
+    "semantic_hash": "8a4a9955fb6d4082aa9eac5574d162a6"
+  },
+  "app/(library)/playbooks/page.tsx": {
+    "mtime": 1777766813.6794074,
+    "ast_hash": "ed4ab10727e62df023266275b915d91f",
+    "semantic_hash": "ed4ab10727e62df023266275b915d91f"
+  },
+  "app/ai-for-deal-teams/page.tsx": {
+    "mtime": 1777857371.7078896,
+    "ast_hash": "67007c19bf944323636b763fe9d7326c",
+    "semantic_hash": "67007c19bf944323636b763fe9d7326c"
+  },
+  "app/ai-for-pe-professionals/guardrails/page.tsx": {
+    "mtime": 1777857371.7082474,
+    "ast_hash": "9ba78d852dbec60e30b0652f8110aae9",
+    "semantic_hash": "9ba78d852dbec60e30b0652f8110aae9"
+  },
+  "app/ai-for-pe-professionals/page.tsx": {
+    "mtime": 1777857371.7084234,
+    "ast_hash": "5065d6b7c189abf6cbf2d86e050bdf44",
+    "semantic_hash": "5065d6b7c189abf6cbf2d86e050bdf44"
+  },
+  "app/ai-for-pe-professionals/tool-landscape/page.tsx": {
+    "mtime": 1777857371.7085998,
+    "ast_hash": "0142d690cc6d3675615f8e487c8ceee0",
+    "semantic_hash": "0142d690cc6d3675615f8e487c8ceee0"
+  },
+  "app/ai-for-pe-professionals/use-cases/page.tsx": {
+    "mtime": 1777857371.7087674,
+    "ast_hash": "23403bf6f4052b9d32ed369b9cc7259d",
+    "semantic_hash": "23403bf6f4052b9d32ed369b9cc7259d"
+  },
+  "app/layout.tsx": {
+    "mtime": 1778300265.0151005,
+    "ast_hash": "d68da017549ddab6d150bcfb9bfec32c",
+    "semantic_hash": "d68da017549ddab6d150bcfb9bfec32c"
+  },
+  "app/not-found.tsx": {
+    "mtime": 1777767566.2512503,
+    "ast_hash": "624dd37ab132345f0112cecc0c238914",
+    "semantic_hash": "624dd37ab132345f0112cecc0c238914"
+  },
+  "app/offerings/page.tsx": {
+    "mtime": 1778949179.6616771,
+    "ast_hash": "17e0e4f181f51d80607da9bee54fa7b9",
+    "semantic_hash": "17e0e4f181f51d80607da9bee54fa7b9"
+  },
+  "app/page.tsx": {
+    "mtime": 1778455376.595714,
+    "ast_hash": "c68aa454b716ec64464607b400a390d4",
+    "semantic_hash": "c68aa454b716ec64464607b400a390d4"
+  },
+  "app/robots.ts": {
+    "mtime": 1778300265.0181077,
+    "ast_hash": "3de6f725d49511c35a4150948a8092cd",
+    "semantic_hash": "3de6f725d49511c35a4150948a8092cd"
+  },
+  "app/sitemap.ts": {
+    "mtime": 1778300265.0183775,
+    "ast_hash": "507d6abd581e15ed7c3ef262e7f47054",
+    "semantic_hash": "507d6abd581e15ed7c3ef262e7f47054"
+  },
+  "components/AIPillarNav.tsx": {
+    "mtime": 1777857371.7092676,
+    "ast_hash": "d933a6409fdc45eebd5a15a072a5a3ef",
+    "semantic_hash": "d933a6409fdc45eebd5a15a072a5a3ef"
+  },
+  "components/AppShell.tsx": {
+    "mtime": 1777786535.9051647,
+    "ast_hash": "18bd37ae6e1c54d72f02bab45bac6a0a",
+    "semantic_hash": "18bd37ae6e1c54d72f02bab45bac6a0a"
+  },
+  "components/Cards.tsx": {
+    "mtime": 1777786562.6481378,
+    "ast_hash": "9773e537eca158e1289a7f3bd5125dad",
+    "semantic_hash": "9773e537eca158e1289a7f3bd5125dad"
+  },
+  "components/ClientNav.tsx": {
+    "mtime": 1777857474.8157647,
+    "ast_hash": "7e821740583bb086fa891646a16d5cf7",
+    "semantic_hash": "7e821740583bb086fa891646a16d5cf7"
+  },
+  "components/DetailViews.tsx": {
+    "mtime": 1778466772.3714643,
+    "ast_hash": "a574cef84496eeb76ee7c2721081780f",
+    "semantic_hash": "a574cef84496eeb76ee7c2721081780f"
+  },
+  "components/MermaidDiagram.tsx": {
+    "mtime": 1777767607.889846,
+    "ast_hash": "27b52df4be04a6939c86f265e8f43f50",
+    "semantic_hash": "27b52df4be04a6939c86f265e8f43f50"
+  },
+  "components/Ops2EBITDALogo.tsx": {
+    "mtime": 1777853440.199057,
+    "ast_hash": "527c6933d40af28b0a681e02647705ae",
+    "semantic_hash": "527c6933d40af28b0a681e02647705ae"
+  },
+  "components/SearchPanel.tsx": {
+    "mtime": 1777786562.6803453,
+    "ast_hash": "2c5d4096dcc028b210bf5929a62bf35b",
+    "semantic_hash": "2c5d4096dcc028b210bf5929a62bf35b"
+  },
+  "content/curated-articles/100-day-value-creation-plan.json": {
+    "mtime": 1777764396.6323583,
+    "ast_hash": "9a8835dfe0675fd9550049184dcfe6dc",
+    "semantic_hash": "9a8835dfe0675fd9550049184dcfe6dc"
+  },
+  "content/curated-articles/add-on-acquisition-integration.json": {
+    "mtime": 1777764396.6329105,
+    "ast_hash": "d58d9ed5be8de2753ceae719d8fca95b",
+    "semantic_hash": "d58d9ed5be8de2753ceae719d8fca95b"
+  },
+  "content/curated-articles/add-on-acquisitions.json": {
+    "mtime": 1777764396.6332378,
+    "ast_hash": "5a4efeba5961108fd5b077bb3a31163e",
+    "semantic_hash": "5a4efeba5961108fd5b077bb3a31163e"
+  },
+  "content/curated-articles/addressable-spend.json": {
+    "mtime": 1777764396.6335552,
+    "ast_hash": "7cd81a9a3a7f6c5febf7e43ed8207238",
+    "semantic_hash": "7cd81a9a3a7f6c5febf7e43ed8207238"
+  },
+  "content/curated-articles/ai-opportunity-identification.json": {
+    "mtime": 1777764396.6338582,
+    "ast_hash": "97c465ce02a0773a01cfda1140185d78",
+    "semantic_hash": "97c465ce02a0773a01cfda1140185d78"
+  },
+  "content/curated-articles/arr.json": {
+    "mtime": 1777764396.6344888,
+    "ast_hash": "d78688988af85b37a581f2682f418d96",
+    "semantic_hash": "d78688988af85b37a581f2682f418d96"
+  },
+  "content/curated-articles/branch-profitability.json": {
+    "mtime": 1777764396.6346803,
+    "ast_hash": "0764548a5f4cb4252aa0c89bd5349eb1",
+    "semantic_hash": "0764548a5f4cb4252aa0c89bd5349eb1"
+  },
+  "content/curated-articles/business-services.json": {
+    "mtime": 1777764396.634918,
+    "ast_hash": "21fa4b5c455d9262b8b50624518f1434",
+    "semantic_hash": "21fa4b5c455d9262b8b50624518f1434"
+  },
+  "content/curated-articles/cac-payback.json": {
+    "mtime": 1777764396.635205,
+    "ast_hash": "a176093544502f890e2652ec93e25b13",
+    "semantic_hash": "a176093544502f890e2652ec93e25b13"
+  },
+  "content/curated-articles/cac.json": {
+    "mtime": 1777764396.635868,
+    "ast_hash": "e5b1f3bd705ca1e071cdb41220bdf0f3",
+    "semantic_hash": "e5b1f3bd705ca1e071cdb41220bdf0f3"
+  },
+  "content/curated-articles/campaign-roi.json": {
+    "mtime": 1777764396.6363118,
+    "ast_hash": "5b86bbb033e6becdb012fbfa9e11b2a5",
+    "semantic_hash": "5b86bbb033e6becdb012fbfa9e11b2a5"
+  },
+  "content/curated-articles/cash-conversion-cycle.json": {
+    "mtime": 1777764396.6367352,
+    "ast_hash": "d9a1c45bcc8ca0fc9837bb9593f2b8b6",
+    "semantic_hash": "d9a1c45bcc8ca0fc9837bb9593f2b8b6"
+  },
+  "content/curated-articles/churn.json": {
+    "mtime": 1777764396.637195,
+    "ast_hash": "1a1c241999a13279361e9fa69436fbb7",
+    "semantic_hash": "1a1c241999a13279361e9fa69436fbb7"
+  },
+  "content/curated-articles/commercial-diligence.json": {
+    "mtime": 1777764396.6375191,
+    "ast_hash": "417f8e3118439ce21e29887cc566662f",
+    "semantic_hash": "417f8e3118439ce21e29887cc566662f"
+  },
+  "content/curated-articles/contract-compliance.json": {
+    "mtime": 1777764396.6377199,
+    "ast_hash": "70f3a0759b269e557b974c0e49d2a51f",
+    "semantic_hash": "70f3a0759b269e557b974c0e49d2a51f"
+  },
+  "content/curated-articles/cost-per-lead.json": {
+    "mtime": 1777764396.6379004,
+    "ast_hash": "18ccab8f6d50ab667f25eac586d2173d",
+    "semantic_hash": "18ccab8f6d50ab667f25eac586d2173d"
+  },
+  "content/curated-articles/customer-retention-churn-reduction.json": {
+    "mtime": 1777764396.6380835,
+    "ast_hash": "af274df6069b99e6e5ac7e4a7db60a47",
+    "semantic_hash": "af274df6069b99e6e5ac7e4a7db60a47"
+  },
+  "content/curated-articles/data-readiness-for-ai.json": {
+    "mtime": 1777764396.63828,
+    "ast_hash": "77a5452d44e2649cc7cb93e33f5ed36f",
+    "semantic_hash": "77a5452d44e2649cc7cb93e33f5ed36f"
+  },
+  "content/curated-articles/deal-lifecycle.json": {
+    "mtime": 1777764396.6385887,
+    "ast_hash": "444774134735294ab48e9ff46f84e6c9",
+    "semantic_hash": "444774134735294ab48e9ff46f84e6c9"
+  },
+  "content/curated-articles/defect-rate.json": {
+    "mtime": 1777764396.6387887,
+    "ast_hash": "3cca812089d96594ad34ac2d2cddf842",
+    "semantic_hash": "3cca812089d96594ad34ac2d2cddf842"
+  },
+  "content/curated-articles/distribution.json": {
+    "mtime": 1777764396.6389627,
+    "ast_hash": "db3280147dfa0433ed102fb64b696e94",
+    "semantic_hash": "db3280147dfa0433ed102fb64b696e94"
+  },
+  "content/curated-articles/dpo.json": {
+    "mtime": 1777764396.6391277,
+    "ast_hash": "8b81e714ad762feede2e4e810db49085",
+    "semantic_hash": "8b81e714ad762feede2e4e810db49085"
+  },
+  "content/curated-articles/dso.json": {
+    "mtime": 1777764396.6392963,
+    "ast_hash": "801501ca129c49b51641e4ca634b0520",
+    "semantic_hash": "801501ca129c49b51641e4ca634b0520"
+  },
+  "content/curated-articles/ebitda-margin.json": {
+    "mtime": 1777764396.6394763,
+    "ast_hash": "3e53543d0fb68972a4da1141440ab790",
+    "semantic_hash": "3e53543d0fb68972a4da1141440ab790"
+  },
+  "content/curated-articles/employee-turnover.json": {
+    "mtime": 1777764396.639653,
+    "ast_hash": "a71edeb414a78197eac054ece3cbbacb",
+    "semantic_hash": "a71edeb414a78197eac054ece3cbbacb"
+  },
+  "content/curated-articles/exit-planning.json": {
+    "mtime": 1777764396.6398287,
+    "ast_hash": "d751cbc15f7c2050186ef770bf73f8aa",
+    "semantic_hash": "d751cbc15f7c2050186ef770bf73f8aa"
+  },
+  "content/curated-articles/exit-readiness.json": {
+    "mtime": 1777764396.6399913,
+    "ast_hash": "8a544bfa04f85b11f87aef1bbc73a64b",
+    "semantic_hash": "8a544bfa04f85b11f87aef1bbc73a64b"
+  },
+  "content/curated-articles/expansion-revenue.json": {
+    "mtime": 1777764396.640155,
+    "ast_hash": "99036744797e4f9da9230a8425f72a3b",
+    "semantic_hash": "99036744797e4f9da9230a8425f72a3b"
+  },
+  "content/curated-articles/finance-function-transformation.json": {
+    "mtime": 1777764396.6403234,
+    "ast_hash": "e933259dc1a270c10f5cf7c1f5b11f19",
+    "semantic_hash": "e933259dc1a270c10f5cf7c1f5b11f19"
+  },
+  "content/curated-articles/forecast-accuracy.json": {
+    "mtime": 1777764396.640478,
+    "ast_hash": "00afa463f00de043ba01b2e2044d2a17",
+    "semantic_hash": "00afa463f00de043ba01b2e2044d2a17"
+  },
+  "content/curated-articles/gross-margin.json": {
+    "mtime": 1777764396.6406517,
+    "ast_hash": "5f3ebcb54df7a9bb58a1613b18410fe3",
+    "semantic_hash": "5f3ebcb54df7a9bb58a1613b18410fe3"
+  },
+  "content/curated-articles/grr.json": {
+    "mtime": 1777764396.640815,
+    "ast_hash": "0a7619fd7a8fce0f8346c7228ac50893",
+    "semantic_hash": "0a7619fd7a8fce0f8346c7228ac50893"
+  },
+  "content/curated-articles/healthcare-services.json": {
+    "mtime": 1777764396.6409788,
+    "ast_hash": "e71e64bc4515fda6438b4b51e0add103",
+    "semantic_hash": "e71e64bc4515fda6438b4b51e0add103"
+  },
+  "content/curated-articles/industrial-services.json": {
+    "mtime": 1777764396.6411335,
+    "ast_hash": "4d2075a6e22b25ef909f2d41e6af55c6",
+    "semantic_hash": "4d2075a6e22b25ef909f2d41e6af55c6"
+  },
+  "content/curated-articles/insurance-services.json": {
+    "mtime": 1777764396.6412792,
+    "ast_hash": "2d628af03f52fca5ceabe056219f982f",
+    "semantic_hash": "2d628af03f52fca5ceabe056219f982f"
+  },
+  "content/curated-articles/inventory-turns.json": {
+    "mtime": 1777764396.6414342,
+    "ast_hash": "ebf4ecf905ae26c03bcae07e0e435bb7",
+    "semantic_hash": "ebf4ecf905ae26c03bcae07e0e435bb7"
+  },
+  "content/curated-articles/investment-thesis.json": {
+    "mtime": 1777764396.6416354,
+    "ast_hash": "3c4d43a7ae83ce746237caae0dc652c1",
+    "semantic_hash": "3c4d43a7ae83ce746237caae0dc652c1"
+  },
+  "content/curated-articles/kpi-dashboard-buildout.json": {
+    "mtime": 1777764396.6418192,
+    "ast_hash": "5f33f2ebe59142fe7dcb307eb4594ba8",
+    "semantic_hash": "5f33f2ebe59142fe7dcb307eb4594ba8"
+  },
+  "content/curated-articles/labor-productivity.json": {
+    "mtime": 1777764396.6419828,
+    "ast_hash": "d6c91bfa71d33f15cb05a29ed49444ce",
+    "semantic_hash": "d6c91bfa71d33f15cb05a29ed49444ce"
+  },
+  "content/curated-articles/lbo-basics.json": {
+    "mtime": 1777764396.642274,
+    "ast_hash": "7f8fb0d6e75491d7dbd4e746c82c448f",
+    "semantic_hash": "7f8fb0d6e75491d7dbd4e746c82c448f"
+  },
+  "content/curated-articles/lead-conversion-rate.json": {
+    "mtime": 1777764396.6428993,
+    "ast_hash": "3ec57971343365f52ada0c6446eabb50",
+    "semantic_hash": "3ec57971343365f52ada0c6446eabb50"
+  },
+  "content/curated-articles/logo-retention.json": {
+    "mtime": 1777764396.643529,
+    "ast_hash": "a394a1b5d8d0eeb6f08063580cbe01d5",
+    "semantic_hash": "a394a1b5d8d0eeb6f08063580cbe01d5"
+  },
+  "content/curated-articles/management-operating-cadence.json": {
+    "mtime": 1777764396.6437068,
+    "ast_hash": "a198e8b2dc914948ad012c84602bf393",
+    "semantic_hash": "a198e8b2dc914948ad012c84602bf393"
+  },
+  "content/curated-articles/manufacturing.json": {
+    "mtime": 1777764396.6439018,
+    "ast_hash": "9a73599d3380e1bf5053b673434151c3",
+    "semantic_hash": "9a73599d3380e1bf5053b673434151c3"
+  },
+  "content/curated-articles/marketing-efficiency-improvement.json": {
+    "mtime": 1777764396.6440573,
+    "ast_hash": "b13a7d6d88116317fbdf765ef762a252",
+    "semantic_hash": "b13a7d6d88116317fbdf765ef762a252"
+  },
+  "content/curated-articles/maverick-spend.json": {
+    "mtime": 1777764396.6442177,
+    "ast_hash": "74907ec2e079a2df668a4fa23bd84063",
+    "semantic_hash": "74907ec2e079a2df668a4fa23bd84063"
+  },
+  "content/curated-articles/mrr.json": {
+    "mtime": 1777764396.644355,
+    "ast_hash": "56297e9abbb7a937113552f95180162b",
+    "semantic_hash": "56297e9abbb7a937113552f95180162b"
+  },
+  "content/curated-articles/multi-site-services.json": {
+    "mtime": 1777764396.6445239,
+    "ast_hash": "14aa1284fb47dbcc6c3941edebdfb3cc",
+    "semantic_hash": "14aa1284fb47dbcc6c3941edebdfb3cc"
+  },
+  "content/curated-articles/nrr.json": {
+    "mtime": 1777764396.645103,
+    "ast_hash": "0290d51dbe43c31fa9d7b5368d40902f",
+    "semantic_hash": "0290d51dbe43c31fa9d7b5368d40902f"
+  },
+  "content/curated-articles/on-time-delivery.json": {
+    "mtime": 1777764396.6452692,
+    "ast_hash": "ab9866d868ad9817245517ff04bae668",
+    "semantic_hash": "ab9866d868ad9817245517ff04bae668"
+  },
+  "content/curated-articles/operational-diligence.json": {
+    "mtime": 1777764396.6455014,
+    "ast_hash": "3fb36cc359bcb75499a53d8b64f845a2",
+    "semantic_hash": "3fb36cc359bcb75499a53d8b64f845a2"
+  },
+  "content/curated-articles/org-design-spans-and-layers.json": {
+    "mtime": 1777764396.6456673,
+    "ast_hash": "cb1d924c556770458971561ffe844941",
+    "semantic_hash": "cb1d924c556770458971561ffe844941"
+  },
+  "content/curated-articles/pe-business-model.json": {
+    "mtime": 1777764396.645965,
+    "ast_hash": "889c17977c8eec72ff5fee79487f4c7a",
+    "semantic_hash": "889c17977c8eec72ff5fee79487f4c7a"
+  },
+  "content/curated-articles/pipeline-coverage.json": {
+    "mtime": 1777764396.6461363,
+    "ast_hash": "6ea6af36f75afb2bc29f1de72e8dcfbb",
+    "semantic_hash": "6ea6af36f75afb2bc29f1de72e8dcfbb"
+  },
+  "content/curated-articles/plant-oee.json": {
+    "mtime": 1777764396.6462805,
+    "ast_hash": "c785a4eabb6aea74cc8759fc2d6f3e9d",
+    "semantic_hash": "c785a4eabb6aea74cc8759fc2d6f3e9d"
+  },
+  "content/curated-articles/portfolio-monitoring.json": {
+    "mtime": 1777764396.6464236,
+    "ast_hash": "2d3961a5036e84c175c8d6e359992db0",
+    "semantic_hash": "2d3961a5036e84c175c8d6e359992db0"
+  },
+  "content/curated-articles/pricing-optimization.json": {
+    "mtime": 1777764396.646646,
+    "ast_hash": "4f54ce06a94ddac28a887b602d91f204",
+    "semantic_hash": "4f54ce06a94ddac28a887b602d91f204"
+  },
+  "content/curated-articles/procurement-savings.json": {
+    "mtime": 1777764396.6472313,
+    "ast_hash": "2768cb2594bf79897192c660845ad811",
+    "semantic_hash": "2768cb2594bf79897192c660845ad811"
+  },
+  "content/curated-articles/provider-utilization.json": {
+    "mtime": 1777764396.6475706,
+    "ast_hash": "575c4251e195dd9fa25e1063f9ee683a",
+    "semantic_hash": "575c4251e195dd9fa25e1063f9ee683a"
+  },
+  "content/curated-articles/quota-attainment.json": {
+    "mtime": 1777764396.6477141,
+    "ast_hash": "85b98efc52b0999a15b7bd0c4d82d00e",
+    "semantic_hash": "85b98efc52b0999a15b7bd0c4d82d00e"
+  },
+  "content/curated-articles/revenue-cycle-denial-rate.json": {
+    "mtime": 1777764396.6478562,
+    "ast_hash": "7f24e1a6a0bc0a719996b64d3b36e17b",
+    "semantic_hash": "7f24e1a6a0bc0a719996b64d3b36e17b"
+  },
+  "content/curated-articles/sales-cycle-length.json": {
+    "mtime": 1777764396.6480086,
+    "ast_hash": "b465e4651a05d2239e7dbf1991e9862b",
+    "semantic_hash": "b465e4651a05d2239e7dbf1991e9862b"
+  },
+  "content/curated-articles/sales-productivity-improvement.json": {
+    "mtime": 1777764396.6481774,
+    "ast_hash": "b4458956061ee94f23ae33390b6d0ebf",
+    "semantic_hash": "b4458956061ee94f23ae33390b6d0ebf"
+  },
+  "content/curated-articles/savings-percentage.json": {
+    "mtime": 1777764396.648501,
+    "ast_hash": "2b74e1bfc1006a412767ff1ea8a04517",
+    "semantic_hash": "2b74e1bfc1006a412767ff1ea8a04517"
+  },
+  "content/curated-articles/scrap-rate.json": {
+    "mtime": 1777764396.6486657,
+    "ast_hash": "0b1c0ba156a6a28b741f4188403782ed",
+    "semantic_hash": "0b1c0ba156a6a28b741f4188403782ed"
+  },
+  "content/curated-articles/sources-of-return.json": {
+    "mtime": 1777764396.6488144,
+    "ast_hash": "66ebd6253508a6181924a0bccd54de2e",
+    "semantic_hash": "66ebd6253508a6181924a0bccd54de2e"
+  },
+  "content/curated-articles/staffing-human-capital-services.json": {
+    "mtime": 1777764396.6489615,
+    "ast_hash": "1c9e5979a2ff53a1d8d0ea48bd874c28",
+    "semantic_hash": "1c9e5979a2ff53a1d8d0ea48bd874c28"
+  },
+  "content/curated-articles/tech-enabled-services.json": {
+    "mtime": 1777764396.6491175,
+    "ast_hash": "45dcc2e8602388b500c8e037b794b138",
+    "semantic_hash": "45dcc2e8602388b500c8e037b794b138"
+  },
+  "content/curated-articles/throughput.json": {
+    "mtime": 1777764396.6492574,
+    "ast_hash": "9e771090a8920d979b3bb57b912134b7",
+    "semantic_hash": "9e771090a8920d979b3bb57b912134b7"
+  },
+  "content/curated-articles/utilization.json": {
+    "mtime": 1777764396.6494117,
+    "ast_hash": "4d25dc761ab6f1c1d595ea245a65a0b1",
+    "semantic_hash": "4d25dc761ab6f1c1d595ea245a65a0b1"
+  },
+  "content/curated-articles/value-creation-planning.json": {
+    "mtime": 1777764396.6495585,
+    "ast_hash": "6b00b8760758b8fc8ff8dd28e964df5c",
+    "semantic_hash": "6b00b8760758b8fc8ff8dd28e964df5c"
+  },
+  "content/curated-articles/vendor-count.json": {
+    "mtime": 1777764396.6497138,
+    "ast_hash": "ee9f1774eaf503caf8304047dbc973fa",
+    "semantic_hash": "ee9f1774eaf503caf8304047dbc973fa"
+  },
+  "content/curated-articles/vertical-saas.json": {
+    "mtime": 1777764396.649874,
+    "ast_hash": "149839ba7da00d5e4ef3911b61ad2550",
+    "semantic_hash": "149839ba7da00d5e4ef3911b61ad2550"
+  },
+  "content/curated-articles/warehouse-picks-per-hour.json": {
+    "mtime": 1777764396.6500366,
+    "ast_hash": "875cbe44b560d439191aad5c5425bdc1",
+    "semantic_hash": "875cbe44b560d439191aad5c5425bdc1"
+  },
+  "content/curated-articles/what-private-equity-is.json": {
+    "mtime": 1777764396.6501966,
+    "ast_hash": "4dc6a2c7b117e5d2b77ce5233d805a74",
+    "semantic_hash": "4dc6a2c7b117e5d2b77ce5233d805a74"
+  },
+  "content/curated-articles/win-rate.json": {
+    "mtime": 1777764396.6504626,
+    "ast_hash": "43159e3deb50fe315d247bb670a646b7",
+    "semantic_hash": "43159e3deb50fe315d247bb670a646b7"
+  },
+  "content/curated-articles/working-capital-improvement.json": {
+    "mtime": 1777764396.6506262,
+    "ast_hash": "f58cbbc5116a887752a3996ed73077cb",
+    "semantic_hash": "f58cbbc5116a887752a3996ed73077cb"
+  },
+  "content/fundamentals/add-on-acquisitions.json": {
+    "mtime": 1778466772.3725429,
+    "ast_hash": "8dc985280354edcaeadcf14f84b26475",
+    "semantic_hash": "8dc985280354edcaeadcf14f84b26475"
+  },
+  "content/fundamentals/commercial-diligence.json": {
+    "mtime": 1778466772.3727994,
+    "ast_hash": "f6cc2cc4cfb2eca0edf91b8cd8493787",
+    "semantic_hash": "f6cc2cc4cfb2eca0edf91b8cd8493787"
+  },
+  "content/fundamentals/deal-lifecycle.json": {
+    "mtime": 1778466772.3729744,
+    "ast_hash": "0cfd19f57c41ad5a4f472e61fe4214ce",
+    "semantic_hash": "0cfd19f57c41ad5a4f472e61fe4214ce"
+  },
+  "content/fundamentals/exit-planning.json": {
+    "mtime": 1778466772.37314,
+    "ast_hash": "1cfd0ffa99e0850081e89129406836b9",
+    "semantic_hash": "1cfd0ffa99e0850081e89129406836b9"
+  },
+  "content/fundamentals/investment-thesis.json": {
+    "mtime": 1778466772.373351,
+    "ast_hash": "5c8f4a9ece0f8e105057320903e79b48",
+    "semantic_hash": "5c8f4a9ece0f8e105057320903e79b48"
+  },
+  "content/fundamentals/lbo-basics.json": {
+    "mtime": 1778466772.373779,
+    "ast_hash": "48d41d880cb7ecd85440f34365e0a8df",
+    "semantic_hash": "48d41d880cb7ecd85440f34365e0a8df"
+  },
+  "content/fundamentals/operational-diligence.json": {
+    "mtime": 1778466772.3740115,
+    "ast_hash": "e66dbe228403c3dd39b057b296f8871a",
+    "semantic_hash": "e66dbe228403c3dd39b057b296f8871a"
+  },
+  "content/fundamentals/pe-business-model.json": {
+    "mtime": 1778466772.374218,
+    "ast_hash": "a53a79a00635af41c699fde354fffc14",
+    "semantic_hash": "a53a79a00635af41c699fde354fffc14"
+  },
+  "content/fundamentals/portfolio-monitoring.json": {
+    "mtime": 1778466772.3744879,
+    "ast_hash": "919093d1486d02ae4290bdf36175d0c2",
+    "semantic_hash": "919093d1486d02ae4290bdf36175d0c2"
+  },
+  "content/fundamentals/sources-of-return.json": {
+    "mtime": 1778466772.3746727,
+    "ast_hash": "d6342673ae320a1c5fecb76d4b69a83c",
+    "semantic_hash": "d6342673ae320a1c5fecb76d4b69a83c"
+  },
+  "content/fundamentals/value-creation-planning.json": {
+    "mtime": 1778466772.3748384,
+    "ast_hash": "ac3e1a3aec4ad96fec549780c0e57eb4",
+    "semantic_hash": "ac3e1a3aec4ad96fec549780c0e57eb4"
+  },
+  "content/fundamentals/what-private-equity-is.json": {
+    "mtime": 1778466772.3751428,
+    "ast_hash": "5e841db7f90307b954015b31bb358161",
+    "semantic_hash": "5e841db7f90307b954015b31bb358161"
+  },
+  "content/industries/aerospace-and-defense.json": {
+    "mtime": 1778466772.375592,
+    "ast_hash": "92fb8701622ba3f26e8ca93c23b06537",
+    "semantic_hash": "92fb8701622ba3f26e8ca93c23b06537"
+  },
+  "content/industries/biotech.json": {
+    "mtime": 1778466772.3759117,
+    "ast_hash": "8bb3be5a74b86dd190ae599d6eb7830c",
+    "semantic_hash": "8bb3be5a74b86dd190ae599d6eb7830c"
+  },
+  "content/industries/business-services.json": {
+    "mtime": 1778466772.376736,
+    "ast_hash": "fb48ee52f00005bffdc5ecfa261858d4",
+    "semantic_hash": "fb48ee52f00005bffdc5ecfa261858d4"
+  },
+  "content/industries/distribution.json": {
+    "mtime": 1778466772.378303,
+    "ast_hash": "c47233d33dfab9087b7f4d96e7b763bc",
+    "semantic_hash": "c47233d33dfab9087b7f4d96e7b763bc"
+  },
+  "content/industries/drug-manufacturers.json": {
+    "mtime": 1778466772.3791149,
+    "ast_hash": "fa2de88fe01ca14cb3601a2770d33ad7",
+    "semantic_hash": "fa2de88fe01ca14cb3601a2770d33ad7"
+  },
+  "content/industries/food-and-beverage.json": {
+    "mtime": 1778466772.3794942,
+    "ast_hash": "e2cd0c6c7a95f421147bc50426a609f1",
+    "semantic_hash": "e2cd0c6c7a95f421147bc50426a609f1"
+  },
+  "content/industries/franchise-model.json": {
+    "mtime": 1778466772.3798761,
+    "ast_hash": "042a2af769a53adb8d490ea8f61ce8b4",
+    "semantic_hash": "042a2af769a53adb8d490ea8f61ce8b4"
+  },
+  "content/industries/healthcare-services.json": {
+    "mtime": 1778466772.380114,
+    "ast_hash": "76e3f2004bd794279c4774fcb3be7f2e",
+    "semantic_hash": "76e3f2004bd794279c4774fcb3be7f2e"
+  },
+  "content/industries/home-residential-services.json": {
+    "mtime": 1778466772.3803794,
+    "ast_hash": "09840d0896740f280796d938bb1a4d29",
+    "semantic_hash": "09840d0896740f280796d938bb1a4d29"
+  },
+  "content/industries/industrial-distribution.json": {
+    "mtime": 1778466772.3805206,
+    "ast_hash": "09a3ef3409652eda3d41fbf7c37d6180",
+    "semantic_hash": "09a3ef3409652eda3d41fbf7c37d6180"
+  },
+  "content/industries/industrial-services.json": {
+    "mtime": 1778466772.3806744,
+    "ast_hash": "9f10d305ce6457fec0e380c13c04080d",
+    "semantic_hash": "9f10d305ce6457fec0e380c13c04080d"
+  },
+  "content/industries/insurance-services.json": {
+    "mtime": 1778466772.3809774,
+    "ast_hash": "9b064a0273d55faad1281e2ead64e708",
+    "semantic_hash": "9b064a0273d55faad1281e2ead64e708"
+  },
+  "content/industries/manufacturing.json": {
+    "mtime": 1778466772.3812568,
+    "ast_hash": "9ed2b4351ac89f14b2d9cf2b00aa405f",
+    "semantic_hash": "9ed2b4351ac89f14b2d9cf2b00aa405f"
+  },
+  "content/industries/multi-site-services.json": {
+    "mtime": 1778466772.3814566,
+    "ast_hash": "823f6947a513a6e9ccaba0a05eff1c54",
+    "semantic_hash": "823f6947a513a6e9ccaba0a05eff1c54"
+  },
+  "content/industries/pharmacy-benefit-managers.json": {
+    "mtime": 1778466772.3816323,
+    "ast_hash": "33c6dc75106d81ecce32e04d382c6b5c",
+    "semantic_hash": "33c6dc75106d81ecce32e04d382c6b5c"
+  },
+  "content/industries/professional-sports-teams.json": {
+    "mtime": 1778466772.3819087,
+    "ast_hash": "398e1dde1f7f5ecaac3f593192112b84",
+    "semantic_hash": "398e1dde1f7f5ecaac3f593192112b84"
+  },
+  "content/industries/software-and-saas.json": {
+    "mtime": 1778466772.3821669,
+    "ast_hash": "0298bffcca35348687119db79ced36cf",
+    "semantic_hash": "0298bffcca35348687119db79ced36cf"
+  },
+  "content/industries/staffing-human-capital-services.json": {
+    "mtime": 1778466772.3823893,
+    "ast_hash": "a0b0e3c77b3863815918e33b82806bb6",
+    "semantic_hash": "a0b0e3c77b3863815918e33b82806bb6"
+  },
+  "content/industries/tech-enabled-services.json": {
+    "mtime": 1778466772.3825352,
+    "ast_hash": "c1c913c267e6e4bc0a2ce084f7fa1e71",
+    "semantic_hash": "c1c913c267e6e4bc0a2ce084f7fa1e71"
+  },
+  "content/industries/transportation-and-logistics.json": {
+    "mtime": 1778466772.382721,
+    "ast_hash": "f1fb6da11f0e82854ec3559270a9b2f4",
+    "semantic_hash": "f1fb6da11f0e82854ec3559270a9b2f4"
+  },
+  "content/industries/value-added-reseller.json": {
+    "mtime": 1778466772.3828843,
+    "ast_hash": "853784c4f69a097584fcc28f0587efc6",
+    "semantic_hash": "853784c4f69a097584fcc28f0587efc6"
+  },
+  "content/industries/wealth-management.json": {
+    "mtime": 1778466772.383023,
+    "ast_hash": "88ec31cf63decb3305b8c256a328f233",
+    "semantic_hash": "88ec31cf63decb3305b8c256a328f233"
+  },
+  "content/industry-project-playbooks/business-services-account-management-model.json": {
+    "mtime": 1777764396.656255,
+    "ast_hash": "7f2062eb9eb80a16107367292576574c",
+    "semantic_hash": "7f2062eb9eb80a16107367292576574c"
+  },
+  "content/industry-project-playbooks/business-services-back-office-centralization.json": {
+    "mtime": 1777764396.6563723,
+    "ast_hash": "df24ff84b203eea15c53d7d3eeac6ae8",
+    "semantic_hash": "df24ff84b203eea15c53d7d3eeac6ae8"
+  },
+  "content/industry-project-playbooks/business-services-customer-concentration-reduction.json": {
+    "mtime": 1777764396.656492,
+    "ast_hash": "c8e557f17b566887e57aca7fc48e6b0f",
+    "semantic_hash": "c8e557f17b566887e57aca7fc48e6b0f"
+  },
+  "content/industry-project-playbooks/business-services-delivery-margin-improvement.json": {
+    "mtime": 1777764396.6566153,
+    "ast_hash": "73b5fa18bb0145172ac8c2e6b6ba0867",
+    "semantic_hash": "73b5fa18bb0145172ac8c2e6b6ba0867"
+  },
+  "content/industry-project-playbooks/business-services-sales-process-professionalization.json": {
+    "mtime": 1777764396.6567328,
+    "ast_hash": "403a0d66d3204626d5a424fa55ddc34b",
+    "semantic_hash": "403a0d66d3204626d5a424fa55ddc34b"
+  },
+  "content/industry-project-playbooks/business-services-utilization-improvement.json": {
+    "mtime": 1777764396.6568477,
+    "ast_hash": "2b4c0b1b473fbd72801548ca270356f6",
+    "semantic_hash": "2b4c0b1b473fbd72801548ca270356f6"
+  },
+  "content/industry-project-playbooks/distribution-branch-profitability-improvement.json": {
+    "mtime": 1777764396.6569624,
+    "ast_hash": "7814251db37b6ca7507264c9798fce4b",
+    "semantic_hash": "7814251db37b6ca7507264c9798fce4b"
+  },
+  "content/industry-project-playbooks/distribution-inventory-turns-improvement.json": {
+    "mtime": 1777764396.6571333,
+    "ast_hash": "38429c8f8c89935019a3c961c649e369",
+    "semantic_hash": "38429c8f8c89935019a3c961c649e369"
+  },
+  "content/industry-project-playbooks/distribution-pricing-discipline.json": {
+    "mtime": 1777764396.6573238,
+    "ast_hash": "812d7d266158b712f3ed2a29fa07e118",
+    "semantic_hash": "812d7d266158b712f3ed2a29fa07e118"
+  },
+  "content/industry-project-playbooks/distribution-sales-territory-redesign.json": {
+    "mtime": 1777764396.6575918,
+    "ast_hash": "d8e13be8a73758647e7d7c237d5f5aa0",
+    "semantic_hash": "d8e13be8a73758647e7d7c237d5f5aa0"
+  },
+  "content/industry-project-playbooks/distribution-vendor-rebate-optimization.json": {
+    "mtime": 1777764396.6577363,
+    "ast_hash": "82229df508f7c032cc20f34e1fb65142",
+    "semantic_hash": "82229df508f7c032cc20f34e1fb65142"
+  },
+  "content/industry-project-playbooks/distribution-warehouse-productivity-improvement.json": {
+    "mtime": 1777764396.6579092,
+    "ast_hash": "e5c552c536bbc58d0155ac973901f703",
+    "semantic_hash": "e5c552c536bbc58d0155ac973901f703"
+  },
+  "content/industry-project-playbooks/healthcare-services-centralized-call-center-implementation.json": {
+    "mtime": 1777764396.6581452,
+    "ast_hash": "66ade73dd38390d99bf7c08c4177ed2a",
+    "semantic_hash": "66ade73dd38390d99bf7c08c4177ed2a"
+  },
+  "content/industry-project-playbooks/healthcare-services-payer-mix-improvement.json": {
+    "mtime": 1777764396.658317,
+    "ast_hash": "5d0e096610df56eba03757484ad38174",
+    "semantic_hash": "5d0e096610df56eba03757484ad38174"
+  },
+  "content/industry-project-playbooks/healthcare-services-provider-utilization-improvement.json": {
+    "mtime": 1777764396.6584766,
+    "ast_hash": "0e7ce17e1d4b1fc572319b9cc69dcf0d",
+    "semantic_hash": "0e7ce17e1d4b1fc572319b9cc69dcf0d"
+  },
+  "content/industry-project-playbooks/healthcare-services-referral-growth-engine.json": {
+    "mtime": 1777764396.6586378,
+    "ast_hash": "f502416bdbbddf61da3113cae9ce404d",
+    "semantic_hash": "f502416bdbbddf61da3113cae9ce404d"
+  },
+  "content/industry-project-playbooks/healthcare-services-revenue-cycle-management-optimization.json": {
+    "mtime": 1777764396.6589434,
+    "ast_hash": "8ec8ff09907d7dc691762bf21a37dfe3",
+    "semantic_hash": "8ec8ff09907d7dc691762bf21a37dfe3"
+  },
+  "content/industry-project-playbooks/healthcare-services-scheduling-optimization.json": {
+    "mtime": 1777764396.6590936,
+    "ast_hash": "a99ed75a1935d0def7652351e60b7950",
+    "semantic_hash": "a99ed75a1935d0def7652351e60b7950"
+  },
+  "content/industry-project-playbooks/manufacturing-inventory-optimization.json": {
+    "mtime": 1777764396.6592712,
+    "ast_hash": "65d4d67411285afd31db3cfc8833face",
+    "semantic_hash": "65d4d67411285afd31db3cfc8833face"
+  },
+  "content/industry-project-playbooks/manufacturing-lean-manufacturing-improvement.json": {
+    "mtime": 1777764396.6594455,
+    "ast_hash": "9cb74b32d1165d10d6287f66918aa9b4",
+    "semantic_hash": "9cb74b32d1165d10d6287f66918aa9b4"
+  },
+  "content/industry-project-playbooks/manufacturing-plant-utilization-improvement.json": {
+    "mtime": 1777764396.659639,
+    "ast_hash": "442fdab2430024ee673406b2ffc8bb5f",
+    "semantic_hash": "442fdab2430024ee673406b2ffc8bb5f"
+  },
+  "content/industry-project-playbooks/manufacturing-procurement-savings.json": {
+    "mtime": 1777764396.6597753,
+    "ast_hash": "c89ec93fddb2c24ef7eb1a12adcf9e0c",
+    "semantic_hash": "c89ec93fddb2c24ef7eb1a12adcf9e0c"
+  },
+  "content/industry-project-playbooks/manufacturing-scrap-and-defect-reduction.json": {
+    "mtime": 1777764396.6599598,
+    "ast_hash": "f8b210a8829bd144f6b9fb80c3cdfd28",
+    "semantic_hash": "f8b210a8829bd144f6b9fb80c3cdfd28"
+  },
+  "content/industry-project-playbooks/manufacturing-sku-rationalization.json": {
+    "mtime": 1777764396.660096,
+    "ast_hash": "ae1b637f54320797c979f6c6c699bb06",
+    "semantic_hash": "ae1b637f54320797c979f6c6c699bb06"
+  },
+  "content/industry-project-playbooks/multi-site-services-add-on-integration-playbook.json": {
+    "mtime": 1777764396.6602786,
+    "ast_hash": "976717ca150c53b6f133315452f0b142",
+    "semantic_hash": "976717ca150c53b6f133315452f0b142"
+  },
+  "content/industry-project-playbooks/multi-site-services-centralized-procurement.json": {
+    "mtime": 1777764396.6604412,
+    "ast_hash": "7aa0f63fcf9bcba431d5889e4161a3b1",
+    "semantic_hash": "7aa0f63fcf9bcba431d5889e4161a3b1"
+  },
+  "content/industry-project-playbooks/multi-site-services-labor-scheduling-optimization.json": {
+    "mtime": 1777764396.6606066,
+    "ast_hash": "1eee5db245ad4814aad306292fa34a37",
+    "semantic_hash": "1eee5db245ad4814aad306292fa34a37"
+  },
+  "content/industry-project-playbooks/multi-site-services-local-marketing-engine.json": {
+    "mtime": 1777764396.6607912,
+    "ast_hash": "78068987f2dc23df7de15d0ccd1530ec",
+    "semantic_hash": "78068987f2dc23df7de15d0ccd1530ec"
+  },
+  "content/industry-project-playbooks/multi-site-services-location-level-profitability-dashboard.json": {
+    "mtime": 1777764396.6609662,
+    "ast_hash": "3c684cb34a5e12be7d27eb0b97b7dd30",
+    "semantic_hash": "3c684cb34a5e12be7d27eb0b97b7dd30"
+  },
+  "content/industry-project-playbooks/multi-site-services-standard-operating-procedures-rollout.json": {
+    "mtime": 1777764396.6611798,
+    "ast_hash": "ae520cf06e97f6470df64dd24e515727",
+    "semantic_hash": "ae520cf06e97f6470df64dd24e515727"
+  },
+  "content/industry-project-playbooks/vertical-saas-churn-reduction.json": {
+    "mtime": 1777764396.6613414,
+    "ast_hash": "889cf0481249e0b56af987467cbae4d3",
+    "semantic_hash": "889cf0481249e0b56af987467cbae4d3"
+  },
+  "content/industry-project-playbooks/vertical-saas-cloud-cost-optimization.json": {
+    "mtime": 1777764396.6615424,
+    "ast_hash": "38dc507d0247d034ae66b55d78ce2513",
+    "semantic_hash": "38dc507d0247d034ae66b55d78ce2513"
+  },
+  "content/industry-project-playbooks/vertical-saas-customer-success-operating-model.json": {
+    "mtime": 1777764396.6617162,
+    "ast_hash": "7ab40b1a941beb66aa19e9c1a331e904",
+    "semantic_hash": "7ab40b1a941beb66aa19e9c1a331e904"
+  },
+  "content/industry-project-playbooks/vertical-saas-net-revenue-retention-improvement.json": {
+    "mtime": 1777764396.6619327,
+    "ast_hash": "cfc65e7435ed2187d8d7234c8156a46e",
+    "semantic_hash": "cfc65e7435ed2187d8d7234c8156a46e"
+  },
+  "content/industry-project-playbooks/vertical-saas-pricing-and-packaging-redesign.json": {
+    "mtime": 1777764396.6620789,
+    "ast_hash": "93af7f16c2e911484c066421c335a5f3",
+    "semantic_hash": "93af7f16c2e911484c066421c335a5f3"
+  },
+  "content/industry-project-playbooks/vertical-saas-revops-dashboard-buildout.json": {
+    "mtime": 1777764396.6622787,
+    "ast_hash": "ebfe4fe850e60e06d40e2ebf5f887a98",
+    "semantic_hash": "ebfe4fe850e60e06d40e2ebf5f887a98"
+  },
+  "content/kpis/addressable-spend.json": {
+    "mtime": 1778466772.3832567,
+    "ast_hash": "f51ba8ee783773ae12decac9718a7bd5",
+    "semantic_hash": "f51ba8ee783773ae12decac9718a7bd5"
+  },
+  "content/kpis/arr.json": {
+    "mtime": 1778466772.38341,
+    "ast_hash": "e51402e22f44a25c71f47267057824c4",
+    "semantic_hash": "e51402e22f44a25c71f47267057824c4"
+  },
+  "content/kpis/branch-profitability.json": {
+    "mtime": 1778466772.3835983,
+    "ast_hash": "fe69f05f2361fdfa3efbe9c4aee2287f",
+    "semantic_hash": "fe69f05f2361fdfa3efbe9c4aee2287f"
+  },
+  "content/kpis/cac-payback.json": {
+    "mtime": 1778466772.3837755,
+    "ast_hash": "29067a1eff6fde8e92cd0c4e72ba04ec",
+    "semantic_hash": "29067a1eff6fde8e92cd0c4e72ba04ec"
+  },
+  "content/kpis/cac.json": {
+    "mtime": 1778466772.3839242,
+    "ast_hash": "cc8476e746b80e08fd29ab6c5a52ecb6",
+    "semantic_hash": "cc8476e746b80e08fd29ab6c5a52ecb6"
+  },
+  "content/kpis/campaign-roi.json": {
+    "mtime": 1778466772.3840828,
+    "ast_hash": "cad0431bd049952184f1cb7b87b49e95",
+    "semantic_hash": "cad0431bd049952184f1cb7b87b49e95"
+  },
+  "content/kpis/cash-conversion-cycle.json": {
+    "mtime": 1778466772.3843002,
+    "ast_hash": "acb956819941d65d65fc019cc19eadea",
+    "semantic_hash": "acb956819941d65d65fc019cc19eadea"
+  },
+  "content/kpis/churn.json": {
+    "mtime": 1778466772.384492,
+    "ast_hash": "c836b3c74437e4a571f60756e70b931c",
+    "semantic_hash": "c836b3c74437e4a571f60756e70b931c"
+  },
+  "content/kpis/contract-compliance.json": {
+    "mtime": 1778466772.384649,
+    "ast_hash": "e26eedc66070a001efec16fa87756d5b",
+    "semantic_hash": "e26eedc66070a001efec16fa87756d5b"
+  },
+  "content/kpis/cost-per-lead.json": {
+    "mtime": 1778466772.3848186,
+    "ast_hash": "6f888ba5670af5a5a13eb936e7042c78",
+    "semantic_hash": "6f888ba5670af5a5a13eb936e7042c78"
+  },
+  "content/kpis/defect-rate.json": {
+    "mtime": 1778466772.3850627,
+    "ast_hash": "8ef491f9581a09da7e8f8284399d4e22",
+    "semantic_hash": "8ef491f9581a09da7e8f8284399d4e22"
+  },
+  "content/kpis/dpo.json": {
+    "mtime": 1778466772.3853555,
+    "ast_hash": "8021beb1b4fde598e5ddce745b0a11a7",
+    "semantic_hash": "8021beb1b4fde598e5ddce745b0a11a7"
+  },
+  "content/kpis/dso.json": {
+    "mtime": 1778466772.3855302,
+    "ast_hash": "c2c6bc1c6d8163675dead0a3a3f55c32",
+    "semantic_hash": "c2c6bc1c6d8163675dead0a3a3f55c32"
+  },
+  "content/kpis/ebitda-margin.json": {
+    "mtime": 1778466772.385776,
+    "ast_hash": "deeefa64df8b8bb5cbe148ac8d93680c",
+    "semantic_hash": "deeefa64df8b8bb5cbe148ac8d93680c"
+  },
+  "content/kpis/employee-turnover.json": {
+    "mtime": 1778466772.3860161,
+    "ast_hash": "9bbc8bef918f690a4daddfb24e882bb1",
+    "semantic_hash": "9bbc8bef918f690a4daddfb24e882bb1"
+  },
+  "content/kpis/expansion-revenue.json": {
+    "mtime": 1778466772.3861701,
+    "ast_hash": "85bc40d3ab5a5ed32545902922ab9caa",
+    "semantic_hash": "85bc40d3ab5a5ed32545902922ab9caa"
+  },
+  "content/kpis/forecast-accuracy.json": {
+    "mtime": 1778466772.386322,
+    "ast_hash": "652c24bbd4901c4e78a6489b52009622",
+    "semantic_hash": "652c24bbd4901c4e78a6489b52009622"
+  },
+  "content/kpis/gross-margin.json": {
+    "mtime": 1778466772.3866122,
+    "ast_hash": "81efe0f8018bb027f0d7088caed18496",
+    "semantic_hash": "81efe0f8018bb027f0d7088caed18496"
+  },
+  "content/kpis/grr.json": {
+    "mtime": 1778466772.386763,
+    "ast_hash": "e9157c925930113bde5c7252d86ed088",
+    "semantic_hash": "e9157c925930113bde5c7252d86ed088"
+  },
+  "content/kpis/inventory-turns.json": {
+    "mtime": 1778466772.3869028,
+    "ast_hash": "2bb2cc7b723dfceb433533b950b88374",
+    "semantic_hash": "2bb2cc7b723dfceb433533b950b88374"
+  },
+  "content/kpis/labor-productivity.json": {
+    "mtime": 1778466772.3870947,
+    "ast_hash": "6a420aa50ae6517742d58e7d5183839d",
+    "semantic_hash": "6a420aa50ae6517742d58e7d5183839d"
+  },
+  "content/kpis/lead-conversion-rate.json": {
+    "mtime": 1778466772.3872235,
+    "ast_hash": "8082dca0f6ca152a17fcda066b65860b",
+    "semantic_hash": "8082dca0f6ca152a17fcda066b65860b"
+  },
+  "content/kpis/logo-retention.json": {
+    "mtime": 1778466772.387387,
+    "ast_hash": "366145d5d912bdb84d1ad6e56d3c6cf5",
+    "semantic_hash": "366145d5d912bdb84d1ad6e56d3c6cf5"
+  },
+  "content/kpis/maverick-spend.json": {
+    "mtime": 1778466772.3875134,
+    "ast_hash": "4c435012362b28f55c094d49a8434554",
+    "semantic_hash": "4c435012362b28f55c094d49a8434554"
+  },
+  "content/kpis/mrr.json": {
+    "mtime": 1778466772.387691,
+    "ast_hash": "e1349b05ef6e399f5867e414432d9985",
+    "semantic_hash": "e1349b05ef6e399f5867e414432d9985"
+  },
+  "content/kpis/nrr.json": {
+    "mtime": 1778466772.3878384,
+    "ast_hash": "0603b6f7fb63382ea6512845d923e128",
+    "semantic_hash": "0603b6f7fb63382ea6512845d923e128"
+  },
+  "content/kpis/on-time-delivery.json": {
+    "mtime": 1778466772.387971,
+    "ast_hash": "f59d671629568b0434bbc531cd4d2e45",
+    "semantic_hash": "f59d671629568b0434bbc531cd4d2e45"
+  },
+  "content/kpis/pipeline-coverage.json": {
+    "mtime": 1778466772.388109,
+    "ast_hash": "c26703332f364f62532367c59fede2e8",
+    "semantic_hash": "c26703332f364f62532367c59fede2e8"
+  },
+  "content/kpis/plant-oee.json": {
+    "mtime": 1778466772.388304,
+    "ast_hash": "4226dcadc21ccfee2a3ea679a9d5130d",
+    "semantic_hash": "4226dcadc21ccfee2a3ea679a9d5130d"
+  },
+  "content/kpis/provider-utilization.json": {
+    "mtime": 1778466772.3884296,
+    "ast_hash": "8c79cdbca77fc4dab945d61902da254b",
+    "semantic_hash": "8c79cdbca77fc4dab945d61902da254b"
+  },
+  "content/kpis/quota-attainment.json": {
+    "mtime": 1778466772.388639,
+    "ast_hash": "c18610348d0a5da6d9e988dc3e3fadeb",
+    "semantic_hash": "c18610348d0a5da6d9e988dc3e3fadeb"
+  },
+  "content/kpis/revenue-cycle-denial-rate.json": {
+    "mtime": 1778466772.3887873,
+    "ast_hash": "c16079a5863331f8c8cc0ddb7370c6ab",
+    "semantic_hash": "c16079a5863331f8c8cc0ddb7370c6ab"
+  },
+  "content/kpis/sales-cycle-length.json": {
+    "mtime": 1778466772.3889847,
+    "ast_hash": "b0e520196992507576dc9b52084b68df",
+    "semantic_hash": "b0e520196992507576dc9b52084b68df"
+  },
+  "content/kpis/savings-percentage.json": {
+    "mtime": 1778466772.3891475,
+    "ast_hash": "445269da7701fc1070e3bef834479b94",
+    "semantic_hash": "445269da7701fc1070e3bef834479b94"
+  },
+  "content/kpis/scrap-rate.json": {
+    "mtime": 1778466772.389291,
+    "ast_hash": "94b8b0b3ce9b9664dbf07dde4fff6126",
+    "semantic_hash": "94b8b0b3ce9b9664dbf07dde4fff6126"
+  },
+  "content/kpis/throughput.json": {
+    "mtime": 1778466772.3894207,
+    "ast_hash": "56042cef78098ca7c8f974b88ce12970",
+    "semantic_hash": "56042cef78098ca7c8f974b88ce12970"
+  },
+  "content/kpis/utilization.json": {
+    "mtime": 1778466772.38956,
+    "ast_hash": "7ebf9beab58b379746c48254e8cb388b",
+    "semantic_hash": "7ebf9beab58b379746c48254e8cb388b"
+  },
+  "content/kpis/vendor-count.json": {
+    "mtime": 1778466772.3897712,
+    "ast_hash": "c9f7fba50856d2081b8869a0ff317f14",
+    "semantic_hash": "c9f7fba50856d2081b8869a0ff317f14"
+  },
+  "content/kpis/warehouse-picks-per-hour.json": {
+    "mtime": 1778466772.3899384,
+    "ast_hash": "482d9716bc38b12a8c51b9601c757210",
+    "semantic_hash": "482d9716bc38b12a8c51b9601c757210"
+  },
+  "content/kpis/win-rate.json": {
+    "mtime": 1778466772.3904104,
+    "ast_hash": "4c86fe9ee673a86c23712a7111e055d5",
+    "semantic_hash": "4c86fe9ee673a86c23712a7111e055d5"
+  },
+  "content/playbooks/100-day-value-creation-plan.json": {
+    "mtime": 1778466772.3910933,
+    "ast_hash": "a4a424bbdb176cf3525c6bf9e92a760f",
+    "semantic_hash": "a4a424bbdb176cf3525c6bf9e92a760f"
+  },
+  "content/playbooks/add-on-acquisition-integration.json": {
+    "mtime": 1778466772.3912492,
+    "ast_hash": "2ee65ba7d2467b29ec5f4f08e2651eda",
+    "semantic_hash": "2ee65ba7d2467b29ec5f4f08e2651eda"
+  },
+  "content/playbooks/ai-opportunity-identification.json": {
+    "mtime": 1778466772.3913934,
+    "ast_hash": "33cb25682c2270f5f4899c0fbb817612",
+    "semantic_hash": "33cb25682c2270f5f4899c0fbb817612"
+  },
+  "content/playbooks/customer-retention-churn-reduction.json": {
+    "mtime": 1778466772.3915899,
+    "ast_hash": "dc4142b4683071f08a6adaaefe63ee3f",
+    "semantic_hash": "dc4142b4683071f08a6adaaefe63ee3f"
+  },
+  "content/playbooks/data-readiness-for-ai.json": {
+    "mtime": 1778466772.3917866,
+    "ast_hash": "a41f290f47239e676f51d0bb229b28a1",
+    "semantic_hash": "a41f290f47239e676f51d0bb229b28a1"
+  },
+  "content/playbooks/exit-readiness.json": {
+    "mtime": 1778466772.391996,
+    "ast_hash": "9d10211473b124954edbca1aab7537fd",
+    "semantic_hash": "9d10211473b124954edbca1aab7537fd"
+  },
+  "content/playbooks/finance-function-transformation.json": {
+    "mtime": 1778466772.3921866,
+    "ast_hash": "6152252ef0081ad45cedcbe456db700e",
+    "semantic_hash": "6152252ef0081ad45cedcbe456db700e"
+  },
+  "content/playbooks/kpi-dashboard-buildout.json": {
+    "mtime": 1778466772.3923557,
+    "ast_hash": "4dc36839e2bcec576b91a73935b3ce68",
+    "semantic_hash": "4dc36839e2bcec576b91a73935b3ce68"
+  },
+  "content/playbooks/management-operating-cadence.json": {
+    "mtime": 1778466772.392533,
+    "ast_hash": "5b89bf5c797a905f36063e03e352fe15",
+    "semantic_hash": "5b89bf5c797a905f36063e03e352fe15"
+  },
+  "content/playbooks/marketing-efficiency-improvement.json": {
+    "mtime": 1778466772.3931656,
+    "ast_hash": "48ba3a193c3813e8f4e0e524185c1bf9",
+    "semantic_hash": "48ba3a193c3813e8f4e0e524185c1bf9"
+  },
+  "content/playbooks/org-design-spans-and-layers.json": {
+    "mtime": 1778466772.393708,
+    "ast_hash": "a23c7923bc3f3343202576b6398421ec",
+    "semantic_hash": "a23c7923bc3f3343202576b6398421ec"
+  },
+  "content/playbooks/pricing-optimization.json": {
+    "mtime": 1778466772.3947008,
+    "ast_hash": "b7629dfe8755292e3a7ace8c2127323d",
+    "semantic_hash": "b7629dfe8755292e3a7ace8c2127323d"
+  },
+  "content/playbooks/procurement-savings.json": {
+    "mtime": 1778466772.3954098,
+    "ast_hash": "b63f3173ef9d0d8edc54ff8c06b06844",
+    "semantic_hash": "b63f3173ef9d0d8edc54ff8c06b06844"
+  },
+  "content/playbooks/sales-productivity-improvement.json": {
+    "mtime": 1778466772.3957076,
+    "ast_hash": "6d52ebf03d4b608f80ebf4f3f49eded7",
+    "semantic_hash": "6d52ebf03d4b608f80ebf4f3f49eded7"
+  },
+  "content/playbooks/working-capital-improvement.json": {
+    "mtime": 1778466772.395917,
+    "ast_hash": "369be4b8003ae054d6fb0ac65c165101",
+    "semantic_hash": "369be4b8003ae054d6fb0ac65c165101"
+  },
+  "content/sources/local-book-folder.json": {
+    "mtime": 1777764396.6796632,
+    "ast_hash": "7e140862182f802bd2d5f740a755eb6f",
+    "semantic_hash": "7e140862182f802bd2d5f740a755eb6f"
+  },
+  "content/sources/local-pe-healthcare.json": {
+    "mtime": 1777764396.680321,
+    "ast_hash": "a5c62433ec640f4c53e285f9185aed10",
+    "semantic_hash": "a5c62433ec640f4c53e285f9185aed10"
+  },
+  "content/sources/local-pe-operations.json": {
+    "mtime": 1777764396.6805198,
+    "ast_hash": "281cd57f170dca44784af6e185e0bf41",
+    "semantic_hash": "281cd57f170dca44784af6e185e0bf41"
+  },
+  "content/sources/local-pe-study-guide.json": {
+    "mtime": 1777764396.6810153,
+    "ast_hash": "c6bc8af052c2a3a30abe9be36941997c",
+    "semantic_hash": "c6bc8af052c2a3a30abe9be36941997c"
+  },
+  "content/sources/local-value-creation-playbook.json": {
+    "mtime": 1777764396.6812067,
+    "ast_hash": "e47307da7771ea45cf65d8e2330e2f8a",
+    "semantic_hash": "e47307da7771ea45cf65d8e2330e2f8a"
+  },
+  "eslint.config.mjs": {
+    "mtime": 1778300357.9465768,
+    "ast_hash": "85c9340626e02c3b5218fa5f370d3352",
+    "semantic_hash": "85c9340626e02c3b5218fa5f370d3352"
+  },
+  "lib/aiForPE.ts": {
+    "mtime": 1777857371.710152,
+    "ast_hash": "adb8a652a6c4e405859b3aba14708854",
+    "semantic_hash": "adb8a652a6c4e405859b3aba14708854"
+  },
+  "lib/content.ts": {
+    "mtime": 1777764396.691037,
+    "ast_hash": "585bbf35eefae57da64feec8d84ae90a",
+    "semantic_hash": "585bbf35eefae57da64feec8d84ae90a"
+  },
+  "lib/format.ts": {
+    "mtime": 1777764396.6911666,
+    "ast_hash": "10c4b32f0cd75da3793c2b14220c7c16",
+    "semantic_hash": "10c4b32f0cd75da3793c2b14220c7c16"
+  },
+  "lib/offerings.ts": {
+    "mtime": 1778949135.388974,
+    "ast_hash": "06b505dd64bb6dfd798339c67efeb681",
+    "semantic_hash": "06b505dd64bb6dfd798339c67efeb681"
+  },
+  "lib/routes.ts": {
+    "mtime": 1777764396.6912851,
+    "ast_hash": "4692412cee6d0815efa1eae01901f16e",
+    "semantic_hash": "4692412cee6d0815efa1eae01901f16e"
+  },
+  "lib/seo.ts": {
+    "mtime": 1778300265.0140364,
+    "ast_hash": "4d73916b36427c1ea792e05c08e5c4ff",
+    "semantic_hash": "4d73916b36427c1ea792e05c08e5c4ff"
+  },
+  "lib/types.ts": {
+    "mtime": 1778466772.3961957,
+    "ast_hash": "a4a262070dedeb54aeeaf7176f208386",
+    "semantic_hash": "a4a262070dedeb54aeeaf7176f208386"
+  },
+  "next-env.d.ts": {
+    "mtime": 1780790242.5155923,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+  },
+  "next.config.ts": {
+    "mtime": 1778444503.728067,
+    "ast_hash": "daad32b4de0b92afe04301ebf0a6cc76",
+    "semantic_hash": "daad32b4de0b92afe04301ebf0a6cc76"
+  },
+  "package.json": {
+    "mtime": 1778445717.2111168,
+    "ast_hash": "3aea4fe127b33f177d0a21668ab15912",
+    "semantic_hash": "3aea4fe127b33f177d0a21668ab15912"
+  },
+  "postcss.config.mjs": {
+    "mtime": 1778445731.8116713,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "refactor.mjs": {
+    "mtime": 1777766810.2844086,
+    "ast_hash": "678cf57fe5547f95d6ec350b260a74c2",
+    "semantic_hash": "678cf57fe5547f95d6ec350b260a74c2"
+  },
+  "scripts/enrich-content.mjs": {
+    "mtime": 1777771996.118023,
+    "ast_hash": "1a255f9f203ee296ffb629bb6567ef4f",
+    "semantic_hash": "1a255f9f203ee296ffb629bb6567ef4f"
+  },
+  "scripts/generate-content.mjs": {
+    "mtime": 1777764396.6946447,
+    "ast_hash": "e395274a442e1f9341513054dedad30a",
+    "semantic_hash": "e395274a442e1f9341513054dedad30a"
+  },
+  "tsconfig.json": {
+    "mtime": 1777764396.6948917,
+    "ast_hash": "189f3961a1af280f940cdb7bab15e7b4",
+    "semantic_hash": "189f3961a1af280f940cdb7bab15e7b4"
+  }
+}
