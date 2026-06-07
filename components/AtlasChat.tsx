@@ -225,8 +225,8 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
           />
         ))}
         <AtlasResearchProgress
-          stage="Atlas IQ is thinking..."
           visible={isLoading}
+          mode={researchMode}
         />
       </div>
 

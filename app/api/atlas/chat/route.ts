@@ -40,12 +40,14 @@ export async function POST(req: Request) {
     systemPrompt += `\n\n${libraryContext}`;
   }
 
+  const isReport = mode === "market" || mode === "company";
+
   const result = streamText({
     model: getAtlasModel(),
     system: systemPrompt,
     messages,
     temperature: 0.2,
-    maxOutputTokens: 4000,
+    maxOutputTokens: isReport ? 16000 : 4000,
   });
 
   return result.toTextStreamResponse();
