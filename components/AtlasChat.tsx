@@ -116,7 +116,9 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const handleStartResearch = useCallback(
     (mode: string, query: string) => {
       setResearchMode(mode);
-      sendMessage({ text: query });
+      // Embed mode in message so server gets it immediately
+      // (transport body won't update until next render)
+      sendMessage({ text: `[mode:${mode}] ${query}` });
     },
     [sendMessage]
   );
