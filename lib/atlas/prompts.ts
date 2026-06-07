@@ -103,26 +103,80 @@ export function getSystemPrompt(mode: "market" | "company" | "chat"): string {
   return CHAT_SYSTEM_PROMPT;
 }
 
-export function buildMarketPrompt(query: string, sourceDigest: string): string {
-  return `Write a comprehensive PE market research memo on: ${query}
+export function buildMarketPrompt(query: string, sourceDigest: string, sourceCount: number): string {
+  return `Prepare a deep, source-backed PE-style market research report for: ${query}
+
+Use only the source digest below. If evidence is thin, say so explicitly.
+Write for a private equity analyst who needs to learn the industry and decide whether deeper sourcing/diligence is warranted.
+
+Quality bar:
+- Be specific and structured, not generic.
+- Separate sourced facts from hypotheses.
+- Include numbers only when supported by the source digest.
+- Include directional benchmark estimates when evidence is incomplete, but label them as directional and state the source basis.
+- Use bullets and compact tables where they improve scanability.
+- Mention source strength and gaps. Current live source count: ${sourceCount}.
 
 Required sections (use these exact headings):
-${MARKET_REQUIRED_SECTIONS.map((s) => `## ${s}`).join("\n")}
+# ${query} - PE Market Research Memo
+## Executive Read
+## Market Definition
+## Segmentation
+## Value Chain
+## Why PE Cares
+## Demand Drivers
+## Business Model and Margin Characteristics
+## Industry Metrics, KPIs, and Valuation Context
+## Competitive Landscape
+## Fragmentation and Buy-and-Build Potential
+## M&A and Sponsor Activity
+## Public Comps / Reference Companies
+## Sponsor Thesis Angles
+## Red Flags and Underwriting Risks
+## Diligence Agenda
+## What Would Change Our Mind
+## Source Notes
 
-Source digest (use these to ground your analysis — cite sources by name where possible):
+Source digest:
 ${sourceDigest}
 
-Be thorough, evidence-aware, and sponsor-focused. If data is thin, flag it and add diligence questions.`;
+Benchmark section requirements:
+- Start with this caveat or a close variant: "The following benchmarks are directional and based on available public sources, public-company comps, industry articles, and disclosed transaction commentary. They should be treated as underwriting inputs to validate in diligence, not definitive market data."
+- Use a compact table with columns: Metric / KPI, Directional Range or Read, Source Basis, Diligence Implication.
+- Include relevant KPIs such as gross margin, EBITDA margin, revenue growth, capex intensity, working-capital intensity, retention/churn/utilization/ARPU/take-rate where applicable, public-company valuation multiples, and reported private transaction multiple commentary when sourceable.
+- If exact evidence is weak, provide a best directional read and label the source basis as weak evidence, adjacent-sector inference, public comps, industry article, operator benchmark, or reported deal commentary.`;
 }
 
-export function buildCompanyPrompt(query: string, sourceDigest: string): string {
-  return `Write a comprehensive PE company analysis on: ${query}
+export function buildCompanyPrompt(query: string, sourceDigest: string, sourceCount: number): string {
+  return `Prepare a deep, source-backed PE-style private company research report for: ${query}
+
+Use only the source digest below. If evidence is thin, say so explicitly.
+Write for a lower-middle-market private equity analyst learning the business and deciding whether to keep digging.
+
+Quality bar:
+- Be specific and structured, not generic.
+- Separate sourced facts from hypotheses.
+- Include numbers, customers, owners, investors, and claims only when supported by the source digest.
+- Use bullets and compact tables where they improve scanability.
+- Mention source strength and gaps. Current live source count: ${sourceCount}.
 
 Required sections (use these exact headings):
-${COMPANY_REQUIRED_SECTIONS.map((s) => `## ${s}`).join("\n")}
+# ${query} - Private Company Research Memo
+## Executive Read
+## Business Overview
+## Products and Services
+## Customers and End Markets
+## Market Positioning
+## Competitive Landscape
+## Ownership and News Signals
+## Sponsor Fit
+## Platform / Add-On Fit
+## Value Creation Levers
+## Red Flags and Underwriting Risks
+## Diligence Agenda
+## What Would Change Our Mind
+## Source Notes
 
-Source digest (use these to ground your analysis — cite sources by name where possible):
-${sourceDigest}
-
-Assess from a lower-middle-market sponsor perspective. Be direct about investability, risks, and what needs proving.`;
+Source digest:
+${sourceDigest}`;
 }

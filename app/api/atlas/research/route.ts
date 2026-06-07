@@ -23,9 +23,10 @@ export async function POST(req: Request) {
   const libraryChunks = await searchOperatingLibrary(query, 6);
   const libraryContext = buildLibraryContext(libraryChunks);
 
+  const sourceCount = sources.filter((s) => s.type !== "placeholder").length;
   let userPrompt = mode === "market"
-    ? buildMarketPrompt(query, sourceDigest)
-    : buildCompanyPrompt(query, sourceDigest);
+    ? buildMarketPrompt(query, sourceDigest, sourceCount)
+    : buildCompanyPrompt(query, sourceDigest, sourceCount);
 
   if (libraryContext) {
     userPrompt = libraryContext + "\n\n" + userPrompt;

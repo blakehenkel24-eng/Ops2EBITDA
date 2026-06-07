@@ -10,11 +10,12 @@ interface AtlasResearchProgressProps {
 const CHAT_STAGES = ["Thinking..."];
 
 const REPORT_STAGES = [
-  "Searching sources...",
-  "Analyzing market data...",
+  "Running targeted web searches...",
+  "Gathering and ranking sources...",
+  "Extracting page content...",
   "Cross-referencing operating library...",
-  "Synthesizing findings...",
-  "Composing report...",
+  "Building source digest...",
+  "Writing source-backed memo...",
 ];
 
 export function AtlasResearchProgress({ visible, mode }: AtlasResearchProgressProps) {

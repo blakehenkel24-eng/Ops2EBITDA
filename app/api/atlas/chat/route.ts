@@ -7,6 +7,13 @@ import {
   ATLAS_COMMANDS,
 } from "@/lib/atlas/prompts";
 import { searchOperatingLibrary, buildLibraryContext } from "@/lib/atlas/library";
+import {
+  gatherSources,
+  getMarketQueries,
+  getCompanyQueries,
+  fetchPageText,
+} from "@/lib/atlas/research";
+import { rankSources, buildSourceDigest } from "@/lib/atlas/scoring";
 
 export const maxDuration = 120;
 
@@ -60,22 +67,68 @@ export async function POST(req: Request) {
     systemPrompt += `\n\nThe user has invoked the ${command.label} command. ${command.prompt} Use the conversation context to generate the requested output.`;
   }
 
-  // Operating library context
-  const libraryChunks = await searchOperatingLibrary(cleanQuery, isReport ? 8 : 4);
-  const libraryContext = buildLibraryContext(libraryChunks);
-
-  // For reports, use the full prompt builders with source digest
+  // ── Report mode: full research pipeline ────────────────────────────
   if (isReport) {
-    const sourceDigest = libraryContext || "No operating library matches found. Rely on your training data and flag gaps.";
+    // 1. Generate search queries
+    const queries =
+      mode === "market"
+        ? getMarketQueries(cleanQuery)
+        : getCompanyQueries(cleanQuery);
 
+    // 2. Gather web sources (Tavily if key available, else DDG)
+    const tavilyKey = process.env.TAVILY_API_KEY;
+    const rawSources = await gatherSources(queries, tavilyKey);
+
+    // 3. Fetch page text for top sources (enrich snippets)
+    const enriched = await Promise.all(
+      rawSources.slice(0, 12).map(async (source) => {
+        if (source.snippet.length < 200 && source.url) {
+          const pageText = await fetchPageText(source.url);
+          if (pageText.length > source.snippet.length) {
+            return { ...source, snippet: pageText };
+          }
+        }
+        return source;
+      })
+    );
+
+    // 4. Score, rank, and build source digest
+    const ranked = rankSources(enriched);
+    const sourceDigest = buildSourceDigest(ranked);
+    const sourceCount = ranked.filter((s) => s.type !== "placeholder").length;
+
+    // 5. Add operating library context to source digest
+    const libraryChunks = await searchOperatingLibrary(cleanQuery, 8);
+    const libraryContext = buildLibraryContext(libraryChunks);
+    let fullDigest = sourceDigest;
+    if (libraryContext) {
+      fullDigest += `\n\nOperating library context (private, do not cite as a source):\n${libraryContext}`;
+    }
+
+    // 6. Build the full structured prompt
     const reportPrompt =
       mode === "market"
-        ? buildMarketPrompt(cleanQuery, sourceDigest)
-        : buildCompanyPrompt(cleanQuery, sourceDigest);
+        ? buildMarketPrompt(cleanQuery, fullDigest, sourceCount)
+        : buildCompanyPrompt(cleanQuery, fullDigest, sourceCount);
 
-    // Inject the structured report prompt as the user message
+    // Inject as user message
     messages[messages.length - 1].content = reportPrompt;
-  } else if (libraryContext) {
+
+    const result = streamText({
+      model: getAtlasModel(),
+      system: systemPrompt,
+      messages,
+      temperature: 0.3,
+      maxOutputTokens: 16000,
+    });
+
+    return result.toTextStreamResponse();
+  }
+
+  // ── Chat mode ──────────────────────────────────────────────────────
+  const libraryChunks = await searchOperatingLibrary(cleanQuery, 4);
+  const libraryContext = buildLibraryContext(libraryChunks);
+  if (libraryContext) {
     systemPrompt += `\n\n${libraryContext}`;
   }
 
@@ -83,8 +136,8 @@ export async function POST(req: Request) {
     model: getAtlasModel(),
     system: systemPrompt,
     messages,
-    temperature: isReport ? 0.3 : 0.2,
-    maxOutputTokens: isReport ? 16000 : 4000,
+    temperature: 0.2,
+    maxOutputTokens: 4000,
   });
 
   return result.toTextStreamResponse();
