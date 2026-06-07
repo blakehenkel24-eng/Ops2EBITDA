@@ -146,20 +146,27 @@ export async function fetchPageText(url: string): Promise<string> {
 
 export function getMarketQueries(market: string): string[] {
   return [
-    `${market} market size revenue growth 2024`,
-    `${market} industry analysis private equity investment`,
-    `${market} CAGR forecast market research report`,
-    `${market} acquisition M&A deal activity`,
-    `${market} market fragmentation competitors landscape`,
+    `${market} market size growth CAGR forecast segments customer end markets`,
+    `${market} value chain business model margins cost structure`,
+    `${market} industry KPIs EBITDA margin gross margin benchmarks`,
+    `${market} valuation multiples EV EBITDA transaction multiples public comps`,
+    `${market} demand drivers regulation trends cyclicality`,
+    `${market} leading companies competitors market share`,
+    `${market} private equity acquisitions M&A sponsor-backed companies`,
+    `${market} unit economics capex working capital retention churn utilization`,
   ];
 }
 
 export function getCompanyQueries(company: string): string[] {
   return [
-    `${company} company revenue EBITDA financials`,
-    `${company} acquisition merger private equity sponsor`,
-    `${company} business model market position competitors`,
-    `${company} management team history founding`,
+    `${company} company overview products services customers`,
+    `${company} competitors market positioning alternatives`,
+    `${company} ownership funding investors acquisition private equity`,
+    `${company} revenue growth employees locations leadership`,
+    `${company} customer reviews case studies contracts partnerships`,
+    `${company} industry market size growth drivers end markets`,
+    `${company} risks lawsuits regulation complaints`,
+    `${company} platform add-on acquisition sponsor fit`,
   ];
 }
 

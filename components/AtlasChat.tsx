@@ -10,10 +10,12 @@ import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
 import { ArrowUp } from "lucide-react";
 
 function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
-  return parts
+  const raw = parts
     .filter(isTextUIPart)
     .map((p) => p.text)
     .join("");
+  // Strip [mode:X] prefix injected by report forms
+  return raw.replace(/^\[mode:(?:market|company)]\s*/, "");
 }
 
 const SUGGESTIONS = [
@@ -26,8 +28,7 @@ const SUGGESTIONS = [
 export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [researchMode, setResearchMode] = useState<string>("chat");
   const [input, setInput] = useState("");
-  const [showSlashMenu, setShowSlashMenu] = useState(false);
-  const [slashFilter, setSlashFilter] = useState("");
+  const [slashDismissed, setSlashDismissed] = useState(false);
   const [slashIndex, setSlashIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -37,10 +38,11 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     () =>
       new TextStreamChatTransport({
         api: "/api/atlas/chat",
-        body: { mode: researchMode },
+        // Mode always "chat" — report mode is sent via [mode:X] prefix
+        // in message text so it's never stale
+        body: { mode: "chat" },
       }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [researchMode]
+    []
   );
 
   const { messages, sendMessage, status } = useChat({ transport });
@@ -56,6 +58,10 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     return -1;
   }, [messages]);
 
+  const slashCandidate = input === "/" || (input.startsWith("/") && !input.includes(" "));
+  const slashFilter = input.startsWith("/") && !input.includes(" ") ? input.slice(1) : "";
+  const showSlashMenu = slashCandidate && !slashDismissed;
+
   // Filtered slash commands
   const filteredCommands = useMemo(() => {
     if (!slashFilter) return ATLAS_COMMANDS;
@@ -66,13 +72,14 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   // Auto-scroll on new messages
   useEffect(() => {
+    if (!hasMessages && !isLoading) return;
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
         top: scrollRef.current.scrollHeight,
         behavior: "smooth",
       });
     }
-  }, [messages, isLoading]);
+  }, [messages, isLoading, hasMessages]);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -91,21 +98,6 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     }
   }, [slashIndex, showSlashMenu]);
 
-  // Detect slash command typing
-  useEffect(() => {
-    if (input === "/") {
-      setShowSlashMenu(true);
-      setSlashFilter("");
-      setSlashIndex(0);
-    } else if (input.startsWith("/") && !input.includes(" ")) {
-      setShowSlashMenu(true);
-      setSlashFilter(input.slice(1));
-      setSlashIndex(0);
-    } else {
-      setShowSlashMenu(false);
-    }
-  }, [input]);
-
   const handleCommand = useCallback(
     (command: string) => {
       sendMessage({ text: command });
@@ -115,9 +107,10 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   const handleStartResearch = useCallback(
     (mode: string, query: string) => {
+      // Set mode for progress indicator only (not transport)
       setResearchMode(mode);
       // Embed mode in message so server gets it immediately
-      // (transport body won't update until next render)
+      // Transport body stays "chat" — mode prefix is the source of truth
       sendMessage({ text: `[mode:${mode}] ${query}` });
     },
     [sendMessage]
@@ -127,7 +120,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     if (!input.trim() || isLoading) return;
     sendMessage({ text: input.trim() });
     setInput("");
-    setShowSlashMenu(false);
+    setSlashDismissed(false);
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
     }
@@ -137,10 +130,16 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     (cmd: string) => {
       sendMessage({ text: `/${cmd}` });
       setInput("");
-      setShowSlashMenu(false);
+      setSlashDismissed(false);
     },
     [sendMessage]
   );
+
+  const handleInputChange = useCallback((value: string) => {
+    setInput(value);
+    setSlashDismissed(false);
+    setSlashIndex(0);
+  }, []);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -162,12 +161,13 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
         }
         if (e.key === "Escape") {
           e.preventDefault();
-          setShowSlashMenu(false);
+          setSlashDismissed(true);
           return;
         }
         if (e.key === "Tab") {
           e.preventDefault();
           setInput(`/${filteredCommands[slashIndex].name}`);
+          setSlashDismissed(false);
           return;
         }
       }
@@ -187,115 +187,141 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     [sendMessage]
   );
 
-  return (
-    <div
-      className={`flex flex-col ${fullPage ? "h-[calc(100vh-4rem)]" : "h-full"}`}
-    >
-      {/* Messages area */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 md:px-8 py-6">
-        {!hasMessages && <AtlasWelcome onStartResearch={handleStartResearch} />}
+  const rootClass = fullPage
+    ? "atlas-chat-viewport"
+    : "flex h-full flex-col";
+  const shellClass = fullPage
+    ? "atlas-chat-document"
+    : "flex h-full flex-col";
+  const scrollClass = fullPage
+    ? "atlas-chat-scroll"
+    : "flex-1 overflow-y-auto px-4 md:px-8 py-6";
+  const inputClass = fullPage
+    ? "atlas-chat-composer"
+    : "border-t border-line/50 bg-paper/80 px-4 md:px-8 py-3";
 
-        {/* Suggestion chips */}
-        {!hasMessages && !isLoading && (
-          <div className="flex flex-wrap gap-2 justify-center max-w-xl mx-auto mb-6">
-            {SUGGESTIONS.map((s) => (
-              <button
-                key={s}
-                type="button"
-                onClick={() => handleSuggestion(s)}
-                className="text-xs text-stone/70 border border-line/40 rounded-full px-3 py-1.5 hover:border-accent/30 hover:text-accent hover:bg-accent/4 transition-all duration-150 font-geist"
-              >
-                {s}
-              </button>
-            ))}
+  return (
+    <div className={rootClass}>
+      <section className={shellClass}>
+        {fullPage && (
+          <div className="atlas-chat-document__header">
+            <div>
+              <p className="font-mono-label text-accent">Atlas IQ</p>
+              <h2 className="mt-1 font-newsreader text-2xl text-ink">
+                Private equity research workspace
+              </h2>
+            </div>
+            <div className="atlas-chat-status">
+              <span />
+              <strong>{isLoading ? "Working" : hasMessages ? "Memo thread" : "Ready"}</strong>
+            </div>
           </div>
         )}
 
-        {messages.map((message, idx) => (
-          <AtlasChatMessage
-            key={message.id}
-            role={message.role as "user" | "assistant"}
-            content={getMessageText(message.parts)}
-            onCommand={
-              message.role === "assistant" && idx === lastAssistantIdx && !isLoading
-                ? handleCommand
-                : undefined
-            }
-            isStreaming={
-              isLoading && message.id === messages[messages.length - 1]?.id
-            }
-          />
-        ))}
-        <AtlasResearchProgress
-          visible={isLoading}
-          mode={researchMode}
-        />
-      </div>
+        <div ref={scrollRef} className={scrollClass}>
+          {!hasMessages && <AtlasWelcome onStartResearch={handleStartResearch} />}
 
-      {/* Report buttons */}
-      {!hasMessages && !isLoading && (
-        <AtlasReportButtons onStartResearch={handleStartResearch} />
-      )}
-
-      {/* Input area */}
-      <div className="border-t border-line/50 bg-paper/80 px-4 md:px-8 py-3">
-        <div className="relative max-w-3xl mx-auto">
-          {/* Slash command menu */}
-          {showSlashMenu && filteredCommands.length > 0 && (
-            <div className="absolute bottom-full left-0 w-full mb-2 bg-paper border border-line/60 rounded-xl shadow-lg overflow-hidden z-20">
-              <div className="px-3 py-2 border-b border-line/30">
-                <span className="font-mono-label text-[10px] text-stone/50">COMMANDS</span>
-              </div>
-              <div ref={slashMenuRef} className="max-h-52 overflow-y-auto py-1">
-                {filteredCommands.map((cmd, i) => (
-                  <button
-                    key={cmd.name}
-                    type="button"
-                    onClick={() => handleSlashSelect(cmd.name)}
-                    className={`w-full text-left px-3 py-2.5 flex items-start gap-3 transition-colors ${
-                      i === slashIndex
-                        ? "bg-accent/6 text-ink"
-                        : "text-stone hover:bg-bone/50"
-                    }`}
-                  >
-                    <span className="font-mono-label text-[11px] text-accent shrink-0 mt-0.5">
-                      /{cmd.name}
-                    </span>
-                    <span className="text-xs text-stone/70 leading-relaxed">
-                      {cmd.prompt}
-                    </span>
-                  </button>
-                ))}
-              </div>
+          {!hasMessages && !isLoading && (
+            <div className="mx-auto mb-7 flex max-w-2xl flex-wrap justify-center gap-2">
+              {SUGGESTIONS.map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => handleSuggestion(s)}
+                  className="border border-line/55 bg-paper px-3 py-1.5 text-xs text-stone transition-all duration-150 font-geist hover:border-accent/35 hover:bg-accent-soft/45 hover:text-accent"
+                >
+                  {s}
+                </button>
+              ))}
             </div>
           )}
 
-          <div className="flex items-end gap-2">
-            <div className="flex-1">
-              <textarea
-                ref={textareaRef}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder={hasMessages ? "Follow up, or type / for commands..." : "Ask Atlas IQ anything..."}
-                rows={1}
-                className="w-full resize-none bg-bone/60 border border-line/60 rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-stone/45 focus:outline-none focus:border-accent/40 focus:bg-bone/80 transition-all duration-150 font-geist leading-relaxed"
-              />
-            </div>
-            <button
-              type="button"
-              onClick={handleSend}
-              disabled={isLoading || !input.trim()}
-              className="w-8 h-8 rounded-lg bg-accent text-white flex items-center justify-center disabled:opacity-25 transition-opacity duration-150 shrink-0 mb-0.5"
-            >
-              <ArrowUp size={15} strokeWidth={2} />
-            </button>
-          </div>
-          <p className="text-[10px] text-stone/35 text-center mt-1.5 font-geist">
-            <kbd className="font-mono">↵</kbd> to send · <kbd className="font-mono">⇧↵</kbd> for new line · <kbd className="font-mono">/</kbd> for commands
-          </p>
+          {messages.map((message, idx) => (
+            <AtlasChatMessage
+              key={message.id}
+              role={message.role as "user" | "assistant"}
+              content={getMessageText(message.parts)}
+              onCommand={
+                message.role === "assistant" && idx === lastAssistantIdx && !isLoading
+                  ? handleCommand
+                  : undefined
+              }
+              isStreaming={
+                isLoading && message.id === messages[messages.length - 1]?.id
+              }
+            />
+          ))}
+          {isLoading && (
+            <AtlasResearchProgress
+              visible
+              mode={researchMode}
+            />
+          )}
         </div>
-      </div>
+
+        {!fullPage && !hasMessages && !isLoading && (
+          <AtlasReportButtons onStartResearch={handleStartResearch} />
+        )}
+
+        <div className={inputClass}>
+          <div className="relative mx-auto max-w-3xl">
+            {showSlashMenu && filteredCommands.length > 0 && (
+              <div className="absolute bottom-full left-0 z-20 mb-2 w-full overflow-hidden border border-line/70 bg-paper shadow-[0_22px_50px_oklch(31%_0.038_248_/_0.16)]">
+                <div className="border-b border-line/40 px-3 py-2">
+                  <span className="font-mono-label text-[10px] text-stone/50">COMMANDS</span>
+                </div>
+                <div ref={slashMenuRef} className="max-h-52 overflow-y-auto py-1">
+                  {filteredCommands.map((cmd, i) => (
+                    <button
+                      key={cmd.name}
+                      type="button"
+                      onClick={() => handleSlashSelect(cmd.name)}
+                      className={`w-full text-left px-3 py-2.5 flex items-start gap-3 transition-colors ${
+                        i === slashIndex
+                          ? "bg-accent-soft/70 text-ink"
+                          : "text-stone hover:bg-bone/50"
+                      }`}
+                    >
+                      <span className="font-mono-label text-[11px] text-accent shrink-0 mt-0.5">
+                        /{cmd.name}
+                      </span>
+                      <span className="text-xs text-stone/70 leading-relaxed">
+                        {cmd.prompt}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="flex items-end gap-2">
+              <div className="flex-1">
+                <textarea
+                  ref={textareaRef}
+                  value={input}
+                  onChange={(e) => handleInputChange(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder={hasMessages ? "Follow up, or type / for commands..." : "Ask Atlas IQ anything..."}
+                  rows={1}
+                  className="w-full resize-none border border-line/70 bg-paper px-4 py-3 text-sm leading-relaxed text-ink placeholder:text-stone/45 transition-all duration-150 font-geist focus:border-accent/45 focus:bg-paper focus:outline-none"
+                />
+              </div>
+              <button
+                type="button"
+                onClick={handleSend}
+                disabled={isLoading || !input.trim()}
+                className="mb-0.5 flex h-10 w-10 shrink-0 items-center justify-center bg-accent text-paper transition-opacity duration-150 disabled:opacity-25"
+                aria-label="Send message"
+              >
+                <ArrowUp size={16} strokeWidth={2} />
+              </button>
+            </div>
+            <p className="mt-2 text-center text-[10px] text-stone/45 font-geist">
+              <kbd className="font-mono">Enter</kbd> to send · <kbd className="font-mono">Shift Enter</kbd> for new line · <kbd className="font-mono">/</kbd> for commands
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

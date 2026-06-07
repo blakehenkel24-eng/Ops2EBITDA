@@ -79,16 +79,22 @@ export function rankSources(sources: ResearchSource[]): ResearchSource[] {
 
 // ─── Digest Builder ───────────────────────────────────────────────────────────
 
+/** Expects pre-ranked sources (call rankSources first). Matches terminal digest format. */
 export function buildSourceDigest(sources: ResearchSource[]): string {
-  const ranked = rankSources(sources);
+  if (sources.length === 0) {
+    return "No live sources were available. Treat the report as a framework and make source gaps explicit.";
+  }
 
-  return ranked
+  return sources
+    .slice(0, 32)
     .map((s) => {
-      const snippet = s.snippet.slice(0, 1500);
+      const snippet = s.snippet.slice(0, 1800);
       const lines: string[] = [
-        `${s.rank}. ${s.title}`,
-        `   URL: ${s.url}`,
-        `   ${snippet}`,
+        `[${s.rank || "?"}] ${s.title}`,
+        `Type: ${s.type} | Score: ${s.score} | Query: ${s.query || "n/a"}`,
+        `URL: ${s.url || "n/a"}`,
+        `Signal: ${s.signal || "context"}`,
+        `Excerpt: ${snippet}`,
       ];
       return lines.join("\n");
     })
