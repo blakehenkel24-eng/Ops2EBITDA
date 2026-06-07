@@ -145,12 +145,11 @@ export async function POST(req: Request) {
             maxOutputTokens: 16000,
           });
 
-          // Stream LLM text
+          // Stream LLM text — no final progress emit after this
+          // (client exits progress mode when LLM text starts)
           for await (const chunk of result.textStream) {
             controller.enqueue(encoder.encode(chunk));
           }
-
-          emit("synthesis", "Memo complete", "done");
         } catch (err) {
           const msg = err instanceof Error ? err.message : "Unknown error";
           controller.enqueue(encoder.encode(`\n\nResearch pipeline error: ${msg}`));

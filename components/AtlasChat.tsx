@@ -59,34 +59,26 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   // Custom fetch that intercepts §§P progress lines before they reach the transport
   const customFetch = useMemo(() => {
-    const fn: typeof globalThis.fetch = async (input, init) => {
-      const res = await globalThis.fetch(input, init);
+    const fn: typeof globalThis.fetch = async (reqInput, init) => {
+      const res = await globalThis.fetch(reqInput, init);
       if (!res.body) return res;
 
-      const reader = res.body.getReader();
       const decoder = new TextDecoder();
       const encoder = new TextEncoder();
       let buffer = "";
-      let inProgressPhase = true;
+      let progressDone = false;
 
-      const filtered = new ReadableStream({
-        async pull(controller) {
-          const { done, value } = await reader.read();
-          if (done) {
-            if (buffer) controller.enqueue(encoder.encode(buffer));
-            controller.close();
+      const transform = new TransformStream<Uint8Array, Uint8Array>({
+        transform(chunk, controller) {
+          // After progress phase, pass through raw bytes
+          if (progressDone) {
+            controller.enqueue(chunk);
             return;
           }
 
-          // After progress phase, pass through raw bytes directly
-          if (!inProgressPhase) {
-            controller.enqueue(value);
-            return;
-          }
+          buffer += decoder.decode(chunk, { stream: true });
 
-          buffer += decoder.decode(value, { stream: true });
-
-          // Process complete lines looking for progress events
+          // Process complete lines
           let nlIdx: number;
           while ((nlIdx = buffer.indexOf("\n")) !== -1) {
             const line = buffer.slice(0, nlIdx);
@@ -100,23 +92,28 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                 // malformed progress line, skip
               }
             } else {
-              // First non-progress line — exit progress phase
-              inProgressPhase = false;
+              // First non-progress content — flush everything downstream
+              progressDone = true;
               const remaining = line + "\n" + buffer;
               buffer = "";
-              if (remaining) controller.enqueue(encoder.encode(remaining));
+              controller.enqueue(encoder.encode(remaining));
               return;
             }
           }
 
-          // If buffer doesn't look like start of a progress line, flush it
+          // Partial buffer that doesn't look like a progress line
           if (buffer.length > 3 && !buffer.startsWith("§")) {
-            inProgressPhase = false;
+            progressDone = true;
             controller.enqueue(encoder.encode(buffer));
             buffer = "";
           }
         },
+        flush(controller) {
+          if (buffer) controller.enqueue(encoder.encode(buffer));
+        },
       });
+
+      const filtered = res.body.pipeThrough(transform);
 
       return new Response(filtered, {
         status: res.status,
@@ -142,13 +139,15 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const isLoading = status === "submitted" || status === "streaming";
   const hasMessages = messages.length > 0;
 
-  // Clear progress when loading finishes
+  // Clear progress only when loading transitions from true -> false
+  const wasLoadingRef = useRef(false);
   useEffect(() => {
-    if (!isLoading) {
+    if (wasLoadingRef.current && !isLoading) {
       setProgressStages([]);
-      if (researchMode !== "chat") setResearchMode("chat");
+      setResearchMode("chat");
     }
-  }, [isLoading, researchMode]);
+    wasLoadingRef.current = isLoading;
+  }, [isLoading]);
 
   // Find last assistant message index for command bar
   const lastAssistantIdx = useMemo(() => {
