@@ -155,6 +155,8 @@ export function ClientNav() {
           </div>
         </div>
 
+        <span className="w-px h-4 bg-line/60 mx-1" aria-hidden="true" />
+
         <Link
           href="/atlas-iq"
           className={`atlas-nav-flagship font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 whitespace-nowrap ${
@@ -163,9 +165,15 @@ export function ClientNav() {
               : 'text-accent hover:text-paper'
           }`}
         >
-          <Sparkles size={14} strokeWidth={1.7} aria-hidden="true" />
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
           <span>Atlas IQ</span>
-          <span className="atlas-nav-flagship__tag">Flagship</span>
+          {!pathname.startsWith('/atlas-iq') && (
+            <span className="atlas-nav-flagship__tag">Flagship</span>
+          )}
         </Link>
 
         <Link
