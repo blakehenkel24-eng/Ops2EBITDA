@@ -30,6 +30,8 @@ export interface AtlasCommand {
   name: string;
   label: string;
   prompt: string;
+  /** If set, selecting this command switches research mode instead of sending a message */
+  mode?: "market" | "company";
 }
 
 export interface ProgressUpdate {

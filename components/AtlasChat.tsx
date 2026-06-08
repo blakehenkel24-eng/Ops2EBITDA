@@ -7,7 +7,7 @@ import { AtlasChatMessage } from "./AtlasChatMessage";
 import { AtlasResearchProgress } from "./AtlasResearchProgress";
 import { AtlasWelcome } from "./AtlasWelcome";
 import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Landmark, Building2, MessageCircle } from "lucide-react";
 
 function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
   const raw = parts
@@ -27,6 +27,7 @@ const PROGRESS_PREFIX = "§§P";
 
 export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [researchMode, setResearchMode] = useState<string>("chat");
+  const [selectedMode, setSelectedMode] = useState<"chat" | "market" | "company">("chat");
   const [progressStages, setProgressStages] = useState<ProgressStage[]>([]);
   const [input, setInput] = useState("");
   const [slashDismissed, setSlashDismissed] = useState(false);
@@ -201,16 +202,32 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   const handleSend = useCallback(() => {
     if (!input.trim() || isLoading) return;
-    sendMessage({ text: input.trim() });
+    const text = input.trim();
+    if (selectedMode !== "chat") {
+      setResearchMode(selectedMode);
+      sendMessage({ text: `[mode:${selectedMode}] ${text}` });
+      setSelectedMode("chat");
+    } else {
+      sendMessage({ text });
+    }
     setInput("");
     setSlashDismissed(false);
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
     }
-  }, [input, isLoading, sendMessage]);
+  }, [input, isLoading, sendMessage, selectedMode]);
 
   const handleSlashSelect = useCallback(
     (cmd: string) => {
+      const command = ATLAS_COMMANDS.find((c) => c.name === cmd);
+      if (command?.mode) {
+        // Mode commands switch the research pill, don't send immediately
+        setSelectedMode(command.mode);
+        setInput("");
+        setSlashDismissed(true);
+        textareaRef.current?.focus();
+        return;
+      }
       sendMessage({ text: `/${cmd}` });
       setInput("");
       setSlashDismissed(false);
@@ -355,6 +372,34 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
               </div>
             )}
 
+            {/* Mode selector pills */}
+            <div className="flex gap-1.5 mb-2">
+              {(
+                [
+                  { mode: "chat", label: "Chat", icon: MessageCircle },
+                  { mode: "market", label: "Market Research", icon: Landmark },
+                  { mode: "company", label: "Company Research", icon: Building2 },
+                ] as const
+              ).map(({ mode, label, icon: Icon }) => (
+                <button
+                  key={mode}
+                  type="button"
+                  onClick={() => {
+                    setSelectedMode(mode);
+                    textareaRef.current?.focus();
+                  }}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-geist transition-all duration-150 ${
+                    selectedMode === mode
+                      ? "bg-accent text-[oklch(97%_0.004_240)] shadow-[0_1px_4px_oklch(34%_0.105_252_/_0.3)]"
+                      : "text-stone/55 border border-line/35 hover:text-ink hover:border-line/60 bg-transparent"
+                  }`}
+                >
+                  <Icon size={11} strokeWidth={1.7} />
+                  {label}
+                </button>
+              ))}
+            </div>
+
             {/* Input area — Claude/ChatGPT style rounded capsule */}
             <div className="atlas-input-wrap">
               <div className="flex items-end gap-0">
@@ -363,7 +408,15 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                   value={input}
                   onChange={(e) => handleInputChange(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder={hasMessages ? "Ask a follow-up..." : "Ask Atlas IQ anything..."}
+                  placeholder={
+                    selectedMode === "market"
+                      ? "Describe the market or sector to research..."
+                      : selectedMode === "company"
+                        ? "Name a company or describe the target..."
+                        : hasMessages
+                          ? "Ask a follow-up..."
+                          : "Ask Atlas IQ anything..."
+                  }
                   rows={1}
                   className="w-full resize-none bg-transparent px-5 py-3.5 text-[15px] leading-relaxed text-ink placeholder:text-stone/40 font-geist focus:outline-none"
                 />
