@@ -26,7 +26,7 @@ export function AtlasChatMessage({
   if (role === "user") {
     return (
       <div className="flex justify-end mb-6">
-        <div className="max-w-[75%] bg-[oklch(99.5%_0.002_240)] text-ink px-4 py-3 rounded-2xl rounded-br-md text-[15px] leading-relaxed font-geist shadow-[0_1px_3px_oklch(31%_0.038_248_/_0.08)]">
+        <div className="max-w-[75%] bg-[oklch(34%_0.105_252)] text-[oklch(97%_0.004_240)] px-4 py-3 rounded-2xl rounded-br-md text-[15px] leading-relaxed font-geist shadow-[0_2px_8px_oklch(34%_0.105_252_/_0.25)]">
           {content}
         </div>
       </div>
