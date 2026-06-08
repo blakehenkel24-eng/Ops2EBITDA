@@ -19,7 +19,7 @@ export function AtlasCommandBar({
           type="button"
           onClick={() => onCommand(`/${cmd.name}`)}
           title={cmd.prompt}
-          className="font-mono-label text-[10px] text-stone/70 bg-transparent border border-line/50 px-2 py-1 rounded-full hover:text-accent hover:border-accent/30 hover:bg-accent/4 transition-all duration-150"
+          className="text-[12px] font-geist text-stone/55 bg-transparent border border-line/35 px-2.5 py-1 rounded-lg hover:text-accent hover:border-accent/25 hover:bg-accent/4 transition-all duration-150"
         >
           {cmd.label}
         </button>

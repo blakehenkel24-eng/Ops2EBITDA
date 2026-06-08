@@ -1,73 +1,115 @@
 "use client";
 
 import { useState } from "react";
-import { Landmark, Building2, ArrowRight, X, ChevronDown } from "lucide-react";
+import { Landmark, Building2, ArrowRight, X, ChevronDown, TrendingUp, AlertTriangle, MessageSquareText, BarChart3 } from "lucide-react";
+
+const SUGGESTIONS = [
+  {
+    icon: TrendingUp,
+    text: "Top value creation levers for HVAC roll-ups",
+  },
+  {
+    icon: AlertTriangle,
+    text: "Red flags in a facilities management target",
+  },
+  {
+    icon: MessageSquareText,
+    text: "What makes a good PE platform in waste services?",
+  },
+  {
+    icon: BarChart3,
+    text: "Compare maintenance vs. project revenue quality",
+  },
+];
 
 interface AtlasWelcomeProps {
   onStartResearch: (mode: string, query: string) => void;
+  onSuggestion: (text: string) => void;
 }
 
-export function AtlasWelcome({ onStartResearch }: AtlasWelcomeProps) {
+export function AtlasWelcome({ onStartResearch, onSuggestion }: AtlasWelcomeProps) {
   const [expanded, setExpanded] = useState<"market" | "company" | null>(null);
 
   return (
     <div className="atlas-chat-welcome">
-      <div className="atlas-wordmark" aria-hidden="true">
-        <span>Atlas</span>
-        <strong>IQ</strong>
-      </div>
-      <p className="font-mono-label text-accent">Sponsor research desk</p>
-      <h1 className="mt-3 font-newsreader text-4xl leading-tight text-ink md:text-5xl">
-        Start with a question. Leave with a memo.
-      </h1>
-      <p className="mt-4 max-w-2xl text-base leading-8 text-stone font-geist">
-        Use Atlas IQ for market maps, target screens, diligence agendas, and
-        thesis pressure-tests grounded in PE operating patterns.
-      </p>
-
-      {/* Report buttons or expanded form */}
-      {expanded === "market" ? (
-        <MarketReportForm
-          onSubmit={(query) => {
-            onStartResearch("market", query);
-            setExpanded(null);
-          }}
-          onCancel={() => setExpanded(null)}
-        />
-      ) : expanded === "company" ? (
-        <CompanyReportForm
-          onSubmit={(query) => {
-            onStartResearch("company", query);
-            setExpanded(null);
-          }}
-          onCancel={() => setExpanded(null)}
-        />
-      ) : (
-        <div className="mt-7 grid w-full max-w-2xl gap-3 sm:grid-cols-2">
-          <button
-            type="button"
-            onClick={() => setExpanded("market")}
-            className="atlas-welcome-action"
-          >
-            <Landmark size={16} strokeWidth={1.6} />
-            <span>
-              <strong>Market memo</strong>
-              <small>Sector structure, buyer universe, M&A logic</small>
-            </span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setExpanded("company")}
-            className="atlas-welcome-action"
-          >
-            <Building2 size={16} strokeWidth={1.6} />
-            <span>
-              <strong>Company screen</strong>
-              <small>Quality, risks, platform fit, diligence agenda</small>
-            </span>
-          </button>
+      {/* Centered content */}
+      <div className="flex flex-col items-center">
+        {/* AI icon */}
+        <div className="atlas-ai-icon mb-5" style={{ width: "3rem", height: "3rem" }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
         </div>
-      )}
+
+        <h1 className="font-newsreader text-3xl text-ink md:text-4xl">
+          What can I help you research?
+        </h1>
+        <p className="mt-3 max-w-lg text-[15px] leading-7 text-stone font-geist">
+          Market maps, target screens, diligence agendas, and thesis pressure-tests grounded in PE operating patterns.
+        </p>
+      </div>
+
+      {/* Suggestion grid or expanded form */}
+      <div className="mt-8 w-full max-w-2xl mx-auto">
+        {expanded === "market" ? (
+          <MarketReportForm
+            onSubmit={(query) => {
+              onStartResearch("market", query);
+              setExpanded(null);
+            }}
+            onCancel={() => setExpanded(null)}
+          />
+        ) : expanded === "company" ? (
+          <CompanyReportForm
+            onSubmit={(query) => {
+              onStartResearch("company", query);
+              setExpanded(null);
+            }}
+            onCancel={() => setExpanded(null)}
+          />
+        ) : (
+          <>
+            {/* Suggestion cards */}
+            <div className="grid gap-2.5 sm:grid-cols-2">
+              {SUGGESTIONS.map((s) => (
+                <button
+                  key={s.text}
+                  type="button"
+                  onClick={() => onSuggestion(s.text)}
+                  className="atlas-welcome-action"
+                >
+                  <s.icon size={16} strokeWidth={1.5} className="text-stone/50 shrink-0 mt-0.5" />
+                  <span className="text-[13px] text-ink/80 font-geist leading-relaxed text-left">
+                    {s.text}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Deep research buttons */}
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <button
+                type="button"
+                onClick={() => setExpanded("market")}
+                className="flex items-center gap-2 rounded-full border border-line/40 bg-transparent px-4 py-2 text-xs font-geist text-stone/70 transition-all hover:border-accent/30 hover:text-accent hover:bg-accent/4"
+              >
+                <Landmark size={13} strokeWidth={1.5} />
+                Deep market research
+              </button>
+              <button
+                type="button"
+                onClick={() => setExpanded("company")}
+                className="flex items-center gap-2 rounded-full border border-line/40 bg-transparent px-4 py-2 text-xs font-geist text-stone/70 transition-all hover:border-accent/30 hover:text-accent hover:bg-accent/4"
+              >
+                <Building2 size={13} strokeWidth={1.5} />
+                Deep company research
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
@@ -76,7 +118,7 @@ export function AtlasWelcome({ onStartResearch }: AtlasWelcomeProps) {
 
 function FormLabel({ children }: { children: React.ReactNode }) {
   return (
-    <label className="block font-mono-label text-[10px] text-stone/60 mb-1">
+    <label className="block text-[11px] font-medium text-stone/55 mb-1 font-geist">
       {children}
     </label>
   );
@@ -102,7 +144,7 @@ function FormInput({
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="w-full bg-bone/50 border border-line/50 px-3 py-2 text-sm text-ink placeholder:text-stone/35 focus:outline-none focus:border-accent/40 transition-colors font-geist"
+      className="w-full rounded-lg bg-[oklch(98%_0.004_240)] border border-line/40 px-3 py-2 text-sm text-ink placeholder:text-stone/30 focus:outline-none focus:border-accent/40 focus:ring-2 focus:ring-accent/8 transition-all font-geist"
     />
   );
 }
@@ -121,7 +163,7 @@ function FormSelect({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full appearance-none bg-bone/50 border border-line/50 px-3 py-2 pr-8 text-sm text-ink focus:outline-none focus:border-accent/40 transition-colors font-geist cursor-pointer"
+        className="w-full appearance-none rounded-lg bg-[oklch(98%_0.004_240)] border border-line/40 px-3 py-2 pr-8 text-sm text-ink focus:outline-none focus:border-accent/40 focus:ring-2 focus:ring-accent/8 transition-all font-geist cursor-pointer"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>
@@ -153,7 +195,7 @@ function FormTextarea({
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       rows={2}
-      className="w-full resize-none bg-bone/50 border border-line/50 px-3 py-2 text-sm text-ink placeholder:text-stone/35 focus:outline-none focus:border-accent/40 transition-colors font-geist leading-relaxed"
+      className="w-full resize-none rounded-lg bg-[oklch(98%_0.004_240)] border border-line/40 px-3 py-2 text-sm text-ink placeholder:text-stone/30 focus:outline-none focus:border-accent/40 focus:ring-2 focus:ring-accent/8 transition-all font-geist leading-relaxed"
     />
   );
 }
@@ -215,32 +257,26 @@ function MarketReportForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-7 w-full max-w-2xl">
-      <div className="border border-accent/20 bg-paper/90 p-5">
-        {/* Header */}
+    <form onSubmit={handleSubmit}>
+      <div className="rounded-2xl border border-line/40 bg-[oklch(99.5%_0.002_240)] p-5">
         <div className="flex items-center gap-2 mb-4">
-          <Landmark size={13} strokeWidth={1.5} className="text-accent" />
-          <span className="font-mono-label text-accent text-[10px]">MARKET REPORT</span>
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-accent/10">
+            <Landmark size={12} strokeWidth={1.5} className="text-accent" />
+          </div>
+          <span className="text-sm font-medium text-ink font-geist">Market research</span>
           <button
             type="button"
             onClick={onCancel}
-            className="ml-auto text-stone/40 hover:text-stone transition-colors p-0.5"
+            className="ml-auto rounded-full p-1 text-stone/40 hover:text-stone hover:bg-stone/8 transition-colors"
           >
-            <X size={13} />
+            <X size={14} />
           </button>
         </div>
 
-        {/* Fields */}
         <div className="grid grid-cols-2 gap-3 mb-3">
           <div className="col-span-2 sm:col-span-1">
             <FormLabel>Sector / Industry *</FormLabel>
-            <FormInput
-              autoFocus
-              required
-              value={sector}
-              onChange={setSector}
-              placeholder="e.g. commercial landscaping"
-            />
+            <FormInput autoFocus required value={sector} onChange={setSector} placeholder="e.g. commercial landscaping" />
           </div>
           <div>
             <FormLabel>Geography</FormLabel>
@@ -248,11 +284,7 @@ function MarketReportForm({
           </div>
           <div>
             <FormLabel>Market size estimate</FormLabel>
-            <FormInput
-              value={marketSize}
-              onChange={setMarketSize}
-              placeholder="e.g. $5-8B"
-            />
+            <FormInput value={marketSize} onChange={setMarketSize} placeholder="e.g. $5-8B" />
           </div>
           <div>
             <FormLabel>Investment angle</FormLabel>
@@ -269,15 +301,14 @@ function MarketReportForm({
           />
         </div>
 
-        {/* Submit */}
         <div className="flex justify-end">
           <button
             type="submit"
             disabled={!canSubmit}
-            className="bg-accent text-paper px-4 py-2 flex items-center gap-1.5 font-mono-label text-[10px] disabled:opacity-25 transition-opacity hover:opacity-90"
+            className="rounded-full bg-accent text-[oklch(98%_0.004_240)] px-5 py-2 flex items-center gap-1.5 text-sm font-medium font-geist disabled:opacity-25 transition-opacity hover:opacity-90"
           >
             Generate report
-            <ArrowRight size={10} strokeWidth={2} />
+            <ArrowRight size={14} strokeWidth={2} />
           </button>
         </div>
       </div>
@@ -317,40 +348,30 @@ function CompanyReportForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-7 w-full max-w-2xl">
-      <div className="border border-accent/20 bg-paper/90 p-5">
-        {/* Header */}
+    <form onSubmit={handleSubmit}>
+      <div className="rounded-2xl border border-line/40 bg-[oklch(99.5%_0.002_240)] p-5">
         <div className="flex items-center gap-2 mb-4">
-          <Building2 size={13} strokeWidth={1.5} className="text-accent" />
-          <span className="font-mono-label text-accent text-[10px]">COMPANY REPORT</span>
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-accent/10">
+            <Building2 size={12} strokeWidth={1.5} className="text-accent" />
+          </div>
+          <span className="text-sm font-medium text-ink font-geist">Company research</span>
           <button
             type="button"
             onClick={onCancel}
-            className="ml-auto text-stone/40 hover:text-stone transition-colors p-0.5"
+            className="ml-auto rounded-full p-1 text-stone/40 hover:text-stone hover:bg-stone/8 transition-colors"
           >
-            <X size={13} />
+            <X size={14} />
           </button>
         </div>
 
-        {/* Fields */}
         <div className="grid grid-cols-2 gap-3 mb-3">
           <div className="col-span-2 sm:col-span-1">
             <FormLabel>Company name *</FormLabel>
-            <FormInput
-              autoFocus
-              required
-              value={company}
-              onChange={setCompany}
-              placeholder="e.g. ServiceMaster Holdings"
-            />
+            <FormInput autoFocus required value={company} onChange={setCompany} placeholder="e.g. ServiceMaster Holdings" />
           </div>
           <div>
             <FormLabel>Sector / Industry</FormLabel>
-            <FormInput
-              value={sector}
-              onChange={setSector}
-              placeholder="e.g. facility services"
-            />
+            <FormInput value={sector} onChange={setSector} placeholder="e.g. facility services" />
           </div>
           <div>
             <FormLabel>Deal context</FormLabel>
@@ -358,11 +379,7 @@ function CompanyReportForm({
           </div>
           <div>
             <FormLabel>Revenue estimate</FormLabel>
-            <FormInput
-              value={revenue}
-              onChange={setRevenue}
-              placeholder="e.g. $20-50M"
-            />
+            <FormInput value={revenue} onChange={setRevenue} placeholder="e.g. $20-50M" />
           </div>
         </div>
 
@@ -375,15 +392,14 @@ function CompanyReportForm({
           />
         </div>
 
-        {/* Submit */}
         <div className="flex justify-end">
           <button
             type="submit"
             disabled={!canSubmit}
-            className="bg-accent text-paper px-4 py-2 flex items-center gap-1.5 font-mono-label text-[10px] disabled:opacity-25 transition-opacity hover:opacity-90"
+            className="rounded-full bg-accent text-[oklch(98%_0.004_240)] px-5 py-2 flex items-center gap-1.5 text-sm font-medium font-geist disabled:opacity-25 transition-opacity hover:opacity-90"
           >
             Generate report
-            <ArrowRight size={10} strokeWidth={2} />
+            <ArrowRight size={14} strokeWidth={2} />
           </button>
         </div>
       </div>
@@ -402,25 +418,29 @@ export function AtlasReportButtons({
 
   if (expanded === "market") {
     return (
-      <MarketReportForm
-        onSubmit={(query) => {
-          onStartResearch("market", query);
-          setExpanded(null);
-        }}
-        onCancel={() => setExpanded(null)}
-      />
+      <div className="px-4 md:px-8 pb-2 max-w-3xl mx-auto">
+        <MarketReportForm
+          onSubmit={(query) => {
+            onStartResearch("market", query);
+            setExpanded(null);
+          }}
+          onCancel={() => setExpanded(null)}
+        />
+      </div>
     );
   }
 
   if (expanded === "company") {
     return (
-      <CompanyReportForm
-        onSubmit={(query) => {
-          onStartResearch("company", query);
-          setExpanded(null);
-        }}
-        onCancel={() => setExpanded(null)}
-      />
+      <div className="px-4 md:px-8 pb-2 max-w-3xl mx-auto">
+        <CompanyReportForm
+          onSubmit={(query) => {
+            onStartResearch("company", query);
+            setExpanded(null);
+          }}
+          onCancel={() => setExpanded(null)}
+        />
+      </div>
     );
   }
 
@@ -429,17 +449,17 @@ export function AtlasReportButtons({
       <button
         type="button"
         onClick={() => setExpanded("market")}
-        className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono-label text-stone/60 border border-line/40 hover:border-accent/30 hover:text-accent hover:bg-accent/4 transition-all duration-150"
+        className="flex items-center gap-1.5 rounded-full border border-line/40 px-3 py-1.5 text-xs font-geist text-stone/60 hover:border-accent/30 hover:text-accent hover:bg-accent/4 transition-all"
       >
-        <Landmark size={10} strokeWidth={1.5} />
+        <Landmark size={11} strokeWidth={1.5} />
         Market Report
       </button>
       <button
         type="button"
         onClick={() => setExpanded("company")}
-        className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono-label text-stone/60 border border-line/40 hover:border-accent/30 hover:text-accent hover:bg-accent/4 transition-all duration-150"
+        className="flex items-center gap-1.5 rounded-full border border-line/40 px-3 py-1.5 text-xs font-geist text-stone/60 hover:border-accent/30 hover:text-accent hover:bg-accent/4 transition-all"
       >
-        <Building2 size={10} strokeWidth={1.5} />
+        <Building2 size={11} strokeWidth={1.5} />
         Company Report
       </button>
     </div>

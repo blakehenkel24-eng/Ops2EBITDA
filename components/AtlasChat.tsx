@@ -5,7 +5,7 @@ import { TextStreamChatTransport, isTextUIPart, UIMessagePart, UIDataTypes, UITo
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
 import { AtlasChatMessage } from "./AtlasChatMessage";
 import { AtlasResearchProgress } from "./AtlasResearchProgress";
-import { AtlasWelcome, AtlasReportButtons } from "./AtlasWelcome";
+import { AtlasWelcome } from "./AtlasWelcome";
 import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
 import { ArrowUp } from "lucide-react";
 
@@ -14,16 +14,8 @@ function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
     .filter(isTextUIPart)
     .map((p) => p.text)
     .join("");
-  // Strip [mode:X] prefix injected by report forms
   return raw.replace(/^\[mode:(?:market|company)]\s*/, "");
 }
-
-const SUGGESTIONS = [
-  "Top value creation levers for HVAC roll-ups",
-  "Red flags in a facilities management target",
-  "What makes a good PE platform in waste services?",
-  "Compare maintenance vs. project revenue quality",
-];
 
 export interface ProgressStage {
   id: string;
@@ -70,7 +62,6 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
       const transform = new TransformStream<Uint8Array, Uint8Array>({
         transform(chunk, controller) {
-          // After progress phase, pass through raw bytes
           if (progressDone) {
             controller.enqueue(chunk);
             return;
@@ -78,7 +69,6 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
           buffer += decoder.decode(chunk, { stream: true });
 
-          // Process complete lines
           let nlIdx: number;
           while ((nlIdx = buffer.indexOf("\n")) !== -1) {
             const line = buffer.slice(0, nlIdx);
@@ -89,10 +79,9 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                 const data = JSON.parse(line.slice(PROGRESS_PREFIX.length));
                 progressRef.current({ id: data.stage, label: data.label, status: data.status });
               } catch {
-                // malformed progress line, skip
+                // malformed progress line
               }
             } else {
-              // First non-progress content — flush everything downstream
               progressDone = true;
               const remaining = line + "\n" + buffer;
               buffer = "";
@@ -101,7 +90,6 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
             }
           }
 
-          // Partial buffer that doesn't look like a progress line
           if (buffer.length > 3 && !buffer.startsWith("§")) {
             progressDone = true;
             controller.enqueue(encoder.encode(buffer));
@@ -161,7 +149,6 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const slashFilter = input.startsWith("/") && !input.includes(" ") ? input.slice(1) : "";
   const showSlashMenu = slashCandidate && !slashDismissed;
 
-  // Filtered slash commands
   const filteredCommands = useMemo(() => {
     if (!slashFilter) return ATLAS_COMMANDS;
     return ATLAS_COMMANDS.filter((cmd) =>
@@ -185,7 +172,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     const ta = textareaRef.current;
     if (!ta) return;
     ta.style.height = "auto";
-    ta.style.height = Math.min(ta.scrollHeight, 160) + "px";
+    ta.style.height = Math.min(ta.scrollHeight, 200) + "px";
   }, [input]);
 
   // Scroll selected slash command into view
@@ -206,10 +193,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   const handleStartResearch = useCallback(
     (mode: string, query: string) => {
-      // Set mode for progress indicator only (not transport)
       setResearchMode(mode);
-      // Embed mode in message so server gets it immediately
-      // Transport body stays "chat" — mode prefix is the source of truth
       sendMessage({ text: `[mode:${mode}] ${query}` });
     },
     [sendMessage]
@@ -302,90 +286,67 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   return (
     <div className={rootClass}>
       <section className={shellClass}>
-        {fullPage && (
-          <div className="atlas-chat-document__header">
-            <div>
-              <p className="font-mono-label text-accent">Atlas IQ</p>
-              <h2 className="mt-1 font-newsreader text-2xl text-ink">
-                Private equity research workspace
-              </h2>
-            </div>
-            <div className="atlas-chat-status">
-              <span />
-              <strong>{isLoading ? "Working" : hasMessages ? "Memo thread" : "Ready"}</strong>
-            </div>
-          </div>
-        )}
-
         <div ref={scrollRef} className={scrollClass}>
-          {!hasMessages && <AtlasWelcome onStartResearch={handleStartResearch} />}
-
+          {/* Welcome state — vertically centered, fills scroll area */}
           {!hasMessages && !isLoading && (
-            <div className="mx-auto mb-7 flex max-w-2xl flex-wrap justify-center gap-2">
-              {SUGGESTIONS.map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() => handleSuggestion(s)}
-                  className="border border-line/55 bg-paper px-3 py-1.5 text-xs text-stone transition-all duration-150 font-geist hover:border-accent/35 hover:bg-accent-soft/45 hover:text-accent"
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
+            <AtlasWelcome
+              onStartResearch={handleStartResearch}
+              onSuggestion={handleSuggestion}
+            />
           )}
 
-          {messages.map((message, idx) => (
-            <AtlasChatMessage
-              key={message.id}
-              role={message.role as "user" | "assistant"}
-              content={getMessageText(message.parts)}
-              onCommand={
-                message.role === "assistant" && idx === lastAssistantIdx && !isLoading
-                  ? handleCommand
-                  : undefined
-              }
-              isStreaming={
-                isLoading && message.id === messages[messages.length - 1]?.id
-              }
-            />
-          ))}
-          {isLoading && (
-            <AtlasResearchProgress
-              visible
-              mode={researchMode}
-              stages={progressStages}
-            />
-          )}
+          {/* Message thread */}
+          <div className="mx-auto max-w-3xl">
+            {messages.map((message, idx) => (
+              <AtlasChatMessage
+                key={message.id}
+                role={message.role as "user" | "assistant"}
+                content={getMessageText(message.parts)}
+                onCommand={
+                  message.role === "assistant" && idx === lastAssistantIdx && !isLoading
+                    ? handleCommand
+                    : undefined
+                }
+                isStreaming={
+                  isLoading && message.id === messages[messages.length - 1]?.id
+                }
+              />
+            ))}
+            {isLoading && (
+              <AtlasResearchProgress
+                visible
+                mode={researchMode}
+                stages={progressStages}
+              />
+            )}
+          </div>
         </div>
 
-        {!fullPage && !hasMessages && !isLoading && (
-          <AtlasReportButtons onStartResearch={handleStartResearch} />
-        )}
-
+        {/* Composer */}
         <div className={inputClass}>
           <div className="relative mx-auto max-w-3xl">
+            {/* Slash command menu */}
             {showSlashMenu && filteredCommands.length > 0 && (
-              <div className="absolute bottom-full left-0 z-20 mb-2 w-full overflow-hidden border border-line/70 bg-paper shadow-[0_22px_50px_oklch(31%_0.038_248_/_0.16)]">
-                <div className="border-b border-line/40 px-3 py-2">
-                  <span className="font-mono-label text-[10px] text-stone/50">COMMANDS</span>
+              <div className="absolute bottom-full left-0 z-20 mb-2 w-full overflow-hidden rounded-xl border border-line/50 bg-[oklch(99.5%_0.002_240)] shadow-[0_8px_30px_oklch(31%_0.038_248_/_0.12)]">
+                <div className="border-b border-line/30 px-3.5 py-2">
+                  <span className="text-[11px] font-medium text-stone/50">Commands</span>
                 </div>
-                <div ref={slashMenuRef} className="max-h-52 overflow-y-auto py-1">
+                <div ref={slashMenuRef} className="max-h-64 overflow-y-auto py-1">
                   {filteredCommands.map((cmd, i) => (
                     <button
                       key={cmd.name}
                       type="button"
                       onClick={() => handleSlashSelect(cmd.name)}
-                      className={`w-full text-left px-3 py-2.5 flex items-start gap-3 transition-colors ${
+                      className={`w-full text-left px-3.5 py-2.5 flex items-start gap-3 transition-colors ${
                         i === slashIndex
-                          ? "bg-accent-soft/70 text-ink"
-                          : "text-stone hover:bg-bone/50"
+                          ? "bg-accent/6 text-ink"
+                          : "text-stone hover:bg-accent/4"
                       }`}
                     >
-                      <span className="font-mono-label text-[11px] text-accent shrink-0 mt-0.5">
+                      <span className="text-[12px] font-medium text-accent shrink-0 mt-px font-geist">
                         /{cmd.name}
                       </span>
-                      <span className="text-xs text-stone/70 leading-relaxed">
+                      <span className="text-xs text-stone/60 leading-relaxed font-geist">
                         {cmd.prompt}
                       </span>
                     </button>
@@ -394,30 +355,32 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
               </div>
             )}
 
-            <div className="flex items-end gap-2">
-              <div className="flex-1">
+            {/* Input area — Claude/ChatGPT style rounded capsule */}
+            <div className="atlas-input-wrap">
+              <div className="flex items-end gap-0">
                 <textarea
                   ref={textareaRef}
                   value={input}
                   onChange={(e) => handleInputChange(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder={hasMessages ? "Follow up, or type / for commands..." : "Ask Atlas IQ anything..."}
+                  placeholder={hasMessages ? "Ask a follow-up..." : "Ask Atlas IQ anything..."}
                   rows={1}
-                  className="w-full resize-none border border-line/70 bg-paper px-4 py-3 text-sm leading-relaxed text-ink placeholder:text-stone/45 transition-all duration-150 font-geist focus:border-accent/45 focus:bg-paper focus:outline-none"
+                  className="w-full resize-none bg-transparent px-5 py-3.5 text-[15px] leading-relaxed text-ink placeholder:text-stone/40 font-geist focus:outline-none"
                 />
+                <button
+                  type="button"
+                  onClick={handleSend}
+                  disabled={isLoading || !input.trim()}
+                  className="m-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-[oklch(98%_0.004_240)] transition-all duration-150 hover:opacity-90 disabled:opacity-20 disabled:bg-stone/30"
+                  aria-label="Send message"
+                >
+                  <ArrowUp size={16} strokeWidth={2.5} />
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={handleSend}
-                disabled={isLoading || !input.trim()}
-                className="mb-0.5 flex h-10 w-10 shrink-0 items-center justify-center bg-accent text-paper transition-opacity duration-150 disabled:opacity-25"
-                aria-label="Send message"
-              >
-                <ArrowUp size={16} strokeWidth={2} />
-              </button>
             </div>
-            <p className="mt-2 text-center text-[10px] text-stone/45 font-geist">
-              <kbd className="font-mono">Enter</kbd> to send · <kbd className="font-mono">Shift Enter</kbd> for new line · <kbd className="font-mono">/</kbd> for commands
+
+            <p className="mt-2 text-center text-[10px] text-stone/35 font-geist">
+              Atlas IQ can make mistakes. Verify important information.
             </p>
           </div>
         </div>

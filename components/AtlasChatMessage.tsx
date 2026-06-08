@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy, RotateCcw } from "lucide-react";
 import type { ResearchSource } from "@/lib/atlas/types";
 import { AtlasMemoCard } from "./AtlasMemoCard";
 import { AtlasCommandBar } from "./AtlasCommandBar";
@@ -25,8 +25,8 @@ export function AtlasChatMessage({
 }: AtlasChatMessageProps) {
   if (role === "user") {
     return (
-      <div className="flex justify-end mb-4">
-        <div className="max-w-[75%] bg-accent text-white px-4 py-2.5 rounded-2xl rounded-br-sm text-sm leading-relaxed">
+      <div className="flex justify-end mb-6">
+        <div className="max-w-[75%] bg-[oklch(99.5%_0.002_240)] text-ink px-4 py-3 rounded-2xl rounded-br-md text-[15px] leading-relaxed font-geist shadow-[0_1px_3px_oklch(31%_0.038_248_/_0.08)]">
           {content}
         </div>
       </div>
@@ -34,42 +34,66 @@ export function AtlasChatMessage({
   }
 
   return (
-    <div className="mb-5 group/msg">
-      {memo && sources ? (
-        <AtlasMemoCard
-          mode={memo.mode}
-          query={memo.query}
-          content={content}
-          sources={sources}
-          confidence={memo.confidence}
-          createdAt={memo.createdAt}
-        />
-      ) : (
-        <div className="relative max-w-[88%]">
-          <div className="text-sm leading-7 text-ink/85 font-geist">
-            <MarkdownContent content={content} />
-            {isStreaming && <StreamingCursor />}
-          </div>
-          {!isStreaming && content.length > 20 && <CopyButton text={content} />}
+    <div className="mb-6 group/msg">
+      <div className="flex gap-3">
+        {/* AI icon */}
+        <div className="atlas-ai-icon mt-1 shrink-0">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
         </div>
-      )}
-      {onCommand && !isStreaming && (
-        <div className="mt-2.5">
-          <AtlasCommandBar onCommand={onCommand} compact />
+
+        {/* Message body */}
+        <div className="min-w-0 flex-1">
+          {memo && sources ? (
+            <AtlasMemoCard
+              mode={memo.mode}
+              query={memo.query}
+              content={content}
+              sources={sources}
+              confidence={memo.confidence}
+              createdAt={memo.createdAt}
+            />
+          ) : (
+            <div className="relative rounded-2xl rounded-tl-sm bg-[oklch(99.5%_0.002_240)] px-5 py-4 shadow-[0_1px_3px_oklch(31%_0.038_248_/_0.07)]">
+              <div className="text-[15px] leading-7 text-ink/90 font-geist">
+                <MarkdownContent content={content} />
+                {isStreaming && <StreamingCursor />}
+              </div>
+            </div>
+          )}
+
+          {/* Hover action bar — sits below card */}
+          {!isStreaming && content.length > 20 && (
+            <div className="atlas-msg-actions mt-1 flex items-center gap-0.5 pl-1">
+              <CopyButton text={content} />
+            </div>
+          )}
+
+          {/* Command bar */}
+          {onCommand && !isStreaming && (
+            <div className="mt-2.5 pl-1">
+              <AtlasCommandBar onCommand={onCommand} compact />
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }
 
-/** Blinking cursor at end of streaming text */
+/** Shimmer dot at end of streaming text */
 function StreamingCursor() {
   return (
-    <span className="inline-block w-0.5 h-4 bg-accent/60 ml-0.5 -mb-0.5 animate-pulse" />
+    <span className="inline-flex items-center gap-0.5 ml-1.5 -mb-0.5">
+      <span className="atlas-streaming-dot inline-block w-1.5 h-1.5 rounded-full bg-accent/50" />
+    </span>
   );
 }
 
-/** Copy button — appears on hover */
+/** Copy button */
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
@@ -83,11 +107,11 @@ function CopyButton({ text }: { text: string }) {
     <button
       type="button"
       onClick={handleCopy}
-      className="absolute -top-1 right-0 opacity-0 group-hover/msg:opacity-100 transition-opacity p-1.5 rounded hover:bg-bone text-stone/50 hover:text-stone"
+      className="flex items-center gap-1 rounded-md px-1.5 py-1 text-stone/40 hover:text-stone/70 hover:bg-stone/6 transition-all"
       title="Copy response"
     >
       {copied ? (
-        <Check size={13} strokeWidth={2} className="text-teal" />
+        <Check size={13} strokeWidth={2} className="text-accent/70" />
       ) : (
         <Copy size={13} strokeWidth={1.5} />
       )}
@@ -107,7 +131,7 @@ function MarkdownContent({ content }: { content: string }) {
     const ordered = listBuffer[0].ordered;
     const Tag = ordered ? "ol" : "ul";
     elements.push(
-      <Tag key={key++} className={`space-y-1.5 my-2.5 ${ordered ? "list-decimal" : "list-disc"} ml-5`}>
+      <Tag key={key++} className={`space-y-1.5 my-3 ${ordered ? "list-decimal" : "list-disc"} ml-5`}>
         {listBuffer.map((item, i) => (
           <li key={i} className="text-ink/80 pl-0.5 leading-relaxed">
             <InlineMarkdown text={item.text} />
@@ -124,7 +148,7 @@ function MarkdownContent({ content }: { content: string }) {
     // Horizontal rule
     if (trimmed === "---" || trimmed === "***" || trimmed === "___") {
       flushList();
-      elements.push(<hr key={key++} className="border-line/30 my-5" />);
+      elements.push(<hr key={key++} className="border-line/20 my-6" />);
       continue;
     }
 
@@ -132,7 +156,7 @@ function MarkdownContent({ content }: { content: string }) {
     if (trimmed.startsWith("#### ")) {
       flushList();
       elements.push(
-        <h5 key={key++} className="font-mono-label text-accent text-[10px] mt-4 mb-1">
+        <h5 key={key++} className="text-xs font-semibold text-stone/60 uppercase tracking-wide mt-5 mb-1.5 font-geist">
           {trimmed.replace("#### ", "")}
         </h5>
       );
@@ -141,7 +165,7 @@ function MarkdownContent({ content }: { content: string }) {
     if (trimmed.startsWith("### ")) {
       flushList();
       elements.push(
-        <h4 key={key++} className="font-newsreader text-[15px] text-ink font-medium mt-5 mb-1.5">
+        <h4 key={key++} className="font-newsreader text-[16px] text-ink font-medium mt-6 mb-2">
           {trimmed.replace("### ", "")}
         </h4>
       );
@@ -150,7 +174,7 @@ function MarkdownContent({ content }: { content: string }) {
     if (trimmed.startsWith("## ")) {
       flushList();
       elements.push(
-        <h3 key={key++} className="font-newsreader text-base text-ink font-medium mt-6 mb-2">
+        <h3 key={key++} className="font-newsreader text-lg text-ink font-medium mt-7 mb-2">
           {trimmed.replace("## ", "")}
         </h3>
       );
@@ -179,7 +203,7 @@ function MarkdownContent({ content }: { content: string }) {
     // Paragraph
     flushList();
     elements.push(
-      <p key={key++} className="mb-2 max-w-[65ch] leading-relaxed">
+      <p key={key++} className="mb-2.5 max-w-[65ch] leading-relaxed">
         <InlineMarkdown text={trimmed} />
       </p>
     );
@@ -207,7 +231,7 @@ function InlineMarkdown({ text }: { text: string }) {
         }
         if (part.startsWith("`") && part.endsWith("`")) {
           return (
-            <code key={i} className="px-1 py-0.5 bg-bone rounded text-[13px] font-jetbrains text-accent/80">
+            <code key={i} className="px-1.5 py-0.5 bg-[oklch(95%_0.006_240)] rounded-md text-[13px] font-jetbrains text-ink/75">
               {part.slice(1, -1)}
             </code>
           );
