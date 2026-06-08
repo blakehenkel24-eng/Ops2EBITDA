@@ -6,8 +6,9 @@ import { useRef, useEffect, useState, useCallback, useMemo } from "react";
 import { AtlasChatMessage } from "./AtlasChatMessage";
 import { AtlasResearchProgress } from "./AtlasResearchProgress";
 import { AtlasWelcome } from "./AtlasWelcome";
+import { AtlasResearchForm } from "./AtlasResearchForm";
 import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
-import { ArrowUp, Landmark, Building2, MessageCircle } from "lucide-react";
+import { ArrowUp, Landmark, Building2 } from "lucide-react";
 
 function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
   const raw = parts
@@ -27,7 +28,7 @@ const PROGRESS_PREFIX = "§§P";
 
 export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [researchMode, setResearchMode] = useState<string>("chat");
-  const [selectedMode, setSelectedMode] = useState<"chat" | "market" | "company">("chat");
+  const [activeForm, setActiveForm] = useState<"market" | "company" | null>(null);
   const [progressStages, setProgressStages] = useState<ProgressStage[]>([]);
   const [input, setInput] = useState("");
   const [slashDismissed, setSlashDismissed] = useState(false);
@@ -202,30 +203,21 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   const handleSend = useCallback(() => {
     if (!input.trim() || isLoading) return;
-    const text = input.trim();
-    if (selectedMode !== "chat") {
-      setResearchMode(selectedMode);
-      sendMessage({ text: `[mode:${selectedMode}] ${text}` });
-      setSelectedMode("chat");
-    } else {
-      sendMessage({ text });
-    }
+    sendMessage({ text: input.trim() });
     setInput("");
     setSlashDismissed(false);
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
     }
-  }, [input, isLoading, sendMessage, selectedMode]);
+  }, [input, isLoading, sendMessage]);
 
   const handleSlashSelect = useCallback(
     (cmd: string) => {
       const command = ATLAS_COMMANDS.find((c) => c.name === cmd);
       if (command?.mode) {
-        // Mode commands switch the research pill, don't send immediately
-        setSelectedMode(command.mode);
+        setActiveForm(command.mode);
         setInput("");
         setSlashDismissed(true);
-        textareaRef.current?.focus();
         return;
       }
       sendMessage({ text: `/${cmd}` });
@@ -278,6 +270,16 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
       }
     },
     [handleSend, showSlashMenu, filteredCommands, slashIndex, handleSlashSelect]
+  );
+
+  const handleResearchFormSubmit = useCallback(
+    (query: string) => {
+      if (!activeForm) return;
+      setResearchMode(activeForm);
+      sendMessage({ text: `[mode:${activeForm}] ${query}` });
+      setActiveForm(null);
+    },
+    [activeForm, sendMessage]
   );
 
   const handleSuggestion = useCallback(
@@ -372,11 +374,10 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
               </div>
             )}
 
-            {/* Mode selector pills */}
+            {/* Research mode buttons */}
             <div className="flex gap-1.5 mb-2">
               {(
                 [
-                  { mode: "chat", label: "Chat", icon: MessageCircle },
                   { mode: "market", label: "Market Research", icon: Landmark },
                   { mode: "company", label: "Company Research", icon: Building2 },
                 ] as const
@@ -384,12 +385,9 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                 <button
                   key={mode}
                   type="button"
-                  onClick={() => {
-                    setSelectedMode(mode);
-                    textareaRef.current?.focus();
-                  }}
+                  onClick={() => setActiveForm(activeForm === mode ? null : mode)}
                   className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-geist transition-all duration-150 ${
-                    selectedMode === mode
+                    activeForm === mode
                       ? "bg-accent text-[oklch(97%_0.004_240)] shadow-[0_1px_4px_oklch(34%_0.105_252_/_0.3)]"
                       : "text-stone/55 border border-line/35 hover:text-ink hover:border-line/60 bg-transparent"
                   }`}
@@ -400,6 +398,15 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
               ))}
             </div>
 
+            {/* Research form — appears above input when a mode is active */}
+            {activeForm && (
+              <AtlasResearchForm
+                mode={activeForm}
+                onSubmit={handleResearchFormSubmit}
+                onClose={() => setActiveForm(null)}
+              />
+            )}
+
             {/* Input area — Claude/ChatGPT style rounded capsule */}
             <div className="atlas-input-wrap">
               <div className="flex items-end gap-0">
@@ -408,15 +415,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                   value={input}
                   onChange={(e) => handleInputChange(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder={
-                    selectedMode === "market"
-                      ? "Describe the market or sector to research..."
-                      : selectedMode === "company"
-                        ? "Name a company or describe the target..."
-                        : hasMessages
-                          ? "Ask a follow-up..."
-                          : "Ask Atlas IQ anything..."
-                  }
+                  placeholder={hasMessages ? "Ask a follow-up..." : "Ask Atlas IQ anything..."}
                   rows={1}
                   className="w-full resize-none bg-transparent px-5 py-3.5 text-[15px] leading-relaxed text-ink placeholder:text-stone/40 font-geist focus:outline-none"
                 />
