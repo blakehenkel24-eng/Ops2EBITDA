@@ -1,0 +1,97 @@
+{
+  "slug": "management-equity-rollout",
+  "title": "Management Equity Rollout",
+  "type": "playbook",
+  "category": "Talent / Organization",
+  "difficulty": "Advanced",
+  "summary": "Rolling out management equity so leadership behavior, retention, and milestones align with the investment thesis.",
+  "definition": "Management Equity Rollout is the post-close process of communicating, allocating, governing, and reinforcing management ownership incentives.",
+  "whyItMatters": "PE cares because equity only changes behavior when leaders understand the math, trust the plan, and see how their actions create personal upside.",
+  "commonProblems": [
+    "Management receives equity but does not understand how value is created.",
+    "Awards are not tied to role criticality, milestones, or retention risk.",
+    "Underperforming leaders keep economics that no longer match the go-forward team."
+  ],
+  "diagnosticQuestions": [
+    "Which leaders are critical to the VCP and exit story?",
+    "What behaviors and milestones should equity reinforce?",
+    "How should the plan be communicated so management thinks like owners?"
+  ],
+  "dataNeeded": [
+    "Management roster, role criticality, performance, and retention risk",
+    "Equity pool, vesting rules, hurdle structure, and rollover detail",
+    "VCP milestones and executive ownership map",
+    "Compensation benchmarks and succession plans"
+  ],
+  "process": [
+    "Map leadership roles to VCP value drivers and retention risk.",
+    "Design allocation logic, vesting, milestones, and governance rules.",
+    "Prepare communication materials that explain the value creation math.",
+    "Roll out the plan through executive-level conversations.",
+    "Review equity alignment during talent upgrades, performance issues, and major thesis changes."
+  ],
+  "kpisImpacted": [
+    "Employee Turnover",
+    "EBITDA Margin",
+    "Forecast Accuracy",
+    "Gross Margin",
+    "NRR"
+  ],
+  "ebitdaLogic": "A disciplined equity rollout improves execution by retaining critical leaders, aligning incentives to VCP milestones, and increasing management ownership of EBITDA, cash, and exit outcomes.",
+  "caseExample": "A sponsor rolls out equity to the CEO, CFO, CRO, COO, and select second-line leaders, tying upside to exit value plus pricing, cash conversion, and integration milestones.",
+  "hundredDayPlan": [
+    "Days 1-30: map critical roles, retention risks, and VCP ownership.",
+    "Days 31-60: finalize allocation logic, vesting rules, and communication materials.",
+    "Days 61-100: complete rollout conversations, answer economics questions, and embed equity milestones into cadence."
+  ],
+  "commonMistakes": [
+    "Treating equity as a legal document instead of a behavior-change tool.",
+    "Giving ownership too broadly without performance or role logic.",
+    "Failing to refresh the plan after leadership changes or thesis shifts."
+  ],
+  "relatedIndustries": [
+    "Business Services",
+    "Healthcare Services",
+    "Vertical SaaS",
+    "Manufacturing"
+  ],
+  "relatedProjectPlaybooks": [
+    "Org Design Spans and Layers",
+    "Management Operating Cadence",
+    "100-Day Value Creation Plan"
+  ],
+  "diagram": "graph LR\n  A[VCP Roles] --> B[Equity Allocation]\n  B --> C[Owner Mindset]\n  C --> D[Execution Behavior]\n  D --> E[Milestone Delivery]\n  E --> F[Exit Value]",
+  "tags": [
+    "Talent / Organization",
+    "management equity",
+    "incentives"
+  ],
+  "articleSections": [
+    {
+      "title": "Equity Rollout as Behavior Design",
+      "body": [
+        "Management Equity Rollout is where the sponsor converts ownership economics into daily management behavior. A legal plan sitting in a data room does not create alignment. Leaders must understand how enterprise value is created, how their role affects that value, and how personal upside changes when the company outperforms.",
+        "The rollout should start with role criticality. The CEO, CFO, CRO, COO, and select second-line leaders should be evaluated against the VCP. Who owns EBITDA expansion? Who owns cash conversion? Who owns integration? Who owns retention? Equity should reinforce the roles that matter most to the thesis.",
+        "The plan must also address retention risk. Some leaders are essential to continuity and buyer confidence. Others may be legacy executives who will not scale. The sponsor should avoid locking too much economics into people who are unlikely to be part of the exit story."
+      ],
+      "callout": "Equity changes behavior only when management understands the value creation math."
+    },
+    {
+      "title": "Allocation, Vesting, and Milestone Logic",
+      "body": [
+        "Allocation should reflect role impact, performance, scarcity, and retention need. Equal treatment may feel fair, but it usually fails to reflect value creation reality. A CFO who protects lender confidence and exit readiness may deserve more economics than a legacy function head with limited thesis relevance.",
+        "Vesting should combine retention and performance. Time-based vesting keeps leaders in the seat. Milestone-based vesting forces focus on the operating outcomes that create value: pricing realization, procurement savings, integration completion, churn reduction, cash conversion, or EBITDA targets.",
+        "The plan should be simple enough to explain clearly. If management cannot describe how value is created and how they participate, the incentive system will not shape behavior. Complexity belongs in legal drafting, not in the leadership message."
+      ]
+    },
+    {
+      "title": "Communication, Governance, and Refreshes",
+      "body": [
+        "Equity rollout conversations should be direct, numerical, and tied to the sponsor's thesis. Leaders should see the base case, upside case, exit timing, and what their work must contribute. This creates owner psychology instead of vague excitement about a future payout.",
+        "The board should review equity alignment when the VCP changes, when leaders miss milestones, when add-ons alter the operating model, or when new executives are hired. A static plan can become misaligned quickly in a fast-moving PE hold.",
+        "At exit, a well-rolled-out MEP shows buyers that leadership is economically aligned and capable of continuing the story. That matters because buyers do not only buy historical EBITDA; they buy the management team's willingness and ability to create the next tranche of value."
+      ]
+    }
+  ],
+  "diagrams": []
+}

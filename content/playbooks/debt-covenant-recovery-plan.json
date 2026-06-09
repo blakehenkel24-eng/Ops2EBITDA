@@ -1,0 +1,97 @@
+{
+  "slug": "debt-covenant-recovery-plan",
+  "title": "Debt Covenant Recovery Plan",
+  "type": "playbook",
+  "category": "Working Capital / Cash Flow",
+  "difficulty": "Advanced",
+  "summary": "Stabilizing lender confidence when EBITDA, liquidity, or covenant cushion deteriorates.",
+  "definition": "A Debt Covenant Recovery Plan is the operating and lender-management response used when a leveraged portfolio company approaches or breaches covenant limits.",
+  "whyItMatters": "PE cares because covenant pressure can transfer negotiating power to lenders, restrict strategic flexibility, and damage equity value.",
+  "commonProblems": [
+    "Management sees covenant pressure too late.",
+    "Forecasts lack enough detail to support lender confidence.",
+    "Cash actions are scattered and not tied to covenant recovery."
+  ],
+  "diagnosticQuestions": [
+    "Which covenant is under pressure and what is the true cushion by month?",
+    "What operating misses caused the pressure: EBITDA, cash, working capital, or debt?",
+    "What lender message can be supported by specific actions and dates?"
+  ],
+  "dataNeeded": [
+    "Credit agreement and covenant definitions",
+    "Monthly EBITDA, debt, cash, and liquidity forecast",
+    "13-week cash flow forecast",
+    "Working capital detail and covenant sensitivity model"
+  ],
+  "process": [
+    "Calculate covenant cushion under base, downside, and severe downside cases.",
+    "Build a recovery bridge from operating actions to covenant improvement.",
+    "Install weekly cash and KPI command center.",
+    "Prepare lender communication, waiver, amendment, or equity cure options.",
+    "Track recovery actions until cushion is restored."
+  ],
+  "kpisImpacted": [
+    "EBITDA Margin",
+    "Cash Conversion Cycle",
+    "DSO",
+    "DPO",
+    "Forecast Accuracy"
+  ],
+  "ebitdaLogic": "The playbook protects equity by preserving lender flexibility, preventing forced value leakage, and restoring operating performance before debt terms become punitive.",
+  "caseExample": "A sponsor-backed manufacturer facing leverage covenant pressure launches a cash war room, reduces inventory purchases, accelerates collections, freezes discretionary spend, and secures an amendment with a credible recovery package.",
+  "hundredDayPlan": [
+    "Days 1-30: calculate true covenant exposure, install cash war room, identify immediate liquidity actions.",
+    "Days 31-60: execute EBITDA and working capital actions, engage lenders with evidence-backed plan.",
+    "Days 61-100: finalize amendment or waiver path, prove forecast accuracy, rebuild cushion."
+  ],
+  "commonMistakes": [
+    "Treating lender communication as a finance-only exercise.",
+    "Using optimistic forecasts without operating owners behind the recovery.",
+    "Waiting for an actual breach before preparing amendment options."
+  ],
+  "relatedIndustries": [
+    "Manufacturing",
+    "Distribution",
+    "Healthcare Services",
+    "Industrial Services"
+  ],
+  "relatedProjectPlaybooks": [
+    "Working Capital Improvement",
+    "Finance Function Transformation",
+    "Management Operating Cadence"
+  ],
+  "diagram": "graph LR\n  A[Covenant Pressure] --> B[Recovery Plan]\n  B --> C[Cash Actions]\n  C --> D[Lender Confidence]\n  D --> E[Flexibility]\n  E --> F[Equity Protection]",
+  "tags": [
+    "Working Capital / Cash Flow",
+    "debt",
+    "covenants"
+  ],
+  "articleSections": [
+    {
+      "title": "When Operating Misses Become Capital Structure Problems",
+      "body": [
+        "A Debt Covenant Recovery Plan is required when the company is no longer merely missing budget, but threatening the boundaries of the credit agreement. Leverage, liquidity, and fixed charge coverage tests convert operating performance into lender-visible risk. Once cushion shrinks, every forecast miss carries more consequence.",
+        "The first move is to establish the true exposure. The team must interpret covenant definitions precisely, calculate current cushion, and model the next several test dates under base, downside, and severe downside cases. Approximate math is not acceptable because the lender will calculate the same problem with contractual precision.",
+        "A recovery plan must separate symptoms from root causes. EBITDA pressure, delayed collections, inventory build, higher interest expense, failed integration, and weak forecasting require different responses. The sponsor needs a recovery bridge that shows how each operating action improves covenant cushion."
+      ],
+      "callout": "Covenant cushion is the sponsor's remaining room to be wrong."
+    },
+    {
+      "title": "Cash War Room and Operating Recovery",
+      "body": [
+        "The recovery plan should immediately create a cash war room with weekly ownership of receipts, disbursements, inventory, vendor payments, payroll, CapEx, and liquidity. The 13-week cash forecast becomes the operating document that governs short-term survival and lender credibility.",
+        "Fast actions usually include collection acceleration, inventory purchase controls, discretionary spend freeze, vendor term negotiation, pricing leakage cleanup, overtime reduction, and pause of noncritical projects. These moves are not strategic elegance; they are liquidity protection while the deeper EBITDA recovery is being built.",
+        "Every action must have an owner, date, and measured impact. Lenders do not trust broad promises like 'improve margins' or 'manage working capital.' They trust specific steps with weekly evidence. The recovery cadence must therefore be tighter than the normal board cadence."
+      ]
+    },
+    {
+      "title": "Lender Messaging, Waivers, Amendments, and Equity Cures",
+      "body": [
+        "Lender communication should happen before trust is destroyed. The sponsor needs a clear narrative: what changed, what management is doing, how much cushion remains, what support is requested, and why the lender should believe the business remains controlled. Silence creates suspicion and reduces negotiating leverage.",
+        "Possible paths include a waiver, amendment, covenant reset, pricing step-up, tighter reporting, blocked payments, or an equity cure. Each option has economic and control consequences. The sponsor must evaluate not only whether the company can avoid default, but how much value leaks through fees, restrictions, or required equity support.",
+        "The recovery is not complete when paperwork is signed. It is complete when forecast accuracy improves, liquidity stabilizes, covenant cushion returns, and lenders stop treating every update as a potential surprise. That confidence is earned through repeated execution."
+      ]
+    }
+  ],
+  "diagrams": []
+}

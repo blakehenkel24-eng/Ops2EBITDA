@@ -1,0 +1,97 @@
+{
+  "slug": "margin-leakage-diagnostic",
+  "title": "Margin Leakage Diagnostic",
+  "type": "playbook",
+  "category": "EBITDA Margin Expansion",
+  "difficulty": "Intermediate",
+  "summary": "Finding hidden profit leakage across pricing, freight, rebates, overtime, scrap, warranty, billing, and service credits.",
+  "definition": "A Margin Leakage Diagnostic is a rapid cross-functional review that identifies where gross margin and EBITDA are lost between list economics and realized profit.",
+  "whyItMatters": "PE cares because leakage often hides in normal operations and can create fast EBITDA uplift without requiring major growth.",
+  "commonProblems": [
+    "Management knows margin is weak but cannot isolate leakage sources.",
+    "Freight, rebates, warranty, overtime, discounts, and service credits are not governed tightly.",
+    "Financial reporting shows gross margin decline but not operational root cause."
+  ],
+  "diagnosticQuestions": [
+    "Where does expected margin leak before it becomes realized EBITDA?",
+    "Which customers, SKUs, sites, reps, vendors, or service lines drive leakage?",
+    "Which leaks can be stopped in 30, 60, and 100 days?"
+  ],
+  "dataNeeded": [
+    "Transaction-level revenue, discount, rebate, and freight data",
+    "Customer, SKU, site, rep, and vendor margin detail",
+    "Warranty, returns, credits, overtime, scrap, and rework data",
+    "Contract terms, pricing rules, and approval workflows"
+  ],
+  "process": [
+    "Build a margin waterfall from list price or standard cost to realized margin.",
+    "Segment leakage by customer, SKU, site, channel, rep, vendor, and process.",
+    "Prioritize leakage based on EBITDA impact and ease of capture.",
+    "Launch control actions for pricing, freight, rebates, credits, overtime, and defects.",
+    "Track leakage closure through weekly benefits cadence."
+  ],
+  "kpisImpacted": [
+    "Gross Margin",
+    "EBITDA Margin",
+    "Defect Rate",
+    "Scrap Rate",
+    "Labor Productivity"
+  ],
+  "ebitdaLogic": "Leakage reduction improves EBITDA by converting already-earned demand into retained margin through better controls, pricing discipline, process quality, and accountability.",
+  "caseExample": "A sponsor-backed distributor discovers that freight givebacks, rebate exceptions, and low-margin service credits are costing 240 basis points of gross margin, then closes half the leakage in two quarters.",
+  "hundredDayPlan": [
+    "Days 1-30: build leakage waterfall and rank margin loss by source.",
+    "Days 31-60: launch controls on highest-impact leakage points.",
+    "Days 61-100: quantify captured margin, embed approval rules, and add leakage metrics to operating reviews."
+  ],
+  "commonMistakes": [
+    "Looking only at average gross margin instead of transaction-level leakage.",
+    "Launching cost cuts while ignoring revenue-side margin givebacks.",
+    "Counting leakage opportunity without proving P&L capture."
+  ],
+  "relatedIndustries": [
+    "Distribution",
+    "Manufacturing",
+    "Industrial Services",
+    "Healthcare Services"
+  ],
+  "relatedProjectPlaybooks": [
+    "Pricing Optimization",
+    "Procurement Savings",
+    "KPI Dashboard Buildout"
+  ],
+  "diagram": "graph LR\n  A[Expected Margin] --> B[Leakage Waterfall]\n  B --> C[Root Cause Actions]\n  C --> D[Captured Margin]\n  D --> E[EBITDA Uplift]\n  E --> F[Value Creation Proof]",
+  "tags": [
+    "EBITDA Margin Expansion",
+    "gross margin",
+    "diagnostic"
+  ],
+  "articleSections": [
+    {
+      "title": "The Margin Lost Between Policy and Reality",
+      "body": [
+        "A Margin Leakage Diagnostic identifies the profit that disappears between what the business thinks it should earn and what it actually keeps. Leakage hides in discounts, freight absorption, rebates, warranty claims, service credits, overtime, scrap, rework, billing errors, contract exceptions, and unmanaged cost-to-serve.",
+        "The diagnostic begins with a margin waterfall. The team must move from list price or standard cost to pocket margin, showing every giveback along the way. Average gross margin is too blunt. The sponsor needs transaction-level evidence by customer, SKU, site, channel, sales rep, vendor, and process.",
+        "This playbook is attractive because it often produces fast EBITDA movement without requiring new demand. The company already has the customers and volume. The problem is that too much economic value leaks before it reaches EBITDA."
+      ],
+      "callout": "Margin leakage is value creation hiding in plain sight."
+    },
+    {
+      "title": "Segmenting Leakage by Root Cause",
+      "body": [
+        "Leakage must be classified by root cause, not accounting line. Pricing leakage may come from unauthorized discounts, stale price lists, weak surcharge discipline, or sales compensation that rewards revenue over profit. Freight leakage may come from free-shipping thresholds, poor routing, or contract terms that fail to pass through cost.",
+        "Operational leakage includes scrap, warranty, rework, overtime, expedited shipping, downtime, and service failures. These issues often sit outside commercial reporting but still destroy margin. The operator must connect financial symptoms to process defects.",
+        "Each leakage source should be ranked by EBITDA impact, speed to capture, customer risk, implementation complexity, and owner. The output is a prioritized action list, not a beautiful diagnostic deck."
+      ]
+    },
+    {
+      "title": "Controls, Cadence, and P&L Capture",
+      "body": [
+        "Leakage closes through controls: discount approval gates, freight pass-through rules, rebate governance, credit review, warranty root-cause analysis, overtime approval, scrap tracking, and billing audits. Every control should have an owner and a measurable effect.",
+        "The finance team must distinguish theoretical leakage from captured EBITDA. If the company identifies $6M of leakage but only $2M appears in margin improvement, the remaining $4M is still a hypothesis. Benefits tracking should reconcile action, operational KPI movement, and P&L impact.",
+        "Once installed, leakage metrics should become part of the monthly operating review. The goal is not a one-time margin hunt. It is a management system that prevents margin from leaking back out after the sponsor stops watching."
+      ]
+    }
+  ],
+  "diagrams": []
+}

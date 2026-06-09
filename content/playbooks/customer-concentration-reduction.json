@@ -1,0 +1,97 @@
+{
+  "slug": "customer-concentration-reduction",
+  "title": "Customer Concentration Reduction",
+  "type": "playbook",
+  "category": "Revenue Growth",
+  "difficulty": "Intermediate",
+  "summary": "Reducing overdependence on a small number of customers before it limits lender confidence or exit valuation.",
+  "definition": "Customer Concentration Reduction is the deliberate program to lower revenue, gross profit, or EBITDA exposure to the largest accounts through diversification, retention strategy, and new growth.",
+  "whyItMatters": "PE cares because high concentration increases forecast risk, weakens buyer confidence, and can cap the exit multiple even when growth looks attractive.",
+  "commonProblems": [
+    "One or two customers drive too much revenue or margin.",
+    "Management tracks concentration by revenue but not gross profit or EBITDA contribution.",
+    "The sales engine is not producing enough new logos to dilute concentration."
+  ],
+  "diagnosticQuestions": [
+    "What percentage of revenue, gross profit, and EBITDA comes from the top 1, 5, 10, and 20 customers?",
+    "Which large customers have renewal, pricing, margin, or churn risk?",
+    "What growth engine can dilute concentration without sacrificing margin quality?"
+  ],
+  "dataNeeded": [
+    "Customer revenue, gross profit, EBITDA, and contract history",
+    "Renewal dates, termination rights, and pricing terms",
+    "Pipeline by segment and new logo source",
+    "Customer satisfaction, usage, and service-level data"
+  ],
+  "process": [
+    "Measure concentration by revenue, margin, EBITDA, and cash behavior.",
+    "Segment large accounts by risk, profitability, and strategic importance.",
+    "Protect critical accounts through executive coverage and contract strategy.",
+    "Launch targeted new logo and whitespace expansion motions.",
+    "Track concentration dilution and margin quality through the board pack."
+  ],
+  "kpisImpacted": [
+    "Logo Retention",
+    "NRR",
+    "GRR",
+    "Gross Margin",
+    "Win Rate"
+  ],
+  "ebitdaLogic": "Reducing concentration improves durability of earnings, lowers buyer risk discounts, and strengthens the exit story by proving growth is not dependent on a fragile customer base.",
+  "caseExample": "A sponsor-backed industrial services company reduces top-customer revenue exposure from 38% to 24% by protecting the core account while adding mid-market logos in higher-margin service lines.",
+  "hundredDayPlan": [
+    "Days 1-30: calculate concentration and risk by revenue, margin, contract, and renewal date.",
+    "Days 31-60: install executive coverage for critical accounts and launch targeted diversification campaigns.",
+    "Days 61-100: track new logo progress, whitespace expansion, contract risk reduction, and concentration movement."
+  ],
+  "commonMistakes": [
+    "Trying to reduce concentration by neglecting the largest customer.",
+    "Measuring concentration only by revenue while ignoring margin exposure.",
+    "Replacing concentrated revenue with lower-quality, low-margin growth."
+  ],
+  "relatedIndustries": [
+    "Business Services",
+    "Industrial Services",
+    "Manufacturing",
+    "Tech-Enabled Services"
+  ],
+  "relatedProjectPlaybooks": [
+    "Sales Productivity Improvement",
+    "Customer Retention Churn Reduction",
+    "Marketing Efficiency Improvement"
+  ],
+  "diagram": "graph LR\n  A[Customer Exposure] --> B[Risk Segmentation]\n  B --> C[Protect Core Accounts]\n  B --> D[New Logo Growth]\n  C --> E[Durable Revenue]\n  D --> E\n  E --> F[Multiple Support]",
+  "tags": [
+    "Revenue Growth",
+    "customer concentration",
+    "exit readiness"
+  ],
+  "articleSections": [
+    {
+      "title": "Concentration as a Valuation Ceiling",
+      "body": [
+        "Customer concentration is one of the fastest ways to cap an otherwise attractive exit multiple. Buyers may admire growth, margin, and management quality, but if one customer controls the company's fate, they will underwrite the asset with a risk discount. The sponsor must reduce that dependency before the sale process, not explain it away during management presentations.",
+        "The first step is measuring concentration correctly. Revenue concentration is useful, but gross profit, EBITDA, cash timing, renewal exposure, and strategic dependency matter more. A customer that represents 15% of revenue but 30% of gross profit is more dangerous than the headline suggests.",
+        "The objective is not to abandon large customers. The objective is to protect them while building enough diversified growth that the company is no longer hostage to one relationship, procurement event, or contract renewal."
+      ],
+      "callout": "A concentrated customer base makes buyer underwriting feel like single-name credit risk."
+    },
+    {
+      "title": "Protect, Expand, and Dilute",
+      "body": [
+        "Large accounts should be segmented by risk and attractiveness. Strategic, profitable, stable customers require executive coverage, contract extension, service-level discipline, and proactive value reviews. Fragile or low-margin large accounts require margin repair, contract cleanup, or controlled exposure reduction.",
+        "Diversification comes from two motions: new logo acquisition and expansion into underpenetrated accounts. The sales team needs targeted ICPs, specific account lists, clear value propositions, and pipeline coverage goals that are mathematically large enough to dilute concentration within the hold period.",
+        "Margin quality must be protected. Replacing one large customer with a large number of low-margin, high-churn customers does not improve the exit story. The board should track concentration movement alongside gross margin, retention, win rate, and CAC payback."
+      ]
+    },
+    {
+      "title": "Exit Evidence Buyers Will Believe",
+      "body": [
+        "Buyers will not accept generic claims that concentration is improving. They need evidence: top-customer share by month, new logo cohorts, expansion revenue, contract renewals, pricing actions, churn risk reduction, and gross profit diversification. The trend must be visible before the process begins.",
+        "A strong concentration reduction story shows that the company kept its anchor customers while proving broader market demand. That combination is powerful because it turns a former risk into a professionalization narrative: the sponsor inherited a concentrated business and built a repeatable commercial engine around it.",
+        "The final test is buyer imagination. If the next owner can see clear paths to continue diluting concentration without damaging margins, the issue stops being a valuation ceiling and becomes an execution roadmap."
+      ]
+    }
+  ],
+  "diagrams": []
+}

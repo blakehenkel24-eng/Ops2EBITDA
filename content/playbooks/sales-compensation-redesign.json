@@ -1,0 +1,97 @@
+{
+  "slug": "sales-compensation-redesign",
+  "title": "Sales Compensation Redesign",
+  "type": "playbook",
+  "category": "Revenue Growth",
+  "difficulty": "Intermediate",
+  "summary": "Aligning sales incentives with gross profit, retention, price realization, strategic product mix, and durable growth.",
+  "definition": "Sales Compensation Redesign is the process of changing quota, commission, bonus, and crediting rules so sales behavior matches the value creation plan.",
+  "whyItMatters": "PE cares because sales teams often do exactly what they are paid to do, even when that destroys margin, retention, or pricing discipline.",
+  "commonProblems": [
+    "Reps are paid on revenue regardless of gross margin or discounting.",
+    "Comp plans reward new bookings while ignoring churn, implementation quality, or cash collection.",
+    "Quota, territory, and crediting rules create conflict instead of focus."
+  ],
+  "diagnosticQuestions": [
+    "What behavior does the current plan actually reward?",
+    "Where do commissions conflict with pricing, margin, retention, or strategic product goals?",
+    "Which plan changes will improve value without causing top-performer flight?"
+  ],
+  "dataNeeded": [
+    "Current compensation plans, quotas, accelerators, and crediting rules",
+    "Rep-level bookings, revenue, margin, churn, and discount data",
+    "Territory, segment, product, and customer profitability data",
+    "Sales attainment, turnover, and payout history"
+  ],
+  "process": [
+    "Diagnose current incentive behavior and economic leakage.",
+    "Define target behaviors tied to the VCP.",
+    "Model plan changes by rep, segment, product, and financial outcome.",
+    "Communicate changes with clear examples and transition rules.",
+    "Track behavior, attainment, payout, margin, and retention after rollout."
+  ],
+  "kpisImpacted": [
+    "Gross Margin",
+    "Quota Attainment",
+    "Win Rate",
+    "NRR",
+    "Sales Cycle Length"
+  ],
+  "ebitdaLogic": "Better sales compensation redirects rep behavior toward profitable growth, reduces discount leakage, improves retention quality, and makes revenue more valuable at exit.",
+  "caseExample": "A sponsor-backed B2B services company shifts commissions from revenue-only to gross-profit-weighted bookings, reducing discount leakage while preserving top-rep motivation.",
+  "hundredDayPlan": [
+    "Days 1-30: diagnose current plan economics and rep behavior.",
+    "Days 31-60: model new plan, test payout impacts, align leadership.",
+    "Days 61-100: communicate rollout, install dashboards, monitor behavior change."
+  ],
+  "commonMistakes": [
+    "Changing compensation without modeling individual rep impact.",
+    "Overcomplicating the plan until no one understands what to sell.",
+    "Punishing top performers for legacy plan design without transition support."
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Business Services",
+    "Industrial Services",
+    "Distribution"
+  ],
+  "relatedProjectPlaybooks": [
+    "Sales Productivity Improvement",
+    "Pricing and Packaging Redesign",
+    "Revenue Operations Cleanup"
+  ],
+  "diagram": "graph LR\n  A[Current Incentives] --> B[Behavior Diagnosis]\n  B --> C[Plan Redesign]\n  C --> D[Sales Behavior]\n  D --> E[Margin + Growth Quality]\n  E --> F[Enterprise Value]",
+  "tags": [
+    "Revenue Growth",
+    "sales compensation",
+    "pricing discipline"
+  ],
+  "articleSections": [
+    {
+      "title": "Compensation Is the Sales Operating System",
+      "body": [
+        "Sales Compensation Redesign starts with one blunt premise: sales teams do what they are paid to do. If the plan rewards revenue regardless of discounting, reps will buy deals with margin. If the plan rewards new bookings but ignores churn, reps will sell weak-fit customers. If the plan rewards strategic product mix, price realization, and retention quality, behavior begins to align with enterprise value.",
+        "The sponsor must diagnose the current plan before changing it. Quotas, accelerators, caps, split credit, territory rules, renewal credit, product multipliers, and discount treatment all shape behavior. Small plan mechanics can produce massive unintended consequences.",
+        "The redesign should be tied directly to the VCP. A pricing thesis requires commission pressure against discounting. A retention thesis requires customer quality and handoff discipline. A product-mix thesis requires higher rewards for strategic offerings that improve margin or multiple."
+      ],
+      "callout": "A sales comp plan is strategy written in money."
+    },
+    {
+      "title": "Modeling Economics and Rep Impact",
+      "body": [
+        "Comp redesign must be modeled at the rep level before rollout. Management needs to understand who wins, who loses, how payouts change under different performance scenarios, and whether top performers remain motivated. A theoretically elegant plan that causes top-rep flight is an expensive failure.",
+        "Strong plans are simple enough to understand but sharp enough to guide behavior. Common mechanics include gross-profit weighting, discount penalties, product multipliers, retention gates, collection gates, and accelerators for strategic segments. The key is avoiding so many metrics that reps cannot tell which behavior matters.",
+        "Finance and sales leadership must agree on the economic logic. The company should know the expected commission cost, margin improvement, payout curve, and attainment distribution. Without that modeling, the board is approving hope."
+      ]
+    },
+    {
+      "title": "Rollout, Governance, and Behavior Tracking",
+      "body": [
+        "Communication matters because compensation changes create anxiety. Reps need clear examples, transition rules, payout calculators, and a direct explanation of why the plan is changing. The message should be blunt: the company is paying for profitable, durable growth, not activity or vanity revenue.",
+        "After rollout, the CRO and CFO should jointly track win rate, gross margin, discounting, quota attainment, product mix, churn, and payout cost. If reps find loopholes, the plan must be adjusted quickly. If behavior improves but revenue stalls, leadership must distinguish plan flaws from broader market or enablement issues.",
+        "At exit, a mature compensation system strengthens the growth story. Buyers can see that revenue quality is managed through incentives, not heroics. That makes the commercial engine more credible and transferable."
+      ]
+    }
+  ],
+  "diagrams": []
+}

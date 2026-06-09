@@ -1,0 +1,97 @@
+{
+  "slug": "quality-of-earnings-preparation",
+  "title": "Quality of Earnings Preparation",
+  "type": "playbook",
+  "category": "Exit Readiness",
+  "difficulty": "Advanced",
+  "summary": "Preparing a portfolio company for buyer-grade EBITDA scrutiny before launching an exit process.",
+  "definition": "Quality of Earnings Preparation is the seller-side process of cleaning financials, defending adjusted EBITDA, proving revenue quality, and eliminating diligence friction before a sale.",
+  "whyItMatters": "PE cares because weak QofE support invites retrades, compresses the multiple, and converts value creation claims into buyer skepticism.",
+  "commonProblems": [
+    "Adjusted EBITDA includes fragile or poorly documented add-backs.",
+    "Revenue, margin, and working capital data do not reconcile cleanly.",
+    "Management cannot explain variance without relying on anecdotes."
+  ],
+  "diagnosticQuestions": [
+    "Which EBITDA adjustments would survive hostile buyer diligence?",
+    "Where do revenue quality, margin, or customer concentration issues weaken the exit story?",
+    "What must be cleaned before vendor diligence begins?"
+  ],
+  "dataNeeded": [
+    "Monthly P&L, balance sheet, and cash flow detail",
+    "Trial balance, general ledger, and chart of accounts",
+    "Customer revenue, churn, cohort, contract, and margin data",
+    "Working capital schedules and historical peg support"
+  ],
+  "process": [
+    "Build the normalized EBITDA bridge and classify every add-back by defensibility.",
+    "Reconcile revenue, margin, and working capital data across finance systems.",
+    "Identify buyer objection areas and assign remediation owners.",
+    "Prepare management explanations for variance, revenue quality, and margin movement.",
+    "Run a mock diligence review before commissioning vendor QofE."
+  ],
+  "kpisImpacted": [
+    "EBITDA Margin",
+    "Gross Margin",
+    "Forecast Accuracy",
+    "DSO",
+    "Cash Conversion Cycle"
+  ],
+  "ebitdaLogic": "Clean earnings support protects the EBITDA base buyers multiply at exit and reduces the probability that diligence converts operating noise into purchase price reductions.",
+  "caseExample": "A sponsor-backed services company removes weak add-backs, rebuilds customer-level margin support, reconciles deferred revenue, and enters sale diligence with a buyer-ready EBITDA bridge.",
+  "hundredDayPlan": [
+    "Days 1-30: collect financial data, identify add-backs, map reconciliation gaps.",
+    "Days 31-60: rebuild EBITDA bridge, clean revenue and working capital support, draft variance explanations.",
+    "Days 61-100: run mock QofE, close data gaps, prepare vendor diligence package."
+  ],
+  "commonMistakes": [
+    "Waiting until the sale process to discover broken financial support.",
+    "Treating every management adjustment as buyer-acceptable EBITDA.",
+    "Ignoring revenue quality while obsessing over accounting cleanup."
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Business Services"
+  ],
+  "relatedProjectPlaybooks": [
+    "Exit Readiness",
+    "Finance Function Transformation",
+    "KPI Dashboard Buildout"
+  ],
+  "diagram": "graph LR\n  A[Reported EBITDA] --> B[QofE Preparation]\n  B --> C[Defensible Adjustments]\n  C --> D[Buyer Confidence]\n  D --> E[Protected Multiple]\n  E --> F[Exit Value]",
+  "tags": [
+    "Exit Readiness",
+    "quality of earnings",
+    "diligence"
+  ],
+  "articleSections": [
+    {
+      "title": "Preparing EBITDA for Hostile Review",
+      "body": [
+        "Quality of Earnings Preparation is the disciplined process of making the company's EBITDA believable before buyers are allowed to attack it. The sponsor must assume every adjustment, revenue trend, margin movement, and working capital claim will be challenged by a skeptical diligence team with no emotional attachment to the story.",
+        "The first task is building a defensible normalized EBITDA bridge. Each add-back must be classified as recurring, non-recurring, owner-specific, transaction-related, or structurally questionable. Weak adjustments should be removed before the process begins because losing credibility on one sloppy add-back makes buyers suspicious of the entire bridge.",
+        "This work is not accounting theater. Every dollar of accepted EBITDA may be multiplied by the exit multiple, while every rejected dollar can create a direct valuation haircut. A $2M add-back rejected at a 12x multiple is not a small disagreement; it is a $24M enterprise value problem."
+      ],
+      "callout": "QofE prep exists to make buyer skepticism expensive to sustain."
+    },
+    {
+      "title": "Revenue Quality, Margin Durability, and Working Capital Support",
+      "body": [
+        "A clean EBITDA bridge is insufficient if revenue quality is fragile. The team must prove recurring revenue, retention, cohort behavior, customer concentration, pricing realization, contract terms, and gross margin durability. Buyers want to know whether earnings come from a repeatable engine or from temporary projects, discounting, or one large customer masking weakness.",
+        "Working capital support must be equally rigorous. Historical monthly net working capital, seasonality, AR aging, inventory quality, deferred revenue, and payables timing all shape the peg negotiation. If the seller cannot explain working capital behavior, buyers will assume the business needs more cash than the model suggests.",
+        "The strongest exit processes connect financial cleanup to operating reality. Margin changes should tie to pricing, procurement, labor, mix, or productivity actions. Revenue growth should tie to customers, products, channels, and cohorts. The goal is a financial story that survives operational cross-examination."
+      ]
+    },
+    {
+      "title": "Mock Diligence and Management Readiness",
+      "body": [
+        "Before vendor QofE begins, the sponsor should run a mock buyer diligence process. The team should stress-test add-backs, data room support, KPI definitions, revenue recognition, margin bridge, and working capital schedules. Every unanswered question becomes a remediation workstream.",
+        "Management must also be trained to explain the numbers without sounding coached. The CFO should own the EBITDA bridge and cash mechanics. The CEO should explain the business drivers behind the financial movement. Functional leaders should be ready to connect operating initiatives to P&L impact.",
+        "By the time buyers enter the data room, QofE preparation should make the asset feel controlled, legible, and professionally managed. That credibility protects the multiple and keeps the process focused on future upside rather than historical cleanup."
+      ]
+    }
+  ],
+  "diagrams": []
+}
