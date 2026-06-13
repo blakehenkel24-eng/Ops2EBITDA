@@ -119,7 +119,21 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-/** Inline markdown renderer: handles headings, bold, bullets, rules, paragraphs */
+/** Parse a pipe-delimited markdown table row into trimmed cells */
+function parseTableRow(line: string): string[] {
+  const trimmed = line.trim().replace(/^\|/, "").replace(/\|$/, "");
+  return trimmed.split("|").map((c) => c.trim());
+}
+
+function isTableSeparator(line: string): boolean {
+  return /^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$/.test(line);
+}
+
+function isTableRow(line: string): boolean {
+  return /^\s*\|.*\|\s*$/.test(line) || /\|/.test(line.trim());
+}
+
+/** Inline markdown renderer: handles headings, bold, bullets, rules, paragraphs, tables, blockquotes */
 function MarkdownContent({ content }: { content: string }) {
   const lines = content.split("\n");
   const elements: React.ReactNode[] = [];
@@ -142,13 +156,81 @@ function MarkdownContent({ content }: { content: string }) {
     listBuffer = [];
   };
 
-  for (const line of lines) {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
     const trimmed = line.trim();
+
+    // Table: header row + separator + data rows
+    if (
+      isTableRow(line) &&
+      i + 1 < lines.length &&
+      isTableSeparator(lines[i + 1])
+    ) {
+      flushList();
+      const headers = parseTableRow(line);
+      const rows: string[][] = [];
+      i += 2;
+      while (i < lines.length && isTableRow(lines[i]) && !isTableSeparator(lines[i])) {
+        rows.push(parseTableRow(lines[i]));
+        i++;
+      }
+      i--; // Outer loop will increment
+      elements.push(
+        <div key={key++} className="my-4 -mx-1 overflow-x-auto">
+          <table className="w-full border-collapse text-[13px] font-geist">
+            <thead>
+              <tr className="border-b border-line/40">
+                {headers.map((h, j) => (
+                  <th
+                    key={j}
+                    className="text-left font-semibold text-stone/70 uppercase tracking-wide text-[11px] px-3 py-2"
+                  >
+                    <InlineMarkdown text={h} />
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, ri) => (
+                <tr
+                  key={ri}
+                  className="border-b border-line/15 last:border-b-0 hover:bg-accent/3 transition-colors"
+                >
+                  {row.map((cell, ci) => (
+                    <td
+                      key={ci}
+                      className="px-3 py-2.5 align-top text-ink/85 leading-relaxed"
+                    >
+                      <InlineMarkdown text={cell} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      continue;
+    }
 
     // Horizontal rule
     if (trimmed === "---" || trimmed === "***" || trimmed === "___") {
       flushList();
       elements.push(<hr key={key++} className="border-line/20 my-6" />);
+      continue;
+    }
+
+    // Blockquote / callout
+    if (trimmed.startsWith("> ")) {
+      flushList();
+      elements.push(
+        <blockquote
+          key={key++}
+          className="my-4 rounded-lg border border-line/30 bg-accent/5 px-4 py-3 text-[14px] text-ink/85 leading-relaxed"
+        >
+          <InlineMarkdown text={trimmed.slice(2)} />
+        </blockquote>
+      );
       continue;
     }
 
@@ -174,9 +256,18 @@ function MarkdownContent({ content }: { content: string }) {
     if (trimmed.startsWith("## ")) {
       flushList();
       elements.push(
-        <h3 key={key++} className="font-newsreader text-lg text-ink font-medium mt-7 mb-2">
+        <h3 key={key++} className="font-newsreader text-[20px] text-ink font-semibold mt-8 mb-3 pb-1.5 border-b border-line/30">
           {trimmed.replace("## ", "")}
         </h3>
+      );
+      continue;
+    }
+    if (trimmed.startsWith("# ")) {
+      flushList();
+      elements.push(
+        <h2 key={key++} className="font-newsreader text-[24px] text-ink font-semibold mt-2 mb-4 leading-tight">
+          {trimmed.replace("# ", "")}
+        </h2>
       );
       continue;
     }
@@ -203,7 +294,7 @@ function MarkdownContent({ content }: { content: string }) {
     // Paragraph
     flushList();
     elements.push(
-      <p key={key++} className="mb-2.5 max-w-[65ch] leading-relaxed">
+      <p key={key++} className="mb-2.5 max-w-[72ch] leading-relaxed">
         <InlineMarkdown text={trimmed} />
       </p>
     );
