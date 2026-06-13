@@ -281,7 +281,24 @@ function MarkdownContent({ content }: { content: string }) {
 
     // Bullet points
     if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
-      listBuffer.push({ text: trimmed.slice(2), ordered: false });
+      const bulletBody = trimmed.slice(2).trim();
+      // Defense: if the bullet body is just **bold text** with no following
+      // prose, it's a pseudo-heading the model emitted by mistake. Promote it
+      // to a subheading so it doesn't sit at the same hierarchy as real items.
+      const headingMatch = bulletBody.match(/^\*\*([^*]+?)\*\*[.:]?$/);
+      if (headingMatch) {
+        flushList();
+        elements.push(
+          <h5
+            key={key++}
+            className="text-[11px] font-semibold text-stone/60 uppercase tracking-wide mt-5 mb-2 font-geist"
+          >
+            {headingMatch[1].replace(/[.:]$/, "")}
+          </h5>
+        );
+        continue;
+      }
+      listBuffer.push({ text: bulletBody, ordered: false });
       continue;
     }
 

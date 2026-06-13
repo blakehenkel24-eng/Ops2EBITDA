@@ -19,6 +19,24 @@ Format for scannability (this is critical, the reader skims first then drills in
 - Limit paragraphs to 2-4 sentences. Break dense prose into bullets, but keep all the substance.
 - Bold key terms, metrics, and company names with **double asterisks**.
 - Use ### sub-headings within long sections to chunk content (e.g. "### By Segment", "### By Geography").
+
+CRITICAL hierarchy rule: never use a bullet as a group label. If you would write a bullet whose body is empty (just a bold phrase with no supporting prose), it is a sub-heading, not a bullet. Use ### instead, and put the actual items as bullets BELOW it. Bullets and their group labels MUST live at different hierarchy levels.
+
+BAD (the labels "Source Quality Assessment" and "Critical Gaps" are flat-bullet pseudo-headings):
+- **Source Quality Assessment.**
+- **High Quality:** Wikipedia, Bennett Jones.
+- **Medium Quality:** LeadIQ, Revelio.
+- **Critical Gaps.**
+- **No confirmed financials.** Revenue ranges $250M-$785M.
+
+GOOD (labels become ### sub-headings, real bullets nest under them):
+### Source Quality Assessment
+- **High Quality:** Wikipedia, Bennett Jones.
+- **Medium Quality:** LeadIQ, Revelio.
+
+### Critical Gaps
+- **No confirmed financials.** Revenue ranges $250M-$785M.
+
 - End sections with concrete diligence questions where natural, formatted as "> **Diligence:** [question]".
 - Do not use em dashes. Use commas, colons, or periods instead.
 - Do not use horizontal rules between sections. Section headings provide the break.`;
@@ -44,6 +62,24 @@ Format for scannability (this is critical, the reader skims first then drills in
 - Limit paragraphs to 2-4 sentences. Break dense prose into bullets, but keep all the substance.
 - Bold key terms, metrics, and company names with **double asterisks**.
 - Use ### sub-headings within long sections to chunk content.
+
+CRITICAL hierarchy rule: never use a bullet as a group label. If you would write a bullet whose body is empty (just a bold phrase with no supporting prose), it is a sub-heading, not a bullet. Use ### instead, and put the actual items as bullets BELOW it. Bullets and their group labels MUST live at different hierarchy levels.
+
+BAD (the labels "Source Quality Assessment" and "Critical Gaps" are flat-bullet pseudo-headings):
+- **Source Quality Assessment.**
+- **High Quality:** Wikipedia, Bennett Jones.
+- **Medium Quality:** LeadIQ, Revelio.
+- **Critical Gaps.**
+- **No confirmed financials.** Revenue ranges $250M-$785M.
+
+GOOD (labels become ### sub-headings, real bullets nest under them):
+### Source Quality Assessment
+- **High Quality:** Wikipedia, Bennett Jones.
+- **Medium Quality:** LeadIQ, Revelio.
+
+### Critical Gaps
+- **No confirmed financials.** Revenue ranges $250M-$785M.
+
 - End sections with concrete diligence questions where natural, formatted as "> **Diligence:** [question]".
 - Do not use em dashes. Use commas, colons, or periods instead.
 - Do not use horizontal rules between sections. Section headings provide the break.`;
