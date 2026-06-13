@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, RotateCcw } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 import type { ResearchSource } from "@/lib/atlas/types";
 import { AtlasMemoCard } from "./AtlasMemoCard";
 import { AtlasCommandBar } from "./AtlasCommandBar";

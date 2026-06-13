@@ -37,9 +37,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const slashMenuRef = useRef<HTMLDivElement>(null);
 
-  // Ref-based progress updater so custom fetch stays stable
-  const progressRef = useRef<(stage: ProgressStage) => void>(() => {});
-  progressRef.current = (stage: ProgressStage) => {
+  const updateProgressStage = useCallback((stage: ProgressStage) => {
     setProgressStages((prev) => {
       const idx = prev.findIndex((s) => s.id === stage.id);
       if (idx >= 0) {
@@ -49,7 +47,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
       }
       return [...prev, stage];
     });
-  };
+  }, []);
 
   // Custom fetch that intercepts §§P progress lines before they reach the transport
   const customFetch = useMemo(() => {
@@ -79,7 +77,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
             if (line.startsWith(PROGRESS_PREFIX)) {
               try {
                 const data = JSON.parse(line.slice(PROGRESS_PREFIX.length));
-                progressRef.current({ id: data.stage, label: data.label, status: data.status });
+                updateProgressStage({ id: data.stage, label: data.label, status: data.status });
               } catch {
                 // malformed progress line
               }
@@ -112,7 +110,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
       });
     };
     return fn;
-  }, []);
+  }, [updateProgressStage]);
 
   const transport = useMemo(
     () =>
