@@ -1,0 +1,59 @@
+{
+  "slug": "working-capital-in-private-equity",
+  "title": "Working Capital in Private Equity",
+  "type": "fundamental",
+  "summary": "Working Capital in Private Equity explains why receivables, inventory, and payables become board-level levers for cash, debt paydown, and valuation.",
+  "definition": "Working capital is the cash tied up in day-to-day operations, primarily accounts receivable, inventory, and accounts payable.",
+  "whyItMatters": "PE operators treat working capital as trapped cash that can fund debt paydown, add-ons, transformation, or liquidity protection.",
+  "example": "A distributor that reduces inventory days and accelerates collections can release cash without growing revenue or raising new capital.",
+  "diagram": "graph TD\n  A[Receivables] --> D[Cash Conversion Cycle]\n  B[Inventory] --> D\n  C[Payables] --> D\n  D --> E[Free Cash Flow]\n  E --> F[Debt Paydown]\n  F --> G[Equity Value]",
+  "relatedPlaybooks": [
+    "Working Capital Improvement",
+    "KPI Dashboard Buildout",
+    "Procurement Savings",
+    "Finance Function Transformation"
+  ],
+  "relatedIndustries": [
+    "Distribution",
+    "Manufacturing",
+    "Healthcare Services",
+    "Industrial Services"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "cash flow"
+  ],
+  "articleSections": [
+    {
+      "title": "Cash Trapped Inside Operations",
+      "body": [
+        "Working capital is where accounting profit becomes either cash or disappointment. A portfolio company can report strong EBITDA while starving for liquidity because customers pay late, inventory sits idle, or vendors are paid faster than necessary. PE sponsors care because leverage turns cash conversion into a survival discipline.",
+        "The core components are accounts receivable, inventory, and accounts payable. Together they determine the cash conversion cycle: how long the business waits between paying for inputs and collecting from customers. Every day trapped in that cycle is capital the sponsor cannot use for debt paydown, acquisitions, or growth investment."
+      ],
+      "callout": "In PE, EBITDA impresses the model; cash services the debt."
+    },
+    {
+      "title": "Receivables, Inventory, and Payables",
+      "body": [
+        "Receivables discipline starts with billing accuracy, customer terms, collections cadence, dispute resolution, and credit policy. A business with sloppy invoicing and passive collections effectively lends money to customers without being paid interest. Reducing DSO can release meaningful cash with no change to revenue or margin.",
+        "Inventory is often the largest hidden cash reserve in manufacturing and distribution. Slow-moving SKUs, poor demand planning, excess safety stock, and obsolete parts quietly consume liquidity. Payables require equal care: extending terms can improve cash, but abusing vendors can damage supply reliability and erode margin through worse pricing."
+      ]
+    },
+    {
+      "title": "The NWC Peg and Transaction Mechanics",
+      "body": [
+        "Working capital matters before ownership even begins because most deals include a net working capital peg. The buyer and seller agree on a normalized level of working capital the business must deliver at close. If the seller delivers less than the peg, purchase price may be reduced. If they deliver more, the buyer may owe additional consideration.",
+        "This mechanism prevents sellers from stripping cash out of the business by delaying vendor payments, accelerating collections, or starving inventory before close. Operators must understand the peg because it defines the starting liquidity position of the asset and often reveals whether reported earnings were supported by healthy operations or short-term cash manipulation."
+      ]
+    },
+    {
+      "title": "Working Capital as Value Creation",
+      "body": [
+        "Working capital improvement is one of the cleanest early value creation levers because it can produce cash before major strategic initiatives mature. Sponsors often launch receivables cleanup, SKU rationalization, inventory segmentation, vendor term negotiation, and forecast discipline in the first 100 days.",
+        "The best programs balance cash release with operating resilience. Cutting inventory too aggressively can damage service levels. Stretching payables too far can weaken vendor relationships. The objective is not cosmetic cash extraction; it is a structurally better operating model that converts EBITDA into free cash flow more reliably than the prior owner could."
+      ]
+    }
+  ],
+  "diagrams": []
+}

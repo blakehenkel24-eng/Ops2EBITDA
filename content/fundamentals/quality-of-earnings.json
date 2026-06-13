@@ -1,0 +1,59 @@
+{
+  "slug": "quality-of-earnings",
+  "title": "Quality of Earnings",
+  "type": "fundamental",
+  "summary": "Quality of Earnings explains whether reported EBITDA is durable, repeatable, and believable enough to underwrite or sell.",
+  "definition": "Quality of Earnings is the diligence process used to validate normalized EBITDA, revenue quality, margin sustainability, working capital behavior, and financial reporting integrity.",
+  "whyItMatters": "PE operators care because every dollar of credible EBITDA can be multiplied at exit, while weak add-backs and poor revenue quality destroy valuation trust.",
+  "example": "A buyer may reject a seller's adjusted EBITDA if customer churn, one-time projects, or aggressive add-backs prove earnings are less repeatable than presented.",
+  "diagram": "graph TD\n  A[Reported EBITDA] --> B[Adjustments]\n  B --> C[Normalized EBITDA]\n  C --> D[Revenue Quality]\n  C --> E[Margin Durability]\n  D --> F[Buyer Confidence]\n  E --> F\n  F --> G[Valuation]",
+  "relatedPlaybooks": [
+    "Exit Readiness",
+    "Finance Function Transformation",
+    "KPI Dashboard Buildout",
+    "100-Day Value Creation Plan"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Distribution"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "diligence"
+  ],
+  "articleSections": [
+    {
+      "title": "EBITDA Credibility Under Cross-Examination",
+      "body": [
+        "Quality of Earnings is the forensic process of determining whether EBITDA is real, recurring, and transferable to the next owner. Sellers present adjusted EBITDA as the economic truth of the business. Buyers treat that number as a hostile witness until every add-back, revenue stream, margin trend, and working capital pattern survives diligence.",
+        "The core question is not whether the company produced accounting earnings. The question is whether those earnings can be relied on to service debt, fund the VCP, and support an exit valuation. A business with $20M of stated adjusted EBITDA but $4M of fragile add-backs may be valued very differently once the buyer normalizes the true earnings base."
+      ],
+      "callout": "In PE, adjusted EBITDA is accepted only after it has been attacked."
+    },
+    {
+      "title": "Add-Backs, Normalization, and Seller Optimism",
+      "body": [
+        "Add-backs are where valuation fights begin. Legitimate add-backs remove one-time, non-recurring, or owner-specific expenses that will not burden the business going forward. Weak add-backs attempt to reclassify normal operating costs as temporary noise. The difference can move enterprise value by tens of millions of dollars.",
+        "A rigorous QofE separates structural earnings from transaction theater. Founder salary normalization may be valid. A one-time legal settlement may be valid. Repeated 'one-time' consulting spend, chronic overtime, recurring freight surcharges, or customer concessions are not clean EBITDA. The operator must know which adjustments will survive buyer scrutiny and which will collapse in the data room."
+      ]
+    },
+    {
+      "title": "Revenue Quality and Margin Durability",
+      "body": [
+        "High-quality earnings come from revenue that is recurring, diversified, contractually visible, and supported by healthy unit economics. Low-quality earnings come from project spikes, customer concentration, channel stuffing, aggressive discounting, or one large customer masking weakness everywhere else. A QofE therefore reaches beyond accounting into commercial truth.",
+        "Margin analysis is equally ruthless. Buyers want to know whether gross margin expansion came from real pricing power, procurement savings, mix shift, or accounting classification. If margin improved only because the company underinvested in service, delayed hiring, or deferred maintenance, that EBITDA is borrowed from the future and will be punished in valuation."
+      ]
+    },
+    {
+      "title": "Exit Readiness Starts Years Before Sale",
+      "body": [
+        "Elite sponsors do not wait for sale diligence to discover earnings quality problems. They run internal QofE-style reviews early, clean the chart of accounts, standardize revenue recognition, document add-backs, reconcile KPI definitions, and eliminate reporting gaps. This turns exit preparation into a multi-year credibility campaign.",
+        "When the final process begins, the company should already have clean monthly financials, defensible revenue cohorts, working capital support, and a management team that can explain every major variance. A clean QofE compresses buyer doubt, protects the multiple, and keeps the auction focused on future upside rather than historical mess."
+      ]
+    }
+  ],
+  "diagrams": []
+}

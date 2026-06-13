@@ -1,0 +1,59 @@
+{
+  "slug": "board-governance-in-pe",
+  "title": "Board Governance in PE",
+  "type": "fundamental",
+  "summary": "Board Governance in PE explains how sponsors use board structure, cadence, and decision rights to enforce value creation.",
+  "definition": "PE board governance is the system of oversight, reserved matters, reporting routines, and sponsor-management accountability used to manage a portfolio company during ownership.",
+  "whyItMatters": "PE operators need governance to keep management focused on the thesis, expose underperformance early, and make major capital and leadership decisions with discipline.",
+  "example": "A board may require monthly operating reviews, approval for major CapEx, and explicit tracking of every value creation initiative against EBITDA impact.",
+  "diagram": "graph TD\n  A[Board Governance] --> B[Decision Rights]\n  A --> C[Operating Cadence]\n  A --> D[Performance Reporting]\n  B --> E[Accountability]\n  C --> E\n  D --> E\n  E --> F[Value Creation]",
+  "relatedPlaybooks": [
+    "Management Operating Cadence",
+    "KPI Dashboard Buildout",
+    "Org Design Spans and Layers",
+    "Exit Readiness"
+  ],
+  "relatedIndustries": [
+    "Business Services",
+    "Healthcare Services",
+    "Distribution",
+    "Vertical SaaS"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "governance"
+  ],
+  "articleSections": [
+    {
+      "title": "Governance as a Value Creation Mechanism",
+      "body": [
+        "A PE board is not a ceremonial oversight body. It is the sponsor's primary mechanism for translating ownership control into operating pressure. The board sets the cadence, approves major decisions, challenges management performance, and ensures the company does not drift away from the underwriting case.",
+        "The structure is intentionally tight. Sponsor directors, independent operators, and selected management leaders are assembled to create a small group capable of fast, high-consequence decisions. Unlike public boards, PE boards operate with concentrated ownership and direct economic exposure, which makes tolerance for vague updates extremely low."
+      ],
+      "callout": "PE governance exists to make value creation unavoidable."
+    },
+    {
+      "title": "Reserved Matters and Decision Rights",
+      "body": [
+        "Reserved matters define what management cannot do without sponsor approval. These often include debt, acquisitions, major CapEx, executive hiring, compensation changes, budget approval, litigation, dividends, and material customer or vendor contracts. The goal is not to paralyze management; it is to prevent value-destructive decisions from occurring outside the sponsor's control.",
+        "Strong governance clarifies where management has autonomy and where the board must intervene. A CEO should be empowered to run the business, but not to quietly abandon the pricing thesis, delay an ERP migration, or make an undisciplined add-on acquisition. Decision rights protect the investment thesis from well-intentioned but unmanaged discretion."
+      ]
+    },
+    {
+      "title": "Board Packs and Operating Reviews",
+      "body": [
+        "The board pack is the operating narrative of the company. It should show actual performance versus budget, KPI movement, cash, covenant cushion, VCP milestones, customer trends, talent issues, and forward-looking risks. A weak board pack hides behind financial statements. A strong board pack makes the few critical decisions obvious.",
+        "Monthly operating reviews are where sponsors force accountability below the quarterly board meeting. Management must explain variance, isolate root causes, and commit to corrective actions. This cadence prevents surprises from aging into crises. It also gives operating partners a structured way to intervene before performance gaps become exit problems."
+      ]
+    },
+    {
+      "title": "Governance Without Management Substitution",
+      "body": [
+        "The failure mode of PE governance is sponsor overreach. If the board begins managing every functional decision, the CEO becomes a messenger instead of an accountable leader. This slows execution and muddies ownership. The board must set expectations, challenge the plan, approve major moves, and replace leaders when needed, but it cannot become the management team.",
+        "The best boards maintain a sharp distinction between governance and execution. They ask harder questions, demand better evidence, and make faster decisions, while preserving clear executive ownership. This balance creates pressure without chaos and keeps the organization focused on the value creation story that must eventually be sold."
+      ]
+    }
+  ],
+  "diagrams": []
+}

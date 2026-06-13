@@ -1,0 +1,59 @@
+{
+  "slug": "management-equity-plans",
+  "title": "Management Equity Plans",
+  "type": "fundamental",
+  "summary": "Management Equity Plans explain how sponsors convert management behavior into exit-aligned execution.",
+  "definition": "Management Equity Plans are the ownership and incentive structures that give portfolio company leaders direct economic exposure to value creation.",
+  "whyItMatters": "PE operators use management equity to align leadership effort, retention, milestone delivery, and exit outcomes around the same enterprise value objective.",
+  "example": "A sponsor may tie a CFO's equity vesting to cash conversion improvement, reporting discipline, and successful exit preparation rather than only tenure.",
+  "diagram": "graph TD\n  A[Investment Thesis] --> B[Management Equity Pool]\n  B --> C[Performance Milestones]\n  C --> D[Behavior Change]\n  D --> E[KPI Movement]\n  E --> F[Exit Value]",
+  "relatedPlaybooks": [
+    "100-Day Value Creation Plan",
+    "Org Design Spans and Layers",
+    "Management Operating Cadence",
+    "KPI Dashboard Buildout"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Healthcare Services",
+    "Manufacturing",
+    "Business Services"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "incentives"
+  ],
+  "articleSections": [
+    {
+      "title": "Equity as the Behavioral Operating System",
+      "body": [
+        "A Management Equity Plan is not a compensation perk; it is the behavioral operating system of the hold period. The GP uses equity to force management to think like owners, not salaried caretakers. When designed correctly, the MEP translates the abstract promise of enterprise value into a brutally concrete personal outcome for the CEO, CFO, CRO, COO, and other value-critical leaders.",
+        "The structure usually includes rollover equity, sweet equity, options, profits interests, or phantom equity, depending on tax, jurisdiction, and sponsor preference. The common objective is the same: management must personally benefit when the sponsor's underwriting case becomes real. Without this alignment, the Value Creation Plan becomes an external demand imposed by the board instead of a financial roadmap management is desperate to execute."
+      ],
+      "callout": "A MEP should make the exit math impossible for management to ignore."
+    },
+    {
+      "title": "Vesting, Hurdles, and Performance Architecture",
+      "body": [
+        "Weak plans vest only with time. Strong plans vest with proof. A sophisticated sponsor separates time-based retention from performance-based economics, tying meaningful upside to EBITDA growth, cash conversion, revenue quality, integration milestones, or exit readiness. This prevents management from collecting ownership simply for surviving the hold period.",
+        "Hurdles are the sharp edge of the plan. If the sponsor bought the business at an aggressive valuation, management should not receive outsized economics before the LPs and GP clear the minimum return threshold. The plan must therefore define exactly where management participates in the value stack, what happens below base case, and how much upside opens when the company outperforms the IC model."
+      ]
+    },
+    {
+      "title": "Rollover Equity and Founder Psychology",
+      "body": [
+        "Rollover equity is one of the most powerful signals in a PE transaction because it reveals whether selling shareholders truly believe in the next leg of value creation. A founder who rolls a meaningful portion of proceeds is effectively saying the second bite of the apple is worth the risk. A founder who refuses to roll is quietly communicating that the sponsor may be buying the best years of the asset.",
+        "Operators must treat rollover as both economics and psychology. Founder-led companies often carry tribal knowledge, informal decision rights, and emotional attachment to legacy practices. The equity plan must honor the founder's retained stake while still making clear that the business is moving from founder preference to institutional discipline."
+      ]
+    },
+    {
+      "title": "Governance and Failure Modes",
+      "body": [
+        "MEPs fail when they are too generous, too vague, or disconnected from the operating plan. If leaders cannot draw a straight line from weekly priorities to personal equity value, the plan becomes background noise. If the plan rewards only exit value, management may ignore cash discipline, customer quality, or system debt until the final year, creating a fragile asset that breaks under buyer diligence.",
+        "The best plans are reviewed alongside the VCP and board pack. Equity milestones, initiative ownership, and KPI movement should reinforce one another. When the sponsor changes the thesis, upgrades the C-suite, or executes major add-ons, the MEP must be recalibrated so incentives keep pointing at the current value creation story, not the obsolete version signed at close."
+      ]
+    }
+  ],
+  "diagrams": []
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "purchase-price-mechanics",
+  "title": "Purchase Price Mechanics",
+  "type": "fundamental",
+  "summary": "Purchase Price Mechanics explain how enterprise value becomes actual equity proceeds after debt, cash, working capital, and deal-specific adjustments.",
+  "definition": "Purchase price mechanics are the transaction rules that convert headline valuation into final cash paid to sellers and capital required from buyers.",
+  "whyItMatters": "PE operators need this because value can move materially through cash-free debt-free adjustments, net working capital pegs, debt-like items, rollover equity, earnouts, and seller notes.",
+  "example": "A company sold for $300M enterprise value may deliver far lower seller proceeds after debt payoff, working capital shortfall, transaction expenses, and rollover equity.",
+  "diagram": "graph TD\n  A[Enterprise Value] --> B[Minus Debt and Debt-Like Items]\n  A --> C[Plus Cash]\n  A --> D[Working Capital Adjustment]\n  B --> E[Equity Value]\n  C --> E\n  D --> E\n  E --> F[Seller Proceeds]",
+  "relatedPlaybooks": [
+    "Exit Readiness",
+    "Working Capital Improvement",
+    "Finance Function Transformation",
+    "Add-On Acquisition Integration"
+  ],
+  "relatedIndustries": [
+    "Business Services",
+    "Manufacturing",
+    "Distribution",
+    "Healthcare Services"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "transactions"
+  ],
+  "articleSections": [
+    {
+      "title": "Headline Price Is Not Seller Proceeds",
+      "body": [
+        "Purchase price mechanics explain why the valuation announced in a deal is rarely the cash a seller receives. Private equity transactions usually start with enterprise value, then adjust for debt, cash, net working capital, transaction expenses, rollover equity, escrows, earnouts, and other deal-specific items. The bridge from headline price to proceeds is where millions of dollars move.",
+        "This matters because sponsors underwrite not only what they are buying, but the exact economic claims attached to the business at close. A company marketed at $300M may require debt payoff, unpaid bonuses, tax liabilities, lease obligations, and a working capital true-up before final equity value is calculated. Operators who ignore mechanics misunderstand the real entry basis."
+      ],
+      "callout": "Enterprise value is the headline; equity value is where the money changes hands."
+    },
+    {
+      "title": "Cash-Free Debt-Free and Debt-Like Items",
+      "body": [
+        "Most middle-market PE deals are priced on a cash-free, debt-free basis. The buyer assumes the business is delivered with normal working capital, no excess cash, and no financial debt. At close, debt is paid off and cash treatment is applied according to the purchase agreement. This creates the initial bridge from enterprise value to equity value.",
+        "Debt-like items are where arguments begin. Unpaid transaction bonuses, overdue payables, tax liabilities, customer deposits, deferred revenue, underfunded pensions, litigation reserves, or capital leases may be treated as debt-like obligations. Sellers want these classified as normal operations. Buyers want them deducted from price. The purchase agreement decides who wins."
+      ]
+    },
+    {
+      "title": "Net Working Capital Pegs and True-Ups",
+      "body": [
+        "The net working capital peg protects the buyer from receiving an undercapitalized business. The parties agree on a normal level of working capital, often based on historical averages adjusted for seasonality and growth. If closing working capital is below the peg, seller proceeds are reduced. If it is above the peg, the seller may receive an upward adjustment.",
+        "This mechanism creates intense diligence around receivables collectability, inventory quality, payables aging, and seasonality. Sellers may try to argue for a low peg. Buyers may push for a higher peg to ensure adequate operating liquidity. Operators must understand the peg because it defines the cash runway and operating condition of the business on Day One."
+      ]
+    },
+    {
+      "title": "Earnouts, Seller Notes, and Rollover Equity",
+      "body": [
+        "When buyer and seller disagree on value, contingent consideration can bridge the gap. Earnouts tie future payments to performance milestones. Seller notes defer a portion of proceeds and keep the seller exposed to credit risk. Rollover equity lets the seller retain ownership in the next transaction vehicle and participate in future upside.",
+        "Each mechanism changes incentives. Earnouts can create disputes if definitions are vague. Seller notes may help financing but complicate governance. Rollover equity can signal conviction but also leaves the seller exposed to sponsor execution. The best deal structures make economic alignment explicit while avoiding hidden friction that distracts management after close."
+      ]
+    }
+  ],
+  "diagrams": []
+}

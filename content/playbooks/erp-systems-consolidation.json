@@ -1,0 +1,97 @@
+{
+  "slug": "erp-systems-consolidation",
+  "title": "ERP / Systems Consolidation",
+  "type": "playbook",
+  "category": "Digital & AI Transformation",
+  "difficulty": "Advanced",
+  "summary": "Consolidating fragmented finance and operating systems into one scalable control layer.",
+  "definition": "ERP / Systems Consolidation is the process of moving a portfolio company or acquisition platform from fragmented systems to a standardized operating and reporting backbone.",
+  "whyItMatters": "PE cares because fragmented systems delay reporting, hide integration risk, weaken KPI visibility, and reduce exit readiness.",
+  "commonProblems": [
+    "Add-ons operate on separate finance, inventory, HR, or CRM systems.",
+    "Reporting depends on spreadsheets and manual reconciliations.",
+    "Management cannot produce consistent site, customer, SKU, or segment profitability."
+  ],
+  "diagnosticQuestions": [
+    "Which systems are the source of truth for finance, operations, customers, inventory, and people?",
+    "What reporting or integration pain is caused by fragmentation?",
+    "Which consolidation path creates value without overwhelming the organization?"
+  ],
+  "dataNeeded": [
+    "System inventory and ownership map",
+    "Chart of accounts, master data, and reporting definitions",
+    "Process maps for quote-to-cash, procure-to-pay, record-to-report, and order-to-fulfillment",
+    "Integration, license, implementation, and support cost data"
+  ],
+  "process": [
+    "Map current systems, data flows, pain points, and reporting gaps.",
+    "Define target architecture and migration priorities.",
+    "Standardize chart of accounts, master data, and process ownership.",
+    "Execute phased migration with controls, testing, and change management.",
+    "Retire legacy systems and embed reporting governance."
+  ],
+  "kpisImpacted": [
+    "Forecast Accuracy",
+    "Gross Margin",
+    "Inventory Turns",
+    "On-Time Delivery",
+    "Labor Productivity"
+  ],
+  "ebitdaLogic": "Systems consolidation improves EBITDA and exit value by reducing manual work, enabling integration synergies, improving operating visibility, and creating buyer confidence in scalability.",
+  "caseExample": "A buy-and-build platform migrates five acquired entities onto one ERP, standardizes the chart of accounts, and finally produces branch-level profitability within the monthly close.",
+  "hundredDayPlan": [
+    "Days 1-30: inventory systems, data flows, reporting gaps, and integration pain.",
+    "Days 31-60: define target architecture, migration waves, governance, and resourcing.",
+    "Days 61-100: launch first standardization wave, clean master data, and create executive migration dashboard."
+  ],
+  "commonMistakes": [
+    "Treating ERP consolidation as IT plumbing instead of operating model redesign.",
+    "Migrating bad data and broken processes into a newer system.",
+    "Launching a big-bang implementation without enough management bandwidth."
+  ],
+  "relatedIndustries": [
+    "Distribution",
+    "Manufacturing",
+    "Multi-Site Services",
+    "Healthcare Services"
+  ],
+  "relatedProjectPlaybooks": [
+    "Add-On Acquisition Integration",
+    "Finance Function Transformation",
+    "KPI Dashboard Buildout"
+  ],
+  "diagram": "graph LR\n  A[Fragmented Systems] --> B[Target Architecture]\n  B --> C[Standard Data + Processes]\n  C --> D[Migration Waves]\n  D --> E[Single Source of Truth]\n  E --> F[Scalable Platform]",
+  "tags": [
+    "Digital & AI Transformation",
+    "ERP",
+    "systems integration"
+  ],
+  "articleSections": [
+    {
+      "title": "The System Spine of the Platform",
+      "body": [
+        "ERP / Systems Consolidation is the work of turning a fragmented company into an institutionally manageable platform. In buy-and-build strategies, each add-on often arrives with its own accounting system, customer data, inventory records, payroll process, and reporting habits. Without consolidation, scale becomes noise.",
+        "The sponsor needs one reliable control layer for finance, operations, customers, products, inventory, and people. This does not always mean one application everywhere on Day One. It means one target architecture, one data model, one chart of accounts, one reporting spine, and one migration plan that management can execute.",
+        "Systems consolidation is valuable because it makes the operating model visible. Branch profitability, customer margin, inventory turns, order accuracy, labor productivity, and integration synergy cannot be managed properly when data lives in disconnected systems and spreadsheet reconciliations."
+      ],
+      "callout": "A platform without a system spine is a roll-up held together by spreadsheets."
+    },
+    {
+      "title": "Standardization Before Migration",
+      "body": [
+        "The most common mistake is moving messy processes into a new ERP and calling it transformation. Before migration, the company must standardize the chart of accounts, master data, process ownership, approval workflows, reporting definitions, and close calendar. Otherwise the new system merely automates confusion.",
+        "The team should map quote-to-cash, procure-to-pay, record-to-report, order-to-fulfillment, inventory management, and HR processes. Pain points should be ranked by value impact: close speed, margin visibility, billing accuracy, inventory control, integration synergy, and management reporting.",
+        "Migration waves should match organizational capacity. A phased rollout by entity, function, or process is usually safer than a big-bang cutover when the company lacks implementation muscle. The board should track risk, cost, timeline, adoption, and reporting improvement together."
+      ]
+    },
+    {
+      "title": "Exit Readiness and Integration Proof",
+      "body": [
+        "Buyers pay more for a platform that can continue scaling without drowning in back-office complexity. ERP consolidation provides evidence that the sponsor professionalized the asset: faster close, cleaner data, standardized controls, integrated add-ons, and better KPI visibility.",
+        "The exit story should show before-and-after proof. How many systems were retired? How much manual reconciliation disappeared? Which reports became available? How quickly can new add-ons be onboarded? Which synergies became measurable because systems were consolidated?",
+        "The goal is not to brag about software. The goal is to prove that the company has a scalable operating backbone. That makes future growth easier for the next buyer to underwrite."
+      ]
+    }
+  ],
+  "diagrams": []
+}

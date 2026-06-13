@@ -1,0 +1,59 @@
+{
+  "slug": "platform-vs-add-on-strategy",
+  "title": "Platform vs. Add-On Strategy",
+  "type": "fundamental",
+  "summary": "Platform vs. Add-On Strategy explains how sponsors use a scalable anchor business and smaller acquisitions to manufacture growth and multiple arbitrage.",
+  "definition": "A platform is the core portfolio company used as the operating base for growth, while add-ons are smaller acquisitions integrated into that base.",
+  "whyItMatters": "PE operators need to know whether the platform can absorb acquisitions without destroying systems, culture, margins, or customer experience.",
+  "example": "A sponsor may buy a regional distribution platform at an institutional multiple, then acquire smaller branches at lower multiples and integrate them onto one operating model.",
+  "diagram": "graph TD\n  A[Platform] --> B[Integration Engine]\n  C[Add-On 1] --> B\n  D[Add-On 2] --> B\n  E[Add-On 3] --> B\n  B --> F[Scale]\n  F --> G[Multiple Expansion]",
+  "relatedPlaybooks": [
+    "Add-On Acquisition Integration",
+    "100-Day Value Creation Plan",
+    "KPI Dashboard Buildout",
+    "Finance Function Transformation"
+  ],
+  "relatedIndustries": [
+    "Healthcare Services",
+    "Multi-Site Services",
+    "Distribution",
+    "Business Services"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "m&a"
+  ],
+  "articleSections": [
+    {
+      "title": "The Platform Is the Operating Base",
+      "body": [
+        "A platform company is not merely the first acquisition in a sector. It is the operating base that must carry the sponsor's full value creation strategy. The platform needs management depth, systems maturity, financial reporting discipline, scalable processes, and enough market credibility to become the consolidator rather than another asset requiring rescue.",
+        "A weak platform makes add-on strategy dangerous. If the core business lacks a real CFO, standardized KPIs, integration playbooks, or clean systems, every acquisition adds complexity faster than it adds value. The sponsor may still report revenue growth, but the operating model underneath becomes increasingly brittle."
+      ],
+      "callout": "A company is platformable only if it can absorb complexity without losing control."
+    },
+    {
+      "title": "Add-Ons and Multiple Arbitrage",
+      "body": [
+        "Add-ons are attractive because they can create immediate multiple arbitrage. The sponsor buys a platform at an institutional multiple, then acquires smaller businesses at lower founder-owned or subscale multiples. Once integrated, the acquired EBITDA may be valued at the platform's higher multiple, creating enterprise value before any synergy is captured.",
+        "The math is powerful but unforgiving. If a platform trades at 11x EBITDA and buys tuck-ins at 6x, each dollar of acquired EBITDA can create a 5-turn valuation spread. But that spread exists only if buyers believe the add-ons are integrated, repeatable, and controllable. Unintegrated EBITDA deserves a conglomerate discount, not a platform premium."
+      ]
+    },
+    {
+      "title": "Integration Determines Whether the Strategy Works",
+      "body": [
+        "Synergies are fictional until they appear in the P&L or cash flow statement. A serious add-on strategy requires Day One integration planning, customer retention controls, finance migration, HR standardization, procurement consolidation, and operating cadence alignment. The platform must know exactly what happens in week one, month one, and quarter one after close.",
+        "Common failure points include delayed systems integration, local leader resistance, incompatible compensation plans, poor customer communication, and no clear owner for synergy capture. The sponsor may close deals quickly, but if integration is slow, the portfolio becomes a pile of acquired entities rather than a single scaled asset."
+      ]
+    },
+    {
+      "title": "What the Next Buyer Needs to Believe",
+      "body": [
+        "At exit, the buyer is not purchasing a press release about consolidation. The buyer is underwriting whether the platform can continue acquiring without operational indigestion. They will test cohort performance, acquired customer retention, synergy realization, branch or site profitability, system adoption, and management bandwidth.",
+        "The best sponsors build the buy-and-build story with evidence from the first add-on onward. Each acquisition should strengthen the platform's integration muscle, data quality, and market position. By the time the exit process begins, the company should look like an industrialized acquisition engine, not a collection of loosely affiliated local businesses."
+      ]
+    }
+  ],
+  "diagrams": []
+}

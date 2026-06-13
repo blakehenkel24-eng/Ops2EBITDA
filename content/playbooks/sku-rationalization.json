@@ -1,0 +1,97 @@
+{
+  "slug": "sku-rationalization",
+  "title": "SKU Rationalization",
+  "type": "playbook",
+  "category": "EBITDA Margin Expansion",
+  "difficulty": "Intermediate",
+  "summary": "Reducing product complexity by eliminating low-margin SKUs, inventory drag, and operational noise.",
+  "definition": "SKU Rationalization is the process of evaluating product-level profitability, demand, complexity, and strategic value to simplify the portfolio.",
+  "whyItMatters": "PE cares because bloated SKU portfolios trap working capital, consume capacity, damage service levels, and hide margin leakage.",
+  "commonProblems": [
+    "The company has too many low-volume, low-margin SKUs.",
+    "Inventory decisions are driven by legacy customer promises instead of profitability.",
+    "Product complexity creates hidden labor, setup, procurement, and working capital costs."
+  ],
+  "diagnosticQuestions": [
+    "Which SKUs generate revenue but destroy gross margin or working capital?",
+    "Which products consume disproportionate capacity, setup time, freight, or service effort?",
+    "Which customers would be affected by rationalization and how valuable are they?"
+  ],
+  "dataNeeded": [
+    "SKU revenue, gross margin, volume, and customer detail",
+    "Inventory turns, obsolete stock, and carrying cost data",
+    "Production setup, procurement, freight, and service cost drivers",
+    "Customer contracts and substitution options"
+  ],
+  "process": [
+    "Build SKU-level profitability and complexity baseline.",
+    "Segment SKUs into protect, price, substitute, exit, or strategic exception buckets.",
+    "Model customer, inventory, margin, and capacity impact.",
+    "Execute pricing, substitution, discontinuation, and inventory burn-down actions.",
+    "Embed SKU governance into product, sales, and operations cadence."
+  ],
+  "kpisImpacted": [
+    "Gross Margin",
+    "Inventory Turns",
+    "On-Time Delivery",
+    "Throughput",
+    "Forecast Accuracy"
+  ],
+  "ebitdaLogic": "SKU rationalization improves EBITDA and cash by eliminating low-quality revenue, reducing complexity costs, improving inventory turns, and freeing capacity for higher-margin products.",
+  "caseExample": "A sponsor-backed manufacturer eliminates or reprices the bottom 18% of SKUs, releases obsolete inventory, reduces changeover burden, and improves gross margin without meaningful revenue loss.",
+  "hundredDayPlan": [
+    "Days 1-30: build SKU profitability and complexity baseline.",
+    "Days 31-60: classify SKU actions and model customer, inventory, and margin impact.",
+    "Days 61-100: launch repricing, discontinuation, substitution, and inventory burn-down plan."
+  ],
+  "commonMistakes": [
+    "Cutting SKUs without understanding customer and margin impact.",
+    "Using gross margin only while ignoring operational complexity.",
+    "Letting sales override rationalization with anecdotal customer fear."
+  ],
+  "relatedIndustries": [
+    "Manufacturing",
+    "Distribution",
+    "Food and Beverage",
+    "Industrial Distribution"
+  ],
+  "relatedProjectPlaybooks": [
+    "Inventory Turns Improvement",
+    "Plant Utilization Improvement",
+    "Procurement Savings"
+  ],
+  "diagram": "graph LR\n  A[SKU Portfolio] --> B[Profitability + Complexity]\n  B --> C[Rationalization Actions]\n  C --> D[Margin + Inventory Improvement]\n  D --> E[EBITDA / Cash]\n  E --> F[Cleaner Exit Story]",
+  "tags": [
+    "EBITDA Margin Expansion",
+    "inventory",
+    "complexity reduction"
+  ],
+  "articleSections": [
+    {
+      "title": "Complexity Hidden Inside Revenue",
+      "body": [
+        "SKU Rationalization attacks the false comfort of top-line breadth. Many mid-market manufacturers and distributors carry long tails of products that create revenue but destroy economic quality through low volume, poor margin, inventory drag, production complexity, and customer service burden.",
+        "The sponsor must build a SKU-level view that goes beyond gross margin. True profitability includes procurement effort, setup time, freight, returns, obsolete inventory, working capital, forecast error, and sales support. A SKU that looks acceptable on invoice margin may be deeply unattractive once operational complexity is included.",
+        "The objective is not reckless product pruning. It is disciplined simplification that frees capacity, improves service, releases cash, and gives management a cleaner commercial and operational model to scale."
+      ],
+      "callout": "Low-quality SKUs are complexity debt sitting inside the revenue line."
+    },
+    {
+      "title": "Segmenting Protect, Price, Substitute, and Exit",
+      "body": [
+        "The team should classify SKUs into clear action buckets. Protect strategic, high-margin, high-velocity SKUs. Reprice products that customers value but the company undercharges. Substitute or bundle SKUs where alternatives exist. Exit products that create operational drag without strategic or customer value.",
+        "Customer impact must be modeled carefully. Some low-margin SKUs protect important customer relationships or unlock profitable basket revenue. Others survive only because sales fears a difficult conversation. The rationalization process must distinguish genuine strategic exceptions from legacy excuses.",
+        "Inventory strategy should run in parallel. Discontinuation without a burn-down plan creates obsolete stock. Repricing without demand monitoring risks surprise volume loss. Operations, sales, finance, and procurement must execute from the same SKU action list."
+      ]
+    },
+    {
+      "title": "Governance After the Cleanup",
+      "body": [
+        "SKU rationalization fails when the company cleans the portfolio once and then lets complexity creep back through custom requests. Management needs product governance: launch thresholds, minimum margin rules, demand validation, substitution rules, and executive approval for exceptions.",
+        "The board should track gross margin, inventory turns, service levels, forecast accuracy, and SKU count. If rationalization is working, the business should become easier to forecast, easier to produce, and easier to explain to buyers.",
+        "At exit, a simplified SKU portfolio supports a better story. Buyers can see disciplined product management, cleaner working capital, stronger margin, and less operational noise. That is worth more than revenue that requires constant exception handling."
+      ]
+    }
+  ],
+  "diagrams": []
+}

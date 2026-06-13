@@ -1,0 +1,97 @@
+{
+  "slug": "revenue-operations-cleanup",
+  "title": "Revenue Operations Cleanup",
+  "type": "playbook",
+  "category": "Revenue Growth",
+  "difficulty": "Intermediate",
+  "summary": "Professionalizing CRM hygiene, pipeline discipline, forecast accuracy, handoffs, and revenue visibility.",
+  "definition": "Revenue Operations Cleanup is the process of repairing the systems, rules, data, and operating cadence that govern the commercial engine.",
+  "whyItMatters": "PE cares because poor revenue operations make growth unforecastable, hide pipeline risk, and weaken buyer confidence in the revenue engine.",
+  "commonProblems": [
+    "CRM data is incomplete, stale, or inconsistent across reps.",
+    "Pipeline stages do not reflect real buyer progress.",
+    "Sales, marketing, customer success, and finance disagree on revenue definitions."
+  ],
+  "diagnosticQuestions": [
+    "Can management explain next-quarter revenue by source, stage, probability, and owner?",
+    "Which CRM fields are required for forecast accuracy and which are noise?",
+    "Where do handoffs break between lead, opportunity, close, onboarding, and renewal?"
+  ],
+  "dataNeeded": [
+    "CRM opportunity, account, activity, and stage history",
+    "Bookings, revenue, churn, renewal, and expansion data",
+    "Sales compensation and quota plans",
+    "Marketing funnel and customer success handoff rules"
+  ],
+  "process": [
+    "Audit CRM fields, pipeline stages, definitions, and usage behavior.",
+    "Rebuild the revenue funnel from lead source through renewal.",
+    "Install forecast categories, exit criteria, and weekly pipeline inspection.",
+    "Align sales, marketing, customer success, and finance definitions.",
+    "Create dashboard and governance routines for revenue leadership."
+  ],
+  "kpisImpacted": [
+    "Pipeline Coverage",
+    "Win Rate",
+    "Sales Cycle Length",
+    "Quota Attainment",
+    "Forecast Accuracy"
+  ],
+  "ebitdaLogic": "Better revenue operations improve forecast accuracy, sales productivity, pipeline conversion, retention visibility, and buyer confidence in repeatable growth.",
+  "caseExample": "A sponsor-backed SaaS company rebuilds pipeline stages, enforces CRM hygiene, cleans renewal ownership, and raises forecast accuracy before launching a growth acceleration plan.",
+  "hundredDayPlan": [
+    "Days 1-30: audit CRM hygiene, funnel definitions, and pipeline quality.",
+    "Days 31-60: reset stages, required fields, forecast categories, and handoff rules.",
+    "Days 61-100: run weekly pipeline cadence, publish dashboards, tie leadership actions to revenue movement."
+  ],
+  "commonMistakes": [
+    "Treating RevOps as a Salesforce cleanup instead of an operating model repair.",
+    "Adding fields without changing management behavior.",
+    "Allowing sales leadership to override forecast rules with optimism."
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Tech-Enabled Services",
+    "Business Services",
+    "Insurance Services"
+  ],
+  "relatedProjectPlaybooks": [
+    "Sales Productivity Improvement",
+    "Customer Retention Churn Reduction",
+    "Marketing Efficiency Improvement"
+  ],
+  "diagram": "graph LR\n  A[Messy Revenue Data] --> B[RevOps Cleanup]\n  B --> C[Pipeline Discipline]\n  C --> D[Forecast Accuracy]\n  D --> E[Repeatable Growth]\n  E --> F[Exit Story]",
+  "tags": [
+    "Revenue Growth",
+    "RevOps",
+    "sales productivity"
+  ],
+  "articleSections": [
+    {
+      "title": "Revenue Visibility Before Revenue Acceleration",
+      "body": [
+        "Revenue Operations Cleanup is the unglamorous work that makes growth manageable. A sponsor cannot accelerate a commercial engine it cannot see. If CRM stages are fictional, activity data is inconsistent, renewal ownership is unclear, and finance disputes bookings definitions, the board is underwriting vibes instead of revenue.",
+        "The first objective is to establish a single commercial truth from lead source to renewal. Every stage must have clear entry and exit criteria. Every opportunity must have an owner, value, close date, next step, probability logic, and customer evidence. Every leadership meeting must use the same definitions.",
+        "This is not a systems project masquerading as strategy. Salesforce, HubSpot, or Dynamics can only reflect the management discipline imposed on them. The cleanup succeeds when sales leaders manage through the system because it helps them win, not because the sponsor demanded cleaner dashboards."
+      ],
+      "callout": "Bad RevOps turns growth into a forecast surprise machine."
+    },
+    {
+      "title": "Pipeline, Forecast, and Handoff Discipline",
+      "body": [
+        "Pipeline cleanup starts by removing dead opportunities, redefining stages, and forcing evidence-based probability. A late-stage opportunity should require buyer engagement, decision process clarity, budget confirmation, and next-step commitment. Without stage exit criteria, pipeline coverage becomes inflated theater.",
+        "Forecast categories must separate committed revenue, best-case upside, pipeline creation, renewal risk, and expansion potential. The CRO should be able to explain exactly what changed week over week and why. Finance should be able to reconcile bookings, revenue recognition, and cash implications without rebuilding the commercial story manually.",
+        "Handoffs are a major leakage point. Marketing must know which leads convert, sales must know which opportunities are qualified, customer success must know what was promised, and finance must know what can be billed. RevOps owns the connective tissue between these teams."
+      ]
+    },
+    {
+      "title": "Embedding the Revenue Operating Cadence",
+      "body": [
+        "Cleanup only matters if it changes the cadence. Weekly pipeline inspection, forecast calls, churn review, expansion review, and campaign attribution must become operating routines with consequences. Leaders should leave each meeting with actions, not commentary.",
+        "Dashboards should focus on the few metrics that govern value: pipeline coverage, win rate, sales cycle length, quota attainment, forecast accuracy, logo retention, NRR, and CAC payback. Excess metrics create the illusion of sophistication while hiding the few points of failure that actually move enterprise value.",
+        "At exit, clean RevOps gives buyers confidence that growth is repeatable. They can see how demand is created, how pipeline converts, how customers renew, and how leadership manages performance. That credibility supports a better multiple than a business whose revenue story lives only in the CRO's head."
+      ]
+    }
+  ],
+  "diagrams": []
+}

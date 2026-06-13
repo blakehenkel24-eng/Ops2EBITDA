@@ -1,0 +1,59 @@
+{
+  "slug": "100-day-plan",
+  "title": "100-Day Plan",
+  "type": "fundamental",
+  "summary": "The 100-Day Plan explains how sponsors convert transaction momentum into immediate operating control.",
+  "definition": "A 100-Day Plan is the post-close execution sprint that establishes governance, validates the thesis, captures early wins, and sets the operating cadence.",
+  "whyItMatters": "PE operators use the first 100 days to prevent drift, expose surprises, stabilize cash, and prove that the value creation plan can survive contact with reality.",
+  "example": "A sponsor may launch cash controls, KPI reporting, management assessment, pricing cleanup, and procurement quick wins before the first full board cycle.",
+  "diagram": "graph TD\n  A[Close] --> B[Control]\n  B --> C[Diagnose]\n  C --> D[Quick Wins]\n  D --> E[Cadence]\n  E --> F[Value Creation Plan]",
+  "relatedPlaybooks": [
+    "100-Day Value Creation Plan",
+    "KPI Dashboard Buildout",
+    "Management Operating Cadence",
+    "Procurement Savings"
+  ],
+  "relatedIndustries": [
+    "Manufacturing",
+    "Distribution",
+    "Business Services",
+    "Healthcare Services"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "post-close"
+  ],
+  "articleSections": [
+    {
+      "title": "From Deal Close to Operating Control",
+      "body": [
+        "The 100-Day Plan is where the deal team's thesis stops being a polished IC memo and becomes a physical operating program. The first hundred days are not a ceremonial onboarding window. They are the period when the sponsor establishes control, confirms the real baseline, and proves whether management can execute at private equity speed.",
+        "The best plans are drafted before close and activated immediately after ownership transfers. Governance, reporting, cash controls, initiative ownership, and management communication should already be staged. If the team spends the first month deciding what to measure, the sponsor has already allowed transaction momentum to decay."
+      ],
+      "callout": "The first 100 days should reduce uncertainty, not create a larger meeting calendar."
+    },
+    {
+      "title": "Control, Cash, and KPI Visibility",
+      "body": [
+        "Day One priorities are usually unglamorous: bank access, authority matrices, weekly cash reporting, budget ownership, KPI definitions, and variance discipline. These controls establish the sponsor's ability to see the business clearly. Without them, even a brilliant VCP becomes hostage to slow reporting and management anecdotes.",
+        "Cash is the immediate obsession because leverage removes patience. Operators install 13-week cash forecasting, working capital routines, spend approval thresholds, and lender reporting discipline. At the same time, they define the small set of KPIs that will govern board conversations: bookings, backlog, churn, gross margin, labor productivity, inventory, DSO, and any thesis-specific operational measure."
+      ]
+    },
+    {
+      "title": "Quick Wins and Thesis Validation",
+      "body": [
+        "A strong 100-Day Plan identifies fast, high-confidence moves that create credibility with the board and management team. Pricing leakage, vendor consolidation, sales pipeline hygiene, overtime control, and inventory cleanup often produce visible early movement. These wins are not random cost cutting; they are controlled tests of the broader value creation logic.",
+        "The period also exposes thesis risk. If management cannot produce customer-level margin data, the pricing thesis may be harder than underwritten. If procurement savings require system changes, the savings timeline must move. If the sales team lacks basic pipeline discipline, revenue acceleration may require leadership replacement before process improvement."
+      ]
+    },
+    {
+      "title": "Management Assessment and Cadence Installation",
+      "body": [
+        "The sponsor must quickly determine whether the inherited leadership team can scale. The CEO may be charismatic but weak on accountability. The CFO may understand the business but lack lender-grade discipline. The CRO may have relationships but no repeatable sales motion. These assessments cannot wait until year two.",
+        "By the end of the first 100 days, the company should have a functioning operating cadence: weekly performance reviews, monthly operating reviews, board-ready KPI packs, initiative owners, milestone tracking, and clear escalation paths. The output is not a binder. It is a management system that makes the next three to five years executable."
+      ]
+    }
+  ],
+  "diagrams": []
+}

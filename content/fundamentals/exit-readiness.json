@@ -1,0 +1,59 @@
+{
+  "slug": "exit-readiness",
+  "title": "Exit Readiness",
+  "type": "fundamental",
+  "summary": "Exit Readiness explains how sponsors prepare a portfolio company to withstand buyer diligence and command a premium valuation.",
+  "definition": "Exit readiness is the multi-year process of making a company clean, credible, scalable, and easy for the next buyer to underwrite.",
+  "whyItMatters": "PE operators use exit readiness to protect the multiple, reduce buyer friction, and convert operational improvements into a compelling value creation story.",
+  "example": "A sponsor may clean KPI definitions, commission vendor diligence, upgrade reporting, document add-on integration results, and resolve customer concentration before launching a sale process.",
+  "diagram": "graph TD\n  A[Value Creation Evidence] --> B[Clean Data Room]\n  B --> C[Buyer Diligence]\n  C --> D[Lower Friction]\n  D --> E[Premium Multiple]\n  E --> F[Realized Return]",
+  "relatedPlaybooks": [
+    "Exit Readiness",
+    "KPI Dashboard Buildout",
+    "Finance Function Transformation",
+    "Customer Retention Churn Reduction"
+  ],
+  "relatedIndustries": [
+    "Vertical SaaS",
+    "Manufacturing",
+    "Healthcare Services",
+    "Business Services"
+  ],
+  "tags": [
+    "fundamentals",
+    "private equity",
+    "exit"
+  ],
+  "articleSections": [
+    {
+      "title": "The Exit Is Built Before the Process Begins",
+      "body": [
+        "Exit readiness is not a final-quarter cleanup exercise. It is the discipline of engineering the business for the next buyer from the first year of ownership. Every system upgrade, KPI definition, pricing initiative, add-on integration, and management hire should be evaluated against one question: will this make the asset easier to underwrite at a premium multiple?",
+        "A buyer pays more when the business is clean, explainable, and scalable. They pay less when they must untangle inconsistent financials, undocumented processes, customer concentration, fragile systems, or unclear revenue quality. Exit readiness is therefore the conversion layer between operational work and realized fund returns."
+      ],
+      "callout": "A premium exit is manufactured through evidence, not asserted in the CIM."
+    },
+    {
+      "title": "Data Room Hygiene and Vendor Diligence",
+      "body": [
+        "The data room should tell a coherent story before buyers ask questions. Financials, customer cohorts, contracts, KPI definitions, management materials, legal documents, tax records, IT architecture, and HR data must be organized, reconciled, and consistent. A messy data room signals weak control and invites valuation pressure.",
+        "Sponsors often commission vendor due diligence before launch: Quality of Earnings, tax, legal, commercial, technology, insurance, and sometimes operational diligence. The purpose is not decoration. It is to surface issues early, control the narrative, and reduce the number of buyer arguments that can be used to retrade price."
+      ]
+    },
+    {
+      "title": "Management Presentation and Value Story",
+      "body": [
+        "The management presentation must connect the full hold period into a clear value creation arc. Buyers need to see what was fixed, what was scaled, what remains to be captured, and why the business is better positioned than when the sponsor bought it. A list of initiatives is not enough; the story must show durable capability creation.",
+        "Management must be trained to defend the numbers without sounding scripted. The CEO should explain strategy, the CFO should own earnings quality and forecast credibility, and functional leaders should show operational depth. If the buyer senses that only the sponsor understands the story, confidence in post-transaction continuity falls."
+      ]
+    },
+    {
+      "title": "Removing Buyer Objections",
+      "body": [
+        "Exit readiness is largely the art of removing buyer objections before they become price reductions. Customer concentration, weak retention, aging systems, unresolved litigation, inconsistent margins, poor second-line leadership, and underdeveloped reporting all become excuses to reduce value. The sponsor must attack these issues while there is still time to prove improvement.",
+        "The strongest exit processes show not only current performance but repeatability. Buyers want evidence that growth can continue under new ownership: documented playbooks, mature systems, stable leadership, clean customer data, and proven acquisition integration. When those elements are visible, the asset stops looking like a successful hold and starts looking like a superior next platform."
+      ]
+    }
+  ],
+  "diagrams": []
+}
