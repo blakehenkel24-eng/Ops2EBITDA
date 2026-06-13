@@ -313,7 +313,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
           )}
 
           {/* Message thread */}
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-4xl">
             {messages.map((message, idx) => (
               <AtlasChatMessage
                 key={message.id}
@@ -341,7 +341,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
         {/* Composer */}
         <div className={inputClass}>
-          <div className="relative mx-auto max-w-3xl">
+          <div className="relative mx-auto max-w-4xl">
             {/* Slash command menu */}
             {showSlashMenu && filteredCommands.length > 0 && (
               <div className="absolute bottom-full left-0 z-20 mb-2 w-full overflow-hidden rounded-xl border border-line/50 bg-[oklch(99.5%_0.002_240)] shadow-[0_8px_30px_oklch(31%_0.038_248_/_0.12)]">
