@@ -3,10 +3,8 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { PageHeader } from "@/components/Cards";
 import {
-  featuredOfferings,
   offeringCollections,
   productLines,
-  workflowBundles,
   type Offering,
 } from "@/lib/offerings";
 import { pageMetadata } from "@/lib/seo";
@@ -134,87 +132,103 @@ export default function OfferingsPage() {
     <div>
       <PageHeader
         eyebrow="Offerings"
-        title="PE operating assets for sharper diligence, board prep, and value creation execution."
-        summary="Start with a bundle when you want coverage fast. Buy a single model, project kit, or skill package when you already know the workflow."
+        title="A simpler toolkit for PE operating work."
+        summary="Start with one of three categories: Models for the math, Projects for repeat workflows, and Skills for better AI output. Bundles are still available, but they no longer need to be the first decision."
       />
 
       <section id="toolkit" className="mt-10 scroll-mt-24">
-        <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-mono-label text-accent">Recommended bundles</p>
+            <p className="font-mono-label text-accent">Toolkit</p>
             <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              Choose the path closest to the work in front of you.
+              Pick the type of help you need.
             </h2>
           </div>
           <p className="max-w-2xl text-sm leading-6 text-stone font-geist">
-            Built for consultants, PE operators, and acquisition entrepreneurs
-            who need usable artifacts, not another slideware promise.
-          </p>
-        </div>
-
-        <div className="grid gap-4 lg:grid-cols-2">
-          {featuredOfferings.map((offering) => (
-            <OfferCard key={offering.slug} offering={offering} />
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-8 grid gap-4 md:grid-cols-3">
-        {productLines.map((line) => (
-          <article
-            key={line.title}
-            className="border border-line/80 bg-paper p-5"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="font-newsreader text-[1.45rem] leading-tight text-ink">
-                {line.title}
-              </h2>
-              <p className="shrink-0 font-mono-label text-accent">
-                {line.price}
-              </p>
-            </div>
-            <p className="mt-3 text-sm leading-6 text-stone font-geist">
-              {line.description}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {line.learnHref ? (
-                <Link
-                  href={line.learnHref}
-                  className="inline-flex min-h-10 items-center border border-accent/30 bg-paper px-3 py-2 font-mono-label text-accent transition-colors hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink"
-                >
-                  {line.learnLabel}
-                </Link>
-              ) : null}
-              {line.shopHref ? (
-                <Link
-                  href={line.shopHref}
-                  className="inline-flex min-h-10 items-center border border-line/80 bg-bone px-3 py-2 font-mono-label text-ink/64 transition-colors hover:border-accent/35 hover:text-ink"
-                >
-                  {line.shopLabel}
-                </Link>
-              ) : null}
-            </div>
-          </article>
-        ))}
-      </section>
-
-      <section className="mt-10">
-        <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="font-mono-label text-accent">Workflow bundles</p>
-            <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              Smaller bundles for specific recurring jobs.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-sm leading-6 text-stone font-geist">
-            Use these when the immediate need is board cadence, analyst output,
-            or diligence handoff rather than the whole library.
+            The catalog is organized around the job in front of you. Quantify
+            the case, set up a repeatable workflow, or make AI produce cleaner
+            work.
           </p>
         </div>
 
         <div className="grid gap-4 xl:grid-cols-3">
-          {workflowBundles.map((offering) => (
-            <OfferCard key={offering.slug} offering={offering} compact />
+          {productLines.map((line, index) => (
+            <article
+              key={line.title}
+              className="flex h-full flex-col border border-line/80 bg-paper p-6"
+            >
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <p className="font-mono-label text-stone">
+                    0{index + 1}
+                  </p>
+                  <h3 className="mt-3 font-newsreader text-[2rem] leading-tight text-ink">
+                    {line.title}
+                  </h3>
+                </div>
+                <p className="shrink-0 border border-line/80 bg-bone px-3 py-2 font-mono-label text-accent">
+                  {line.price}
+                </p>
+              </div>
+              <p className="mt-5 text-[0.98rem] leading-7 text-ink/82 font-geist">
+                {line.description}
+              </p>
+
+              <div className="mt-5 border-t border-line/70 pt-5">
+                <p className="font-mono-label text-stone">Value</p>
+                <p className="mt-2 text-sm leading-6 text-stone font-geist">
+                  {line.value}
+                </p>
+              </div>
+
+              <div className="mt-5 border-t border-line/70 pt-5">
+                <p className="font-mono-label text-stone">How to use</p>
+                <ol className="mt-3 grid gap-2 text-sm leading-6 text-ink/78 font-geist">
+                  {line.howToUse.map((step, stepIndex) => (
+                    <li key={step} className="flex gap-3">
+                      <span className="mt-1 h-5 min-w-5 border border-accent/25 bg-accent-soft text-center font-mono-label text-[0.58rem] leading-5 text-accent">
+                        {stepIndex + 1}
+                      </span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {line.learnHref ? (
+                  <Link
+                    href={line.learnHref}
+                    className="inline-flex min-h-10 items-center border border-line/80 bg-paper px-3 py-2 font-mono-label text-ink/64 transition-colors hover:border-accent/35 hover:text-ink"
+                  >
+                    {line.learnLabel}
+                  </Link>
+                ) : null}
+                {line.shopHref ? (
+                  <Link
+                    href={line.shopHref}
+                    className="inline-flex min-h-10 items-center border border-accent/35 bg-accent-soft/55 px-3 py-2 font-mono-label text-accent transition-colors hover:border-accent/60 hover:bg-accent-soft hover:text-ink"
+                  >
+                    {line.shopLabel}
+                  </Link>
+                ) : null}
+              </div>
+              {line.bundleHref ? (
+                <a
+                  href={line.bundleHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex w-fit items-center gap-2 text-xs leading-5 text-ink/54 underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                >
+                  {line.bundleLabel}
+                  <ArrowRight size={13} strokeWidth={1.5} />
+                </a>
+              ) : (
+                <span className="mt-4 inline-flex w-fit text-xs leading-5 text-ink/42">
+                  {line.bundleFallbackLabel}
+                </span>
+              )}
+            </article>
           ))}
         </div>
       </section>
@@ -224,12 +238,12 @@ export default function OfferingsPage() {
           <div>
             <p className="font-mono-label text-accent">Full catalog</p>
             <h2 className="mt-3 font-newsreader text-3xl text-ink">
-              Single assets for exact problems.
+              Browse individual assets when you know the job.
             </h2>
           </div>
           <p className="max-w-2xl text-sm leading-6 text-stone font-geist">
-            The catalog is for buyers who already know the model, AI project,
-            or skill package they need.
+            These sections stay intentionally direct: choose the exact model,
+            project, or skill package that matches the current work.
           </p>
         </div>
       </section>

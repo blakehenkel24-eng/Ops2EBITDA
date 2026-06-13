@@ -8,11 +8,16 @@ export type ProductLine = {
   title: string;
   price: string;
   description: string;
+  value: string;
+  howToUse: string[];
   examples: string[];
   learnHref?: string;
   learnLabel?: string;
   shopHref?: string;
   shopLabel?: string;
+  bundleHref?: string;
+  bundleLabel?: string;
+  bundleFallbackLabel?: string;
 };
 
 export type Offering = {
@@ -55,27 +60,47 @@ function createOffer(
 
 export const productLines: ProductLine[] = [
   {
-    title: "Excel Models",
+    title: "Models",
     price: "$99 each",
     description:
-      "For quantified price, cost, cash, sales, retention, and synergy work.",
+      "Excel workbooks for operating analyses where the answer needs numbers, not just narrative.",
+    value:
+      "Use them to size EBITDA upside, cash release, revenue leakage, retention risk, and synergy capture in a format you can edit and defend.",
+    howToUse: [
+      "Pick the operating lever you are working on.",
+      "Load your company data into the workbook.",
+      "Use the outputs in diligence, board prep, or the value creation plan.",
+    ],
     examples: [
       "Pricing Waterfall & Margin Leakage Model",
       "Procurement Spend Cube & Savings Tracker",
       "Working Capital & Cash Conversion Model",
     ],
     shopHref: "#excel-models",
-    shopLabel: "Browse Excel models",
+    shopLabel: "Browse models",
+    bundleHref: checkoutHref("NEXT_PUBLIC_LS_CHECKOUT_CORE_MODEL_BUNDLE"),
+    bundleLabel: "Model bundle available",
+    bundleFallbackLabel: "Model bundle link coming soon",
   },
   {
-    title: "AI Project Kits",
+    title: "Projects",
     price: "$49 each",
     description:
-      "For repeat workflows: board prep, KPI diagnosis, diligence, meetings, and execution plans.",
+      "Ready-to-build AI workspaces for recurring PE operating jobs.",
+    value:
+      "Use them when the work has multiple steps: board updates, KPI diagnosis, diligence, meeting prep, market research, or execution follow-through.",
+    howToUse: [
+      "Choose the project that matches the job.",
+      "Set it up in your AI tool or project workspace.",
+      "Add the company context and run the included workflow.",
+    ],
     learnHref: "/ai-for-pe-professionals#ai-projects",
-    learnLabel: "What is an AI project kit?",
+    learnLabel: "What is a project?",
     shopHref: "#ai-project-kits",
-    shopLabel: "Browse AI project kits",
+    shopLabel: "Browse projects",
+    bundleHref: checkoutHref("NEXT_PUBLIC_LS_CHECKOUT_AI_PROJECT_LIBRARY"),
+    bundleLabel: "Project library available",
+    bundleFallbackLabel: "Project library link coming soon",
     examples: [
       "Operating Partner Copilot",
       "Board Pack & Executive Update Builder",
@@ -83,14 +108,24 @@ export const productLines: ProductLine[] = [
     ],
   },
   {
-    title: "Skill Packages",
+    title: "Skills",
     price: "$39 each",
     description:
-      "For sharper AI output inside the tools you already use.",
+      "Reusable instruction files that make your AI tool better at specific PE operating tasks.",
+    value:
+      "Use them to improve the quality of repeated outputs: sharper summaries, better questions, cleaner logic, and more executive-ready work.",
+    howToUse: [
+      "Install the skill package in your AI workspace.",
+      "Use the matching skill when that task comes up.",
+      "Keep the package as a reusable standard for your team.",
+    ],
     learnHref: "/ai-for-pe-professionals#skills",
-    learnLabel: "What is a reusable AI skill?",
+    learnLabel: "What is a skill?",
     shopHref: "#skill-packages",
-    shopLabel: "Browse skill packages",
+    shopLabel: "Browse skills",
+    bundleHref: checkoutHref("NEXT_PUBLIC_LS_CHECKOUT_SKILL_PACKAGE_LIBRARY"),
+    bundleLabel: "Skill library available",
+    bundleFallbackLabel: "Skill library link coming soon",
     examples: [
       "Executive Communication Skills",
       "Operating Diagnostic Skills",

@@ -227,6 +227,18 @@ export const toolLandscape = [
     source: "https://claude.com/pricing/enterprise",
   },
   {
+    name: "Atlas IQ",
+    category: "PE operating intelligence workspace",
+    opinion: "Best internal layer for Ops2EBITDA-style operating judgment.",
+    bestFor:
+      "PE-specific operating research, value creation questions, KPI interpretation, industry context, and structured memos grounded in the Ops2EBITDA knowledge base.",
+    whyUse:
+      "Use Atlas IQ when the question is not just 'what can a general model do?' but 'how should a PE operator think about this?' It gives the AI workflow a stronger private equity operating frame before the user moves into broader tools.",
+    limitations:
+      "It should complement, not replace, enterprise AI workspaces like Claude or specialist data platforms. Users still need to verify important facts and use the right source system for proprietary data.",
+    source: "/atlas-iq",
+  },
+  {
     name: "ChatGPT",
     category: "General enterprise AI workspace",
     opinion: "Best broad platform, especially where OpenAI is already approved.",
