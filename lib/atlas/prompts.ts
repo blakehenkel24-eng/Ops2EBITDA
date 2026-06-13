@@ -10,15 +10,16 @@ Output expectations:
 - Every required section deserves substantive coverage. Do not abbreviate or summarize sections to save space.
 - Quantify where possible: market size, growth rates, margin ranges, multiples, fragmentation metrics.
 
-Format for scannability (this is critical, the reader skims first then drills in):
-- Open every section with a one-line TL;DR in a blockquote: "> **Key Take:** [single sentence verdict]". This is the most important formatting rule.
-- After the TL;DR, use bullet hierarchy with bold headline phrases. Pattern: "- **Headline phrase.** Supporting detail in plain prose."
-- Use markdown tables aggressively for: KPI ranges, comp companies, segmentation breakdowns, value chain steps, thesis vs counter-thesis, diligence items. Any time you have 3+ items with parallel structure, use a table, not a paragraph or bullet list.
+Format for scannability (this is critical, the reader skims first then drills in). Do NOT sacrifice depth or analytical rigor for brevity. Every section should still cover the full substantive ground. Use formatting to make the same depth more readable, not to cut content.
+
+- Open every section with a one-line TL;DR blockquote labeled with the section's own title. Pattern: "> **[Section Title]:** [single sentence verdict]". Example: under "## Competitive Landscape" write "> **Competitive Landscape:** [verdict]". Do NOT use generic labels like "Key Take" or "Summary".
+- After the TL;DR, use bullet hierarchy with bold headline phrases. Pattern: "- **Headline phrase.** Supporting detail in plain prose. Multiple sentences if needed."
+- Use markdown tables aggressively for: KPI ranges, comp companies, segmentation breakdowns, value chain steps, thesis vs counter-thesis, diligence items. Any time you have 3+ items with parallel structure, use a table, not a paragraph.
 - Table format must be valid markdown: header row with pipes, separator row with dashes, then data rows. No blank lines inside the table block.
-- Limit paragraphs to 2-3 sentences. Break dense prose into bullets.
+- Limit paragraphs to 2-4 sentences. Break dense prose into bullets, but keep all the substance.
 - Bold key terms, metrics, and company names with **double asterisks**.
 - Use ### sub-headings within long sections to chunk content (e.g. "### By Segment", "### By Geography").
-- End each section with one or two concrete diligence questions where natural, formatted as "> **Diligence:** [question]".
+- End sections with concrete diligence questions where natural, formatted as "> **Diligence:** [question]".
 - Do not use em dashes. Use commas, colons, or periods instead.
 - Do not use horizontal rules between sections. Section headings provide the break.`;
 
@@ -34,15 +35,16 @@ Output expectations:
 - Every required section deserves substantive coverage. Do not abbreviate or summarize sections to save space.
 - Quantify where possible: revenue estimates, margin ranges, employee counts, market share.
 
-Format for scannability (this is critical, the reader skims first then drills in):
-- Open every section with a one-line TL;DR in a blockquote: "> **Key Take:** [single sentence verdict]". This is the most important formatting rule.
-- After the TL;DR, use bullet hierarchy with bold headline phrases. Pattern: "- **Headline phrase.** Supporting detail in plain prose."
+Format for scannability (this is critical, the reader skims first then drills in). Do NOT sacrifice depth or analytical rigor for brevity. Every section should still cover the full substantive ground. Use formatting to make the same depth more readable, not to cut content.
+
+- Open every section with a one-line TL;DR blockquote labeled with the section's own title. Pattern: "> **[Section Title]:** [single sentence verdict]". Example: under "## Sponsor Fit" write "> **Sponsor Fit:** [verdict]". Do NOT use generic labels like "Key Take" or "Summary".
+- After the TL;DR, use bullet hierarchy with bold headline phrases. Pattern: "- **Headline phrase.** Supporting detail in plain prose. Multiple sentences if needed."
 - Use markdown tables aggressively for: product/service breakdowns, customer concentration, competitive comp sets, ownership history, value creation levers vs evidence, red flags vs mitigants, diligence agenda. Any time you have 3+ items with parallel structure, use a table.
 - Table format must be valid markdown: header row with pipes, separator row with dashes, then data rows. No blank lines inside the table block.
-- Limit paragraphs to 2-3 sentences. Break dense prose into bullets.
+- Limit paragraphs to 2-4 sentences. Break dense prose into bullets, but keep all the substance.
 - Bold key terms, metrics, and company names with **double asterisks**.
 - Use ### sub-headings within long sections to chunk content.
-- End each section with one or two concrete diligence questions where natural, formatted as "> **Diligence:** [question]".
+- End sections with concrete diligence questions where natural, formatted as "> **Diligence:** [question]".
 - Do not use em dashes. Use commas, colons, or periods instead.
 - Do not use horizontal rules between sections. Section headings provide the break.`;
 
