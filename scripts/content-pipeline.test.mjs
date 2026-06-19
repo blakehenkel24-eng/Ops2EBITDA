@@ -53,8 +53,23 @@ try {
   fs.cpSync(path.join(root, "scripts"), path.join(temporaryRoot, "scripts"), { recursive: true });
   fs.cpSync(path.join(root, "content"), path.join(temporaryRoot, "content"), { recursive: true });
 
+  const sentinelPath = path.join(temporaryRoot, "external-sentinel.json");
+  const sentinelContents = "registered content must not follow this symlink\n";
+  const registeredPath = path.join(
+    temporaryRoot,
+    "content",
+    "fundamentals",
+    "what-private-equity-is.json",
+  );
+  fs.writeFileSync(sentinelPath, sentinelContents);
+  fs.rmSync(registeredPath);
+  fs.symlinkSync(sentinelPath, registeredPath);
+
   execFileSync(process.execPath, ["scripts/generate-content.mjs"], { cwd: temporaryRoot });
   execFileSync(process.execPath, ["scripts/enrich-content.mjs"], { cwd: temporaryRoot });
+
+  assert.equal(fs.readFileSync(sentinelPath, "utf8"), sentinelContents);
+  assert.equal(fs.lstatSync(registeredPath).isSymbolicLink(), false);
 
   for (const [directory, slugs] of Object.entries(scopedPages)) {
     for (const slug of slugs) {

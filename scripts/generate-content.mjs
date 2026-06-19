@@ -16,8 +16,10 @@ function writeCollection(directory, items) {
   const target = path.join(contentRoot, directory);
   fs.mkdirSync(target, { recursive: true });
   for (const item of items) {
+    const filePath = path.join(target, `${item.slug}.json`);
+    fs.rmSync(filePath, { force: true });
     fs.writeFileSync(
-      path.join(target, `${item.slug}.json`),
+      filePath,
       `${JSON.stringify(item, null, 2)}\n`,
     );
   }
