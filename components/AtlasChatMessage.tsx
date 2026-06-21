@@ -65,7 +65,7 @@ export function AtlasChatMessage({
             </div>
           )}
 
-          {/* Hover action bar — sits below card */}
+          {/* Hover action bar below the card */}
           {!isStreaming && content.length > 20 && (
             <div className="atlas-msg-actions mt-1 flex items-center gap-0.5 pl-1">
               <CopyButton text={content} />
@@ -183,7 +183,7 @@ function MarkdownContent({ content }: { content: string }) {
                 {headers.map((h, j) => (
                   <th
                     key={j}
-                    className="text-left font-semibold text-stone/70 uppercase tracking-wide text-[11px] px-3 py-2"
+                    className="text-left font-semibold text-stone/70 uppercase text-[11px] px-3 py-2"
                   >
                     <InlineMarkdown text={h} />
                   </th>
@@ -238,7 +238,7 @@ function MarkdownContent({ content }: { content: string }) {
     if (trimmed.startsWith("#### ")) {
       flushList();
       elements.push(
-        <h5 key={key++} className="text-xs font-semibold text-stone/60 uppercase tracking-wide mt-5 mb-1.5 font-geist">
+        <h5 key={key++} className="text-xs font-semibold text-stone/60 uppercase mt-5 mb-1.5 font-geist">
           {trimmed.replace("#### ", "")}
         </h5>
       );
@@ -291,7 +291,7 @@ function MarkdownContent({ content }: { content: string }) {
         elements.push(
           <h5
             key={key++}
-            className="text-[11px] font-semibold text-stone/60 uppercase tracking-wide mt-5 mb-2 font-geist"
+            className="text-[11px] font-semibold text-stone/60 uppercase mt-5 mb-2 font-geist"
           >
             {headingMatch[1].replace(/[.:]$/, "")}
           </h5>

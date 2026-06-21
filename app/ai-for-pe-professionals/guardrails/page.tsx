@@ -4,7 +4,7 @@ import { AIPillarNav, SourceList } from "@/components/AIPillarNav";
 import { guardrailPractices, sourceLinks } from "@/lib/aiForPE";
 
 export const metadata: Metadata = {
-  title: "AI Guardrails & Data Security for PE | Ops2EBITDA",
+  title: "AI Guardrails & Data Security for PE",
   description:
     "Practical AI guardrails for private equity workflows, enterprise licenses, retention settings, admin controls, sensitive uploads, transcripts, and legal provisions.",
 };

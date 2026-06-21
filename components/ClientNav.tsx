@@ -50,6 +50,8 @@ export function ClientNav() {
 
   const knowledgeActive = knowledgeLinks.some((link) => isActive(link.href));
   const aiActive = isActive('/ai-for-pe-professionals');
+  const atlasActive = pathname.startsWith('/atlas-iq');
+  const offeringsActive = pathname.startsWith('/offerings');
   const aiIcons = {
     '/ai-for-pe-professionals': Sparkles,
     '/ai-for-pe-professionals/use-cases': Waypoints,
@@ -158,12 +160,13 @@ export function ClientNav() {
         <span className="w-px h-4 bg-line/60 mx-1" aria-hidden="true" />
 
         <Link
-          href="/atlas-iq"
+          href="/atlas-iq/chat"
           className={`atlas-nav-flagship font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 whitespace-nowrap ${
-            pathname.startsWith('/atlas-iq')
+            atlasActive
               ? 'is-active text-paper'
               : 'text-accent hover:text-paper'
           }`}
+          aria-current={atlasActive ? 'page' : undefined}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -171,14 +174,19 @@ export function ClientNav() {
             <path d="M2 12l10 5 10-5" />
           </svg>
           <span>Atlas IQ</span>
-          {!pathname.startsWith('/atlas-iq') && (
+          {!atlasActive && (
             <span className="atlas-nav-flagship__tag">Flagship</span>
           )}
         </Link>
 
         <Link
           href="/offerings#toolkit"
-          className="font-mono-label flex items-center gap-2 border border-accent/35 bg-paper/90 text-accent px-3 py-2 transition-all duration-200 whitespace-nowrap hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink"
+          className={`font-mono-label flex items-center gap-2 border px-3 py-2 transition-all duration-200 whitespace-nowrap ${
+            offeringsActive
+              ? 'border-accent/45 bg-accent-soft text-accent'
+              : 'border-accent/35 bg-paper/90 text-accent hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink'
+          }`}
+          aria-current={offeringsActive ? 'page' : undefined}
         >
           <Package size={14} strokeWidth={1.7} aria-hidden="true" />
           Get the Toolkit
@@ -262,7 +270,7 @@ export function ClientNav() {
           </div>
 
           <Link
-            href="/atlas-iq"
+            href="/atlas-iq/chat"
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center gap-3 font-mono-label p-3 transition-colors ${
               pathname.startsWith('/atlas-iq')
@@ -276,7 +284,7 @@ export function ClientNav() {
           </Link>
 
           {[
-            { href: '/offerings#toolkit', label: 'Get the Toolkit', icon: Package, active: false },
+            { href: '/offerings#toolkit', label: 'Get the Toolkit', icon: Package, active: offeringsActive },
           ].map((link) => (
             <Link
               key={link.href}
@@ -284,7 +292,9 @@ export function ClientNav() {
               onClick={() => setMobileMenuOpen(false)}
               className={`flex items-center gap-3 font-mono-label p-3 transition-colors ${
                 link.label === 'Get the Toolkit'
-                  ? 'mt-1 border border-accent/35 bg-paper/90 text-accent hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink'
+                  ? link.active
+                    ? 'mt-1 border border-accent/45 bg-accent-soft text-accent'
+                    : 'mt-1 border border-accent/35 bg-paper/90 text-accent hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink'
                   : link.active
                     ? 'bg-accent-soft text-accent'
                     : 'text-stone hover:bg-bone hover:text-ink'

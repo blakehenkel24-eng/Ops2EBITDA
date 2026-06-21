@@ -4,7 +4,7 @@ import { AIPillarNav, SourceList } from "@/components/AIPillarNav";
 import { sourceLinks, toolLandscape } from "@/lib/aiForPE";
 
 export const metadata: Metadata = {
-  title: "AI Tool Landscape for PE Professionals | Ops2EBITDA",
+  title: "AI Tool Landscape for PE Professionals",
   description:
     "An opinionated guide to Claude, ChatGPT, NotebookLM, Hebbia, Onyx, AlphaSense, S&P Capital IQ Pro, PitchBook, Grata, FactSet, and other AI tools for PE professionals.",
 };

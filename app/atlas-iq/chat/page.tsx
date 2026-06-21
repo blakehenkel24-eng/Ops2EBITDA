@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Atlas IQ Chat",
-  description: "PE research intelligence — market analysis, company evaluation, and operating insights.",
+  description: "PE research intelligence for market analysis, company evaluation, and operating insights.",
   path: "/atlas-iq/chat",
 });
 

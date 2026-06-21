@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { ArrowRight, X } from "lucide-react";
 
 interface AtlasResearchFormProps {
@@ -25,11 +25,11 @@ export function AtlasResearchForm({ mode, onSubmit, onClose }: AtlasResearchForm
     if (mode === "market") {
       query = sector.trim();
       if (geography.trim()) query += ` in ${geography.trim()}`;
-      if (focus.trim()) query += ` — focus on ${focus.trim()}`;
+      if (focus.trim()) query += `, focus on ${focus.trim()}`;
     } else {
       query = company.trim();
       if (sector.trim()) query += ` (${sector.trim()})`;
-      if (focus.trim()) query += ` — ${focus.trim()}`;
+      if (focus.trim()) query += `, ${focus.trim()}`;
     }
     onSubmit(query);
   };
@@ -130,13 +130,19 @@ function Field({
   required?: boolean;
   autoFocus?: boolean;
 }) {
+  const id = useId();
+
   return (
     <div>
-      <label className="mb-1.5 flex items-center gap-1 text-[11px] font-medium uppercase tracking-wide text-stone/55 font-geist">
+      <label
+        htmlFor={id}
+        className="mb-1.5 flex items-center gap-1 text-[11px] font-medium uppercase text-stone/55 font-geist"
+      >
         {label}
         {required && <span className="text-accent/70">*</span>}
       </label>
       <input
+        id={id}
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}

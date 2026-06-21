@@ -44,10 +44,10 @@ export function AtlasWelcome({ onStartResearch, onSuggestion }: AtlasWelcomeProp
         </div>
 
         <h1 className="font-newsreader text-3xl text-ink md:text-4xl">
-          What can I help you research?
+          What can Atlas IQ help you evaluate?
         </h1>
         <p className="mt-3 max-w-lg text-[15px] leading-7 text-stone font-geist">
-          Market maps, target screens, diligence agendas, and thesis pressure-tests grounded in PE operating patterns.
+          Research markets, assess companies, pressure-test investment theses, and prepare for diligence.
         </p>
       </div>
 

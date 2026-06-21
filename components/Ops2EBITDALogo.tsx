@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Ops2EBITDALogo({ className = "" }: { className?: string }) {
   return (
-    <span className={`font-newsreader font-medium text-[1em] tracking-[-0.025em] leading-none text-ink whitespace-nowrap ${className}`}>
+    <span className={`font-newsreader font-medium text-[1em] leading-none text-ink whitespace-nowrap ${className}`}>
       Ops
       <span
         className="px-[0.025em]"

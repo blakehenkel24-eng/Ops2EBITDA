@@ -17,7 +17,7 @@ import { rankSources, buildSourceDigest } from "@/lib/atlas/scoring";
 
 export const maxDuration = 120;
 
-// Progress event prefix — client strips these before displaying text
+// Progress event prefix. The client strips these before displaying text.
 const PROGRESS_PREFIX = "§§P";
 
 /** Parse `[mode:market]` or `[mode:company]` prefix from message text */
@@ -145,7 +145,7 @@ export async function POST(req: Request) {
             maxOutputTokens: 16000,
           });
 
-          // Stream LLM text — no final progress emit after this
+          // Stream LLM text. No final progress emit after this.
           // (client exits progress mode when LLM text starts)
           for await (const chunk of result.textStream) {
             controller.enqueue(encoder.encode(chunk));
@@ -180,7 +180,7 @@ export async function POST(req: Request) {
     system: systemPrompt,
     messages,
     temperature: 0.2,
-    maxOutputTokens: 4000,
+    maxOutputTokens: 8000,
   });
 
   return result.toTextStreamResponse();

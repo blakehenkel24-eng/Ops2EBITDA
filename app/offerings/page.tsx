@@ -72,11 +72,11 @@ function OfferCard({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="text-[0.74rem] font-medium uppercase tracking-[0.18em] text-ink/52">
+            <p className="text-[0.74rem] font-medium uppercase text-ink/52">
               {offering.category}
             </p>
             {offering.badge ? (
-              <span className="border border-accent/25 bg-accent-soft px-3 py-1 text-[0.74rem] font-medium uppercase tracking-[0.16em] text-accent">
+              <span className="border border-accent/25 bg-accent-soft px-3 py-1 text-[0.74rem] font-medium uppercase text-accent">
                 {offering.badge}
               </span>
             ) : null}
@@ -95,7 +95,7 @@ function OfferCard({
       </p>
       {showBestFor ? (
         <p className="mt-4 text-[0.95rem] leading-7 text-ink/88 font-geist">
-          <span className="mr-2 inline-block text-[0.72rem] font-medium uppercase tracking-[0.18em] text-ink/48">
+          <span className="mr-2 inline-block text-[0.72rem] font-medium uppercase text-ink/48">
             Best for
           </span>
           {offering.bestFor}

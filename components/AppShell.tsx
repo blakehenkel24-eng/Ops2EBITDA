@@ -5,7 +5,7 @@ import { ClientNav } from './ClientNav';
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-bone text-ink flex flex-col">
-      <header className="sticky top-0 z-50 border-b border-line/70 bg-bone/90 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 border-b border-line/70 bg-bone/95">
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between gap-8">
           <Link href="/" className="text-xl shrink-0 hover:opacity-80 transition-opacity">
             <Ops2EBITDALogo />

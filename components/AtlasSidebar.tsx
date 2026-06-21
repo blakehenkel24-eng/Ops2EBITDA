@@ -20,7 +20,7 @@ export function AtlasSidebar() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="fixed bottom-5 right-5 z-50 w-12 h-12 bg-accent text-white rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+          className="fixed bottom-5 right-5 z-50 w-12 h-12 bg-accent text-[oklch(98%_0.004_240)] rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
           aria-label="Open Atlas IQ"
         >
           <span className="font-newsreader text-sm font-semibold">IQ</span>
@@ -30,7 +30,7 @@ export function AtlasSidebar() {
       {/* Backdrop */}
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-ink/20 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-ink/20"
           onClick={() => setOpen(false)}
         />
       )}
@@ -40,6 +40,8 @@ export function AtlasSidebar() {
         className={`fixed top-0 right-0 z-50 h-full w-full max-w-md bg-bone border-l border-line/70 shadow-2xl transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
+        aria-hidden={!open}
+        inert={!open}
       >
         {/* Panel header */}
         <div className="flex items-center justify-between px-4 h-12 border-b border-line/70">

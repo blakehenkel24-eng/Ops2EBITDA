@@ -5,7 +5,7 @@ import { AIPillarNav } from "@/components/AIPillarNav";
 import { differences, projectExample, skillExamples } from "@/lib/aiForPE";
 
 export const metadata: Metadata = {
-  title: "AI for PE Professionals | Ops2EBITDA",
+  title: "AI for PE Professionals",
   description:
     "A practical starting point for AI projects, AI skills, skill.md files, and AI workflows for private equity professionals.",
 };

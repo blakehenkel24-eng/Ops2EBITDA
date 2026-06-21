@@ -4,7 +4,7 @@ import { AIPillarNav, SourceList } from "@/components/AIPillarNav";
 import { sourceLinks, useCases } from "@/lib/aiForPE";
 
 export const metadata: Metadata = {
-  title: "Top AI Use Cases for PE Professionals | Ops2EBITDA",
+  title: "Top AI Use Cases for PE Professionals",
   description:
     "Practical AI use cases for private equity investment teams, operating partners, portfolio teams, and diligence consultants.",
 };

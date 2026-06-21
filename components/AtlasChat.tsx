@@ -8,7 +8,8 @@ import { AtlasResearchProgress } from "./AtlasResearchProgress";
 import { AtlasWelcome } from "./AtlasWelcome";
 import { AtlasResearchForm } from "./AtlasResearchForm";
 import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
-import { ArrowUp, Landmark, Building2 } from "lucide-react";
+import { ArrowUp, Landmark, Building2, History, MessageSquarePlus, PanelLeftClose, Trash2 } from "lucide-react";
+import type { UIMessage } from "@ai-sdk/react";
 
 function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
   const raw = parts
@@ -25,12 +26,84 @@ export interface ProgressStage {
 }
 
 const PROGRESS_PREFIX = "§§P";
+const HISTORY_STORAGE_KEY = "atlas-iq-chat-history";
+
+interface AtlasChatSession {
+  id: string;
+  title: string;
+  preview: string;
+  updatedAt: number;
+  messages: UIMessage[];
+}
+
+function createSessionId() {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
+  }
+  return `atlas-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function readStoredSessions(): AtlasChatSession[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(HISTORY_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((session): session is AtlasChatSession =>
+        typeof session?.id === "string" &&
+        typeof session?.title === "string" &&
+        typeof session?.preview === "string" &&
+        Number.isFinite(session?.updatedAt) &&
+        Array.isArray(session?.messages)
+      )
+      .sort((a, b) => b.updatedAt - a.updatedAt);
+  } catch {
+    return [];
+  }
+}
+
+function writeStoredSessions(sessions: AtlasChatSession[]) {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(sessions.slice(0, 24)));
+  } catch {
+    // History is a convenience feature; storage failures should not break chat.
+  }
+}
+
+function cleanHistoryText(text: string) {
+  return text
+    .replace(/[*_`>#-]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function sessionTitleFromMessages(messages: UIMessage[]) {
+  const firstUserMessage = messages.find((message) => message.role === "user");
+  if (!firstUserMessage) return "New research chat";
+  const text = cleanHistoryText(getMessageText(firstUserMessage.parts));
+  return text.length > 54 ? `${text.slice(0, 54).trim()}...` : text || "New research chat";
+}
+
+function sessionPreviewFromMessages(messages: UIMessage[]) {
+  const lastMessage = [...messages].reverse().find((message) => message.role !== "system");
+  if (!lastMessage) return "No messages yet";
+  const text = cleanHistoryText(getMessageText(lastMessage.parts));
+  return text.length > 74 ? `${text.slice(0, 74).trim()}...` : text || "No messages yet";
+}
 
 export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [researchMode, setResearchMode] = useState<string>("chat");
   const [activeForm, setActiveForm] = useState<"market" | "company" | null>(null);
   const [progressStages, setProgressStages] = useState<ProgressStage[]>([]);
   const [input, setInput] = useState("");
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [sessions, setSessions] = useState<AtlasChatSession[]>([]);
+  const [activeSessionId, setActiveSessionId] = useState(createSessionId);
+  const historyLoadedRef = useRef(false);
   const [slashDismissed, setSlashDismissed] = useState(false);
   const [slashIndex, setSlashIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -122,10 +195,39 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     [customFetch]
   );
 
-  const { messages, sendMessage, status } = useChat({ transport });
+  const { messages, sendMessage, status, setMessages } = useChat({ transport });
 
   const isLoading = status === "submitted" || status === "streaming";
   const hasMessages = messages.length > 0;
+
+  useEffect(() => {
+    if (!fullPage) return;
+    const timeoutId = window.setTimeout(() => {
+      setSessions(readStoredSessions());
+      historyLoadedRef.current = true;
+    }, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, [fullPage]);
+
+  useEffect(() => {
+    if (!fullPage || !historyLoadedRef.current || messages.length === 0) return;
+
+    const session: AtlasChatSession = {
+      id: activeSessionId,
+      title: sessionTitleFromMessages(messages),
+      preview: sessionPreviewFromMessages(messages),
+      updatedAt: Date.now(),
+      messages,
+    };
+
+    setSessions((current) => {
+      const next = [session, ...current.filter((item) => item.id !== activeSessionId)]
+        .sort((a, b) => b.updatedAt - a.updatedAt)
+        .slice(0, 24);
+      writeStoredSessions(next);
+      return next;
+    });
+  }, [activeSessionId, fullPage, messages]);
 
   // Clear progress only when loading transitions from true -> false
   const wasLoadingRef = useRef(false);
@@ -287,8 +389,44 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     [sendMessage]
   );
 
+  const handleNewChat = useCallback(() => {
+    setMessages([]);
+    setProgressStages([]);
+    setResearchMode("chat");
+    setActiveForm(null);
+    setInput("");
+    setActiveSessionId(createSessionId());
+  }, [setMessages]);
+
+  const handleSelectSession = useCallback(
+    (session: AtlasChatSession) => {
+      if (isLoading) return;
+      setActiveSessionId(session.id);
+      setMessages(session.messages);
+      setActiveForm(null);
+      setProgressStages([]);
+      setResearchMode("chat");
+    },
+    [isLoading, setMessages]
+  );
+
+  const handleDeleteSession = useCallback(
+    (sessionId: string) => {
+      setSessions((current) => {
+        const next = current.filter((session) => session.id !== sessionId);
+        writeStoredSessions(next);
+        return next;
+      });
+
+      if (sessionId === activeSessionId) {
+        handleNewChat();
+      }
+    },
+    [activeSessionId, handleNewChat]
+  );
+
   const rootClass = fullPage
-    ? "atlas-chat-viewport"
+    ? `atlas-chat-viewport ${historyOpen ? "is-history-open" : ""}`
     : "flex h-full flex-col";
   const shellClass = fullPage
     ? "atlas-chat-document"
@@ -302,9 +440,34 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   return (
     <div className={rootClass}>
+      {fullPage && (
+        <>
+          {!historyOpen && (
+            <button
+              type="button"
+              onClick={() => setHistoryOpen(true)}
+              className="atlas-history-trigger"
+              aria-label="Open chat history"
+              aria-expanded={false}
+            >
+              <History size={17} strokeWidth={1.8} />
+            </button>
+          )}
+          <AtlasChatHistoryPanel
+            open={historyOpen}
+            sessions={sessions}
+            activeSessionId={activeSessionId}
+            isLoading={isLoading}
+            onClose={() => setHistoryOpen(false)}
+            onNewChat={handleNewChat}
+            onSelectSession={handleSelectSession}
+            onDeleteSession={handleDeleteSession}
+          />
+        </>
+      )}
       <section className={shellClass}>
         <div ref={scrollRef} className={scrollClass}>
-          {/* Welcome state — vertically centered, fills scroll area */}
+          {/* Welcome state, vertically centered and filling the scroll area */}
           {!hasMessages && !isLoading && (
             <AtlasWelcome
               onStartResearch={handleStartResearch}
@@ -372,40 +535,42 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
               </div>
             )}
 
-            {/* Research mode buttons */}
-            <div className="flex gap-1.5 mb-2">
-              {(
-                [
-                  { mode: "market", label: "Market Research", icon: Landmark },
-                  { mode: "company", label: "Company Research", icon: Building2 },
-                ] as const
-              ).map(({ mode, label, icon: Icon }) => (
-                <button
-                  key={mode}
-                  type="button"
-                  onClick={() => setActiveForm(activeForm === mode ? null : mode)}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-geist transition-all duration-150 ${
-                    activeForm === mode
-                      ? "bg-accent text-[oklch(97%_0.004_240)] shadow-[0_1px_4px_oklch(34%_0.105_252_/_0.3)]"
-                      : "text-stone/55 border border-line/35 hover:text-ink hover:border-line/60 bg-transparent"
-                  }`}
-                >
-                  <Icon size={11} strokeWidth={1.7} />
-                  {label}
-                </button>
-              ))}
+            <div className="mx-auto w-full max-w-[48rem]">
+              {/* Research mode buttons */}
+              <div className="mb-2 flex gap-1.5">
+                {(
+                  [
+                    { mode: "market", label: "Market Research", icon: Landmark },
+                    { mode: "company", label: "Company Research", icon: Building2 },
+                  ] as const
+                ).map(({ mode, label, icon: Icon }) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => setActiveForm(activeForm === mode ? null : mode)}
+                    className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-geist transition-all duration-150 ${
+                      activeForm === mode
+                        ? "bg-accent text-[oklch(97%_0.004_240)] shadow-[0_1px_4px_oklch(34%_0.105_252_/_0.3)]"
+                        : "text-stone/55 border border-line/35 hover:text-ink hover:border-line/60 bg-transparent"
+                    }`}
+                  >
+                    <Icon size={11} strokeWidth={1.7} />
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Research form appears above input when a mode is active */}
+              {activeForm && (
+                <AtlasResearchForm
+                  mode={activeForm}
+                  onSubmit={handleResearchFormSubmit}
+                  onClose={() => setActiveForm(null)}
+                />
+              )}
             </div>
 
-            {/* Research form — appears above input when a mode is active */}
-            {activeForm && (
-              <AtlasResearchForm
-                mode={activeForm}
-                onSubmit={handleResearchFormSubmit}
-                onClose={() => setActiveForm(null)}
-              />
-            )}
-
-            {/* Input area — Claude/ChatGPT style rounded capsule */}
+            {/* Input area */}
             <div className="atlas-input-wrap">
               <div className="flex items-end gap-0">
                 <textarea
@@ -413,7 +578,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                   value={input}
                   onChange={(e) => handleInputChange(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder={hasMessages ? "Ask a follow-up..." : "Ask Atlas IQ anything..."}
+                  placeholder={hasMessages ? "Ask a follow-up..." : "Ask about a deal or thesis..."}
                   rows={1}
                   className="w-full resize-none bg-transparent px-5 py-3.5 text-[15px] leading-relaxed text-ink placeholder:text-stone/40 font-geist focus:outline-none"
                 />
@@ -436,5 +601,105 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
         </div>
       </section>
     </div>
+  );
+}
+
+function AtlasChatHistoryPanel({
+  open,
+  sessions,
+  activeSessionId,
+  isLoading,
+  onClose,
+  onNewChat,
+  onSelectSession,
+  onDeleteSession,
+}: {
+  open: boolean;
+  sessions: AtlasChatSession[];
+  activeSessionId: string;
+  isLoading: boolean;
+  onClose: () => void;
+  onNewChat: () => void;
+  onSelectSession: (session: AtlasChatSession) => void;
+  onDeleteSession: (sessionId: string) => void;
+}) {
+  return (
+    <aside className="atlas-history-panel" aria-hidden={!open} inert={!open}>
+      <div className="flex h-14 items-center justify-between border-b border-line/45 px-4">
+        <div className="flex items-center gap-2">
+          <History size={15} strokeWidth={1.7} className="text-accent" />
+          <span className="font-mono-label text-[0.68rem] text-ink">Chat history</span>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          className="atlas-history-icon-button"
+          aria-label="Close chat history"
+        >
+          <PanelLeftClose size={15} strokeWidth={1.8} />
+        </button>
+      </div>
+
+      <div className="border-b border-line/35 p-3">
+        <button
+          type="button"
+          onClick={onNewChat}
+          className="atlas-history-new-chat"
+        >
+          <MessageSquarePlus size={15} strokeWidth={1.8} />
+          New chat
+        </button>
+      </div>
+
+      <div className="min-h-0 flex-1 overflow-y-auto p-2">
+        {sessions.length === 0 ? (
+          <div className="px-3 py-5 text-sm leading-6 text-stone/65">
+            Your ATLAS IQ research threads will appear here after you start a chat.
+          </div>
+        ) : (
+          <div className="space-y-1">
+            {sessions.map((session) => {
+              const active = session.id === activeSessionId;
+              return (
+                <div
+                  key={session.id}
+                  className={`atlas-history-row ${active ? "is-active" : ""}`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => onSelectSession(session)}
+                    disabled={isLoading}
+                    className="min-w-0 flex-1 text-left disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <span className="block truncate text-sm font-medium text-ink">
+                      {session.title}
+                    </span>
+                    <span className="mt-1 block truncate text-xs text-stone/70">
+                      {session.preview}
+                    </span>
+                    <span className="mt-2 block font-mono-label text-[0.58rem] text-stone/45">
+                      {new Intl.DateTimeFormat("en", {
+                        month: "short",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "2-digit",
+                      }).format(session.updatedAt)}
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onDeleteSession(session.id)}
+                    className="atlas-history-delete"
+                    aria-label={`Delete ${session.title}`}
+                  >
+                    <Trash2 size={13} strokeWidth={1.7} />
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </aside>
   );
 }
