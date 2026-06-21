@@ -28,6 +28,14 @@ function write(filePath, item) {
   fs.writeFileSync(filePath, `${JSON.stringify(item, null, 2)}\n`);
 }
 
+function isNonEmptyArray(value) {
+  return Array.isArray(value) && value.length > 0;
+}
+
+function isNonEmptyString(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
 const STYLES = `
   classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c
   classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c
@@ -750,8 +758,28 @@ const enrichers = {
 for (const [directory, makeArticle] of Object.entries(enrichers)) {
   for (const { filePath, item } of readCollection(directory)) {
     const curatedSections = getCuratedArticle(item.slug);
-    item.articleSections = curatedSections || makeArticle(item);
-    item.diagrams = diagramsFor(directory, item);
+    item.articleSections = isNonEmptyArray(item.articleSections)
+      ? item.articleSections
+      : isNonEmptyArray(curatedSections)
+        ? curatedSections
+        : makeArticle(item);
+
+    if (!isNonEmptyArray(item.diagrams)) {
+      const generatedDiagrams = diagramsFor(directory, item);
+      if (isNonEmptyArray(generatedDiagrams)) {
+        item.diagrams = generatedDiagrams;
+      } else if (isNonEmptyString(item.diagram)) {
+        item.diagrams = [
+          {
+            title: `${item.title} overview`,
+            description: `How ${item.title} connects operating actions to measurable value.`,
+            chart: item.diagram,
+          },
+        ];
+      } else {
+        item.diagrams = [];
+      }
+    }
     delete item.bookExcerpts;
     delete item.sourceRefs;
     write(filePath, item);
