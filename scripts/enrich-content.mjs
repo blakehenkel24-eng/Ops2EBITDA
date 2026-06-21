@@ -764,19 +764,21 @@ for (const [directory, makeArticle] of Object.entries(enrichers)) {
         ? curatedSections
         : makeArticle(item);
 
-    const generatedDiagrams = diagramsFor(directory, item);
-    if (isNonEmptyArray(generatedDiagrams)) {
-      item.diagrams = generatedDiagrams;
-    } else if (!isNonEmptyArray(item.diagrams) && isNonEmptyString(item.diagram)) {
-      item.diagrams = [
-        {
-          title: `${item.title} overview`,
-          description: `How ${item.title} connects operating actions to measurable value.`,
-          chart: item.diagram,
-        },
-      ];
-    } else if (!isNonEmptyArray(item.diagrams)) {
-      item.diagrams = [];
+    if (!isNonEmptyArray(item.diagrams)) {
+      const generatedDiagrams = diagramsFor(directory, item);
+      if (isNonEmptyArray(generatedDiagrams)) {
+        item.diagrams = generatedDiagrams;
+      } else if (isNonEmptyString(item.diagram)) {
+        item.diagrams = [
+          {
+            title: `${item.title} overview`,
+            description: `How ${item.title} connects operating actions to measurable value.`,
+            chart: item.diagram,
+          },
+        ];
+      } else {
+        item.diagrams = [];
+      }
     }
     delete item.bookExcerpts;
     delete item.sourceRefs;
