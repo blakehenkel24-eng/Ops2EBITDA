@@ -54,7 +54,8 @@ export function scoreSource(source: ResearchSource): number {
   if (COMPANY_TERMS.some((t) => text.includes(t))) score += 10;
 
   // Source type bonuses
-  if (source.type === "registry") score += 10;
+  if (source.type === "registry") score += 15;
+  if (source.signal === "sec-edgar") score += 10;
   if (source.type === "tavily") score += 8;
 
   // Placeholder penalty
@@ -88,7 +89,7 @@ export function buildSourceDigest(sources: ResearchSource[]): string {
   return sources
     .slice(0, 32)
     .map((s) => {
-      const snippet = s.snippet.slice(0, 1800);
+      const snippet = s.snippet.slice(0, 3000);
       const lines: string[] = [
         `[${s.rank || "?"}] ${s.title}`,
         `Type: ${s.type} | Score: ${s.score} | Query: ${s.query || "n/a"}`,

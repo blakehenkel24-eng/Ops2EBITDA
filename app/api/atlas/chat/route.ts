@@ -12,6 +12,7 @@ import {
   getMarketQueries,
   getCompanyQueries,
   fetchPageText,
+  searchEdgarCompany,
 } from "@/lib/atlas/research";
 import { rankSources, buildSourceDigest } from "@/lib/atlas/scoring";
 
@@ -84,17 +85,23 @@ export async function POST(req: Request) {
               : getCompanyQueries(cleanQuery);
           emit("search_plan", `${queries.length} targeted queries`, "done");
 
-          // 2. Gather sources
-          emit("source_gathering", "Searching the web", "active");
+          // 2. Gather sources (web + SEC EDGAR)
+          emit("source_gathering", "Searching the web and SEC filings", "active");
           const tavilyKey = process.env.TAVILY_API_KEY;
-          const rawSources = await gatherSources(queries, tavilyKey);
+          const [webSources, edgarCompanySources] = await Promise.all([
+            gatherSources(queries, tavilyKey, mode as "market" | "company"),
+            mode === "company"
+              ? searchEdgarCompany(cleanQuery, 3)
+              : Promise.resolve([]),
+          ]);
+          const rawSources = [...webSources, ...edgarCompanySources];
           emit("source_gathering", `${rawSources.length} sources found`, "done");
 
           // 3. Enrich source content
           emit("page_extraction", "Extracting source content", "active");
           const enriched = await Promise.all(
-            rawSources.slice(0, 12).map(async (source) => {
-              if (source.snippet.length < 200 && source.url) {
+            rawSources.slice(0, 16).map(async (source) => {
+              if (source.snippet.length < 600 && source.url) {
                 const pageText = await fetchPageText(source.url);
                 if (pageText.length > source.snippet.length) {
                   return { ...source, snippet: pageText };

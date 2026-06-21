@@ -94,7 +94,7 @@ export async function searchTavily(
       body: JSON.stringify({
         query,
         max_results: limit,
-        search_depth: "basic",
+        search_depth: "advanced",
         include_answer: false,
         include_raw_content: false,
       }),
@@ -123,10 +123,10 @@ export async function fetchPageText(url: string): Promise<string> {
   let html: string;
   try {
     const res = await fetch(url, {
-      signal: AbortSignal.timeout(10_000),
+      signal: AbortSignal.timeout(12_000),
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; AtlasIQ/1.0; research-bot)",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
       },
     });
     if (!res.ok) return "";
@@ -136,10 +136,196 @@ export async function fetchPageText(url: string): Promise<string> {
   }
 
   const $ = cheerio.load(html);
-  $("script, style, noscript, head").remove();
 
-  const text = $("body").text().replace(/\s+/g, " ").trim();
-  return text.slice(0, 3000);
+  // Remove non-content elements
+  $(
+    "script, style, noscript, head, nav, footer, header, " +
+    "aside, .sidebar, .nav, .footer, .header, .menu, .breadcrumb, " +
+    ".cookie, .banner, .ad, .advertisement, .social-share, " +
+    ".related-posts, .comments, form, iframe, [role='navigation'], " +
+    "[role='banner'], [role='complementary']"
+  ).remove();
+
+  // Prefer article/main content selectors
+  const articleSelectors = [
+    "article",
+    "[role='main']",
+    "main",
+    ".post-content",
+    ".article-content",
+    ".entry-content",
+    ".content-body",
+    "#content",
+    ".prose",
+  ];
+
+  let text = "";
+  for (const sel of articleSelectors) {
+    const el = $(sel);
+    if (el.length > 0) {
+      text = el.text().replace(/\s+/g, " ").trim();
+      if (text.length > 200) break;
+    }
+  }
+
+  // Fallback to body if no article container found
+  if (text.length < 200) {
+    text = $("body").text().replace(/\s+/g, " ").trim();
+  }
+
+  return text.slice(0, 8000);
+}
+
+// ─── SEC EDGAR Full-Text Search ──────────────────────────────────────────────
+
+interface EdgarSource {
+  ciks?: string[];
+  display_names?: string[];
+  file_date?: string;
+  form?: string;
+  file_type?: string;
+  file_description?: string;
+  adsh?: string;
+  period_ending?: string;
+}
+
+interface EdgarResponse {
+  hits?: {
+    hits?: { _source: EdgarSource; _id: string }[];
+  };
+}
+
+function buildEdgarFilingUrl(cik: string, accession: string, filename: string): string {
+  const cleanCik = cik.replace(/^0+/, "");
+  return `https://www.sec.gov/Archives/edgar/data/${cleanCik}/${accession}/${filename}`;
+}
+
+export async function searchEdgar(
+  query: string,
+  limit = 5
+): Promise<ResearchSource[]> {
+  // Fetch more results and filter client-side for recent filings
+  const fetchSize = limit * 10;
+  const url = `https://efts.sec.gov/LATEST/search-index?q=${encodeURIComponent(query)}&forms=10-K,10-Q&size=${fetchSize}`;
+
+  let data: EdgarResponse;
+  try {
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(10_000),
+      headers: {
+        "User-Agent": "AtlasIQ/1.0 (blakehenkel24@gmail.com)",
+        Accept: "application/json",
+      },
+    });
+    if (!res.ok) return [];
+    data = (await res.json()) as EdgarResponse;
+  } catch {
+    return [];
+  }
+
+  const hits = data.hits?.hits ?? [];
+  const sources: ResearchSource[] = [];
+
+  // Filter for recent filings (2022+) and primary documents (not exhibits)
+  const recentHits = hits.filter((h) => {
+    const fileDate = h._source.file_date ?? "";
+    const fileType = h._source.file_type ?? h._source.form ?? "";
+    return fileDate >= "2022-01-01" && /^10-[KQ]/.test(fileType);
+  });
+
+  // Deduplicate by company (keep most recent filing per company)
+  const seenCompanies = new Set<string>();
+  for (const hit of recentHits) {
+    if (sources.length >= limit) break;
+    const s = hit._source;
+    const companyKey = s.ciks?.[0] ?? "";
+    if (seenCompanies.has(companyKey)) continue;
+    seenCompanies.add(companyKey);
+
+    const idParts = hit._id.split(":");
+    const accession = idParts[0] ?? "";
+    const filename = idParts[1] ?? "";
+    const cik = s.ciks?.[0] ?? "";
+    const displayName = s.display_names?.[0]?.replace(/\s*\(CIK.*/, "") ?? "Unknown";
+
+    const filingUrl = cik && accession && filename
+      ? buildEdgarFilingUrl(cik, accession, filename)
+      : "";
+
+    sources.push({
+      title: `[SEC] ${displayName} — ${s.form ?? s.file_type ?? "Filing"} (${s.file_date ?? ""})`,
+      url: filingUrl,
+      type: "registry" as const,
+      signal: "sec-edgar",
+      snippet: s.file_description ?? `${s.form} filing`,
+      query,
+      rank: 0,
+      score: 0,
+    });
+  }
+
+  return sources;
+}
+
+export async function searchEdgarCompany(
+  companyName: string,
+  limit = 3
+): Promise<ResearchSource[]> {
+  // Search for the company name in quotes to get exact matches, 10-K only for depth
+  const url = `https://efts.sec.gov/LATEST/search-index?q=%22${encodeURIComponent(companyName)}%22&forms=10-K&size=${limit}`;
+
+  let data: EdgarResponse;
+  try {
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(10_000),
+      headers: {
+        "User-Agent": "AtlasIQ/1.0 (blakehenkel24@gmail.com)",
+        Accept: "application/json",
+      },
+    });
+    if (!res.ok) return [];
+    data = (await res.json()) as EdgarResponse;
+  } catch {
+    return [];
+  }
+
+  const hits = data.hits?.hits ?? [];
+  const sources: ResearchSource[] = [];
+
+  for (const hit of hits.slice(0, limit)) {
+    const s = hit._source;
+    const idParts = hit._id.split(":");
+    const accession = idParts[0] ?? "";
+    const filename = idParts[1] ?? "";
+    const cik = s.ciks?.[0] ?? "";
+    const displayName = s.display_names?.[0]?.replace(/\s*\(CIK.*/, "") ?? companyName;
+
+    const filingUrl = cik && accession && filename
+      ? buildEdgarFilingUrl(cik, accession, filename)
+      : "";
+
+    // Extract filing text for richer snippets
+    let snippet = s.file_description ?? `${s.form} filing by ${displayName}`;
+    if (filingUrl) {
+      const pageText = await fetchPageText(filingUrl);
+      if (pageText.length > 200) {
+        snippet = pageText;
+      }
+    }
+
+    sources.push({
+      title: `[SEC] ${displayName} — ${s.form ?? "10-K"} (${s.file_date ?? ""})`,
+      url: filingUrl,
+      type: "registry" as const,
+      signal: "sec-edgar",
+      snippet,
+      query: companyName,
+      rank: 0,
+      score: 0,
+    });
+  }
+
+  return sources;
 }
 
 // ─── Query Generators ─────────────────────────────────────────────────────────
@@ -174,9 +360,11 @@ export function getCompanyQueries(company: string): string[] {
 
 export async function gatherSources(
   queries: string[],
-  tavilyApiKey?: string
+  tavilyApiKey?: string,
+  mode?: "market" | "company" | "chat"
 ): Promise<ResearchSource[]> {
-  const results = await Promise.all(
+  // Primary search: Tavily (preferred) or DuckDuckGo
+  const primaryResults = await Promise.all(
     queries.map((q) =>
       tavilyApiKey
         ? searchTavily(q, tavilyApiKey)
@@ -184,7 +372,18 @@ export async function gatherSources(
     )
   );
 
-  const flat = results.flat();
+  // SEC EDGAR: run sector/company-relevant queries in parallel
+  const edgarQueries = queries
+    .filter((q) =>
+      /market size|revenue|margin|growth|M&A|acquisition|competitor/i.test(q)
+    )
+    .slice(0, 3);
+
+  const edgarResults = await Promise.all(
+    edgarQueries.map((q) => searchEdgar(q, 3))
+  );
+
+  const flat = [...primaryResults.flat(), ...edgarResults.flat()];
 
   // Deduplicate by URL (prefer first occurrence), then by title if no URL
   const seenUrls = new Set<string>();
