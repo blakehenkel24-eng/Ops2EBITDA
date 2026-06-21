@@ -106,6 +106,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const historyLoadedRef = useRef(false);
   const [slashDismissed, setSlashDismissed] = useState(false);
   const [slashIndex, setSlashIndex] = useState(0);
+  const [reportRevealing, setReportRevealing] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const slashMenuRef = useRef<HTMLDivElement>(null);
@@ -229,15 +230,27 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     });
   }, [activeSessionId, fullPage, messages]);
 
-  // Clear progress only when loading transitions from true -> false
+  const isReport = researchMode === "market" || researchMode === "company";
+
+  // When loading ends: for reports, trigger reveal animation then clear
   const wasLoadingRef = useRef(false);
   useEffect(() => {
     if (wasLoadingRef.current && !isLoading) {
+      if (researchMode === "market" || researchMode === "company") {
+        setReportRevealing(true);
+        const timer = window.setTimeout(() => {
+          setReportRevealing(false);
+          setProgressStages([]);
+          setResearchMode("chat");
+        }, 600);
+        wasLoadingRef.current = isLoading;
+        return () => window.clearTimeout(timer);
+      }
       setProgressStages([]);
       setResearchMode("chat");
     }
     wasLoadingRef.current = isLoading;
-  }, [isLoading]);
+  }, [isLoading, researchMode]);
 
   // Find last assistant message index for command bar
   const lastAssistantIdx = useMemo(() => {
@@ -477,26 +490,34 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
           {/* Message thread */}
           <div className="mx-auto max-w-4xl">
-            {messages.map((message, idx) => (
-              <AtlasChatMessage
-                key={message.id}
-                role={message.role as "user" | "assistant"}
-                content={getMessageText(message.parts)}
-                onCommand={
-                  message.role === "assistant" && idx === lastAssistantIdx && !isLoading
-                    ? handleCommand
-                    : undefined
-                }
-                isStreaming={
-                  isLoading && message.id === messages[messages.length - 1]?.id
-                }
-              />
-            ))}
-            {isLoading && (
+            {messages.map((message, idx) => {
+              const isLastMessage = message.id === messages[messages.length - 1]?.id;
+              const isStreamingMsg = isLoading && isLastMessage;
+              const hideForReport = isReport && isStreamingMsg && message.role === "assistant";
+
+              return (
+                <AtlasChatMessage
+                  key={message.id}
+                  role={message.role as "user" | "assistant"}
+                  content={getMessageText(message.parts)}
+                  onCommand={
+                    message.role === "assistant" && idx === lastAssistantIdx && !isLoading
+                      ? handleCommand
+                      : undefined
+                  }
+                  isStreaming={isStreamingMsg && !hideForReport}
+                  isHidden={hideForReport}
+                  isRevealing={reportRevealing && isLastMessage && message.role === "assistant"}
+                />
+              );
+            })}
+            {(isLoading || (reportRevealing && isReport)) && (
               <AtlasResearchProgress
                 visible
                 mode={researchMode}
                 stages={progressStages}
+                isComposing={isReport && isLoading && progressStages.some(s => s.id === "synthesis")}
+                isFadingOut={reportRevealing}
               />
             )}
           </div>

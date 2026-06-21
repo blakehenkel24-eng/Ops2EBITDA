@@ -6,12 +6,16 @@ interface AtlasResearchProgressProps {
   visible: boolean;
   mode?: string;
   stages?: ProgressStage[];
+  isComposing?: boolean;
+  isFadingOut?: boolean;
 }
 
 export function AtlasResearchProgress({
   visible,
   mode,
   stages,
+  isComposing,
+  isFadingOut,
 }: AtlasResearchProgressProps) {
   if (!visible) return null;
 
@@ -24,7 +28,7 @@ export function AtlasResearchProgress({
     const pct = Math.round((doneCount / Math.max(total, 1)) * 100);
 
     return (
-      <div className="mb-6 animate-in fade-in duration-300">
+      <div className={`mb-6 ${isFadingOut ? "atlas-progress-fadeout" : "animate-in fade-in duration-300"}`}>
         <div className="flex gap-3">
           {/* AI icon */}
           <div className="atlas-ai-icon mt-0.5 shrink-0">
@@ -66,6 +70,9 @@ export function AtlasResearchProgress({
                 style={{ width: `${pct}%` }}
               />
             </div>
+
+            {/* Document composing skeleton */}
+            {isComposing && <DocumentComposingSkeleton />}
           </div>
         </div>
       </div>
@@ -153,5 +160,52 @@ function Spinner() {
         strokeLinecap="round"
       />
     </svg>
+  );
+}
+
+function DocumentComposingSkeleton() {
+  return (
+    <div className="mt-5 atlas-doc-skeleton animate-in fade-in duration-500">
+      <div className="rounded-xl border border-line/30 bg-[oklch(99.5%_0.002_240)] p-5 shadow-[0_1px_4px_oklch(31%_0.038_248_/_0.06)]">
+        {/* Title line */}
+        <div className="atlas-skeleton-line h-4 w-3/5 rounded bg-[oklch(92%_0.008_240)] mb-4" />
+
+        {/* Section heading */}
+        <div className="atlas-skeleton-line h-3 w-2/5 rounded bg-[oklch(90%_0.012_248)] mb-3" style={{ animationDelay: "0.3s" }} />
+
+        {/* Body lines */}
+        <div className="space-y-2 mb-4">
+          <div className="atlas-skeleton-line h-2.5 w-full rounded bg-[oklch(94%_0.006_240)]" style={{ animationDelay: "0.5s" }} />
+          <div className="atlas-skeleton-line h-2.5 w-11/12 rounded bg-[oklch(94%_0.006_240)]" style={{ animationDelay: "0.7s" }} />
+          <div className="atlas-skeleton-line h-2.5 w-4/5 rounded bg-[oklch(94%_0.006_240)]" style={{ animationDelay: "0.9s" }} />
+        </div>
+
+        {/* Another section */}
+        <div className="atlas-skeleton-line h-3 w-1/3 rounded bg-[oklch(90%_0.012_248)] mb-3" style={{ animationDelay: "1.2s" }} />
+        <div className="space-y-2 mb-4">
+          <div className="atlas-skeleton-line h-2.5 w-full rounded bg-[oklch(94%_0.006_240)]" style={{ animationDelay: "1.4s" }} />
+          <div className="atlas-skeleton-line h-2.5 w-10/12 rounded bg-[oklch(94%_0.006_240)]" style={{ animationDelay: "1.6s" }} />
+          <div className="atlas-skeleton-line h-2.5 w-3/4 rounded bg-[oklch(94%_0.006_240)]" style={{ animationDelay: "1.8s" }} />
+          <div className="atlas-skeleton-line h-2.5 w-5/6 rounded bg-[oklch(94%_0.006_240)]" style={{ animationDelay: "2.0s" }} />
+        </div>
+
+        {/* Table placeholder */}
+        <div className="atlas-skeleton-line h-3 w-1/4 rounded bg-[oklch(90%_0.012_248)] mb-2" style={{ animationDelay: "2.3s" }} />
+        <div className="rounded-lg border border-line/20 overflow-hidden" style={{ animationDelay: "2.5s" }}>
+          <div className="flex gap-2 p-2 bg-[oklch(96%_0.006_240)]">
+            <div className="atlas-skeleton-line h-2 w-1/4 rounded bg-[oklch(90%_0.008_242)]" />
+            <div className="atlas-skeleton-line h-2 w-1/4 rounded bg-[oklch(90%_0.008_242)]" />
+            <div className="atlas-skeleton-line h-2 w-1/4 rounded bg-[oklch(90%_0.008_242)]" />
+          </div>
+          {[0, 1, 2].map((row) => (
+            <div key={row} className="flex gap-2 p-2 border-t border-line/10">
+              <div className="atlas-skeleton-line h-2 w-1/4 rounded bg-[oklch(94%_0.005_240)]" style={{ animationDelay: `${2.7 + row * 0.2}s` }} />
+              <div className="atlas-skeleton-line h-2 w-1/4 rounded bg-[oklch(94%_0.005_240)]" style={{ animationDelay: `${2.8 + row * 0.2}s` }} />
+              <div className="atlas-skeleton-line h-2 w-1/4 rounded bg-[oklch(94%_0.005_240)]" style={{ animationDelay: `${2.9 + row * 0.2}s` }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

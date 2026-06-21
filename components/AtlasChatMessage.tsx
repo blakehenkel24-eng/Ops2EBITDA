@@ -13,6 +13,8 @@ interface AtlasChatMessageProps {
   memo?: { mode: string; query: string; confidence: string; createdAt: string };
   onCommand?: (command: string) => void;
   isStreaming?: boolean;
+  isHidden?: boolean;
+  isRevealing?: boolean;
 }
 
 export function AtlasChatMessage({
@@ -22,6 +24,8 @@ export function AtlasChatMessage({
   memo,
   onCommand,
   isStreaming,
+  isHidden,
+  isRevealing,
 }: AtlasChatMessageProps) {
   if (role === "user") {
     return (
@@ -33,8 +37,14 @@ export function AtlasChatMessage({
     );
   }
 
+  const wrapperClass = isHidden
+    ? "mb-6 group/msg atlas-report-hidden"
+    : isRevealing
+      ? "mb-6 group/msg atlas-report-reveal"
+      : "mb-6 group/msg";
+
   return (
-    <div className="mb-6 group/msg">
+    <div className={wrapperClass}>
       <div className="flex gap-3">
         {/* AI icon */}
         <div className="atlas-ai-icon mt-1 shrink-0">
@@ -66,14 +76,14 @@ export function AtlasChatMessage({
           )}
 
           {/* Hover action bar below the card */}
-          {!isStreaming && content.length > 20 && (
+          {!isStreaming && !isHidden && content.length > 20 && (
             <div className="atlas-msg-actions mt-1 flex items-center gap-0.5 pl-1">
               <CopyButton text={content} />
             </div>
           )}
 
           {/* Command bar */}
-          {onCommand && !isStreaming && (
+          {onCommand && !isStreaming && !isHidden && (
             <div className="mt-2.5 pl-1">
               <AtlasCommandBar onCommand={onCommand} compact />
             </div>
