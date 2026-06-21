@@ -70,7 +70,7 @@
     {
       "title": "Deal Lifecycle workflow",
       "description": "A practical flow from diagnosis through execution and value impact.",
-      "chart": "flowchart TB\n  A[\"Investment thesis\"] --> B[\"Commercial and operational diligence\"]\n  B --> C[\"Value creation underwriting\"]\n  C --> D[\"Close and 100-day plan\"]\n  D --> E[\"Portfolio operating cadence\"]\n  E --> F[\"Exit readiness\"]\n  F --> G[\"Sale process and buyer diligence\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+      "chart": "flowchart TB\n  A[\"Investment thesis\"] --> B[\"Commercial and operational<br/>diligence\"]\n  B --> C[\"Value creation underwriting\"]\n  C --> D[\"Close and 100-day plan\"]\n  D --> E[\"Portfolio operating cadence\"]\n  E --> F[\"Exit readiness\"]\n  F --> G[\"Sale process and buyer diligence\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
     }
   ]
 }

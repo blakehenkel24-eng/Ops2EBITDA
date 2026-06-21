@@ -113,7 +113,7 @@
     {
       "title": "Customer Retention / Churn Reduction workflow",
       "description": "A realistic operator flow from diagnosis through execution, KPI tracking, and value impact.",
-      "chart": "flowchart TB\n  A[\"Customer base\"] --> B[\"Cohort and segment churn\"]\n  B --> C[\"Root-cause reason codes\"]\n  C --> D[\"At-risk account list\"]\n  D --> E[\"Save / onboarding / success plays\"]\n  E --> F[\"Renewal outcome\"]\n  F --> G[\"GRR / NRR bridge\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+      "chart": "flowchart TB\n  A[\"Customer base\"] --> B[\"Cohort and segment churn\"]\n  B --> C[\"Root-cause reason codes\"]\n  C --> D[\"At-risk account list\"]\n  D --> E[\"Save / onboarding / success<br/>plays\"]\n  E --> F[\"Renewal outcome\"]\n  F --> G[\"GRR / NRR bridge\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
     }
   ]
 }

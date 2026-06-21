@@ -71,7 +71,7 @@
     {
       "title": "Management Equity Proceeds Waterfall",
       "description": "A complete illustrative waterfall from enterprise value through sponsor priority and individual management settlement.",
-      "chart": "flowchart TB\n  A[\"Exit enterprise value: $220m\"] --> B[\"Less net debt: $35m\"]\n  B --> C[\"Less transaction fees: $5m\"]\n  C --> D[\"Equity proceeds: $180m\"]\n  D --> E[\"Return sponsor invested capital: $60m\"]\n  E --> F[\"Residual above return-of-capital hurdle: $120m\"]\n  F --> G[\"Management pool at 10%: $12m\"]\n  F --> H[\"Sponsor residual at 90%: $108m\"]\n  G --> I[\"CEO allocation at 30%: $3.6m\"]\n  I --> J[\"Gross vested management proceeds at 80% vesting: $2.88m\"]\n  J --> K[\"Less $0.2m exercise price\"]\n  K --> L[\"Net proceeds after exercise: $2.68m before escrow and tax\"]"
+      "chart": "flowchart TB\n  A[\"Exit enterprise value: $220m\"] --> B[\"Less net debt: $35m\"]\n  B --> C[\"Less transaction fees: $5m\"]\n  C --> D[\"Equity proceeds: $180m\"]\n  D --> E[\"Return sponsor invested capital:<br/>$60m\"]\n  E --> F[\"Residual above return-of-capital<br/>hurdle: $120m\"]\n  F --> G[\"Management pool at 10%: $12m\"]\n  F --> H[\"Sponsor residual at 90%: $108m\"]\n  G --> I[\"CEO allocation at 30%: $3.6m\"]\n  I --> J[\"Gross vested management proceeds<br/>at 80% vesting: $2.88m\"]\n  J --> K[\"Less $0.2m exercise price\"]\n  K --> L[\"Net proceeds after exercise:<br/>$2.68m before escrow and tax\"]"
     }
   ]
 }

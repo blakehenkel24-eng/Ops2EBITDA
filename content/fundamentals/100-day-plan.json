@@ -71,7 +71,7 @@
     {
       "title": "100-Day Plan-to-EBITDA Workflow",
       "description": "The operating workflow converts diligence hypotheses into validated initiatives, measured earnings, and the hold-period value creation plan.",
-      "chart": "flowchart LR\n  A[\"IC mandate and diligence findings\"] --> B[\"Reconcile operating baseline\"]\n  B --> C[\"Initiative charters: owner, action, cost, timing\"]\n  C --> D{\"Pilot evidence passes gate?\"}\n  D -- \"No\" --> E[\"Redesign, defer, or remove benefit\"]\n  D -- \"Yes\" --> F[\"Scale operational change\"]\n  F --> G[\"CFO validates realized EBITDA and cash\"]\n  G --> H[\"Day-100 board proof gate\"]\n  H --> I[\"Hold-period VCP and exit bridge\"]\n  E --> H"
+      "chart": "flowchart LR\n  A[\"IC mandate and diligence<br/>findings\"] --> B[\"Reconcile operating baseline\"]\n  B --> C[\"Initiative charters: owner,<br/>action, cost, timing\"]\n  C --> D{\"Pilot evidence passes gate?\"}\n  D -- \"No\" --> E[\"Redesign, defer, or remove<br/>benefit\"]\n  D -- \"Yes\" --> F[\"Scale operational change\"]\n  F --> G[\"CFO validates realized EBITDA<br/>and cash\"]\n  G --> H[\"Day-100 board proof gate\"]\n  H --> I[\"Hold-period VCP and exit bridge\"]\n  E --> H"
     }
   ]
 }

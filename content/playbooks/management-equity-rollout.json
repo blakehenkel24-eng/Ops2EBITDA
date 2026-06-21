@@ -113,7 +113,7 @@
     {
       "title": "Management equity design-to-exit workflow",
       "description": "The workflow connects role alignment and waterfall economics to approvals, communication, administration, and verified exit settlement.",
-      "chart": "flowchart TB\n  A[\"Value-creation roles and eligibility bands\"] --> B[\"Fully diluted pool and exit waterfall\"]\n  B --> C[\"Vesting, hurdle, and leaver design\"]\n  C --> D[\"Legal, tax, valuation, and accounting review\"]\n  D --> E{\"Board approvals and documents complete?\"}\n  E -->|\"No\"| D\n  E -->|\"Yes\"| F[\"Individual proceeds illustrations and rollout\"]\n  F --> G[\"Executed grants and cap-table administration\"]\n  G --> H[\"Quarterly vesting, pool, and leadership review\"]\n  H --> I[\"Approved refreshes or leaver treatment\"]\n  I --> G\n  H --> J[\"Exit cap-table reconciliation and funds flow\"]\n  J --> K[\"Verified participant settlement and rollover\"]"
+      "chart": "flowchart TB\n  A[\"Value-creation roles and<br/>eligibility bands\"] --> B[\"Fully diluted pool and exit<br/>waterfall\"]\n  B --> C[\"Vesting, hurdle, and leaver<br/>design\"]\n  C --> D[\"Legal, tax, valuation, and<br/>accounting review\"]\n  D --> E{\"Board approvals and documents<br/>complete?\"}\n  E -->|\"No\"| D\n  E -->|\"Yes\"| F[\"Individual proceeds<br/>illustrations and rollout\"]\n  F --> G[\"Executed grants and cap-table<br/>administration\"]\n  G --> H[\"Quarterly vesting, pool, and<br/>leadership review\"]\n  H --> I[\"Approved refreshes or leaver<br/>treatment\"]\n  I --> G\n  H --> J[\"Exit cap-table reconciliation<br/>and funds flow\"]\n  J --> K[\"Verified participant settlement<br/>and rollover\"]"
     }
   ]
 }

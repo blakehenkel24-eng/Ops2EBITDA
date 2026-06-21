@@ -112,7 +112,7 @@
     {
       "title": "Add-On Acquisition Integration workflow",
       "description": "A realistic operator flow from diagnosis through execution, KPI tracking, and value impact.",
-      "chart": "flowchart TB\n  A[\"Integration thesis before signing\"] --> B[\"Close readiness\"]\n  B --> C[\"Protect customers and critical talent\"]\n  C --> D[\"Install finance and KPI controls\"]\n  D --> E[\"Capture validated synergies\"]\n  E --> F[\"Migrate systems and process\"]\n  F --> G[\"Repeatable integration playbook\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
+      "chart": "flowchart TB\n  A[\"Integration thesis before<br/>signing\"] --> B[\"Close readiness\"]\n  B --> C[\"Protect customers and critical<br/>talent\"]\n  C --> D[\"Install finance and KPI controls\"]\n  D --> E[\"Capture validated synergies\"]\n  E --> F[\"Migrate systems and process\"]\n  F --> G[\"Repeatable integration playbook\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,F accent"
     }
   ]
 }

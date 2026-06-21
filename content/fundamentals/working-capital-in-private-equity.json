@@ -71,7 +71,7 @@
     {
       "title": "Working Capital Days-to-Cash Bridge",
       "description": "The bridge converts targeted DSO, inventory, and DPO improvements into a reconciled cash release while preserving operating gates.",
-      "chart": "flowchart LR\n  A[\"Baseline CCC: 60 DSO + 90 DIO - 35 DPO = 115 days\"] --> B[\"DSO to 48: $3.95M release\"]\n  B --> C[\"DIO to 75: $2.96M release\"]\n  C --> D[\"DPO to 45: $1.97M release\"]\n  D --> E[\"Target CCC: 48 + 75 - 45 = 78 days\"]\n  E --> F[\"Gross cash release: $8.88M\"]\n  F --> G{\"Customer, service, supplier, and control gates pass?\"}\n  G -- \"No\" --> H[\"Correct leakage and reset the initiative\"]\n  H --> B\n  G -- \"Yes\" --> I[\"Repay debt, fund growth, or protect liquidity\"]\n  I --> J[\"Sustain through seasonality and defend at exit\"]"
+      "chart": "flowchart LR\n  A[\"Baseline CCC: 60 DSO + 90 DIO -<br/>35 DPO = 115 days\"] --> B[\"DSO to 48: $3.95M release\"]\n  B --> C[\"DIO to 75: $2.96M release\"]\n  C --> D[\"DPO to 45: $1.97M release\"]\n  D --> E[\"Target CCC: 48 + 75 - 45 = 78<br/>days\"]\n  E --> F[\"Gross cash release: $8.88M\"]\n  F --> G{\"Customer, service, supplier, and<br/>control gates pass?\"}\n  G -- \"No\" --> H[\"Correct leakage and reset the<br/>initiative\"]\n  H --> B\n  G -- \"Yes\" --> I[\"Repay debt, fund growth, or<br/>protect liquidity\"]\n  I --> J[\"Sustain through seasonality and<br/>defend at exit\"]"
     }
   ]
 }

@@ -112,7 +112,7 @@
     {
       "title": "AI Opportunity Identification workflow",
       "description": "A realistic operator flow from diagnosis through execution, KPI tracking, and value impact.",
-      "chart": "flowchart TB\n  A[\"Workflow inventory\"] --> B[\"Value / feasibility / risk score\"]\n  B --> C[\"Data readiness check\"]\n  C --> D[\"Pilot design with controls\"]\n  D --> E[\"Measure cycle time, cost, quality\"]\n  E --> F{\"Benefit proven?\"}\n  F -->|\"Yes\"| G[\"Scale\"]\n  F -->|\"No\"| H[\"Stop or redesign\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,H accent\n  class F base"
+      "chart": "flowchart TB\n  A[\"Workflow inventory\"] --> B[\"Value / feasibility / risk score\"]\n  B --> C[\"Data readiness check\"]\n  C --> D[\"Pilot design with controls\"]\n  D --> E[\"Measure cycle time, cost,<br/>quality\"]\n  E --> F{\"Benefit proven?\"}\n  F -->|\"Yes\"| G[\"Scale\"]\n  F -->|\"No\"| H[\"Stop or redesign\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C,D base\n  class E,H accent\n  class F base"
     }
   ]
 }

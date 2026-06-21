@@ -112,7 +112,7 @@
     {
       "title": "Working Capital Improvement workflow",
       "description": "A realistic operator flow from diagnosis through execution, KPI tracking, and value impact.",
-      "chart": "flowchart TB\n  A[\"Balance sheet baseline\"] --> B[\"DSO + inventory + DPO bridge\"]\n  B --> C[\"Segment by customer / SKU / vendor\"]\n  C --> D[\"Collections, inventory, terms workstreams\"]\n  D --> E[\"Daily cash review\"]\n  E --> F[\"Released cash\"]\n  F --> G[\"Debt paydown / growth capacity\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C base\n  class D,E,F accent"
+      "chart": "flowchart TB\n  A[\"Balance sheet baseline\"] --> B[\"DSO + inventory + DPO bridge\"]\n  B --> C[\"Segment by customer / SKU /<br/>vendor\"]\n  C --> D[\"Collections, inventory, terms<br/>workstreams\"]\n  D --> E[\"Daily cash review\"]\n  E --> F[\"Released cash\"]\n  F --> G[\"Debt paydown / growth capacity\"]\n\n  classDef base fill:#f0ece3,stroke:#ded8cd,color:#22201c\n  classDef accent fill:#f1e4dc,stroke:#7a3f2c,color:#22201c\n  classDef strong fill:#7a3f2c,stroke:#7a3f2c,color:#fffdf8\n  class A,G strong\n  class B,C base\n  class D,E,F accent"
     }
   ]
 }

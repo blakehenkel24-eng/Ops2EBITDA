@@ -113,7 +113,7 @@
     {
       "title": "Margin leakage diagnostic and control loop",
       "description": "A transaction-level loop reconciles expected economics, isolates root causes, installs controls, and validates durable EBITDA capture.",
-      "chart": "flowchart TB\n  A[\"Expected price and standard cost\"] --> B[\"Transaction-level pocket margin waterfall\"]\n  B --> C[\"Segment by customer, product, site, channel, and exception\"]\n  C --> D{\"Root cause\"}\n  D -->|\"Commercial\"| E[\"Discount, freight, rebate, credit, billing actions\"]\n  D -->|\"Operational\"| F[\"Yield, scrap, rework, overtime, service actions\"]\n  E --> G[\"Preventive system and approval controls\"]\n  F --> G\n  G --> H[\"Weekly exception closure by named owners\"]\n  H --> I[\"Finance matches realized transactions to baseline\"]\n  I --> J{\"P&L benefit and customer/service guardrails hold?\"}\n  J -->|\"No\"| D\n  J -->|\"Yes\"| K[\"Validated EBITDA and durable exit evidence\"]"
+      "chart": "flowchart TB\n  A[\"Expected price and standard cost\"] --> B[\"Transaction-level pocket margin<br/>waterfall\"]\n  B --> C[\"Segment by customer, product,<br/>site, channel, and exception\"]\n  C --> D{\"Root cause\"}\n  D -->|\"Commercial\"| E[\"Discount, freight, rebate,<br/>credit, billing actions\"]\n  D -->|\"Operational\"| F[\"Yield, scrap, rework, overtime,<br/>service actions\"]\n  E --> G[\"Preventive system and approval<br/>controls\"]\n  F --> G\n  G --> H[\"Weekly exception closure by<br/>named owners\"]\n  H --> I[\"Finance matches realized<br/>transactions to baseline\"]\n  I --> J{\"P&L benefit and customer/service<br/>guardrails hold?\"}\n  J -->|\"No\"| D\n  J -->|\"Yes\"| K[\"Validated EBITDA and durable<br/>exit evidence\"]"
     }
   ]
 }
