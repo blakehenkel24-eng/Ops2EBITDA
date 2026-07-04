@@ -7,6 +7,7 @@ import {
   ATLAS_COMMANDS,
 } from "@/lib/atlas/prompts";
 import { searchOperatingLibrary, buildLibraryContext } from "@/lib/atlas/library";
+import { buildDealContext } from "@/lib/atlas/deal";
 import {
   gatherSources,
   getMarketQueries,
@@ -31,7 +32,7 @@ function parseMode(text: string): { mode: string; clean: string } {
 }
 
 export async function POST(req: Request) {
-  const { messages: rawMessages, mode: bodyMode = "chat" } = await req.json();
+  const { messages: rawMessages, mode: bodyMode = "chat", dealId = null } = await req.json();
 
   const messages = rawMessages.map(
     (m: { role: string; content?: string; parts?: { type: string; text: string }[] }) => ({
@@ -63,6 +64,8 @@ export async function POST(req: Request) {
   if (command) {
     systemPrompt += `\n\nThe user has invoked the ${command.label} command. ${command.prompt} Use the conversation context to generate the requested output.`;
   }
+
+  const dealContext = await buildDealContext(dealId);
 
   // ── Report mode: full research pipeline with live progress ─────────
   if (isReport) {
@@ -127,6 +130,9 @@ export async function POST(req: Request) {
           if (libraryContext) {
             fullDigest += `\n\nOperating library context (private, do not cite as a source):\n${libraryContext}`;
           }
+          if (dealContext) {
+            fullDigest += `\n\n${dealContext}`;
+          }
           emit(
             "operating_library",
             libraryChunks.length > 0
@@ -180,6 +186,9 @@ export async function POST(req: Request) {
   const libraryContext = buildLibraryContext(libraryChunks);
   if (libraryContext) {
     systemPrompt += `\n\n${libraryContext}`;
+  }
+  if (dealContext) {
+    systemPrompt += `\n\n${dealContext}`;
   }
 
   const result = streamText({
