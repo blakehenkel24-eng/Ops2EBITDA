@@ -8,7 +8,8 @@ import { AtlasResearchProgress } from "./AtlasResearchProgress";
 import { AtlasWelcome } from "./AtlasWelcome";
 import { AtlasResearchForm } from "./AtlasResearchForm";
 import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
-import { ArrowUp, Landmark, Building2, History, MessageSquarePlus, PanelLeftClose, Trash2 } from "lucide-react";
+import { ArrowUp, Landmark, Building2, History, MessageSquarePlus, PanelLeftClose, Trash2, Layers } from "lucide-react";
+import { DealWorkspacePanel } from "./DealWorkspacePanel";
 import type { UIMessage } from "@ai-sdk/react";
 
 function getMessageText(parts: UIMessagePart<UIDataTypes, UITools>[]): string {
@@ -101,6 +102,8 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [progressStages, setProgressStages] = useState<ProgressStage[]>([]);
   const [input, setInput] = useState("");
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [activeDealId, setActiveDealId] = useState<string | null>(null);
+  const [dealPanelOpen, setDealPanelOpen] = useState(false);
   const [sessions, setSessions] = useState<AtlasChatSession[]>([]);
   const [activeSessionId, setActiveSessionId] = useState(createSessionId);
   const historyLoadedRef = useRef(false);
@@ -190,10 +193,10 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     () =>
       new TextStreamChatTransport({
         api: "/api/atlas/chat",
-        body: { mode: "chat" },
+        body: { mode: "chat", dealId: activeDealId },
         fetch: customFetch,
       }),
-    [customFetch]
+    [customFetch, activeDealId]
   );
 
   const { messages, sendMessage, status, setMessages } = useChat({ transport });
@@ -235,21 +238,36 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   // When loading ends: for reports, trigger reveal animation then clear
   const wasLoadingRef = useRef(false);
   useEffect(() => {
-    if (wasLoadingRef.current && !isLoading) {
-      if (researchMode === "market" || researchMode === "company") {
+    if (!wasLoadingRef.current || isLoading) {
+      wasLoadingRef.current = isLoading;
+      return;
+    }
+
+    wasLoadingRef.current = isLoading;
+
+    if (researchMode === "market" || researchMode === "company") {
+      let finishTimer: number | undefined;
+      const revealTimer = window.setTimeout(() => {
         setReportRevealing(true);
-        const timer = window.setTimeout(() => {
+        finishTimer = window.setTimeout(() => {
           setReportRevealing(false);
           setProgressStages([]);
           setResearchMode("chat");
         }, 600);
-        wasLoadingRef.current = isLoading;
-        return () => window.clearTimeout(timer);
-      }
+      }, 0);
+
+      return () => {
+        window.clearTimeout(revealTimer);
+        if (finishTimer) window.clearTimeout(finishTimer);
+      };
+    }
+
+    const resetTimer = window.setTimeout(() => {
       setProgressStages([]);
       setResearchMode("chat");
-    }
-    wasLoadingRef.current = isLoading;
+    }, 0);
+
+    return () => window.clearTimeout(resetTimer);
   }, [isLoading, researchMode]);
 
   // Find last assistant message index for command bar
@@ -476,6 +494,23 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
             onSelectSession={handleSelectSession}
             onDeleteSession={handleDeleteSession}
           />
+          {!dealPanelOpen && (
+            <button
+              type="button"
+              onClick={() => setDealPanelOpen(true)}
+              className="deal-workspace-trigger"
+              aria-label="Open deal workspace"
+              aria-expanded={false}
+            >
+              <Layers size={17} strokeWidth={1.8} />
+            </button>
+          )}
+          <DealWorkspacePanel
+            open={dealPanelOpen}
+            onClose={() => setDealPanelOpen(false)}
+            activeDealId={activeDealId}
+            onActiveDealChange={setActiveDealId}
+          />
         </>
       )}
       <section className={shellClass}>
@@ -495,6 +530,21 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
               const isStreamingMsg = isLoading && isLastMessage;
               const hideForReport = isReport && isStreamingMsg && message.role === "assistant";
 
+              // Detect if this assistant message is a report by checking preceding user message
+              let msgReportMode: "market" | "company" | undefined;
+              let msgReportQuery: string | undefined;
+              if (message.role === "assistant" && idx > 0) {
+                const prevMsg = messages[idx - 1];
+                if (prevMsg?.role === "user") {
+                  const rawText = getMessageText(prevMsg.parts);
+                  const modeMatch = rawText.match(/^\[mode:(market|company)]\s*/);
+                  if (modeMatch) {
+                    msgReportMode = modeMatch[1] as "market" | "company";
+                    msgReportQuery = rawText.slice(modeMatch[0].length);
+                  }
+                }
+              }
+
               return (
                 <AtlasChatMessage
                   key={message.id}
@@ -508,6 +558,8 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                   isStreaming={isStreamingMsg && !hideForReport}
                   isHidden={hideForReport}
                   isRevealing={reportRevealing && isLastMessage && message.role === "assistant"}
+                  reportMode={msgReportMode}
+                  reportQuery={msgReportQuery}
                 />
               );
             })}
