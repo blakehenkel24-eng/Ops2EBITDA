@@ -1,11 +1,26 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Layers, X, Upload, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { X, Upload, Loader2, Check, AlertCircle } from "lucide-react";
 import type { Deal, DealDocument, DealStage, DealType, ValueLever } from "@/lib/atlas/deal-types";
 
-const STAGES: DealStage[] = ["sourced", "screening", "ioi", "loi", "diligence", "ic", "closed", "passed"];
-const TYPES: DealType[] = ["platform", "bolt_on", "tuck_in", "carve_out", "other"];
+const STAGES: { id: DealStage; label: string }[] = [
+  { id: "sourced", label: "Sourced" },
+  { id: "screening", label: "Screening" },
+  { id: "ioi", label: "IOI" },
+  { id: "loi", label: "LOI" },
+  { id: "diligence", label: "Diligence" },
+  { id: "ic", label: "IC" },
+  { id: "closed", label: "Closed" },
+  { id: "passed", label: "Passed" },
+];
+const TYPES: { id: DealType; label: string }[] = [
+  { id: "platform", label: "Platform" },
+  { id: "bolt_on", label: "Bolt-on" },
+  { id: "tuck_in", label: "Tuck-in" },
+  { id: "carve_out", label: "Carve-out" },
+  { id: "other", label: "Other" },
+];
 const LEVERS: { id: ValueLever; label: string }[] = [
   { id: "organic_growth", label: "Organic growth" },
   { id: "margin_expansion", label: "Margin expansion" },
@@ -13,6 +28,9 @@ const LEVERS: { id: ValueLever; label: string }[] = [
   { id: "multiple_expansion", label: "Multiple exp." },
   { id: "deleveraging", label: "Deleveraging" },
 ];
+const DOC_TAG: Record<string, string> = {
+  cim: "CIM", qoe: "QoE", mgmt_deck: "Deck", teaser: "Teaser", other: "Doc",
+};
 
 interface Props {
   open: boolean;
@@ -102,101 +120,138 @@ export function DealWorkspacePanel({ open, onClose, activeDealId, onActiveDealCh
     patchActive({ levers: next });
   }, [active, patchActive]);
 
+  const onSwitch = useCallback((value: string) => {
+    if (value === "__new") newDeal();
+    else onActiveDealChange(value);
+  }, [newDeal, onActiveDealChange]);
+
   return (
     <aside className={`deal-workspace-panel ${open ? "is-open" : ""}`} aria-hidden={!open} inert={!open}>
-      <div className="flex h-14 items-center justify-between border-b border-line/45 px-4">
-        <div className="flex items-center gap-2">
-          <Layers size={15} strokeWidth={1.7} className="text-accent" />
-          <span className="font-mono-label text-[0.68rem] text-ink">Deal workspace</span>
+      <header className="shrink-0 px-5 pt-4 pb-3.5 border-b border-line/40">
+        <div className="mb-2.5 flex items-center justify-between">
+          <span className="dw-overline">Deal dossier</span>
+          <div className="flex items-center gap-1">
+            {deals.length > 0 && (
+              <select
+                className="dw-switch"
+                value={active?.id ?? ""}
+                onChange={(e) => onSwitch(e.target.value)}
+                aria-label="Switch deal"
+              >
+                {deals.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
+                <option value="__new">+ New deal</option>
+              </select>
+            )}
+            <button type="button" onClick={onClose} aria-label="Close deal workspace" className="dw-iconbtn">
+              <X size={15} strokeWidth={1.8} />
+            </button>
+          </div>
         </div>
-        <button type="button" onClick={onClose} aria-label="Close deal workspace" className="text-stone/70">
-          <X size={15} strokeWidth={1.8} />
-        </button>
-      </div>
 
-      <div className="border-b border-line/35 p-3">
-        <select
-          className="deal-workspace-field"
-          value={active?.id ?? ""}
-          onChange={(e) => (e.target.value === "__new" ? newDeal() : onActiveDealChange(e.target.value))}
-        >
-          {deals.length === 0 && <option value="">No deals yet</option>}
-          {deals.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
-          <option value="__new">+ New deal</option>
-        </select>
-      </div>
+        {active && (
+          <>
+            <input
+              className="dw-title"
+              value={active.name}
+              placeholder="Untitled deal"
+              onChange={(e) => patchActive({ name: e.target.value })}
+            />
+            <input
+              className="dw-subtitle"
+              value={active.target ?? ""}
+              placeholder="Target company"
+              onChange={(e) => patchActive({ target: e.target.value })}
+            />
+          </>
+        )}
+      </header>
 
       {active ? (
-        <div className="flex flex-col gap-5 p-4">
-          <section className="flex flex-col gap-2">
-            <Label>Basics</Label>
-            <input className="deal-workspace-field" placeholder="Deal name" value={active.name}
-              onChange={(e) => patchActive({ name: e.target.value })} />
-            <input className="deal-workspace-field" placeholder="Target company" value={active.target ?? ""}
-              onChange={(e) => patchActive({ target: e.target.value })} />
-            <input className="deal-workspace-field" placeholder="Sector" value={active.sector ?? ""}
-              onChange={(e) => patchActive({ sector: e.target.value })} />
-            <div className="flex gap-2">
-              <select className="deal-workspace-field" value={active.stage ?? ""}
+        <div className="min-h-0 flex-1 overflow-y-auto">
+          <section className="px-5 py-3.5">
+            <div className="dw-row">
+              <span className="dw-label">Sector</span>
+              <input className="dw-input" placeholder="Add sector" value={active.sector ?? ""}
+                onChange={(e) => patchActive({ sector: e.target.value })} />
+            </div>
+            <div className="dw-row">
+              <span className="dw-label">Stage</span>
+              <select className="dw-input" value={active.stage ?? ""}
                 onChange={(e) => patchActive({ stage: (e.target.value || null) as DealStage })}>
-                <option value="">Stage…</option>
-                {STAGES.map((s) => <option key={s} value={s}>{s}</option>)}
+                <option value="">Not set</option>
+                {STAGES.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
               </select>
-              <select className="deal-workspace-field" value={active.deal_type ?? ""}
+            </div>
+            <div className="dw-row">
+              <span className="dw-label">Type</span>
+              <select className="dw-input" value={active.deal_type ?? ""}
                 onChange={(e) => patchActive({ deal_type: (e.target.value || null) as DealType })}>
-                <option value="">Type…</option>
-                {TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
+                <option value="">Not set</option>
+                {TYPES.map((t) => <option key={t.id} value={t.id}>{t.label}</option>)}
               </select>
             </div>
           </section>
 
-          <section className="flex flex-col gap-2">
-            <Label>Documents</Label>
+          <section className="px-5 py-3.5 border-t border-line/40">
+            <div className="dw-overline mb-2.5">Documents</div>
             {documents.map((doc) => (
-              <div key={doc.id} className="flex items-center gap-2 rounded-lg border border-line/40 px-3 py-2 text-xs">
-                <span className="flex-1 truncate">{doc.filename}</span>
+              <div key={doc.id} className="dw-doc">
+                <span className="dw-tag">{DOC_TAG[doc.doc_type ?? "other"] ?? "Doc"}</span>
+                <span className="flex-1 truncate text-ink/90">{doc.filename}</span>
                 <DocStatusBadge status={doc.status} />
               </div>
             ))}
-            <label className="flex items-center justify-center gap-2 rounded-lg border border-dashed border-line/60 px-3 py-2 text-xs text-stone/70 cursor-pointer">
-              {uploading ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />}
-              Upload CIM, QoE, deck…
+            <label className="dw-upload">
+              {uploading
+                ? <Loader2 size={14} strokeWidth={1.9} className="animate-spin" />
+                : <Upload size={14} strokeWidth={1.9} />}
+              {uploading ? "Reading document…" : "Upload CIM, QoE, or deck"}
               <input type="file" accept="application/pdf" className="hidden" disabled={uploading}
                 onChange={(e) => { const f = e.target.files?.[0]; if (f) upload(f, inferDocType(f.name)); e.target.value = ""; }} />
             </label>
           </section>
 
-          <section className="flex flex-col gap-2">
-            <Label>Thesis &amp; focus</Label>
-            <textarea className="deal-workspace-field min-h-[88px] resize-y" placeholder="Investment thesis, focus, risks to watch…"
+          <section className="px-5 py-3.5 border-t border-line/40">
+            <div className="dw-overline mb-2.5">Thesis &amp; focus</div>
+            <textarea className="dw-thesis" placeholder="Investment thesis, what Atlas should focus on, risks to watch."
               value={active.thesis ?? ""} onChange={(e) => patchActive({ thesis: e.target.value })} />
-            <div className="flex flex-wrap gap-1.5">
+            <div className="mt-3 flex flex-wrap gap-1.5">
               {LEVERS.map((l) => (
-                <button key={l.id} type="button" onClick={() => toggleLever(l.id)}
-                  className={`rounded-full px-2.5 py-1 text-[11px] border ${active.levers.includes(l.id) ? "bg-accent/10 text-accent border-accent/30" : "text-stone/70 border-line/40"}`}>
+                <button key={l.id} type="button" className="dw-lever"
+                  data-on={active.levers.includes(l.id)} onClick={() => toggleLever(l.id)}>
                   {l.label}
                 </button>
               ))}
             </div>
           </section>
+
+          <div className="dw-footnote">
+            <span className="dw-pulse" aria-hidden="true" />
+            Feeds Atlas on every message in this deal
+          </div>
         </div>
       ) : (
-        <div className="p-4 text-sm leading-6 text-stone/65">
-          Create a deal to give Atlas persistent context — basics, documents, and your thesis feed every answer.
+        <div className="px-5 py-6">
+          <p className="max-w-[26ch] text-[0.82rem] leading-6 text-stone/75">
+            No active deal. Open one to give Atlas a standing brief: the basics, your documents, and the thesis all feed every answer.
+          </p>
+          <button type="button" className="dw-newdeal mt-4" onClick={newDeal}>
+            New deal
+          </button>
         </div>
       )}
     </aside>
   );
 }
 
-function Label({ children }: { children: React.ReactNode }) {
-  return <span className="font-mono-label text-[0.6rem] uppercase tracking-wide text-stone/55">{children}</span>;
-}
-
 function DocStatusBadge({ status }: { status: DealDocument["status"] }) {
-  if (status === "ready") return <span className="flex items-center gap-1 text-emerald-600"><CheckCircle2 size={13} />Ready</span>;
-  if (status === "failed") return <span className="flex items-center gap-1 text-red-500"><AlertCircle size={13} />Failed</span>;
-  return <span className="flex items-center gap-1 text-stone/60"><Loader2 size={13} className="animate-spin" />Reading…</span>;
+  if (status === "ready") {
+    return <span className="flex items-center gap-1 text-[0.68rem] text-accent"><Check size={12} strokeWidth={2.4} />Ready</span>;
+  }
+  if (status === "failed") {
+    return <span className="flex items-center gap-1 text-[0.68rem] text-red-500"><AlertCircle size={12} strokeWidth={2} />Failed</span>;
+  }
+  return <span className="flex items-center gap-1 text-[0.68rem] text-stone/60"><Loader2 size={12} className="animate-spin" />Reading</span>;
 }
 
 function inferDocType(filename: string): string {
@@ -204,5 +259,6 @@ function inferDocType(filename: string): string {
   if (f.includes("cim")) return "cim";
   if (f.includes("qoe") || f.includes("quality")) return "qoe";
   if (f.includes("deck") || f.includes("presentation")) return "mgmt_deck";
+  if (f.includes("teaser")) return "teaser";
   return "other";
 }

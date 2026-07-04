@@ -1492,7 +1492,7 @@ body:has(.atlas-chat-viewport) {
   width: min(21.5rem, calc(100vw - 2rem));
   min-height: 0;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
   border-left: 1px solid oklch(72% 0.028 242 / 0.32);
   background: oklch(98.8% 0.005 238 / 0.98);
   box-shadow: -18px 0 42px oklch(31% 0.038 248 / 0.12);
@@ -1504,19 +1504,234 @@ body:has(.atlas-chat-viewport) {
   transform: translateX(0);
 }
 
-.deal-workspace-field {
-  width: 100%;
-  border: 1px solid oklch(72% 0.028 242 / 0.3);
-  border-radius: 8px;
-  padding: 7px 10px;
-  font-size: 13px;
-  background: transparent;
+.deal-workspace-panel {
+  background: oklch(98.4% 0.005 240 / 0.99);
+}
+
+.dw-overline {
+  font-family: var(--font-jetbrains);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: oklch(54% 0.025 240 / 0.72);
+}
+
+.dw-iconbtn {
+  display: flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  color: oklch(54% 0.025 240 / 0.72);
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.dw-iconbtn:hover {
+  background: oklch(78% 0.018 240 / 0.16);
   color: var(--color-ink);
 }
 
-.deal-workspace-field:focus {
+.dw-switch {
+  max-width: 8.5rem;
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-family: var(--font-jetbrains);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: oklch(54% 0.025 240 / 0.8);
+  padding: 4px 16px 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%237a8394' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.dw-switch:hover {
+  background-color: oklch(78% 0.018 240 / 0.16);
+  color: var(--color-ink);
+}
+
+.dw-title {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 1px 0;
+  font-family: var(--font-newsreader);
+  font-size: 1.3rem;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  color: var(--color-ink);
+}
+
+.dw-title:focus { outline: none; }
+.dw-title::placeholder { color: oklch(54% 0.025 240 / 0.4); }
+
+.dw-subtitle {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 2px 0 0;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: var(--color-stone);
+}
+
+.dw-subtitle:focus { outline: none; }
+.dw-subtitle::placeholder { color: oklch(54% 0.025 240 / 0.45); }
+
+.dw-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid oklch(78% 0.018 240 / 0.28);
+}
+
+.dw-row:last-child { border-bottom: none; }
+
+.dw-label {
+  font-size: 0.75rem;
+  color: oklch(54% 0.025 240 / 0.85);
+}
+
+.dw-input {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  padding: 6px 7px;
+  font-size: 0.82rem;
+  color: var(--color-ink);
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.dw-input::placeholder { color: oklch(54% 0.025 240 / 0.42); }
+.dw-input:hover { background: oklch(78% 0.018 240 / 0.13); }
+
+.dw-input:focus {
   outline: none;
-  border-color: oklch(48% 0.105 252 / 0.4);
+  background: oklch(98.7% 0.006 235);
+  border-color: oklch(34% 0.105 252 / 0.35);
+}
+
+select.dw-input {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%237a8394' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  padding-right: 20px;
+}
+
+.dw-tag {
+  font-family: var(--font-jetbrains);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.dw-doc {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid oklch(78% 0.018 240 / 0.28);
+  font-size: 0.82rem;
+}
+
+.dw-upload {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 0.1rem;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--color-stone);
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.dw-upload:hover { color: var(--color-accent); }
+
+.dw-thesis {
+  width: 100%;
+  min-height: 5.5rem;
+  resize: vertical;
+  border: 1px solid oklch(78% 0.018 240 / 0.5);
+  border-radius: 9px;
+  background: oklch(99.2% 0.004 235);
+  padding: 0.6rem 0.7rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--color-ink);
+  transition: border-color 150ms ease;
+}
+
+.dw-thesis::placeholder { color: oklch(54% 0.025 240 / 0.45); }
+.dw-thesis:focus {
+  outline: none;
+  border-color: oklch(34% 0.105 252 / 0.4);
+}
+
+.dw-lever {
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 5px;
+  border: 1px solid var(--color-line);
+  background: transparent;
+  color: var(--color-stone);
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.dw-lever:hover { border-color: oklch(34% 0.105 252 / 0.4); }
+
+.dw-lever[data-on="true"] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: oklch(97% 0.004 240);
+}
+
+.dw-newdeal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 7px 13px;
+  border-radius: 7px;
+  background: var(--color-accent);
+  color: oklch(97% 0.004 240);
+  font-size: 0.8rem;
+  transition: opacity 150ms ease;
+}
+
+.dw-newdeal:hover { opacity: 0.9; }
+
+.dw-footnote {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.25rem;
+  border-top: 1px solid oklch(78% 0.018 240 / 0.35);
+  font-size: 0.68rem;
+  color: oklch(54% 0.025 240 / 0.7);
+}
+
+.dw-pulse {
+  height: 5px;
+  width: 5px;
+  border-radius: 999px;
+  background: var(--color-accent);
 }
 
 .atlas-history-icon-button,
