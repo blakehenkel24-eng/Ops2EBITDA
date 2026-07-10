@@ -1,0 +1,90 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Ops2EBITDA" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e6]: Ops2EBITDA
+        - navigation [ref=e7]:
+          - button "Knowledge Base" [ref=e9]:
+            - img [ref=e10]
+            - text: Knowledge Base
+            - img [ref=e12]
+          - button "AI for PE Professionals" [ref=e15]:
+            - img [ref=e16]
+            - text: AI for PE Professionals
+            - img [ref=e28]
+          - link "Atlas IQ Flagship" [ref=e31] [cursor=pointer]:
+            - /url: /atlas-iq/chat
+            - img [ref=e32]
+            - generic [ref=e36]: Atlas IQ
+            - generic [ref=e37]: Flagship
+          - link "Get the Toolkit" [ref=e38] [cursor=pointer]:
+            - /url: /offerings#toolkit
+            - img [ref=e39]
+            - text: Get the Toolkit
+    - main [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e46]:
+          - paragraph [ref=e47]: EBITDA Margin Expansion
+          - heading "SKU Rationalization" [level=1] [ref=e48]
+          - paragraph [ref=e49]: Reducing product complexity by eliminating low-margin SKUs, inventory drag, and operational noise.
+        - article [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - paragraph [ref=e53]: "01"
+              - heading "Build SKU Profitability and Cost-to-Serve Truth" [level=2] [ref=e54]
+              - generic [ref=e55]:
+                - paragraph [ref=e56]: Begin with a twelve- to twenty-four-month SKU-customer-location cube that reconciles units, list price, invoice price, rebates, returns, standard and actual cost, freight, and gross profit to the ledger. Normalize renumbered and bundled products and separate stocked, configured, and engineered-to-order items. Finance owns reconciliation; product owns hierarchy and lifecycle; operations validates routings and capacity; commercial leaders certify customer relationships. Do not start with a simple revenue rank. A long-tail item can be strategically valuable, while a high-revenue item can consume scarce capacity and working capital without adequate return.
+                - paragraph [ref=e57]: Extend profitability beyond invoice margin. Attribute procurement touches, minimum-order premiums, production changeovers, scrap, quality events, warehouse picks, special packaging, expedites, technical support, returns, obsolescence, forecast error, and inventory carrying cost using practical drivers. Keep direct economics separate from allocated corporate overhead so the team does not discontinue contribution-positive products merely because arbitrary fixed cost was spread across them. Show both avoidable cost and total cost to serve. An exit decision depends on cash and capacity that actually disappear, not an accounting allocation that remains after the SKU is gone.
+                - paragraph [ref=e58]: "Baseline revenue, contribution, inventory dollars and turns, service level, lead time, changeover hours, scrap, and forecast accuracy by SKU family. Quantify concentration: the bottom 40% of SKUs may represent only 4% of sales yet 22% of inventory locations and 30% of schedule changes. These facts reveal opportunity but not action. Identify shared materials, customer baskets, regulatory obligations, replacement parts, and cross-sell dependencies before assigning targets. The first gate is a reconciled economic cube with approved cost drivers and an exception list for data that cannot be reliably reconstructed."
+              - generic [ref=e59]: Rationalize on avoidable contribution and strategic role, not revenue rank or fully allocated margin alone.
+            - generic [ref=e60]:
+              - paragraph [ref=e61]: "02"
+              - heading "Segment Keep, Fix, Migrate, and Exit Decisions" [level=2] [ref=e62]
+              - generic [ref=e63]:
+                - paragraph [ref=e64]: Score each SKU on contribution after cost to serve, velocity, demand stability, inventory intensity, capacity consumption, customer importance, basket attachment, substitutability, product strategy, and contractual or regulatory requirement. Then assign keep, fix, migrate, or exit. Keep products clear economic and strategic thresholds. Fix candidates can recover through price, minimum order quantity, packaging, sourcing, routing, or service policy. Migrate candidates have a validated substitute. Exit candidates destroy avoidable contribution or complexity value with no defensible relationship role. Force every strategic exception to name the protected customer economics and an expiry date.
+                - paragraph [ref=e65]: "Use an economics bridge that reconciles gross opportunity to captured value. Suppose a $60 million manufacturer identifies 800 of 4,000 SKUs generating $3.0 million of revenue, $0.6 million of gross profit, and $0.9 million of avoidable service, changeover, scrap, and carrying cost: current contribution is negative $0.3 million. Of the existing gross profit, $0.2 million relates to $1.8 million of revenue that can migrate to substitutes at 35% margin, increasing gross profit by $0.43 million. Repricing another $0.6 million by 12% adds $72,000, while exiting the remainder removes $0.4 million of gross profit and avoids $0.9 million of cost. Recurring EBITDA improvement is therefore $1.002 million before migration cost and demand leakage."
+                - paragraph [ref=e66]: Challenge the bridge with realistic leakage. Subtract volume loss on attached profitable items, replacement qualification, customer concessions, temporary overtime, inventory write-down, tooling disposal, and stranded labor or overhead. If $250,000 of attached contribution is lost, $180,000 of one-time migration cost is incurred, and only $650,000 of the $900,000 cost is truly avoidable, recurring improvement is $0.43 million + $0.072 million - $0.4 million + $0.65 million - $0.25 million, or $0.502 million. First-year benefit is $0.322 million before working-capital release. This lower figure may still justify action, but it prevents the board from multiplying an unachievable gross estimate.
+            - generic [ref=e67]:
+              - paragraph [ref=e68]: "03"
+              - heading "Execute Customer Migration, Inventory, and Stranded-Cost Plans" [level=2] [ref=e69]
+              - generic [ref=e70]:
+                - paragraph [ref=e71]: Build a customer-by-SKU migration map before communicating. Segment customers by revenue, total contribution, contract, technical qualification, service risk, and relationship value. Assign a substitute, price change, last-order date, samples or validation, account owner, and escalation path. Strategic accounts receive coordinated executive outreach; transactional accounts may receive standard notice. Sales incentives must support migration instead of rewarding retention of obsolete items. Track accepted substitutions, lost volume, complaints, and attached basket revenue weekly. Do not announce discontinuation until supply, quality, legal, and customer-service teams can honor the transition promise.
+                - paragraph [ref=e72]: Create an inventory disposition plan at lot and location level. Stop or reduce purchase orders and production, establish last-time-buy rules, consume common raw materials in retained products, transfer inventory where demand exists, negotiate supplier returns, and choose discount, donation, salvage, or write-off for residual stock. Forecast demand through the notice period so a premature stockout does not force expedites or damage customers. Finance separately tracks accounting reserve and cash release. Writing down inventory is not the same as releasing cash; cash improves only when purchases decline, stock is sold, or carrying and storage costs are avoided.
+                - paragraph [ref=e73]: Remove stranded cost deliberately. Update bills of material, routings, forecasts, catalogs, ecommerce, price lists, quality documents, service scripts, and ERP status codes; retire unique tooling and vendor minimums; rebalance labor and warehouse space; and revise capacity plans. A discontinued SKU that remains orderable or continues triggering safety stock creates all the old complexity without revenue. Operations owns physical cutover, supply chain owns inventory, commercial owns migration, IT owns system blocks, and finance validates avoided cost. Each workstream has a dated gate and rollback plan for service or quality failure.
+            - generic [ref=e74]:
+              - paragraph [ref=e75]: "04"
+              - heading "Govern Cross-Functional Gates and Manage Failure Modes" [level=2] [ref=e76]
+              - generic [ref=e77]:
+                - paragraph [ref=e78]: Establish a portfolio council chaired by the general manager with finance, product, sales, operations, supply chain, quality, and customer service. During design it meets weekly to approve classifications and economics; during migration it reviews service, inventory, and customer exceptions; after stabilization it meets monthly or quarterly. Gate one approves data and cost drivers, gate two approves customer and operational impact, gate three authorizes notice and supply changes, and gate four confirms system closure and benefit evidence. The board reviews material revenue risk, restructuring cost, and changes to the investment case.
+                - paragraph [ref=e79]: Common failures are blunt revenue pruning, sales-created permanent exceptions, unavailable substitutes, overestimated avoidable overhead, supplier commitments that outlive demand, obsolete inventory created by poor sequencing, and capacity savings that are immediately refilled by low-quality custom work. Define trigger thresholds for lost strategic accounts, fill-rate decline, complaints, quality incidents, or margin leakage. Pause the affected wave, identify root cause, and correct migration or supply before proceeding. A rollback may restore a SKU temporarily, but it should include a new expiry and economics; otherwise every difficult conversation becomes a permanent reversal.
+                - paragraph [ref=e80]: Manage the human consequences openly. Product managers may view exits as loss of relevance, sales may fear quota gaps, planners may distrust reduced buffers, and plant leaders may resist labor or footprint implications. Align quotas and incentives to retained contribution, publish decision logic, train customer-facing teams, and provide a rapid exception channel. Where positions or supplier relationships change, follow employment, contract, and consultation obligations. Do not describe simplification as purely analytical when it changes roles and customer commitments. Durable adoption comes from visible leadership decisions and consistent treatment of exceptions.
+            - generic [ref=e81]:
+              - paragraph [ref=e82]: "05"
+              - heading "Validate Captured Margin, Working Capital, and Exit Proof" [level=2] [ref=e83]
+              - generic [ref=e84]:
+                - paragraph [ref=e85]: "Maintain a benefit ledger by action and month: baseline units and price, retained or migrated volume, price realization, direct cost, avoided cost, one-time cost, inventory balance, purchase reduction, write-off, and attached revenue impact. Finance validates invoice and ledger evidence; operations confirms changeovers, labor, scrap, and capacity; supply chain confirms purchases and inventory; commercial confirms customer outcomes. Separate recurring EBITDA, one-time P&L, cash release, and theoretical capacity. Never count inventory reduction as EBITDA or claim free capacity as savings unless labor, spend, or profitable throughput actually changes."
+                - paragraph [ref=e86]: In the worked case, recurring improvement should be reported as the validated $0.502 million only after price, migrated margin, avoided spend, and lost basket contribution appear in actuals. The $180,000 migration cost reduces first-year earnings or cash but not steady-state run rate; inventory liquidation may add a separate cash release net of write-offs. Compare results with an unchanged SKU or customer cohort where feasible and normalize demand, commodity, and mix. Review monthly for at least two planning cycles because initial inventory burn and customer stocking can make early results look artificially strong.
+                - paragraph [ref=e87]: Exit proof includes the reconciled SKU cube, cost-driver methodology, decision log, approved exceptions, customer migration outcomes, inventory disposition, system controls, and a bridge from gross opportunity to realized EBITDA and cash. Demonstrate fewer active SKUs, higher contribution, better turns, stable service and retention, lower changeovers or scrap, and a governed new-product process. Buyers should see simplification that persists, not a quarter-end discontinuation wave followed by custom-product creep. Require business cases, minimum volumes, margin thresholds, lifecycle owners, and sunset reviews for new SKUs so complexity remains an intentional investment.
+          - generic [ref=e88]:
+            - separator [ref=e89]
+            - figure "SKU rationalization decision and value-capture tree" [ref=e90]:
+              - generic [ref=e91]:
+                - heading "SKU rationalization decision and value-capture tree" [level=3] [ref=e92]
+                - paragraph [ref=e93]: The tree tests avoidable economics and strategic dependency before routing each SKU to keep, fix, migrate, or exit and validating realized benefits.
+              - status [ref=e95]: Rendering diagram...
+    - contentinfo [ref=e96]:
+      - generic [ref=e97]: Ops2EBITDA / Private Equity Operating Knowledge Base / © 2026
+  - button "Open Atlas IQ" [ref=e98]:
+    - generic [ref=e99]: IQ
+  - generic [ref=e101]:
+    - generic [ref=e102]: Atlas IQ
+    - generic [ref=e103]:
+      - link [ref=e104] [cursor=pointer]:
+        - /url: /atlas-iq/chat
+        - img [ref=e105]
+      - button [ref=e110]:
+        - img [ref=e111]
+  - button "Open Next.js Dev Tools" [ref=e119] [cursor=pointer]:
+    - img [ref=e120]

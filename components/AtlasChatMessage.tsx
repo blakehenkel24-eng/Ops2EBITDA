@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { useState, useCallback } from "react";
+import { Check, Copy, FileText, FileDown } from "lucide-react";
 import type { ResearchSource } from "@/lib/atlas/types";
+import { downloadAtlasExport } from "@/lib/atlas/export-client";
 import { AtlasMemoCard } from "./AtlasMemoCard";
 import { AtlasCommandBar } from "./AtlasCommandBar";
 
@@ -15,6 +16,8 @@ interface AtlasChatMessageProps {
   isStreaming?: boolean;
   isHidden?: boolean;
   isRevealing?: boolean;
+  reportMode?: "market" | "company";
+  reportQuery?: string;
 }
 
 export function AtlasChatMessage({
@@ -26,6 +29,8 @@ export function AtlasChatMessage({
   isStreaming,
   isHidden,
   isRevealing,
+  reportMode,
+  reportQuery,
 }: AtlasChatMessageProps) {
   if (role === "user") {
     return (
@@ -42,6 +47,10 @@ export function AtlasChatMessage({
     : isRevealing
       ? "mb-6 group/msg atlas-report-reveal"
       : "mb-6 group/msg";
+  const visibleContent =
+    !isStreaming && !isHidden && content.trim().length === 0
+      ? "Atlas IQ did not return any visible text. Check the model setting and try again."
+      : content;
 
   return (
     <div className={wrapperClass}>
@@ -69,16 +78,22 @@ export function AtlasChatMessage({
           ) : (
             <div className="relative rounded-2xl rounded-tl-sm bg-[oklch(99.5%_0.002_240)] px-5 py-4 shadow-[0_1px_3px_oklch(31%_0.038_248_/_0.07)]">
               <div className="text-[15px] leading-7 text-ink/90 font-geist">
-                <MarkdownContent content={content} />
+                <MarkdownContent content={visibleContent} />
                 {isStreaming && <StreamingCursor />}
               </div>
             </div>
           )}
 
           {/* Hover action bar below the card */}
-          {!isStreaming && !isHidden && content.length > 20 && (
+          {!isStreaming && !isHidden && visibleContent.length > 20 && (
             <div className="atlas-msg-actions mt-1 flex items-center gap-0.5 pl-1">
-              <CopyButton text={content} />
+              <CopyButton text={visibleContent} />
+              {reportMode && reportQuery && (
+                <>
+                  <ExportButton format="pdf" content={visibleContent} mode={reportMode} query={reportQuery} />
+                  <ExportButton format="docx" content={visibleContent} mode={reportMode} query={reportQuery} />
+                </>
+              )}
             </div>
           )}
 
@@ -331,6 +346,53 @@ function MarkdownContent({ content }: { content: string }) {
   return <>{elements}</>;
 }
 
+/** Export to PDF or DOCX */
+function ExportButton({
+  format,
+  content,
+  mode,
+  query,
+}: {
+  format: "pdf" | "docx";
+  content: string;
+  mode: "market" | "company";
+  query: string;
+}) {
+  const [exporting, setExporting] = useState(false);
+
+  const handleExport = useCallback(async () => {
+    if (exporting) return;
+    setExporting(true);
+    try {
+      await downloadAtlasExport({
+        mode,
+        query,
+        markdown: content,
+      }, format);
+    } catch {
+      // Export errors are non-critical
+    } finally {
+      setExporting(false);
+    }
+  }, [exporting, format, content, mode, query]);
+
+  const Icon = format === "pdf" ? FileText : FileDown;
+  const label = format.toUpperCase();
+
+  return (
+    <button
+      type="button"
+      onClick={handleExport}
+      disabled={exporting}
+      className="flex items-center gap-1 rounded-md px-1.5 py-1 text-stone/40 hover:text-stone/70 hover:bg-stone/6 transition-all disabled:opacity-40"
+      title={`Export as ${label}`}
+    >
+      <Icon size={13} strokeWidth={1.5} />
+      <span className="text-[10px] font-geist font-medium">{label}</span>
+    </button>
+  );
+}
+
 /** Handles inline **bold**, *italic*, and `code` */
 function InlineMarkdown({ text }: { text: string }) {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
@@ -349,7 +411,7 @@ function InlineMarkdown({ text }: { text: string }) {
         }
         if (part.startsWith("`") && part.endsWith("`")) {
           return (
-            <code key={i} className="px-1.5 py-0.5 bg-[oklch(95%_0.006_240)] rounded-md text-[13px] font-jetbrains text-ink/75">
+            <code key={i} className="px-1.5 py-0.5 bg-[oklch(95%_0.006_240)] rounded-md text-[13px] text-ink/75">
               {part.slice(1, -1)}
             </code>
           );

@@ -8,6 +8,11 @@ import { AtlasResearchProgress } from "./AtlasResearchProgress";
 import { AtlasWelcome } from "./AtlasWelcome";
 import { AtlasResearchForm } from "./AtlasResearchForm";
 import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
+import {
+  downloadAtlasExport,
+  getExportCommandFormat,
+  getLastAssistantExportTarget,
+} from "@/lib/atlas/export-client";
 import { ArrowUp, Landmark, Building2, History, MessageSquarePlus, PanelLeftClose, Trash2, Layers } from "lucide-react";
 import { DealWorkspacePanel } from "./DealWorkspacePanel";
 import type { UIMessage } from "@ai-sdk/react";
@@ -110,6 +115,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [slashDismissed, setSlashDismissed] = useState(false);
   const [slashIndex, setSlashIndex] = useState(0);
   const [reportRevealing, setReportRevealing] = useState(false);
+  const [exportingFormat, setExportingFormat] = useState<"pdf" | "docx" | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const slashMenuRef = useRef<HTMLDivElement>(null);
@@ -203,6 +209,17 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
 
   const isLoading = status === "submitted" || status === "streaming";
   const hasMessages = messages.length > 0;
+
+  useEffect(() => {
+    if (!fullPage) return;
+
+    const query = window.matchMedia("(min-width: 900px)");
+    const syncHistoryState = () => setHistoryOpen(query.matches);
+
+    syncHistoryState();
+    query.addEventListener("change", syncHistoryState);
+    return () => query.removeEventListener("change", syncHistoryState);
+  }, [fullPage]);
 
   useEffect(() => {
     if (!fullPage) return;
@@ -332,18 +349,60 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     [sendMessage]
   );
 
+  const handleExportLastAssistant = useCallback(
+    async (format: "pdf" | "docx") => {
+      if (exportingFormat) return;
+
+      const target = getLastAssistantExportTarget(
+        messages.map((message) => ({
+          role: message.role,
+          text: getMessageText(message.parts),
+        }))
+      );
+
+      if (!target) return;
+
+      setExportingFormat(format);
+      try {
+        await downloadAtlasExport(target, format);
+      } catch {
+        // Export is a convenience action; keep chat usable if the request fails.
+      } finally {
+        setExportingFormat(null);
+      }
+    },
+    [exportingFormat, messages]
+  );
+
   const handleSend = useCallback(() => {
     if (!input.trim() || isLoading) return;
-    sendMessage({ text: input.trim() });
+    const trimmedInput = input.trim();
+    const exportFormat = getExportCommandFormat(trimmedInput);
+    if (exportFormat) {
+      void handleExportLastAssistant(exportFormat);
+      setInput("");
+      setSlashDismissed(false);
+      return;
+    }
+
+    sendMessage({ text: trimmedInput });
     setInput("");
     setSlashDismissed(false);
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
     }
-  }, [input, isLoading, sendMessage]);
+  }, [handleExportLastAssistant, input, isLoading, sendMessage]);
 
   const handleSlashSelect = useCallback(
     (cmd: string) => {
+      const exportFormat = getExportCommandFormat(`/${cmd}`);
+      if (exportFormat) {
+        void handleExportLastAssistant(exportFormat);
+        setInput("");
+        setSlashDismissed(false);
+        return;
+      }
+
       const command = ATLAS_COMMANDS.find((c) => c.name === cmd);
       if (command?.mode) {
         setActiveForm(command.mode);
@@ -355,7 +414,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
       setInput("");
       setSlashDismissed(false);
     },
-    [sendMessage]
+    [handleExportLastAssistant, sendMessage]
   );
 
   const handleInputChange = useCallback((value: string) => {
@@ -650,6 +709,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
                   ref={textareaRef}
                   value={input}
                   onChange={(e) => handleInputChange(e.target.value)}
+                  onInput={(e) => handleInputChange(e.currentTarget.value)}
                   onKeyDown={handleKeyDown}
                   placeholder={hasMessages ? "Ask a follow-up..." : "Ask about a deal or thesis..."}
                   rows={1}

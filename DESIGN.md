@@ -10,9 +10,12 @@ Use a cool, digital palette. Backgrounds use cool slate-grays (`--paper`), while
 
 ## Typography
 
-A strong pairing of Serif for headings and crisp Sans-Serif for body and data. 
-- **Headings (h1-h6):** Elegant serif fonts (e.g., Georgia, Times) to evoke a "published report" authority.
-- **Body & Data:** Crisp sans-serif (e.g., Inter, system-ui) for long-form readability and precise data presentation. Line lengths are capped around 75 characters with generous line height (1.7) for breathability.
+A single-family system: **Cambria** for everything (headings, body, data, labels), with `Georgia, "Times New Roman", serif` as the fallback stack. No webfonts are loaded; Cambria is a system font. Hierarchy comes from size and weight contrast, not family changes.
+
+- **Headings (h1-h6):** Cambria, medium weight, to evoke a "published report" authority.
+- **Body & Data:** Cambria. Line lengths are capped around 75 characters with generous line height for breathability.
+- **Labels:** Uppercase Cambria at 11px with slight tracking (0.06em).
+- **Code:** The one exception — `pre`/`code`/`kbd`/`samp` stay monospace (ui-monospace stack) for readability.
 
 ## Layout
 

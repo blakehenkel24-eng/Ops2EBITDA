@@ -69,10 +69,10 @@ export function ClientNav() {
               setKnowledgeMenuOpen((open) => !open);
               setAiMenuOpen(false);
             }}
-            className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
-              knowledgeActive || pathname === '/'
-                ? 'border-accent/20 text-accent bg-accent-soft'
-                : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
+            className={`nav-button font-mono-label flex items-center gap-2 px-3 py-2 whitespace-nowrap ${
+              knowledgeActive || pathname === '/' || knowledgeMenuOpen
+                ? 'is-active'
+                : 'text-stone hover:text-ink'
             }`}
             aria-expanded={knowledgeMenuOpen}
             aria-haspopup="menu"
@@ -117,10 +117,10 @@ export function ClientNav() {
               setAiMenuOpen((open) => !open);
               setKnowledgeMenuOpen(false);
             }}
-            className={`font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 border border-transparent whitespace-nowrap ${
-              aiActive
-                ? 'border-accent/20 text-accent bg-accent-soft'
-                : 'text-stone hover:text-ink hover:bg-paper hover:border-line'
+            className={`nav-button font-mono-label flex items-center gap-2 px-3 py-2 whitespace-nowrap ${
+              aiActive || aiMenuOpen
+                ? 'is-active'
+                : 'text-stone hover:text-ink'
             }`}
             aria-expanded={aiMenuOpen}
             aria-haspopup="menu"
@@ -161,10 +161,8 @@ export function ClientNav() {
 
         <Link
           href="/atlas-iq/chat"
-          className={`atlas-nav-flagship font-mono-label flex items-center gap-2 px-3 py-2 transition-all duration-200 whitespace-nowrap ${
-            atlasActive
-              ? 'is-active text-paper'
-              : 'text-accent hover:text-paper'
+          className={`atlas-nav-flagship font-mono-label flex items-center gap-2 px-3 py-2 whitespace-nowrap ${
+            atlasActive ? 'is-active' : ''
           }`}
           aria-current={atlasActive ? 'page' : undefined}
         >
@@ -174,17 +172,13 @@ export function ClientNav() {
             <path d="M2 12l10 5 10-5" />
           </svg>
           <span>Atlas IQ</span>
-          {!atlasActive && (
-            <span className="atlas-nav-flagship__tag">Flagship</span>
-          )}
+          <span className="atlas-nav-flagship__tag">Flagship</span>
         </Link>
 
         <Link
           href="/offerings#toolkit"
-          className={`font-mono-label flex items-center gap-2 border px-3 py-2 transition-all duration-200 whitespace-nowrap ${
-            offeringsActive
-              ? 'border-accent/45 bg-accent-soft text-accent'
-              : 'border-accent/35 bg-paper/90 text-accent hover:border-accent/55 hover:bg-accent-soft/70 hover:text-ink'
+          className={`nav-toolkit font-mono-label flex items-center gap-2 px-3 py-2 whitespace-nowrap ${
+            offeringsActive ? 'is-active' : ''
           }`}
           aria-current={offeringsActive ? 'page' : undefined}
         >

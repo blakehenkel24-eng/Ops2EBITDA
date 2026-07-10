@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { Newsreader, Geist, JetBrains_Mono } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import { AtlasSidebar } from "@/components/AtlasSidebar";
 import { siteDescription, siteName, siteUrl } from "@/lib/seo";
 import "./globals.css";
-
-const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-family-newsreader" });
-const geist = Geist({ subsets: ["latin"], variable: "--font-family-geist" });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-family-jetbrains" });
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -35,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${geist.variable} ${jetbrains.variable}`}>
+    <html lang="en">
       <body>
         <AppShell>{children}</AppShell>
         <AtlasSidebar />

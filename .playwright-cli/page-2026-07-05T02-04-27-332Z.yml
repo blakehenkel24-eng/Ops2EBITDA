@@ -1,0 +1,130 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Ops2EBITDA" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e6]: Ops2EBITDA
+        - navigation [ref=e7]:
+          - button "Knowledge Base" [ref=e9]:
+            - img [ref=e10]
+            - text: Knowledge Base
+            - img [ref=e12]
+          - button "AI for PE Professionals" [ref=e15]:
+            - img [ref=e16]
+            - text: AI for PE Professionals
+            - img [ref=e28]
+          - link "Atlas IQ Flagship" [ref=e31] [cursor=pointer]:
+            - /url: /atlas-iq/chat
+            - img [ref=e32]
+            - generic [ref=e36]: Atlas IQ
+            - generic [ref=e37]: Flagship
+          - link "Get the Toolkit" [ref=e38] [cursor=pointer]:
+            - /url: /offerings#toolkit
+            - img [ref=e39]
+            - text: Get the Toolkit
+    - main [ref=e43]:
+      - generic [ref=e44]:
+        - complementary [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - img [ref=e48]
+              - generic [ref=e52]: Chat history
+            - button "Close chat history" [ref=e53]:
+              - img [ref=e54]
+          - button "New chat" [ref=e58]:
+            - img [ref=e59]
+            - text: New chat
+          - generic [ref=e62]: Your ATLAS IQ research threads will appear here after you start a chat.
+        - button "Open deal workspace" [ref=e63]:
+          - img [ref=e64]
+        - complementary [ref=e68]:
+          - generic [ref=e70]:
+            - generic [ref=e71]: Deal dossier
+            - button [ref=e73]:
+              - img [ref=e74]
+          - generic [ref=e77]:
+            - paragraph [ref=e78]: "No active deal. Open one to give Atlas a standing brief: the basics, your documents, and the thesis all feed every answer."
+            - button [ref=e79]: New deal
+        - generic [ref=e80]:
+          - generic [ref=e83]:
+            - img [ref=e85]
+            - heading "What can Atlas evaluate?" [level=1] [ref=e89]:
+              - text: What can Atlas
+              - emphasis [ref=e90]: evaluate
+              - text: "?"
+            - paragraph [ref=e91]: Research markets, profile targets, pressure-test theses.
+            - generic [ref=e92]:
+              - button "Market Report" [ref=e93] [cursor=pointer]:
+                - img [ref=e95]
+                - generic [ref=e97]: Market Report
+                - img [ref=e98]
+              - button "Company Report" [ref=e100] [cursor=pointer]:
+                - img [ref=e102]
+                - generic [ref=e106]: Company Report
+                - img [ref=e107]
+          - generic [ref=e110]:
+            - generic [ref=e112]:
+              - button "Market Research" [ref=e113]:
+                - img [ref=e114]
+                - text: Market Research
+              - button "Company Research" [ref=e116]:
+                - img [ref=e117]
+                - text: Company Research
+            - generic [ref=e122]:
+              - textbox "Ask about a deal or thesis..." [active] [ref=e123]
+              - button "Send message" [disabled] [ref=e124]:
+                - img [ref=e125]
+            - paragraph [ref=e127]: Atlas IQ can make mistakes. Verify important information.
+    - contentinfo [ref=e128]:
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - generic [ref=e131]:
+            - link "Ops2EBITDA" [ref=e132] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e133]: Ops2EBITDA
+            - paragraph [ref=e134]: Private equity operations knowledge base and AI-powered research tools for value creation.
+          - generic [ref=e135]:
+            - paragraph [ref=e136]: Knowledge
+            - list [ref=e137]:
+              - listitem [ref=e138]:
+                - link "Fundamentals" [ref=e139] [cursor=pointer]:
+                  - /url: /fundamentals
+              - listitem [ref=e140]:
+                - link "Playbooks" [ref=e141] [cursor=pointer]:
+                  - /url: /playbooks
+              - listitem [ref=e142]:
+                - link "Industries" [ref=e143] [cursor=pointer]:
+                  - /url: /industries
+              - listitem [ref=e144]:
+                - link "KPIs" [ref=e145] [cursor=pointer]:
+                  - /url: /kpis
+          - generic [ref=e146]:
+            - paragraph [ref=e147]: Product
+            - list [ref=e148]:
+              - listitem [ref=e149]:
+                - link "Atlas IQ" [ref=e150] [cursor=pointer]:
+                  - /url: /atlas-iq/chat
+              - listitem [ref=e151]:
+                - link "Operating Assets" [ref=e152] [cursor=pointer]:
+                  - /url: /offerings#toolkit
+              - listitem [ref=e153]:
+                - link "AI for PE" [ref=e154] [cursor=pointer]:
+                  - /url: /ai-for-pe-professionals
+          - generic [ref=e155]:
+            - paragraph [ref=e156]: Company
+            - list [ref=e157]:
+              - listitem [ref=e158]:
+                - link "Pricing" [ref=e159] [cursor=pointer]:
+                  - /url: /offerings#toolkit
+        - generic [ref=e160]:
+          - paragraph [ref=e161]: © 2026 Ops2EBITDA
+          - paragraph [ref=e162]: Private Equity Operations Knowledge Base
+  - button "Open Next.js Dev Tools" [ref=e172] [cursor=pointer]:
+    - generic [ref=e182]:
+      - text: Compiling
+      - generic [ref=e183]:
+        - generic [ref=e184]: .
+        - generic [ref=e185]: .
+        - generic [ref=e186]: .
+  - alert [ref=e180]: Atlas IQ Chat | Ops2EBITDA

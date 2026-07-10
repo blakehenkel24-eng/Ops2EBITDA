@@ -1,59 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { Landmark, Building2, ArrowRight, X, ChevronDown, TrendingUp, AlertTriangle, MessageSquareText, BarChart3 } from "lucide-react";
-
-const SUGGESTIONS = [
-  {
-    icon: TrendingUp,
-    text: "Top value creation levers for HVAC roll-ups",
-  },
-  {
-    icon: AlertTriangle,
-    text: "Red flags in a facilities management target",
-  },
-  {
-    icon: MessageSquareText,
-    text: "What makes a good PE platform in waste services?",
-  },
-  {
-    icon: BarChart3,
-    text: "Compare maintenance vs. project revenue quality",
-  },
-];
+import { Landmark, Building2, ArrowRight, X, ChevronDown } from "lucide-react";
 
 interface AtlasWelcomeProps {
   onStartResearch: (mode: string, query: string) => void;
   onSuggestion: (text: string) => void;
 }
 
-export function AtlasWelcome({ onStartResearch, onSuggestion }: AtlasWelcomeProps) {
+export function AtlasWelcome({ onStartResearch }: AtlasWelcomeProps) {
   const [expanded, setExpanded] = useState<"market" | "company" | null>(null);
 
-  return (
-    <div className="atlas-chat-welcome">
-      {/* Centered content */}
-      <div className="flex flex-col items-center">
-        {/* AI icon */}
-        <div className="atlas-ai-icon mb-5" style={{ width: "3rem", height: "3rem" }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
-          </svg>
-        </div>
-
-        <h1 className="font-newsreader text-3xl text-ink md:text-4xl">
-          What can Atlas IQ help you evaluate?
-        </h1>
-        <p className="mt-3 max-w-lg text-[15px] leading-7 text-stone font-geist">
-          Research markets, assess companies, pressure-test investment theses, and prepare for diligence.
-        </p>
-      </div>
-
-      {/* Suggestion grid or expanded form */}
-      <div className="mt-8 w-full max-w-2xl mx-auto">
-        {expanded === "market" ? (
+  if (expanded === "market") {
+    return (
+      <div className="atlas-welcome-stage">
+        <div className="atlas-welcome-stage__inner atlas-welcome-stage__inner--form">
           <MarketReportForm
             onSubmit={(query) => {
               onStartResearch("market", query);
@@ -61,7 +22,14 @@ export function AtlasWelcome({ onStartResearch, onSuggestion }: AtlasWelcomeProp
             }}
             onCancel={() => setExpanded(null)}
           />
-        ) : expanded === "company" ? (
+        </div>
+      </div>
+    );
+  }
+  if (expanded === "company") {
+    return (
+      <div className="atlas-welcome-stage">
+        <div className="atlas-welcome-stage__inner atlas-welcome-stage__inner--form">
           <CompanyReportForm
             onSubmit={(query) => {
               onStartResearch("company", query);
@@ -69,46 +37,52 @@ export function AtlasWelcome({ onStartResearch, onSuggestion }: AtlasWelcomeProp
             }}
             onCancel={() => setExpanded(null)}
           />
-        ) : (
-          <>
-            {/* Suggestion cards */}
-            <div className="grid gap-2.5 sm:grid-cols-2">
-              {SUGGESTIONS.map((s) => (
-                <button
-                  key={s.text}
-                  type="button"
-                  onClick={() => onSuggestion(s.text)}
-                  className="atlas-welcome-action"
-                >
-                  <s.icon size={16} strokeWidth={1.5} className="text-stone/50 shrink-0 mt-0.5" />
-                  <span className="text-[13px] text-ink/80 font-geist leading-relaxed text-left">
-                    {s.text}
-                  </span>
-                </button>
-              ))}
-            </div>
+        </div>
+      </div>
+    );
+  }
 
-            {/* Deep research buttons */}
-            <div className="mt-4 flex items-center justify-center gap-2">
-              <button
-                type="button"
-                onClick={() => setExpanded("market")}
-                className="flex items-center gap-2 rounded-full border border-line/40 bg-transparent px-4 py-2 text-xs font-geist text-stone/70 transition-all hover:border-accent/30 hover:text-accent hover:bg-accent/4"
-              >
-                <Landmark size={13} strokeWidth={1.5} />
-                Deep market research
-              </button>
-              <button
-                type="button"
-                onClick={() => setExpanded("company")}
-                className="flex items-center gap-2 rounded-full border border-line/40 bg-transparent px-4 py-2 text-xs font-geist text-stone/70 transition-all hover:border-accent/30 hover:text-accent hover:bg-accent/4"
-              >
-                <Building2 size={13} strokeWidth={1.5} />
-                Deep company research
-              </button>
-            </div>
-          </>
-        )}
+  return (
+    <div className="atlas-welcome-stage atlas-welcome-stage--minimal">
+      <div className="atlas-welcome-stage__inner">
+        <div className="atlas-welcome-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 3L3 9.5l13 6.5 13-6.5L16 3z" />
+            <path d="M3 22.5l13 6.5 13-6.5" />
+            <path d="M3 16l13 6.5L29 16" />
+          </svg>
+        </div>
+        <h1 className="atlas-welcome__heading">
+          What can Atlas <em>evaluate</em>?
+        </h1>
+        <p className="atlas-welcome__sub">
+          Research markets, profile targets, pressure-test theses.
+        </p>
+
+        <div className="atlas-welcome__modes">
+          <button
+            type="button"
+            onClick={() => setExpanded("market")}
+            className="atlas-welcome__mode"
+          >
+            <span className="atlas-welcome__mode-icon">
+              <Landmark size={14} strokeWidth={1.7} />
+            </span>
+            <span className="atlas-welcome__mode-title">Market Report</span>
+            <ArrowRight size={12} strokeWidth={1.7} className="atlas-welcome__mode-arrow" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setExpanded("company")}
+            className="atlas-welcome__mode"
+          >
+            <span className="atlas-welcome__mode-icon">
+              <Building2 size={14} strokeWidth={1.7} />
+            </span>
+            <span className="atlas-welcome__mode-title">Company Report</span>
+            <ArrowRight size={12} strokeWidth={1.7} className="atlas-welcome__mode-arrow" />
+          </button>
+        </div>
       </div>
     </div>
   );

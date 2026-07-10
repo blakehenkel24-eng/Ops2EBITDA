@@ -1,0 +1,440 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Ops2EBITDA" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e6]: Ops2EBITDA
+        - navigation [ref=e7]:
+          - button "Knowledge Base" [ref=e9]:
+            - img [ref=e10]
+            - text: Knowledge Base
+            - img [ref=e12]
+          - button "AI for PE Professionals" [ref=e15]:
+            - img [ref=e16]
+            - text: AI for PE Professionals
+            - img [ref=e28]
+          - link "Atlas IQ Flagship" [ref=e31] [cursor=pointer]:
+            - /url: /atlas-iq/chat
+            - img [ref=e32]
+            - generic [ref=e36]: Atlas IQ
+            - generic [ref=e37]: Flagship
+          - link "Get the Toolkit" [ref=e38] [cursor=pointer]:
+            - /url: /offerings#toolkit
+            - img [ref=e39]
+            - text: Get the Toolkit
+    - main [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: PE operating workbench
+            - heading "Private equity operations, from thesis to exit." [level=1] [ref=e50]
+            - paragraph [ref=e51]: Ops2EBITDA combines consulting-grade operating briefings, Atlas IQ research, and downloadable execution assets for teams turning value creation ideas into board-ready work.
+            - generic [ref=e52]:
+              - link "Try Atlas IQ" [ref=e53] [cursor=pointer]:
+                - /url: /atlas-iq/chat
+                - text: Try Atlas IQ
+                - img [ref=e54]
+              - link "Explore the Knowledge Base" [ref=e56] [cursor=pointer]:
+                - /url: /fundamentals
+                - text: Explore the Knowledge Base
+                - img [ref=e57]
+            - generic "Platform strengths" [ref=e59]:
+              - generic [ref=e60]: Source-backed research
+              - generic [ref=e61]: Model-ready assets
+              - generic [ref=e62]: PE workflow logic
+              - generic [ref=e63]: Board-ready outputs
+          - generic "Ops2EBITDA operating workbench preview" [ref=e64]:
+            - generic [ref=e69]:
+              - generic [ref=e70]: Live operating file
+              - generic [ref=e71]: Value creation map
+            - generic [ref=e73]:
+              - heading "From issue to EBITDA proof." [level=2] [ref=e74]
+              - paragraph [ref=e75]: Research, playbooks, models, and AI workspaces stitched into the same operating logic.
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - img [ref=e78]
+                - generic [ref=e80]: Diagnose
+              - generic [ref=e81]:
+                - img [ref=e82]
+                - generic [ref=e85]: Prioritize
+              - generic [ref=e86]:
+                - img [ref=e87]
+                - generic [ref=e90]: Package
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e93]: Margin leakage
+                - generic [ref=e94]: Pricing waterfall
+                - strong [ref=e95]: +180 bps
+              - generic [ref=e96]:
+                - generic [ref=e97]: Cash conversion
+                - generic [ref=e98]: DSO and inventory bridge
+                - strong [ref=e99]: $4.2M
+              - generic [ref=e100]:
+                - generic [ref=e101]: Exit readiness
+                - generic [ref=e102]: Buyer diligence narrative
+                - strong [ref=e103]: IC-ready
+            - generic [ref=e104]:
+              - generic [ref=e105]: Knowledge base
+              - generic [ref=e106]: Atlas IQ
+              - generic [ref=e107]: Operating assets
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - paragraph [ref=e112]: Search the knowledge base
+              - heading "Find a lever, KPI, or industry" [level=2] [ref=e113]
+              - paragraph [ref=e114]: Showing 8 starter briefings
+            - generic [ref=e115]: Search PE operations topics
+            - textbox "Search PE operations topics" [ref=e116]:
+              - /placeholder: "Try: churn, procurement, SaaS, DSO..."
+          - generic [ref=e117]:
+            - link "PE Fundamental 100-Day Plan" [ref=e118] [cursor=pointer]:
+              - /url: /fundamentals/100-day-plan
+              - text: PE Fundamental
+              - paragraph [ref=e119]: 100-Day Plan
+            - link "PE Fundamental Add-On Acquisitions" [ref=e120] [cursor=pointer]:
+              - /url: /fundamentals/add-on-acquisitions
+              - text: PE Fundamental
+              - paragraph [ref=e121]: Add-On Acquisitions
+            - link "PE Fundamental Board Governance in PE" [ref=e122] [cursor=pointer]:
+              - /url: /fundamentals/board-governance-in-pe
+              - text: PE Fundamental
+              - paragraph [ref=e123]: Board Governance in PE
+            - link "PE Fundamental Commercial Diligence" [ref=e124] [cursor=pointer]:
+              - /url: /fundamentals/commercial-diligence
+              - text: PE Fundamental
+              - paragraph [ref=e125]: Commercial Diligence
+            - link "PE Fundamental Deal Lifecycle" [ref=e126] [cursor=pointer]:
+              - /url: /fundamentals/deal-lifecycle
+              - text: PE Fundamental
+              - paragraph [ref=e127]: Deal Lifecycle
+            - link "PE Fundamental Debt Covenants and Lender Reporting" [ref=e128] [cursor=pointer]:
+              - /url: /fundamentals/debt-covenants-and-lender-reporting
+              - text: PE Fundamental
+              - paragraph [ref=e129]: Debt Covenants and Lender Reporting
+            - link "PE Fundamental Exit Planning" [ref=e130] [cursor=pointer]:
+              - /url: /fundamentals/exit-planning
+              - text: PE Fundamental
+              - paragraph [ref=e131]: Exit Planning
+            - link "PE Fundamental Exit Readiness" [ref=e132] [cursor=pointer]:
+              - /url: /fundamentals/exit-readiness
+              - text: PE Fundamental
+              - paragraph [ref=e133]: Exit Readiness
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - paragraph [ref=e136]: Operating layer
+            - heading "Knowledge, tools, and intelligence in one platform." [level=2] [ref=e137]
+            - paragraph [ref=e138]: "Built around the actual PE operating cycle: diagnose the issue, understand the lever, generate the work product, and connect the output to EBITDA, cash, or exit value."
+          - generic [ref=e139]:
+            - link "Atlas IQ Research AI-powered market and company research that delivers consulting-grade analysis with source verification and PDF export. Try Atlas IQ" [ref=e140] [cursor=pointer]:
+              - /url: /atlas-iq/chat
+              - img [ref=e142]
+              - heading "Atlas IQ Research" [level=3] [ref=e145]
+              - paragraph [ref=e146]: AI-powered market and company research that delivers consulting-grade analysis with source verification and PDF export.
+              - generic [ref=e147]:
+                - text: Try Atlas IQ
+                - img [ref=e148]
+            - generic [ref=e150]:
+              - link "Knowledge Base 22 fundamentals, 24 playbooks, and 22 industry briefings on PE operations." [ref=e151] [cursor=pointer]:
+                - /url: /fundamentals
+                - heading "Knowledge Base" [level=3] [ref=e152]
+                - paragraph [ref=e153]: 22 fundamentals, 24 playbooks, and 22 industry briefings on PE operations.
+                - img [ref=e154]
+              - link "Operating Assets Excel models, AI project kits, and skill packages for the workflows behind the briefings." [ref=e156] [cursor=pointer]:
+                - /url: /offerings#toolkit
+                - heading "Operating Assets" [level=3] [ref=e157]:
+                  - text: Operating Assets
+                  - img [ref=e158]
+                - paragraph [ref=e162]: Excel models, AI project kits, and skill packages for the workflows behind the briefings.
+                - img [ref=e163]
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - generic [ref=e168]: Flagship · Atlas IQ
+            - heading "AI-powered PE research, grounded in real sources." [level=2] [ref=e170]
+            - paragraph [ref=e171]: Atlas IQ delivers consulting-grade market landscape analysis and company deep-dives. Every claim is sourced. Export to PDF or Word when you need the deliverable, not the conversation.
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - generic [ref=e174]: "01"
+                - generic [ref=e175]: Market landscape research with competitive positioning
+              - generic [ref=e176]:
+                - generic [ref=e177]: "02"
+                - generic [ref=e178]: Company deep-dives across financials, operations, and strategy
+              - generic [ref=e179]:
+                - generic [ref=e180]: "03"
+                - generic [ref=e181]: Source-verified analysis with confidence scoring
+              - generic [ref=e182]:
+                - generic [ref=e183]: "04"
+                - generic [ref=e184]: PDF and Word export for board packs and memos
+            - link "Try Atlas IQ" [ref=e185] [cursor=pointer]:
+              - /url: /atlas-iq/chat
+              - text: Try Atlas IQ
+              - img [ref=e186]
+          - generic [ref=e189]:
+            - generic [ref=e194]:
+              - img [ref=e195]
+              - text: Atlas IQ · Market Mode
+            - generic [ref=e198]:
+              - generic [ref=e199]:
+                - generic [ref=e200]: ">"
+                - generic [ref=e201]: "Landscape: tech-enabled HCM platforms, mid-market"
+              - generic [ref=e203]: Executive Summary
+              - generic [ref=e207]:
+                - generic [ref=e208]: Competitive Map
+                - generic [ref=e212]:
+                  - generic [ref=e213]: "[SEC 10-K]"
+                  - generic [ref=e214]: "[Gartner]"
+                  - generic [ref=e215]: "[S&P Cap IQ]"
+              - generic [ref=e217]: Operating Levers
+        - generic [ref=e220]:
+          - heading "From operating issue to exit narrative." [level=2] [ref=e221]
+          - generic [ref=e222]:
+            - generic [ref=e224]:
+              - generic [ref=e225]: "01"
+              - heading "Identify Leakage" [level=3] [ref=e226]
+              - paragraph [ref=e227]: Pinpoint margin degradation or trapped working capital.
+              - text: ↓
+            - generic [ref=e229]:
+              - generic [ref=e230]: "02"
+              - heading "Root Cause" [level=3] [ref=e231]
+              - paragraph [ref=e232]: Isolate the operational friction or data gap.
+              - text: ↓
+            - generic [ref=e234]:
+              - generic [ref=e235]: "03"
+              - heading "Execute Playbook" [level=3] [ref=e236]
+              - paragraph [ref=e237]: Deploy standard operating procedures and tech.
+              - text: ↓
+            - generic [ref=e239]:
+              - generic [ref=e240]: "04"
+              - heading "Track Impact" [level=3] [ref=e241]
+              - paragraph [ref=e242]: Measure EBITDA lift and cash conversion.
+              - text: ↓
+            - generic [ref=e244]:
+              - generic [ref=e245]: "05"
+              - heading "Exit Narrative" [level=3] [ref=e246]
+              - paragraph [ref=e247]: Frame the fix as a de-risked, scalable capability.
+        - generic [ref=e248]:
+          - heading "Operating agendas, not modules." [level=2] [ref=e249]
+          - generic [ref=e250]:
+            - link "01 Underwrite the value creation agenda Start with sources of return, diligence, thesis quality, and the first 100 days." [ref=e251] [cursor=pointer]:
+              - /url: /fundamentals/value-creation-planning
+              - generic [ref=e252]: "01"
+              - generic [ref=e253]:
+                - heading "Underwrite the value creation agenda" [level=3] [ref=e254]
+                - paragraph [ref=e255]: Start with sources of return, diligence, thesis quality, and the first 100 days.
+              - img [ref=e256]
+            - link "02 Pressure-test operating levers Move from problem diagnosis to action, KPI movement, EBITDA logic, and buyer narrative." [ref=e258] [cursor=pointer]:
+              - /url: /playbooks
+              - generic [ref=e259]: "02"
+              - generic [ref=e260]:
+                - heading "Pressure-test operating levers" [level=3] [ref=e261]
+                - paragraph [ref=e262]: Move from problem diagnosis to action, KPI movement, EBITDA logic, and buyer narrative.
+              - img [ref=e263]
+            - link "03 Read industries like an operator Understand business model quality, cost structure, operating issues, and exit readiness." [ref=e265] [cursor=pointer]:
+              - /url: /industries
+              - generic [ref=e266]: "03"
+              - generic [ref=e267]:
+                - heading "Read industries like an operator" [level=3] [ref=e268]
+                - paragraph [ref=e269]: Understand business model quality, cost structure, operating issues, and exit readiness.
+              - img [ref=e270]
+        - generic [ref=e272]:
+          - generic [ref=e273]:
+            - heading "Featured briefings" [level=2] [ref=e274]
+            - link "View all" [ref=e275] [cursor=pointer]:
+              - /url: /playbooks
+          - generic [ref=e276]:
+            - link [ref=e277] [cursor=pointer]:
+              - /url: /playbooks/100-day-value-creation-plan
+              - article [ref=e278]:
+                - generic [ref=e279]: Value Creation
+                - heading "100-Day Value Creation Plan" [level=3] [ref=e280]
+                - paragraph [ref=e281]: Converting diligence findings into a prioritized first-100-days execution roadmap.
+                - generic [ref=e282]:
+                  - text: Open briefing
+                  - img [ref=e283]
+            - link [ref=e285] [cursor=pointer]:
+              - /url: /playbooks/add-on-acquisition-integration
+              - article [ref=e286]:
+                - generic [ref=e287]: Value Creation
+                - heading "Add-On Acquisition Integration" [level=3] [ref=e288]
+                - paragraph [ref=e289]: Capturing cost, revenue, and operating synergies after acquiring a tuck-in or merger target.
+                - generic [ref=e290]:
+                  - text: Open briefing
+                  - img [ref=e291]
+            - link [ref=e293] [cursor=pointer]:
+              - /url: /playbooks/ai-opportunity-identification
+              - article [ref=e294]:
+                - generic [ref=e295]: Value Creation
+                - heading "AI Opportunity Identification" [level=3] [ref=e296]
+                - paragraph [ref=e297]: Finding practical automation, analytics, and agentic workflow opportunities with measurable business cases.
+                - generic [ref=e298]:
+                  - text: Open briefing
+                  - img [ref=e299]
+            - link [ref=e301] [cursor=pointer]:
+              - /url: /playbooks/customer-concentration-reduction
+              - article [ref=e302]:
+                - generic [ref=e303]: Value Creation
+                - heading "Customer Concentration Reduction" [level=3] [ref=e304]
+                - paragraph [ref=e305]: Reducing overdependence on a small number of customers before it limits lender confidence or exit valuation.
+                - generic [ref=e306]:
+                  - text: Open briefing
+                  - img [ref=e307]
+        - generic [ref=e309]:
+          - generic [ref=e310]:
+            - heading "Industry intelligence" [level=2] [ref=e311]
+            - link "View all" [ref=e312] [cursor=pointer]:
+              - /url: /industries
+          - generic [ref=e313]:
+            - link [ref=e314] [cursor=pointer]:
+              - /url: /industries/aerospace-and-defense
+              - article [ref=e315]:
+                - generic [ref=e316]: Industry
+                - heading "Aerospace & Defense" [level=3] [ref=e317]
+                - paragraph [ref=e318]: Precision manufacturing, MRO (Maintenance, Repair, and Overhaul), and specialized services with high barriers to entry and sticky government or prime-contractor relationships.
+                - generic [ref=e319]:
+                  - text: Open briefing
+                  - img [ref=e320]
+            - link [ref=e322] [cursor=pointer]:
+              - /url: /industries/biotech
+              - article [ref=e323]:
+                - generic [ref=e324]: Industry
+                - heading "Biotech & Contract Research (CRO)" [level=3] [ref=e325]
+                - paragraph [ref=e326]: Highly specialized life sciences firms and outsourced clinical research organizations where value is driven by proprietary IP, clinical trial velocity, and regulatory expertise.
+                - generic [ref=e327]:
+                  - text: Open briefing
+                  - img [ref=e328]
+            - link [ref=e330] [cursor=pointer]:
+              - /url: /industries/business-services
+              - article [ref=e331]:
+                - generic [ref=e332]: Industry
+                - heading "Business Services" [level=3] [ref=e333]
+                - paragraph [ref=e334]: B2B services businesses monetizing people, process expertise, outsourced functions, or recurring contracts.
+                - generic [ref=e335]:
+                  - text: Open briefing
+                  - img [ref=e336]
+            - link [ref=e338] [cursor=pointer]:
+              - /url: /industries/distribution
+              - article [ref=e339]:
+                - generic [ref=e340]: Industry
+                - heading "Distribution" [level=3] [ref=e341]
+                - paragraph [ref=e342]: Intermediaries that buy, stock, sell, and deliver products across fragmented customer bases.
+                - generic [ref=e343]:
+                  - text: Open briefing
+                  - img [ref=e344]
+        - generic [ref=e346]:
+          - heading "Paid assets for the workflows behind the briefings." [level=2] [ref=e348]
+          - link "Shop bundles" [ref=e350] [cursor=pointer]:
+            - /url: /offerings#toolkit
+          - generic [ref=e351]:
+            - article [ref=e352]:
+              - generic [ref=e353]:
+                - heading "Models" [level=3] [ref=e354]
+                - paragraph [ref=e355]: $99 each
+              - paragraph [ref=e356]: Excel workbooks for operating analyses where the answer needs numbers, not just narrative.
+              - list [ref=e357]:
+                - listitem [ref=e358]: Pricing Waterfall & Margin Leakage Model
+                - listitem [ref=e359]: Procurement Spend Cube & Savings Tracker
+            - article [ref=e360]:
+              - generic [ref=e361]:
+                - heading "Projects" [level=3] [ref=e362]
+                - paragraph [ref=e363]: $49 each
+              - paragraph [ref=e364]: Ready-to-build AI workspaces for recurring PE operating jobs.
+              - list [ref=e365]:
+                - listitem [ref=e366]: Operating Partner Copilot
+                - listitem [ref=e367]: Board Pack & Executive Update Builder
+            - article [ref=e368]:
+              - generic [ref=e369]:
+                - heading "Skills" [level=3] [ref=e370]
+                - paragraph [ref=e371]: $39 each
+              - paragraph [ref=e372]: Reusable instruction files that make your AI tool better at specific PE operating tasks.
+              - list [ref=e373]:
+                - listitem [ref=e374]: Executive Communication Skills
+                - listitem [ref=e375]: Operating Diagnostic Skills
+          - generic [ref=e377]:
+            - generic [ref=e378]:
+              - heading "Full Ops2EBITDA Toolkit" [level=3] [ref=e379]
+              - paragraph [ref=e380]: "The whole asset library in one purchase: models, AI workflows, and reusable PE operating skills."
+            - generic [ref=e381]:
+              - paragraph [ref=e382]: $699
+              - link "Get the Toolkit" [ref=e383] [cursor=pointer]:
+                - /url: /offerings#toolkit
+                - text: Get the Toolkit
+                - img [ref=e384]
+        - generic [ref=e387]:
+          - link "KPI Reference" [ref=e388] [cursor=pointer]:
+            - /url: /kpis
+            - generic [ref=e389]: KPI Reference
+            - img [ref=e390]
+          - link "AI Opportunity Lens" [ref=e392] [cursor=pointer]:
+            - /url: /playbooks/ai-opportunity-identification
+            - generic [ref=e393]: AI Opportunity Lens
+            - img [ref=e394]
+          - link "100-Day Plan" [ref=e396] [cursor=pointer]:
+            - /url: /playbooks/100-day-value-creation-plan
+            - generic [ref=e397]: 100-Day Plan
+            - img [ref=e398]
+        - generic [ref=e400]:
+          - heading "Start building your operating edge." [level=2] [ref=e401]
+          - paragraph [ref=e402]: Explore the knowledge base for free, or get the full toolkit with models, projects, and skills for PE value creation.
+          - generic [ref=e403]:
+            - link "Explore Knowledge Base" [ref=e404] [cursor=pointer]:
+              - /url: /fundamentals
+              - text: Explore Knowledge Base
+              - img [ref=e405]
+            - link "Get the Toolkit" [ref=e407] [cursor=pointer]:
+              - /url: /offerings#toolkit
+              - text: Get the Toolkit
+              - img [ref=e408]
+    - contentinfo [ref=e410]:
+      - generic [ref=e411]:
+        - generic [ref=e412]:
+          - generic [ref=e413]:
+            - link "Ops2EBITDA" [ref=e414] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e415]: Ops2EBITDA
+            - paragraph [ref=e416]: Private equity operations knowledge base and AI-powered research tools for value creation.
+          - generic [ref=e417]:
+            - paragraph [ref=e418]: Knowledge
+            - list [ref=e419]:
+              - listitem [ref=e420]:
+                - link "Fundamentals" [ref=e421] [cursor=pointer]:
+                  - /url: /fundamentals
+              - listitem [ref=e422]:
+                - link "Playbooks" [ref=e423] [cursor=pointer]:
+                  - /url: /playbooks
+              - listitem [ref=e424]:
+                - link "Industries" [ref=e425] [cursor=pointer]:
+                  - /url: /industries
+              - listitem [ref=e426]:
+                - link "KPIs" [ref=e427] [cursor=pointer]:
+                  - /url: /kpis
+          - generic [ref=e428]:
+            - paragraph [ref=e429]: Product
+            - list [ref=e430]:
+              - listitem [ref=e431]:
+                - link "Atlas IQ" [ref=e432] [cursor=pointer]:
+                  - /url: /atlas-iq/chat
+              - listitem [ref=e433]:
+                - link "Operating Assets" [ref=e434] [cursor=pointer]:
+                  - /url: /offerings#toolkit
+              - listitem [ref=e435]:
+                - link "AI for PE" [ref=e436] [cursor=pointer]:
+                  - /url: /ai-for-pe-professionals
+          - generic [ref=e437]:
+            - paragraph [ref=e438]: Company
+            - list [ref=e439]:
+              - listitem [ref=e440]:
+                - link "Pricing" [ref=e441] [cursor=pointer]:
+                  - /url: /offerings#toolkit
+        - generic [ref=e442]:
+          - paragraph [ref=e443]: © 2026 Ops2EBITDA
+          - paragraph [ref=e444]: Private Equity Operations Knowledge Base
+  - button "Open Atlas IQ" [ref=e445]:
+    - generic [ref=e446]: IQ
+  - generic [ref=e448]:
+    - generic [ref=e449]: Atlas IQ
+    - generic [ref=e450]:
+      - link [ref=e451] [cursor=pointer]:
+        - /url: /atlas-iq/chat
+        - img [ref=e452]
+      - button [ref=e457]:
+        - img [ref=e458]

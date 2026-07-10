@@ -5,7 +5,7 @@ import type { ResearchSource } from "./types";
 
 export async function searchDuckDuckGo(
   query: string,
-  limit = 4
+  limit = 8
 ): Promise<ResearchSource[]> {
   const url = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
 
@@ -80,7 +80,7 @@ interface TavilyResponse {
 export async function searchTavily(
   query: string,
   apiKey: string,
-  limit = 4
+  limit = 8
 ): Promise<ResearchSource[]> {
   let data: TavilyResponse;
   try {
@@ -333,12 +333,20 @@ export async function searchEdgarCompany(
 export function getMarketQueries(market: string): string[] {
   return [
     `${market} market size growth CAGR forecast segments customer end markets`,
+    `${market} total addressable market TAM penetration whitespace`,
     `${market} value chain business model margins cost structure`,
     `${market} industry KPIs EBITDA margin gross margin benchmarks`,
     `${market} valuation multiples EV EBITDA transaction multiples public comps`,
     `${market} demand drivers regulation trends cyclicality`,
+    `${market} trade association industry report statistics`,
+    `${market} regulatory compliance OSHA FDA USDA EPA state requirements`,
     `${market} leading companies competitors market share`,
+    `${market} public companies annual report 10-K competitors`,
     `${market} private equity acquisitions M&A sponsor-backed companies`,
+    `${market} market fragmentation regional providers consolidation roll-up`,
+    `${market} customer concentration contract renewal outsourcing trends`,
+    `${market} labor costs wage inflation retention utilization`,
+    `${market} pricing margin pressure input costs`,
     `${market} unit economics capex working capital retention churn utilization`,
   ];
 }
@@ -346,41 +354,58 @@ export function getMarketQueries(market: string): string[] {
 export function getCompanyQueries(company: string): string[] {
   return [
     `${company} company overview products services customers`,
+    `${company} official website services locations leadership`,
     `${company} competitors market positioning alternatives`,
     `${company} ownership funding investors acquisition private equity`,
+    `${company} parent company sponsor investor acquisition press release`,
     `${company} revenue growth employees locations leadership`,
+    `${company} LinkedIn employees locations management`,
     `${company} customer reviews case studies contracts partnerships`,
+    `${company} news press release expansion acquisition partnership`,
     `${company} industry market size growth drivers end markets`,
-    `${company} risks lawsuits regulation complaints`,
+    `${company} regulatory compliance OSHA FDA USDA EPA violations`,
+    `${company} lawsuits complaints safety violations enforcement`,
+    `${company} jobs hiring wages operations locations`,
     `${company} platform add-on acquisition sponsor fit`,
   ];
 }
 
 // ─── Gather Sources ───────────────────────────────────────────────────────────
 
+export interface GatherSourcesOptions {
+  searchLimit?: number;
+  edgarQueryLimit?: number;
+  edgarResultLimit?: number;
+}
+
 export async function gatherSources(
   queries: string[],
   tavilyApiKey?: string,
-  mode?: "market" | "company" | "chat"
+  mode?: "market" | "company" | "chat",
+  options: GatherSourcesOptions = {}
 ): Promise<ResearchSource[]> {
+  const searchLimit = options.searchLimit ?? 8;
+  const edgarQueryLimit = options.edgarQueryLimit ?? 5;
+  const edgarResultLimit = options.edgarResultLimit ?? 4;
+
   // Primary search: Tavily (preferred) or DuckDuckGo
   const primaryResults = await Promise.all(
     queries.map((q) =>
       tavilyApiKey
-        ? searchTavily(q, tavilyApiKey)
-        : searchDuckDuckGo(q)
+        ? searchTavily(q, tavilyApiKey, searchLimit)
+        : searchDuckDuckGo(q, searchLimit)
     )
   );
 
   // SEC EDGAR: run sector/company-relevant queries in parallel
   const edgarQueries = queries
     .filter((q) =>
-      /market size|revenue|margin|growth|M&A|acquisition|competitor/i.test(q)
+      /market size|tam|revenue|margin|growth|M&A|acquisition|competitor|public companies|10-K|valuation/i.test(q)
     )
-    .slice(0, 3);
+    .slice(0, edgarQueryLimit);
 
   const edgarResults = await Promise.all(
-    edgarQueries.map((q) => searchEdgar(q, 3))
+    edgarQueries.map((q) => searchEdgar(q, edgarResultLimit))
   );
 
   const flat = [...primaryResults.flat(), ...edgarResults.flat()];

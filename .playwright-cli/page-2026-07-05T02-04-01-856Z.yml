@@ -1,0 +1,164 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Ops2EBITDA" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: Ops2EBITDA
+      - navigation [ref=e7]:
+        - generic [ref=e8]:
+          - button "Knowledge Base" [ref=e9]:
+            - img [ref=e10]
+            - text: Knowledge Base
+            - img [ref=e12]
+          - generic [ref=e14]:
+            - link "Library Home" [ref=e15] [cursor=pointer]:
+              - /url: /
+              - img [ref=e16]
+              - text: Library Home
+            - link "Fundamentals" [ref=e18] [cursor=pointer]:
+              - /url: /fundamentals
+              - img [ref=e19]
+              - text: Fundamentals
+            - link "Playbooks" [ref=e23] [cursor=pointer]:
+              - /url: /playbooks
+              - img [ref=e24]
+              - text: Playbooks
+            - link "Industries" [ref=e28] [cursor=pointer]:
+              - /url: /industries
+              - img [ref=e29]
+              - text: Industries
+            - link "KPIs" [ref=e31] [cursor=pointer]:
+              - /url: /kpis
+              - img [ref=e32]
+              - text: KPIs
+        - generic [ref=e34]:
+          - button "AI for PE Professionals" [ref=e35]:
+            - img [ref=e36]
+            - text: AI for PE Professionals
+            - img [ref=e48]
+          - generic [ref=e50]:
+            - link "Start Here" [ref=e51] [cursor=pointer]:
+              - /url: /ai-for-pe-professionals
+              - img [ref=e52]
+              - text: Start Here
+            - link "Top Use Cases" [ref=e55] [cursor=pointer]:
+              - /url: /ai-for-pe-professionals/use-cases
+              - img [ref=e56]
+              - text: Top Use Cases
+            - link "Tool Landscape" [ref=e63] [cursor=pointer]:
+              - /url: /ai-for-pe-professionals/tool-landscape
+              - img [ref=e64]
+              - text: Tool Landscape
+            - link "Guardrails & Data Security" [ref=e68] [cursor=pointer]:
+              - /url: /ai-for-pe-professionals/guardrails
+              - img [ref=e69]
+              - text: Guardrails & Data Security
+        - link "Atlas IQFlagship" [ref=e72] [cursor=pointer]:
+          - /url: /atlas-iq/chat
+          - img [ref=e73]
+          - text: Atlas IQFlagship
+        - link "Get the Toolkit" [ref=e77] [cursor=pointer]:
+          - /url: /offerings#toolkit
+          - img [ref=e78]
+          - text: Get the Toolkit
+      - button "Toggle mobile menu" [ref=e83]:
+        - img [ref=e84]
+  - main [ref=e85]:
+    - generic [ref=e86]:
+      - button "Open chat history" [ref=e87]:
+        - img [ref=e88]
+      - complementary [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - img [ref=e95]
+            - text: Chat history
+          - button [ref=e99]:
+            - img [ref=e100]
+        - button [ref=e104]:
+          - img [ref=e105]
+          - text: New chat
+        - generic [ref=e108]: Your ATLAS IQ research threads will appear here after you start a chat.
+      - button "Open deal workspace" [ref=e109]:
+        - img [ref=e110]
+      - complementary [ref=e114]:
+        - generic [ref=e116]:
+          - text: Deal dossier
+          - button [ref=e118]:
+            - img [ref=e119]
+        - generic [ref=e122]:
+          - paragraph [ref=e123]: "No active deal. Open one to give Atlas a standing brief: the basics, your documents, and the thesis all feed every answer."
+          - button [ref=e124]: New deal
+      - generic [ref=e125]:
+        - generic [ref=e128]:
+          - img [ref=e130]
+          - heading "What can Atlas evaluate?" [level=1] [ref=e134]:
+            - text: What can Atlas
+            - emphasis [ref=e135]: evaluate
+            - text: "?"
+          - paragraph [ref=e136]: Research markets, profile targets, pressure-test theses.
+          - generic [ref=e137]:
+            - button "Market Report" [ref=e138]:
+              - img [ref=e140]
+              - text: Market Report
+              - img [ref=e142]
+            - button "Company Report" [ref=e144]:
+              - img [ref=e146]
+              - text: Company Report
+              - img [ref=e150]
+        - generic [ref=e153]:
+          - generic [ref=e155]:
+            - button "Market Research" [ref=e156]:
+              - img [ref=e157]
+              - text: Market Research
+            - button "Company Research" [ref=e159]:
+              - img [ref=e160]
+              - text: Company Research
+          - generic [ref=e165]:
+            - textbox "Ask about a deal or thesis..." [ref=e166]
+            - button "Send message" [disabled] [ref=e167]:
+              - img [ref=e168]
+          - paragraph [ref=e170]: Atlas IQ can make mistakes. Verify important information.
+  - contentinfo [ref=e171]:
+    - generic [ref=e172]:
+      - generic [ref=e173]:
+        - generic [ref=e174]:
+          - link "Ops2EBITDA" [ref=e175] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e176]: Ops2EBITDA
+          - paragraph [ref=e177]: Private equity operations knowledge base and AI-powered research tools for value creation.
+        - generic [ref=e178]:
+          - paragraph [ref=e179]: Knowledge
+          - list [ref=e180]:
+            - listitem [ref=e181]:
+              - link "Fundamentals" [ref=e182] [cursor=pointer]:
+                - /url: /fundamentals
+            - listitem [ref=e183]:
+              - link "Playbooks" [ref=e184] [cursor=pointer]:
+                - /url: /playbooks
+            - listitem [ref=e185]:
+              - link "Industries" [ref=e186] [cursor=pointer]:
+                - /url: /industries
+            - listitem [ref=e187]:
+              - link "KPIs" [ref=e188] [cursor=pointer]:
+                - /url: /kpis
+        - generic [ref=e189]:
+          - paragraph [ref=e190]: Product
+          - list [ref=e191]:
+            - listitem [ref=e192]:
+              - link "Atlas IQ" [ref=e193] [cursor=pointer]:
+                - /url: /atlas-iq/chat
+            - listitem [ref=e194]:
+              - link "Operating Assets" [ref=e195] [cursor=pointer]:
+                - /url: /offerings#toolkit
+            - listitem [ref=e196]:
+              - link "AI for PE" [ref=e197] [cursor=pointer]:
+                - /url: /ai-for-pe-professionals
+        - generic [ref=e198]:
+          - paragraph [ref=e199]: Company
+          - list [ref=e200]:
+            - listitem [ref=e201]:
+              - link "Pricing" [ref=e202] [cursor=pointer]:
+                - /url: /offerings#toolkit
+      - generic [ref=e203]:
+        - paragraph [ref=e204]: © 2026 Ops2EBITDA
+        - paragraph [ref=e205]: Private Equity Operations Knowledge Base

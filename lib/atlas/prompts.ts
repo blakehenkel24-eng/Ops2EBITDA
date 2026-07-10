@@ -133,6 +133,8 @@ import type { AtlasCommand } from "./types";
 export const ATLAS_COMMANDS: AtlasCommand[] = [
   { name: "market", label: "/market", prompt: "Run deep market research on a sector or industry.", mode: "market" },
   { name: "company", label: "/company", prompt: "Run deep company research on a target.", mode: "company" },
+  { name: "pdf", label: "/pdf", prompt: "Export the latest Atlas IQ response as a PDF." },
+  { name: "word", label: "/word", prompt: "Export the latest Atlas IQ response as a Word document." },
   { name: "brief", label: "/brief", prompt: "Create a partner-ready brief from this finding." },
   { name: "email", label: "/email", prompt: "Draft a short internal email to the deal team about this finding." },
   { name: "questions", label: "/questions", prompt: "Create management and expert-call questions from this finding." },

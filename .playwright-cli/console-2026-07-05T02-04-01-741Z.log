@@ -1,0 +1,3 @@
+[      42ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/_next/static/chunks/0ppnhge1326ia.css:0
+[      63ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/_next/static/chunks/0apgrrlc~z_0x.js:0
+[      99ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/favicon.ico:0
