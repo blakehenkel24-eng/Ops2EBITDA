@@ -135,14 +135,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-
-          <div className="home-hero-abstract" aria-hidden="true">
-            <span className="home-hero-abstract__grid" />
-            <span className="home-hero-abstract__axis" />
-            <span className="home-hero-abstract__dot home-hero-abstract__dot--a" />
-            <span className="home-hero-abstract__dot home-hero-abstract__dot--b" />
-            <span className="home-hero-abstract__dot home-hero-abstract__dot--c" />
-          </div>
         </div>
       </section>
 
@@ -244,9 +236,6 @@ export default function Home() {
           <div className="home-showcase__visual">
             <div className="home-showcase__mock">
               <div className="home-showcase__mock-header">
-                <div className="home-showcase__mock-dot" />
-                <div className="home-showcase__mock-dot" />
-                <div className="home-showcase__mock-dot" />
                 <span className="home-showcase__mock-tab">
                   <Sparkles size={9} strokeWidth={2} aria-hidden="true" />
                   Atlas IQ · Market Mode
