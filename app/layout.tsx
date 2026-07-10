@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   authors: [{ name: siteName }],
   creator: siteName,
   publisher: siteName,
+  icons: {
+    icon: "/brand/ops2ebitda-logo-linkedin.png",
+  },
   robots: {
     index: true,
     follow: true,

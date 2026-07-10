@@ -17,7 +17,7 @@ import {
 } from "@/lib/atlas/research";
 import { rankSources, buildSourceDigest } from "@/lib/atlas/scoring";
 
-export const maxDuration = 120;
+export const maxDuration = 300;
 
 // Progress event prefix. The client strips these before displaying text.
 const PROGRESS_PREFIX = "§§P";
@@ -199,6 +199,7 @@ export async function POST(req: Request) {
             temperature: 0.3,
             maxOutputTokens: getMaxOutputTokens("ATLAS_REPORT_MAX_TOKENS", 16000),
             model: process.env.OPENROUTER_REPORT_MODEL || "deepseek/deepseek-v4-pro",
+            signal: req.signal,
           });
 
           let wroteText = false;
@@ -252,6 +253,7 @@ export async function POST(req: Request) {
     messages,
     temperature: 0.2,
     maxOutputTokens: getMaxOutputTokens("ATLAS_CHAT_MAX_TOKENS", 8000),
+    signal: req.signal,
   });
 
   return createAtlasTextStreamResponse({ textStream: result });

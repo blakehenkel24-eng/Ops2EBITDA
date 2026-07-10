@@ -443,6 +443,7 @@ function parseTableBlock(lines: string[], startIdx: number): { table: Table; end
 
   const table = new Table({
     layout: TableLayoutType.FIXED,
+    columnWidths: headers.map(() => Math.floor(9360 / headers.length)),
     rows: [
       new TableRow({
         tableHeader: true,

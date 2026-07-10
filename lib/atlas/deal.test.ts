@@ -1,5 +1,7 @@
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { listDeals, createDeal, getDealContextData } from "@/lib/atlas/deal";
+import { DealServiceError, deleteDeal, listDeals, createDeal, getDealContextData } from "@/lib/atlas/deal";
+
+const DEAL_ID = "123e4567-e89b-42d3-a456-426614174000";
 
 beforeEach(() => {
   process.env.SUPABASE_URL = "https://x.supabase.co";
@@ -38,12 +40,42 @@ test("getDealContextData returns null when env is missing", async () => {
 
 test("getDealContextData assembles deal, documents, and mandate", async () => {
   const fetchSpy = vi.spyOn(globalThis, "fetch")
-    .mockResolvedValueOnce({ ok: true, json: async () => [{ id: "1", name: "Cedar", levers: [] }] } as Response)
+    .mockResolvedValueOnce({ ok: true, json: async () => [{ id: DEAL_ID, name: "Cedar", levers: [] }] } as Response)
     .mockResolvedValueOnce({ ok: true, json: async () => [{ doc_type: "cim", filename: "C.pdf", digest: "d", status: "ready" }] } as Response)
     .mockResolvedValueOnce({ ok: true, json: async () => [{ id: "m", deal_types: [] }] } as Response);
-  const data = await getDealContextData("1");
+  const data = await getDealContextData(DEAL_ID);
   expect(data?.deal.name).toBe("Cedar");
   expect(data?.documents).toHaveLength(1);
   expect(data?.mandate?.id).toBe("m");
   expect(fetchSpy).toHaveBeenCalledTimes(3);
+});
+
+test("PostgREST failures surface as service errors", async () => {
+  vi.spyOn(globalThis, "fetch").mockResolvedValue({ ok: false, status: 503 } as Response);
+  await expect(listDeals()).rejects.toEqual(expect.objectContaining({
+    name: "DealServiceError",
+    message: "Deal data service request failed (503)",
+  } satisfies Partial<DealServiceError>));
+});
+
+test("deleteDeal reports missing rows instead of claiming success", async () => {
+  const fetchSpy = vi.spyOn(globalThis, "fetch")
+    .mockResolvedValueOnce({ ok: true, json: async () => [] } as Response)
+    .mockResolvedValueOnce({ ok: true, json: async () => [] } as Response);
+  await expect(deleteDeal(DEAL_ID)).resolves.toBe(false);
+  expect(fetchSpy).toHaveBeenCalledTimes(2);
+});
+
+test("deleteDeal removes document storage after deleting database row", async () => {
+  const fetchSpy = vi.spyOn(globalThis, "fetch")
+    .mockResolvedValueOnce({ ok: true, json: async () => [{ storage_path: `${DEAL_ID}/memo.pdf` }] } as Response)
+    .mockResolvedValueOnce({ ok: true, json: async () => [{ id: DEAL_ID }] } as Response)
+    .mockResolvedValueOnce({ ok: true, json: async () => ({}) } as Response);
+  await expect(deleteDeal(DEAL_ID)).resolves.toBe(true);
+  const storageCall = fetchSpy.mock.calls[2];
+  expect(String(storageCall[0])).toContain("/storage/v1/object/deal-documents");
+  expect(storageCall[1]).toEqual(expect.objectContaining({
+    method: "DELETE",
+    body: JSON.stringify({ prefixes: [`${DEAL_ID}/memo.pdf`] }),
+  }));
 });

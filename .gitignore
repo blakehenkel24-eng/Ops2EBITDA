@@ -12,4 +12,6 @@ dist
 *.pdf
 *.epub
 .vercel
+.playwright-cli/
+tmp/
 linkedin-assets/
