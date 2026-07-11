@@ -24,7 +24,8 @@ vi.mock("@/lib/atlas/digest", () => ({
   digestDocumentText: mocks.digestDocumentText,
 }));
 
-import { MAX_PDF_BYTES, POST as uploadDocument } from "@/app/api/atlas/deal-document/route";
+import { POST as uploadDocument } from "@/app/api/atlas/deal-document/route";
+import { MAX_PDF_BYTES } from "@/lib/atlas/deal-upload";
 import { GET as getDeals, POST as postDeal } from "@/app/api/atlas/deals/route";
 import { DELETE as deleteDealRoute, PATCH as patchDeal } from "@/app/api/atlas/deals/[id]/route";
 

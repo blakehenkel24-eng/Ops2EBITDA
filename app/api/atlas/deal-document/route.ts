@@ -8,9 +8,9 @@ import {
   uploadToStorage,
 } from "@/lib/atlas/deal";
 import { extractPdfText, digestDocumentText } from "@/lib/atlas/digest";
+import { MAX_PDF_BYTES } from "@/lib/atlas/deal-upload";
 
 export const maxDuration = 120;
-export const MAX_PDF_BYTES = 20 * 1024 * 1024;
 
 function safeFilename(name: string): string {
   const basename = name.split(/[\\/]/).pop() ?? "document.pdf";

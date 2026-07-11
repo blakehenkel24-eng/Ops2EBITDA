@@ -7,13 +7,14 @@ import { AtlasChatMessage } from "./AtlasChatMessage";
 import { AtlasResearchProgress } from "./AtlasResearchProgress";
 import { AtlasWelcome } from "./AtlasWelcome";
 import { AtlasResearchForm } from "./AtlasResearchForm";
+import { DocumentStudio } from "./DocumentStudio";
 import { ATLAS_COMMANDS } from "@/lib/atlas/prompts";
 import {
   downloadAtlasExport,
   getExportCommandFormat,
   getLastAssistantExportTarget,
 } from "@/lib/atlas/export-client";
-import { ArrowUp, Landmark, Building2, History, MessageSquarePlus, PanelLeftClose, Trash2, Layers } from "lucide-react";
+import { ArrowUp, Landmark, Building2, History, MessageSquare, MessageSquarePlus, PanelLeftClose, Trash2, Layers, FileText } from "lucide-react";
 import { DealWorkspacePanel } from "./DealWorkspacePanel";
 import type { UIMessage } from "@ai-sdk/react";
 
@@ -107,6 +108,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const [progressStages, setProgressStages] = useState<ProgressStage[]>([]);
   const [input, setInput] = useState("");
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [activeModule, setActiveModule] = useState<"chat" | "document-studio">("chat");
   const [activeDealId, setActiveDealId] = useState<string | null>(null);
   const [dealPanelOpen, setDealPanelOpen] = useState(false);
   const [sessions, setSessions] = useState<AtlasChatSession[]>([]);
@@ -119,6 +121,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const slashMenuRef = useRef<HTMLDivElement>(null);
+  const documentStudioButtonRef = useRef<HTMLButtonElement>(null);
 
   const updateProgressStage = useCallback((stage: ProgressStage) => {
     setProgressStages((prev) => {
@@ -488,6 +491,19 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     setActiveSessionId(createSessionId());
   }, [setMessages]);
 
+  const handleSelectModule = useCallback((module: "chat" | "document-studio") => {
+    setActiveModule(module);
+    if (module === "document-studio" && window.matchMedia("(max-width: 899px)").matches) {
+      setHistoryOpen(false);
+    }
+  }, []);
+
+  const handleStudioBack = useCallback(() => {
+    setActiveModule("chat");
+    setHistoryOpen(true);
+    window.setTimeout(() => documentStudioButtonRef.current?.focus(), 0);
+  }, []);
+
   const handleSelectSession = useCallback(
     (session: AtlasChatSession) => {
       if (isLoading) return;
@@ -532,7 +548,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
     <div className={rootClass}>
       {fullPage && (
         <>
-          {!historyOpen && (
+          {activeModule === "chat" && !historyOpen && (
             <button
               type="button"
               onClick={() => setHistoryOpen(true)}
@@ -545,6 +561,7 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
           )}
           <AtlasChatHistoryPanel
             open={historyOpen}
+            activeModule={activeModule}
             sessions={sessions}
             activeSessionId={activeSessionId}
             isLoading={isLoading}
@@ -552,8 +569,10 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
             onNewChat={handleNewChat}
             onSelectSession={handleSelectSession}
             onDeleteSession={handleDeleteSession}
+            onSelectModule={handleSelectModule}
+            documentStudioButtonRef={documentStudioButtonRef}
           />
-          {!dealPanelOpen && (
+          {activeModule === "chat" && !dealPanelOpen && (
             <button
               type="button"
               onClick={() => setDealPanelOpen(true)}
@@ -572,6 +591,9 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
           />
         </>
       )}
+      {fullPage && activeModule === "document-studio" ? (
+        <DocumentStudio onBack={handleStudioBack} />
+      ) : (
       <section className={shellClass}>
         <div ref={scrollRef} className={scrollClass}>
           {/* Welcome state, vertically centered and filling the scroll area */}
@@ -733,12 +755,14 @@ export function AtlasChat({ fullPage = false }: { fullPage?: boolean }) {
           </div>
         </div>
       </section>
+      )}
     </div>
   );
 }
 
 function AtlasChatHistoryPanel({
   open,
+  activeModule,
   sessions,
   activeSessionId,
   isLoading,
@@ -746,8 +770,11 @@ function AtlasChatHistoryPanel({
   onNewChat,
   onSelectSession,
   onDeleteSession,
+  onSelectModule,
+  documentStudioButtonRef,
 }: {
   open: boolean;
+  activeModule: "chat" | "document-studio";
   sessions: AtlasChatSession[];
   activeSessionId: string;
   isLoading: boolean;
@@ -755,6 +782,8 @@ function AtlasChatHistoryPanel({
   onNewChat: () => void;
   onSelectSession: (session: AtlasChatSession) => void;
   onDeleteSession: (sessionId: string) => void;
+  onSelectModule: (module: "chat" | "document-studio") => void;
+  documentStudioButtonRef: React.RefObject<HTMLButtonElement | null>;
 }) {
   return (
     <aside className="atlas-history-panel" aria-hidden={!open} inert={!open}>
@@ -773,18 +802,28 @@ function AtlasChatHistoryPanel({
         </button>
       </div>
 
-      <div className="border-b border-line/35 p-3">
-        <button
-          type="button"
-          onClick={onNewChat}
-          className="atlas-history-new-chat"
-        >
-          <MessageSquarePlus size={15} strokeWidth={1.8} />
-          New chat
-        </button>
-      </div>
+      <div className="atlas-history-areas">
+        <nav className="atlas-module-nav" aria-label="Atlas IQ modules">
+          <p className="atlas-module-nav__label">Modules</p>
+          <button type="button" className={`atlas-module-nav__button ${activeModule === "chat" ? "is-active" : ""}`} onClick={() => onSelectModule("chat")} aria-pressed={activeModule === "chat"}>
+            <MessageSquare size={15} strokeWidth={1.8} /> <span>Research chat</span>
+          </button>
+          <button ref={documentStudioButtonRef} type="button" className={`atlas-module-nav__button ${activeModule === "document-studio" ? "is-active" : ""}`} onClick={() => onSelectModule("document-studio")} aria-pressed={activeModule === "document-studio"}>
+            <FileText size={15} strokeWidth={1.8} /> <span>Document Studio</span><small>Preview</small>
+          </button>
+          <p className="atlas-module-nav__hint">Guided deal documents, starting with NDA review.</p>
+        </nav>
 
-      <div className="min-h-0 flex-1 overflow-y-auto p-2">
+        <section className="atlas-history-region" aria-label="Recent chats">
+          <div className="atlas-history-region__heading">
+            <span>{activeModule === "document-studio" ? "Chat history" : "Recent chats"}</span>
+            {activeModule === "chat" && (
+              <button type="button" onClick={onNewChat} className="atlas-history-new-chat">
+                <MessageSquarePlus size={13} strokeWidth={1.8} /> New chat
+              </button>
+            )}
+          </div>
+          <div className="atlas-history-list">
         {sessions.length === 0 ? (
           <div className="px-3 py-5 text-sm leading-6 text-stone/65">
             Your ATLAS IQ research threads will appear here after you start a chat.
@@ -832,6 +871,8 @@ function AtlasChatHistoryPanel({
             })}
           </div>
         )}
+          </div>
+        </section>
       </div>
     </aside>
   );
